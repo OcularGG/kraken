@@ -1,0 +1,3 @@
+Placeholder for First Sea Lord insignia (five-star admiral rank)
+Replace this file with: five-star-admiral.png
+Image should be: Royal Navy First Sea Lord insignia with five stars

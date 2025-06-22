@@ -1,0 +1,575 @@
+/* KRAKEN Organizational Chart Styles */
+
+.orgchart-container {
+    min-height: 100vh;
+    background: #181818;
+    color: #fff;
+    padding: 2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    padding-top: 100px;
+}
+
+.orgchart-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    border-bottom: 3px solid #bfa140;
+}
+
+.orgchart-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #bfa140;
+}
+
+.orgchart-subtitle {
+    font-size: 1.2rem;
+    color: #bfa140;
+    font-weight: 600;
+}
+
+/* Style Selector */
+.style-selector {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.style-selector h2 {
+    color: #bfa140;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.style-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.style-btn {
+    background: #fff;
+    color: #181818;
+    border: 4px solid #181818;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Space Grotesk', sans-serif;
+    border-radius: 0;
+}
+
+.style-btn:hover {
+    background: #bfa140;
+    color: #181818;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px #bfa140;
+}
+
+.style-btn.active {
+    background: #bfa140;
+    color: #181818;
+    box-shadow: 4px 4px 0px #181818;
+    transform: translateY(-2px);
+}
+
+/* Display Sections */
+.org-display {
+    display: none;
+    max-width: 1400px;
+    margin: 0 auto 3rem auto;
+    padding: 2rem;
+    background: #2a2a2a;
+    border: 4px solid #bfa140;
+    box-shadow: 8px 8px 0px #bfa140;
+}
+
+.org-display.active {
+    display: block;
+}
+
+.org-display h2 {
+    color: #bfa140;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+/* Hierarchical Tree View */
+.hierarchy-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.rank-level {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.rank-level::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 1rem;
+    background: #bfa140;
+}
+
+.rank-level:last-child::after {
+    display: none;
+}
+
+.officer {
+    background: #fff;
+    color: #181818;
+    border: 4px solid #181818;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 6px 6px 0px #bfa140;
+    min-width: 300px;
+}
+
+.sea-lords-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.insignia img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.officer-info h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.officer-info .rank {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #bfa140;
+    background: #181818;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+}
+
+.placeholder-ranks {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rank-placeholder {
+    background: #3a3a3a;
+    color: #bfa140;
+    border: 4px dashed #bfa140;
+    padding: 1rem;
+    text-align: center;
+    min-width: 150px;
+}
+
+.rank-placeholder .insignia img {
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+}
+
+.rank-placeholder .rank {
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.rank-placeholder small {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Grid Layout View */
+.grid-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.grid-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.grid-card {
+    background: #fff;
+    color: #181818;
+    border: 4px solid #181818;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 6px 6px 0px #bfa140;
+    min-width: 250px;
+    flex: 1;
+    max-width: 300px;
+}
+
+.card-header {
+    margin-bottom: 1rem;
+}
+
+.card-header img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.card-header h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.rank-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #bfa140;
+    background: #181818;
+    padding: 0.3rem 0.6rem;
+    margin: 0.5rem 0;
+    display: inline-block;
+}
+
+.rank-desc {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Command Cards View */
+.cards-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.command-card {
+    position: relative;
+    background: #fff;
+    color: #181818;
+    border: 4px solid #181818;
+    box-shadow: 8px 8px 0px #bfa140;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(135deg, #bfa140 0%, #9e8435 100%);
+}
+
+.card-content {
+    position: relative;
+    padding: 2rem;
+    z-index: 2;
+}
+
+.card-insignia {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.card-insignia img {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border: 4px solid #181818;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.officer-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.officer-rank {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    color: #bfa140;
+    background: #181818;
+    padding: 0.3rem 0.8rem;
+    margin: 0 auto 1rem auto;
+    display: inline-block;
+}
+
+.officer-desc {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.card-stats {
+    border-top: 2px solid #bfa140;
+    padding-top: 1rem;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.stat-value {
+    font-weight: 800;
+    color: #bfa140;
+    background: #181818;
+    padding: 0.2rem 0.5rem;
+}
+
+/* Pyramid Structure View */
+.pyramid-structure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.pyramid-level {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pyramid-officer {
+    background: #fff;
+    color: #181818;
+    border: 4px solid #181818;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 4px 4px 0px #bfa140;
+    min-width: 140px;
+}
+
+.pyramid-officer img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.pyramid-officer h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+}
+
+.pyramid-officer p {
+    font-size: 0.8rem;
+    color: #bfa140;
+    background: #181818;
+    padding: 0.2rem 0.4rem;
+    font-weight: 600;
+}
+
+/* Naval Formation View */
+.naval-formation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.flagship,
+.escort-line,
+.fleet-line,
+.command-line {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.flagship .ship-icon {
+    font-size: 3rem;
+}
+
+.escort-ship,
+.fleet-ship,
+.command-ship {
+    background: #fff;
+    color: #181818;
+    border: 4px solid #181818;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 6px 6px 0px #bfa140;
+    min-width: 180px;
+}
+
+.ship-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.ship-info h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+}
+
+.ship-info p {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+}
+
+.ship-info img {
+    width: 30px;
+    height: 30px;
+    margin-top: 0.5rem;
+}
+
+/* Rank Legend */
+.rank-legend {
+    max-width: 1200px;
+    margin: 3rem auto 0 auto;
+    padding: 2rem;
+    background: #2a2a2a;
+    border: 4px solid #bfa140;
+}
+
+.rank-legend h2 {
+    color: #bfa140;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.legend-item {
+    background: #fff;
+    color: #181818;
+    border: 3px solid #181818;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 4px 4px 0px #bfa140;
+}
+
+.legend-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.legend-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+}
+
+.legend-info p {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .orgchart-container {
+        padding: 1rem;
+        padding-top: 80px;
+    }
+    
+    .orgchart-title {
+        font-size: 2rem;
+    }
+    
+    .style-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .style-btn {
+        width: 200px;
+    }
+    
+    .org-display {
+        padding: 1rem;
+    }
+    
+    .sea-lords-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .officer {
+        min-width: 250px;
+    }
+    
+    .grid-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cards-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .pyramid-level {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .fleet-line {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .legend-grid {
+        grid-template-columns: 1fr;
+    }
+}

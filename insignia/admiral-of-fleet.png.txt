@@ -1,0 +1,3 @@
+Placeholder for Admiral of the Fleet insignia
+Replace this file with: admiral-of-fleet.png
+Image should be: Royal Navy Admiral of the Fleet insignia with crossed batons and crown

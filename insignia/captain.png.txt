@@ -1,0 +1,3 @@
+Placeholder for Captain insignia
+Replace this file with: captain.png
+Image should be: Royal Navy Captain insignia with crown and three rings

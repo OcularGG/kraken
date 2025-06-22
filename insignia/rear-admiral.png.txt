@@ -1,0 +1,3 @@
+Placeholder for Rear Admiral insignia
+Replace this file with: rear-admiral.png
+Image should be: Royal Navy Rear Admiral insignia with two stars

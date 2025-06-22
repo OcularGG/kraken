@@ -1,0 +1,3 @@
+Placeholder for Commander insignia
+Replace this file with: commander.png
+Image should be: Royal Navy Commander insignia with crown and two rings

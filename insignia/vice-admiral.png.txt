@@ -1,0 +1,3 @@
+Placeholder for Vice Admiral insignia
+Replace this file with: vice-admiral.png
+Image should be: Royal Navy Vice Admiral insignia with three stars

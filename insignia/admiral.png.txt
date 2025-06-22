@@ -1,0 +1,3 @@
+Placeholder for Admiral insignia
+Replace this file with: admiral.png
+Image should be: Royal Navy Admiral insignia with crossed anchor and crown

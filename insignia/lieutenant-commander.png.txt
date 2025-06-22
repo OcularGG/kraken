@@ -1,0 +1,3 @@
+Placeholder for Lieutenant Commander insignia
+Replace this file with: lieutenant-commander.png
+Image should be: Royal Navy Lieutenant Commander insignia with crown and one ring

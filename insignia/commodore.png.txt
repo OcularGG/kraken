@@ -1,0 +1,3 @@
+Placeholder for Commodore insignia
+Replace this file with: commodore.png
+Image should be: Royal Navy Commodore insignia with crown and anchor
