@@ -161,3 +161,20 @@ function handleResponsive() {
 
 window.addEventListener('resize', handleResponsive);
 handleResponsive(); // Initial check
+
+// Toggle info panel function for pyramid officers
+function toggleInfo(panelId) {
+    const panel = document.getElementById(panelId);
+    if (panel) {
+        if (panel.style.display === 'none' || panel.style.display === '') {
+            // Hide all other panels first
+            const allPanels = document.querySelectorAll('.info-panel');
+            allPanels.forEach(p => p.style.display = 'none');
+            
+            // Show the selected panel
+            panel.style.display = 'block';
+        } else {
+            panel.style.display = 'none';
+        }
+    }
+}

@@ -369,41 +369,123 @@
     gap: 1.5rem;
 }
 
+.pyramid-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #2a2a2a;
+    border: 3px solid #bfa140;
+    border-radius: 0;
+}
+
+.section-title {
+    color: #bfa140;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    background: #181818;
+    padding: 1rem;
+    border: 3px solid #bfa140;
+    box-shadow: 4px 4px 0px #bfa140;
+}
+
 .pyramid-level {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .pyramid-officer {
+    position: relative;
     background: #fff;
     color: #181818;
     border: 4px solid #181818;
     padding: 1rem;
     text-align: center;
     box-shadow: 4px 4px 0px #bfa140;
-    min-width: 140px;
+    min-width: 160px;
+    margin: 0.5rem;
 }
 
 .pyramid-officer img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     margin-bottom: 0.5rem;
+    object-fit: contain;
+    border: 2px solid #181818;
+    border-radius: 50%;
+    background: #fff;
+    padding: 2px;
 }
 
 .pyramid-officer h4 {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
     text-transform: uppercase;
+    color: #181818;
 }
 
 .pyramid-officer p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #bfa140;
     background: #181818;
-    padding: 0.2rem 0.4rem;
+    padding: 0.3rem 0.5rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Info Button Styles */
+.info-btn {
+    background: #bfa140;
+    color: #181818;
+    border: 2px solid #181818;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.info-btn:hover {
+    background: #181818;
+    color: #bfa140;
+    transform: scale(1.1);
+    box-shadow: 2px 2px 0px #bfa140;
+}
+
+/* Info Panel Styles */
+.info-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #181818;
+    color: #bfa140;
+    border: 3px solid #bfa140;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    z-index: 100;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    box-shadow: 4px 4px 0px #bfa140;
+    max-width: 300px;
+    text-align: left;
+}
+
+.info-panel p {
+    color: #fff;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
 }
 
 /* Naval Formation View */

@@ -990,131 +990,274 @@
         <section id="pyramid" class="org-display">
             <h2>Naval Pyramid</h2>
             <div class="pyramid-structure">
-                <div class="pyramid-level level-1">
-                    <div class="pyramid-officer">
-                        <img src="insignia/five-star-admiral.png" alt="First Sea Lord">
-                        <h4>CHOSEN</h4>
-                        <p>First Sea Lord</p>
+                <!-- Sea Lords Section -->
+                <div class="pyramid-section">
+                    <h3 class="section-title">Sea Lords</h3>
+                    
+                    <div class="pyramid-level level-1">
+                        <div class="pyramid-officer">
+                            <img src="insignia/five-star-admiral.png" alt="First Sea Lord">
+                            <h4>CHOSEN</h4>
+                            <p>First Sea Lord</p>
+                            <button class="info-btn" onclick="toggleInfo('first-sea-lord-info')">ℹ️</button>
+                            <div id="first-sea-lord-info" class="info-panel" style="display: none;">
+                                <p>Supreme Commander of the KRAKEN Fleet. Responsible for all naval operations, strategic command decisions, and overall fleet leadership. Reports directly to no one and has ultimate authority over all naval matters.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="pyramid-level level-2">
-                    <div class="pyramid-officer">
-                        <img src="insignia/admiral.png" alt="Second Sea Lord">
-                        <h4>WarLord4082</h4>
-                        <p>Second Sea Lord</p>
+                    
+                    <div class="pyramid-level level-2">
+                        <div class="pyramid-officer">
+                            <img src="insignia/admiral.png" alt="Second Sea Lord">
+                            <h4>WarLord4082</h4>
+                            <p>Second Sea Lord</p>
+                            <button class="info-btn" onclick="toggleInfo('second-sea-lord-info')">ℹ️</button>
+                            <div id="second-sea-lord-info" class="info-panel" style="display: none;">
+                                <p>Deputy Commander responsible for fleet operations and tactical coordination across all naval theaters. Serves as the primary lieutenant to the First Sea Lord and manages day-to-day operational activities.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="pyramid-level level-3">
-                    <div class="pyramid-officer">
-                        <img src="insignia/vice-admiral.png" alt="Third Sea Lord">
-                        <h4>Magoo</h4>
-                        <p>Third Sea Lord</p>
-                    </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/vice-admiral.png" alt="Fourth Sea Lord">
-                        <h4>Kpt. Gneisenau</h4>
-                        <p>Fourth Sea Lord</p>
-                    </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/vice-admiral.png" alt="Fifth Sea Lord">
-                        <h4>Kpt. Scharnhorst</h4>
-                        <p>Fifth Sea Lord</p>
-                    </div>
-                </div>
-                
-                <div class="pyramid-level level-4">
-                    <div class="pyramid-officer">
-                        <img src="insignia/admiral-of-fleet.png" alt="Admiral of the Fleet">
-                        <h4>Tommy Templeman</h4>
-                        <p>Admiral of the Fleet</p>
-                    </div>
-                </div>
-
-                <div class="pyramid-level level-5">
-                    <div class="pyramid-officer">
-                        <img src="insignia/admiral.png" alt="Admiral">
-                        <h4>Admiral Johnson</h4>
-                        <p>Admiral</p>
-                    </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/admiral.png" alt="Admiral">
-                        <h4>Admiral Smith</h4>
-                        <p>Admiral</p>
-                    </div>
-                </div>
-
-                <div class="pyramid-level level-6">
-                    <div class="pyramid-officer">
-                        <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                        <h4>R. Adm. Brown</h4>
-                        <p>Rear Admiral</p>
-                    </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                        <h4>R. Adm. Davis</h4>
-                        <p>Rear Admiral</p>
-                    </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                        <h4>R. Adm. Wilson</h4>
-                        <p>Rear Admiral</p>
+                    
+                    <div class="pyramid-level level-3">
+                        <div class="pyramid-officer">
+                            <img src="insignia/vice-admiral.png" alt="Third Sea Lord">
+                            <h4>Magoo</h4>
+                            <p>Third Sea Lord</p>
+                            <button class="info-btn" onclick="toggleInfo('third-sea-lord-info')">ℹ️</button>
+                            <div id="third-sea-lord-info" class="info-panel" style="display: none;">
+                                <p>Naval Personnel and Administrative Command. Oversees recruitment, training, personnel management, and ensures the fleet maintains proper staffing and skill development across all ranks.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/vice-admiral.png" alt="Fourth Sea Lord">
+                            <h4>Kpt. Gneisenau</h4>
+                            <p>Fourth Sea Lord</p>
+                            <button class="info-btn" onclick="toggleInfo('fourth-sea-lord-info')">ℹ️</button>
+                            <div id="fourth-sea-lord-info" class="info-panel" style="display: none;">
+                                <p>Logistics and Supply Chain Command. Manages fleet resources, equipment procurement, maintenance schedules, and ensures all ships are properly supplied for extended operations.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/vice-admiral.png" alt="Fifth Sea Lord">
+                            <h4>Kpt. Scharnhorst</h4>
+                            <p>Fifth Sea Lord</p>
+                            <button class="info-btn" onclick="toggleInfo('fifth-sea-lord-info')">ℹ️</button>
+                            <div id="fifth-sea-lord-info" class="info-panel" style="display: none;">
+                                <p>Strategic Planning and Intelligence Command. Coordinates long-term strategy, intelligence operations, enemy analysis, and develops tactical doctrines for the fleet.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="pyramid-level level-7">
-                    <div class="pyramid-officer">
-                        <img src="insignia/commodore.png" alt="Commodore">
-                        <h4>Cmdre. Taylor</h4>
-                        <p>Commodore</p>
+                <!-- Admirals Section -->
+                <div class="pyramid-section">
+                    <h3 class="section-title">Admirals</h3>
+                    
+                    <div class="pyramid-level level-4">
+                        <div class="pyramid-officer">
+                            <img src="insignia/admiral-of-fleet.png" alt="Admiral of the Fleet">
+                            <h4>Tommy Templeman</h4>
+                            <p>Admiral of the Fleet</p>
+                            <button class="info-btn" onclick="toggleInfo('admiral-fleet-info')">ℹ️</button>
+                            <div id="admiral-fleet-info" class="info-panel" style="display: none;">
+                                <p>Fleet Command and Operations. Direct command of all fleet movements, tactical operations, and battle coordination. Leads the fleet in major engagements and oversees all naval combat operations.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/commodore.png" alt="Commodore">
-                        <h4>Cmdre. Anderson</h4>
-                        <p>Commodore</p>
+
+                    <div class="pyramid-level level-5">
+                        <div class="pyramid-officer">
+                            <img src="insignia/admiral.png" alt="Admiral">
+                            <h4>Admiral Johnson</h4>
+                            <p>Admiral</p>
+                            <button class="info-btn" onclick="toggleInfo('admiral-johnson-info')">ℹ️</button>
+                            <div id="admiral-johnson-info" class="info-panel" style="display: none;">
+                                <p>Naval Operations Command. Oversees major fleet operations, strategic deployments, and coordinates with other admirals to ensure effective fleet management and tactical execution.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/admiral.png" alt="Admiral">
+                            <h4>Admiral Smith</h4>
+                            <p>Admiral</p>
+                            <button class="info-btn" onclick="toggleInfo('admiral-smith-info')">ℹ️</button>
+                            <div id="admiral-smith-info" class="info-panel" style="display: none;">
+                                <p>Fleet Strategy Command. Develops and implements strategic naval doctrine, fleet tactics, and long-term operational planning. Works closely with intelligence to adapt strategies.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/commodore.png" alt="Commodore">
-                        <h4>Cmdre. Thomas</h4>
-                        <p>Commodore</p>
-                    </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/commodore.png" alt="Commodore">
-                        <h4>Cmdre. Jackson</h4>
-                        <p>Commodore</p>
+
+                    <div class="pyramid-level level-6">
+                        <div class="pyramid-officer">
+                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
+                            <h4>R. Adm. Brown</h4>
+                            <p>Rear Admiral</p>
+                            <button class="info-btn" onclick="toggleInfo('rear-adm-brown-info')">ℹ️</button>
+                            <div id="rear-adm-brown-info" class="info-panel" style="display: none;">
+                                <p>Squadron Command. Leads squadron operations and tactical formations in naval engagements. Commands multiple ships in coordinated attacks and defensive maneuvers.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
+                            <h4>R. Adm. Davis</h4>
+                            <p>Rear Admiral</p>
+                            <button class="info-btn" onclick="toggleInfo('rear-adm-davis-info')">ℹ️</button>
+                            <div id="rear-adm-davis-info" class="info-panel" style="display: none;">
+                                <p>Tactical Operations. Specializes in combat tactics, battlefield coordination, and real-time tactical decision making during naval conflicts and strategic operations.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
+                            <h4>R. Adm. Wilson</h4>
+                            <p>Rear Admiral</p>
+                            <button class="info-btn" onclick="toggleInfo('rear-adm-wilson-info')">ℹ️</button>
+                            <div id="rear-adm-wilson-info" class="info-panel" style="display: none;">
+                                <p>Intelligence Operations. Manages naval intelligence gathering, reconnaissance missions, enemy analysis, and provides critical information for strategic planning.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="pyramid-level level-8">
-                    <div class="pyramid-officer">
-                        <img src="insignia/captain.png" alt="Captain">
-                        <h4>Capt. White</h4>
-                        <p>Captain</p>
+                <!-- Captains Section -->
+                <div class="pyramid-section">
+                    <h3 class="section-title">Captains & Officers</h3>
+                    
+                    <div class="pyramid-level level-7">
+                        <div class="pyramid-officer">
+                            <img src="insignia/commodore.png" alt="Commodore">
+                            <h4>Cmdre. Taylor</h4>
+                            <p>Commodore</p>
+                            <button class="info-btn" onclick="toggleInfo('commodore-taylor-info')">ℹ️</button>
+                            <div id="commodore-taylor-info" class="info-panel" style="display: none;">
+                                <p>Division Command. Leads naval divisions and coordinates multi-ship operations. Manages tactical formations and ensures effective communication between ships.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/commodore.png" alt="Commodore">
+                            <h4>Cmdre. Anderson</h4>
+                            <p>Commodore</p>
+                            <button class="info-btn" onclick="toggleInfo('commodore-anderson-info')">ℹ️</button>
+                            <div id="commodore-anderson-info" class="info-panel" style="display: none;">
+                                <p>Training Operations. Oversees naval training programs, skill development, and ensures all crew members maintain combat readiness and operational expertise.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/commodore.png" alt="Commodore">
+                            <h4>Cmdre. Thomas</h4>
+                            <p>Commodore</p>
+                            <button class="info-btn" onclick="toggleInfo('commodore-thomas-info')">ℹ️</button>
+                            <div id="commodore-thomas-info" class="info-panel" style="display: none;">
+                                <p>Engineering Division. Manages ship maintenance, technical operations, upgrades, and ensures all vessels maintain optimal performance and combat capability.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/commodore.png" alt="Commodore">
+                            <h4>Cmdre. Jackson</h4>
+                            <p>Commodore</p>
+                            <button class="info-btn" onclick="toggleInfo('commodore-jackson-info')">ℹ️</button>
+                            <div id="commodore-jackson-info" class="info-panel" style="display: none;">
+                                <p>Communications Command. Oversees all fleet communications, signal coordination, intelligence distribution, and maintains secure communication networks.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/captain.png" alt="Captain">
-                        <h4>Capt. Harris</h4>
-                        <p>Captain</p>
+
+                    <div class="pyramid-level level-8">
+                        <div class="pyramid-officer">
+                            <img src="insignia/captain.png" alt="Captain">
+                            <h4>Capt. White</h4>
+                            <p>Captain</p>
+                            <button class="info-btn" onclick="toggleInfo('captain-white-info')">ℹ️</button>
+                            <div id="captain-white-info" class="info-panel" style="display: none;">
+                                <p>Ship Command. Commands individual vessels, responsible for crew management, ship operations, and tactical execution of orders from higher command.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/captain.png" alt="Captain">
+                            <h4>Capt. Harris</h4>
+                            <p>Captain</p>
+                            <button class="info-btn" onclick="toggleInfo('captain-harris-info')">ℹ️</button>
+                            <div id="captain-harris-info" class="info-panel" style="display: none;">
+                                <p>Ship Command. Leads individual ship operations, manages crew performance, and executes tactical maneuvers as directed by squadron and fleet command.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/captain.png" alt="Captain">
+                            <h4>Capt. Martin</h4>
+                            <p>Captain</p>
+                            <button class="info-btn" onclick="toggleInfo('captain-martin-info')">ℹ️</button>
+                            <div id="captain-martin-info" class="info-panel" style="display: none;">
+                                <p>Ship Command. Responsible for ship-level tactical decisions, crew coordination, and maintaining vessel readiness for combat and strategic operations.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/captain.png" alt="Captain">
+                            <h4>Capt. Thompson</h4>
+                            <p>Captain</p>
+                            <button class="info-btn" onclick="toggleInfo('captain-thompson-info')">ℹ️</button>
+                            <div id="captain-thompson-info" class="info-panel" style="display: none;">
+                                <p>Ship Command. Manages individual vessel operations, oversees crew training, and ensures optimal ship performance in both combat and support roles.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/captain.png" alt="Captain">
+                            <h4>Capt. Garcia</h4>
+                            <p>Captain</p>
+                            <button class="info-btn" onclick="toggleInfo('captain-garcia-info')">ℹ️</button>
+                            <div id="captain-garcia-info" class="info-panel" style="display: none;">
+                                <p>Ship Command. Leads ship operations, maintains crew discipline, and coordinates with other captains to execute fleet-wide tactical objectives.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/captain.png" alt="Captain">
-                        <h4>Capt. Martin</h4>
-                        <p>Captain</p>
-                    </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/captain.png" alt="Captain">
-                        <h4>Capt. Thompson</h4>
-                        <p>Captain</p>
-                    </div>
-                    <div class="pyramid-officer">
-                        <img src="insignia/captain.png" alt="Captain">
-                        <h4>Capt. Garcia</h4>
-                        <p>Captain</p>
+
+                    <div class="pyramid-level level-9">
+                        <div class="pyramid-officer">
+                            <img src="insignia/commander.png" alt="Commander">
+                            <h4>Cmdr. Martinez</h4>
+                            <p>Commander</p>
+                            <button class="info-btn" onclick="toggleInfo('commander-martinez-info')">ℹ️</button>
+                            <div id="commander-martinez-info" class="info-panel" style="display: none;">
+                                <p>Senior Officer. Serves as executive officer or department head, manages specific ship systems, and assists captains in operational decision-making.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/commander.png" alt="Commander">
+                            <h4>Cmdr. Robinson</h4>
+                            <p>Commander</p>
+                            <button class="info-btn" onclick="toggleInfo('commander-robinson-info')">ℹ️</button>
+                            <div id="commander-robinson-info" class="info-panel" style="display: none;">
+                                <p>Senior Officer. Oversees critical ship departments, provides tactical expertise, and serves as second-in-command for vessel operations.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/commander.png" alt="Commander">
+                            <h4>Cmdr. Clark</h4>
+                            <p>Commander</p>
+                            <button class="info-btn" onclick="toggleInfo('commander-clark-info')">ℹ️</button>
+                            <div id="commander-clark-info" class="info-panel" style="display: none;">
+                                <p>Senior Officer. Manages specialized operations, coordinates with other departments, and provides operational expertise for complex missions.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
+                            <h4>Lt. Cmdr. Walker</h4>
+                            <p>Lieutenant Commander</p>
+                            <button class="info-btn" onclick="toggleInfo('lt-commander-walker-info')">ℹ️</button>
+                            <div id="lt-commander-walker-info" class="info-panel" style="display: none;">
+                                <p>Department Head. Leads specific ship departments, manages junior officers, and ensures operational efficiency in assigned areas of responsibility.</p>
+                            </div>
+                        </div>
+                        <div class="pyramid-officer">
+                            <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
+                            <h4>Lt. Cmdr. Hall</h4>
+                            <p>Lieutenant Commander</p>
+                            <button class="info-btn" onclick="toggleInfo('lt-commander-hall-info')">ℹ️</button>
+                            <div id="lt-commander-hall-info" class="info-panel" style="display: none;">
+                                <p>Department Head. Oversees departmental operations, trains junior personnel, and implements tactical procedures within their area of expertise.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>        <!-- Naval Formation View -->
+        </section><!-- Naval Formation View -->
         <section id="naval" class="org-display">
             <h2>Fleet Formation</h2>
             <div class="naval-formation">
