@@ -1,3 +1,7 @@
+// Import https module for Node.js compatibility
+const https = require('https');
+const { URL } = require('url');
+
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || 'https://discord.com/api/webhooks/1386130290640162857/1WB7lqwj3RVAcib7H08ygsfBozw7u5PHDSgAgOLCn1SpKy1Fkjlrc0byPmN2Wl8vgpzG';
 
 module.exports = async (req, res) => {
@@ -15,6 +19,7 @@ module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
   try {
     console.log('Received application:', JSON.stringify(req.body, null, 2));
     const payload = req.body;
@@ -25,34 +30,56 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: 'Invalid payload structure' });
     }
     
-    console.log('Sending to Discord webhook:', DISCORD_WEBHOOK_URL.substring(0, 50) + '...');
-    const discordRes = await fetch(DISCORD_WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
+    console.log('Sending to Discord webhook...');
     
-    if (discordRes.ok) {
-      console.log('Successfully sent to Discord');
-      res.status(200).json({ success: true });
-    } else {
-      let errorText;
-      try {
-        errorText = await discordRes.text();
-      } catch (e) {
-        errorText = 'Could not read error response';
+    // Use https module instead of fetch for better Node.js compatibility
+    const url = new URL(DISCORD_WEBHOOK_URL);
+    const postData = JSON.stringify(payload);
+    
+    const options = {
+      hostname: url.hostname,
+      port: 443,
+      path: url.pathname + url.search,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(postData)
       }
-      console.error('Discord webhook error:', {
-        status: discordRes.status,
-        statusText: discordRes.statusText,
-        errorText: errorText,
-        headers: Object.fromEntries(discordRes.headers)
+    };
+
+    const discordRequest = https.request(options, (discordRes) => {
+      let data = '';
+      
+      discordRes.on('data', (chunk) => {
+        data += chunk;
       });
-      res.status(500).json({ 
-        error: 'Discord webhook error', 
-        details: errorText || `HTTP ${discordRes.status}: ${discordRes.statusText}` 
+      
+      discordRes.on('end', () => {
+        if (discordRes.statusCode >= 200 && discordRes.statusCode < 300) {
+          console.log('Successfully sent to Discord');
+          res.status(200).json({ success: true });
+        } else {
+          console.error('Discord webhook error:', {
+            status: discordRes.statusCode,
+            statusMessage: discordRes.statusMessage,
+            data: data
+          });
+          res.status(500).json({ 
+            error: 'Discord webhook error', 
+            details: data || `HTTP ${discordRes.statusCode}: ${discordRes.statusMessage}` 
+          });
+        }
       });
-    }
+    });
+
+    discordRequest.on('error', (err) => {
+      console.error('Discord request error:', err);
+      res.status(500).json({ error: 'Network error', details: err.message });
+    });
+
+    discordRequest.write(postData);
+    discordRequest.end();
+
   } catch (err) {
     console.error('Server error:', err);
     res.status(500).json({ error: 'Server error', details: err.message });
