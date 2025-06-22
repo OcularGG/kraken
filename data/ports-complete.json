@@ -1,0 +1,1217 @@
+[
+  {
+    "id": 1,
+    "name": "Abreus",
+    "searchText": "abreus"
+  },
+  {
+    "id": 2,
+    "name": "Aguadilla",
+    "searchText": "aguadilla"
+  },
+  {
+    "id": 3,
+    "name": "Aguas Buenas",
+    "searchText": "aguas buenas"
+  },
+  {
+    "id": 4,
+    "name": "Aibonito",
+    "searchText": "aibonito"
+  },
+  {
+    "id": 5,
+    "name": "Aquin",
+    "searchText": "aquin"
+  },
+  {
+    "id": 6,
+    "name": "Arecibo",
+    "searchText": "arecibo"
+  },
+  {
+    "id": 7,
+    "name": "Baracoa",
+    "searchText": "baracoa"
+  },
+  {
+    "id": 8,
+    "name": "Barranquilla",
+    "searchText": "barranquilla"
+  },
+  {
+    "id": 9,
+    "name": "Barranquitas",
+    "searchText": "barranquitas"
+  },
+  {
+    "id": 10,
+    "name": "Basse-Pointe",
+    "searchText": "basse pointe"
+  },
+  {
+    "id": 11,
+    "name": "Bayamo",
+    "searchText": "bayamo"
+  },
+  {
+    "id": 12,
+    "name": "Bayamón",
+    "searchText": "bayam n"
+  },
+  {
+    "id": 13,
+    "name": "Bensalem",
+    "searchText": "bensalem"
+  },
+  {
+    "id": 14,
+    "name": "Black River",
+    "searchText": "black river"
+  },
+  {
+    "id": 15,
+    "name": "Blue Mountain Peak",
+    "searchText": "blue mountain peak"
+  },
+  {
+    "id": 16,
+    "name": "Bog Walk",
+    "searchText": "bog walk"
+  },
+  {
+    "id": 17,
+    "name": "Brievengat",
+    "searchText": "brievengat"
+  },
+  {
+    "id": 18,
+    "name": "Browns Town",
+    "searchText": "browns town"
+  },
+  {
+    "id": 19,
+    "name": "Buff Bay",
+    "searchText": "buff bay"
+  },
+  {
+    "id": 20,
+    "name": "Cabaiguán",
+    "searchText": "cabaigu n"
+  },
+  {
+    "id": 21,
+    "name": "Caguas",
+    "searchText": "caguas"
+  },
+  {
+    "id": 22,
+    "name": "Caibarien",
+    "searchText": "caibarien"
+  },
+  {
+    "id": 23,
+    "name": "Caibarién",
+    "searchText": "caibari n"
+  },
+  {
+    "id": 24,
+    "name": "Camajuani",
+    "searchText": "camajuani"
+  },
+  {
+    "id": 25,
+    "name": "Campeche",
+    "searchText": "campeche"
+  },
+  {
+    "id": 26,
+    "name": "Campechuela",
+    "searchText": "campechuela"
+  },
+  {
+    "id": 27,
+    "name": "Camuy",
+    "searchText": "camuy"
+  },
+  {
+    "id": 28,
+    "name": "Cap-Haïtien",
+    "searchText": "cap ha tien"
+  },
+  {
+    "id": 29,
+    "name": "Cardenas",
+    "searchText": "cardenas"
+  },
+  {
+    "id": 30,
+    "name": "Carolina",
+    "searchText": "carolina"
+  },
+  {
+    "id": 31,
+    "name": "Cartagena",
+    "searchText": "cartagena"
+  },
+  {
+    "id": 32,
+    "name": "Cartagena de Indias",
+    "searchText": "cartagena de indias"
+  },
+  {
+    "id": 33,
+    "name": "Casilda",
+    "searchText": "casilda"
+  },
+  {
+    "id": 34,
+    "name": "Cavaillon",
+    "searchText": "cavaillon"
+  },
+  {
+    "id": 35,
+    "name": "Cayenne",
+    "searchText": "cayenne"
+  },
+  {
+    "id": 36,
+    "name": "Cayey",
+    "searchText": "cayey"
+  },
+  {
+    "id": 37,
+    "name": "Chantal",
+    "searchText": "chantal"
+  },
+  {
+    "id": 38,
+    "name": "Chardonnières",
+    "searchText": "chardonni res"
+  },
+  {
+    "id": 39,
+    "name": "Charleston",
+    "searchText": "charleston"
+  },
+  {
+    "id": 40,
+    "name": "Charlotte Amalie",
+    "searchText": "charlotte amalie"
+  },
+  {
+    "id": 41,
+    "name": "Chivirico",
+    "searchText": "chivirico"
+  },
+  {
+    "id": 42,
+    "name": "Christiansted",
+    "searchText": "christiansted"
+  },
+  {
+    "id": 43,
+    "name": "Ciales",
+    "searchText": "ciales"
+  },
+  {
+    "id": 44,
+    "name": "Cidra",
+    "searchText": "cidra"
+  },
+  {
+    "id": 45,
+    "name": "Cienfuegos",
+    "searchText": "cienfuegos"
+  },
+  {
+    "id": 46,
+    "name": "Clark's Town",
+    "searchText": "clark s town"
+  },
+  {
+    "id": 47,
+    "name": "Coamo",
+    "searchText": "coamo"
+  },
+  {
+    "id": 48,
+    "name": "Colon",
+    "searchText": "colon"
+  },
+  {
+    "id": 49,
+    "name": "Comerío",
+    "searchText": "comer o"
+  },
+  {
+    "id": 50,
+    "name": "Constant Spring",
+    "searchText": "constant spring"
+  },
+  {
+    "id": 51,
+    "name": "Content Gap",
+    "searchText": "content gap"
+  },
+  {
+    "id": 52,
+    "name": "Coro",
+    "searchText": "coro"
+  },
+  {
+    "id": 53,
+    "name": "Corozal",
+    "searchText": "corozal"
+  },
+  {
+    "id": 54,
+    "name": "Croix-des-Bouquets",
+    "searchText": "croix des bouquets"
+  },
+  {
+    "id": 55,
+    "name": "Cross Roads",
+    "searchText": "cross roads"
+  },
+  {
+    "id": 56,
+    "name": "Cruces",
+    "searchText": "cruces"
+  },
+  {
+    "id": 57,
+    "name": "Côteaux",
+    "searchText": "c teaux"
+  },
+  {
+    "id": 58,
+    "name": "Daiquiri",
+    "searchText": "daiquiri"
+  },
+  {
+    "id": 59,
+    "name": "Dame-Marie",
+    "searchText": "dame marie"
+  },
+  {
+    "id": 60,
+    "name": "Discovery Bay",
+    "searchText": "discovery bay"
+  },
+  {
+    "id": 61,
+    "name": "Dorado",
+    "searchText": "dorado"
+  },
+  {
+    "id": 62,
+    "name": "Ducos",
+    "searchText": "ducos"
+  },
+  {
+    "id": 63,
+    "name": "Duncans",
+    "searchText": "duncans"
+  },
+  {
+    "id": 64,
+    "name": "Emmastad",
+    "searchText": "emmastad"
+  },
+  {
+    "id": 65,
+    "name": "Esperanza",
+    "searchText": "esperanza"
+  },
+  {
+    "id": 66,
+    "name": "Ewarton",
+    "searchText": "ewarton"
+  },
+  {
+    "id": 67,
+    "name": "Falmouth",
+    "searchText": "falmouth"
+  },
+  {
+    "id": 68,
+    "name": "Firmeza",
+    "searchText": "firmeza"
+  },
+  {
+    "id": 69,
+    "name": "Fomento",
+    "searchText": "fomento"
+  },
+  {
+    "id": 70,
+    "name": "Fort-Royal",
+    "searchText": "fort royal"
+  },
+  {
+    "id": 71,
+    "name": "Fort-de-France",
+    "searchText": "fort de france"
+  },
+  {
+    "id": 72,
+    "name": "George Town",
+    "searchText": "george town"
+  },
+  {
+    "id": 73,
+    "name": "Georgetown",
+    "searchText": "georgetown"
+  },
+  {
+    "id": 74,
+    "name": "Gibara",
+    "searchText": "gibara"
+  },
+  {
+    "id": 75,
+    "name": "Gonaïves",
+    "searchText": "gona ves"
+  },
+  {
+    "id": 76,
+    "name": "Gordon Town",
+    "searchText": "gordon town"
+  },
+  {
+    "id": 77,
+    "name": "Grand'Rivière",
+    "searchText": "grand rivi re"
+  },
+  {
+    "id": 78,
+    "name": "Grand-Goâve",
+    "searchText": "grand go ve"
+  },
+  {
+    "id": 79,
+    "name": "Groot Kwartier",
+    "searchText": "groot kwartier"
+  },
+  {
+    "id": 80,
+    "name": "Gros-Morne",
+    "searchText": "gros morne"
+  },
+  {
+    "id": 81,
+    "name": "Guantanamo",
+    "searchText": "guantanamo"
+  },
+  {
+    "id": 82,
+    "name": "Guaynabo",
+    "searchText": "guaynabo"
+  },
+  {
+    "id": 83,
+    "name": "Guisa",
+    "searchText": "guisa"
+  },
+  {
+    "id": 84,
+    "name": "Gustavia",
+    "searchText": "gustavia"
+  },
+  {
+    "id": 85,
+    "name": "Half Way Tree",
+    "searchText": "half way tree"
+  },
+  {
+    "id": 86,
+    "name": "Hardware Gap",
+    "searchText": "hardware gap"
+  },
+  {
+    "id": 87,
+    "name": "Hatillo",
+    "searchText": "hatillo"
+  },
+  {
+    "id": 88,
+    "name": "Havana",
+    "searchText": "havana"
+  },
+  {
+    "id": 89,
+    "name": "Hinche",
+    "searchText": "hinche"
+  },
+  {
+    "id": 90,
+    "name": "Holguin",
+    "searchText": "holguin"
+  },
+  {
+    "id": 91,
+    "name": "Holywell",
+    "searchText": "holywell"
+  },
+  {
+    "id": 92,
+    "name": "Hope Bay",
+    "searchText": "hope bay"
+  },
+  {
+    "id": 93,
+    "name": "Hope Pastures",
+    "searchText": "hope pastures"
+  },
+  {
+    "id": 94,
+    "name": "Irish Town",
+    "searchText": "irish town"
+  },
+  {
+    "id": 95,
+    "name": "Isabela",
+    "searchText": "isabela"
+  },
+  {
+    "id": 96,
+    "name": "Jacmel",
+    "searchText": "jacmel"
+  },
+  {
+    "id": 97,
+    "name": "Jagua",
+    "searchText": "jagua"
+  },
+  {
+    "id": 98,
+    "name": "Jucaro",
+    "searchText": "jucaro"
+  },
+  {
+    "id": 99,
+    "name": "Julianadorp",
+    "searchText": "julianadorp"
+  },
+  {
+    "id": 100,
+    "name": "Juraguá",
+    "searchText": "juragu "
+  },
+  {
+    "id": 101,
+    "name": "Jérémie",
+    "searchText": "j r mie"
+  },
+  {
+    "id": 102,
+    "name": "L'Ajoupa-Bouillon",
+    "searchText": "l ajoupa bouillon"
+  },
+  {
+    "id": 103,
+    "name": "La Guaira",
+    "searchText": "la guaira"
+  },
+  {
+    "id": 104,
+    "name": "La Tortue",
+    "searchText": "la tortue"
+  },
+  {
+    "id": 105,
+    "name": "La Trinité",
+    "searchText": "la trinit "
+  },
+  {
+    "id": 106,
+    "name": "Lajas",
+    "searchText": "lajas"
+  },
+  {
+    "id": 107,
+    "name": "Las Tunas",
+    "searchText": "las tunas"
+  },
+  {
+    "id": 108,
+    "name": "Le Diamant",
+    "searchText": "le diamant"
+  },
+  {
+    "id": 109,
+    "name": "Le François",
+    "searchText": "le fran ois"
+  },
+  {
+    "id": 110,
+    "name": "Le Lamentin",
+    "searchText": "le lamentin"
+  },
+  {
+    "id": 111,
+    "name": "Le Lorrain",
+    "searchText": "le lorrain"
+  },
+  {
+    "id": 112,
+    "name": "Le Macouba",
+    "searchText": "le macouba"
+  },
+  {
+    "id": 113,
+    "name": "Le Marigot",
+    "searchText": "le marigot"
+  },
+  {
+    "id": 114,
+    "name": "Le Marin",
+    "searchText": "le marin"
+  },
+  {
+    "id": 115,
+    "name": "Le Morne-Rouge",
+    "searchText": "le morne rouge"
+  },
+  {
+    "id": 116,
+    "name": "Le Prêcheur",
+    "searchText": "le pr cheur"
+  },
+  {
+    "id": 117,
+    "name": "Le Robert",
+    "searchText": "le robert"
+  },
+  {
+    "id": 118,
+    "name": "Le Vauclin",
+    "searchText": "le vauclin"
+  },
+  {
+    "id": 119,
+    "name": "Les Anses-d'Arlets",
+    "searchText": "les anses d arlets"
+  },
+  {
+    "id": 120,
+    "name": "Les Cayes",
+    "searchText": "les cayes"
+  },
+  {
+    "id": 121,
+    "name": "Les Trois-Îlets",
+    "searchText": "les trois  lets"
+  },
+  {
+    "id": 122,
+    "name": "Liguanea",
+    "searchText": "liguanea"
+  },
+  {
+    "id": 123,
+    "name": "Linstead",
+    "searchText": "linstead"
+  },
+  {
+    "id": 124,
+    "name": "Lluidas Vale",
+    "searchText": "lluidas vale"
+  },
+  {
+    "id": 125,
+    "name": "Lucea",
+    "searchText": "lucea"
+  },
+  {
+    "id": 126,
+    "name": "Léogâne",
+    "searchText": "l og ne"
+  },
+  {
+    "id": 127,
+    "name": "Macouba",
+    "searchText": "macouba"
+  },
+  {
+    "id": 128,
+    "name": "Mahaai",
+    "searchText": "mahaai"
+  },
+  {
+    "id": 129,
+    "name": "Manatí",
+    "searchText": "manat "
+  },
+  {
+    "id": 130,
+    "name": "Manzanillo",
+    "searchText": "manzanillo"
+  },
+  {
+    "id": 131,
+    "name": "Maracaibo",
+    "searchText": "maracaibo"
+  },
+  {
+    "id": 132,
+    "name": "Martha Brae",
+    "searchText": "martha brae"
+  },
+  {
+    "id": 133,
+    "name": "Matanzas",
+    "searchText": "matanzas"
+  },
+  {
+    "id": 134,
+    "name": "Mavis Bank",
+    "searchText": "mavis bank"
+  },
+  {
+    "id": 135,
+    "name": "May Pen",
+    "searchText": "may pen"
+  },
+  {
+    "id": 136,
+    "name": "Mayagüez",
+    "searchText": "mayag ez"
+  },
+  {
+    "id": 137,
+    "name": "Media Luna",
+    "searchText": "media luna"
+  },
+  {
+    "id": 138,
+    "name": "Miragoâne",
+    "searchText": "mirago ne"
+  },
+  {
+    "id": 139,
+    "name": "Mona",
+    "searchText": "mona"
+  },
+  {
+    "id": 140,
+    "name": "Moneague",
+    "searchText": "moneague"
+  },
+  {
+    "id": 141,
+    "name": "Montaña",
+    "searchText": "monta a"
+  },
+  {
+    "id": 142,
+    "name": "Montego Bay",
+    "searchText": "montego bay"
+  },
+  {
+    "id": 143,
+    "name": "Morant Bay",
+    "searchText": "morant bay"
+  },
+  {
+    "id": 144,
+    "name": "Morovis",
+    "searchText": "morovis"
+  },
+  {
+    "id": 145,
+    "name": "Naranjito",
+    "searchText": "naranjito"
+  },
+  {
+    "id": 146,
+    "name": "Nassau",
+    "searchText": "nassau"
+  },
+  {
+    "id": 147,
+    "name": "New Orleans",
+    "searchText": "new orleans"
+  },
+  {
+    "id": 148,
+    "name": "Newcastle",
+    "searchText": "newcastle"
+  },
+  {
+    "id": 149,
+    "name": "Niquero",
+    "searchText": "niquero"
+  },
+  {
+    "id": 150,
+    "name": "Nuevitas",
+    "searchText": "nuevitas"
+  },
+  {
+    "id": 151,
+    "name": "Ocho Rios",
+    "searchText": "ocho rios"
+  },
+  {
+    "id": 152,
+    "name": "Old Harbour",
+    "searchText": "old harbour"
+  },
+  {
+    "id": 153,
+    "name": "Oracabessa",
+    "searchText": "oracabessa"
+  },
+  {
+    "id": 154,
+    "name": "Orange Bay",
+    "searchText": "orange bay"
+  },
+  {
+    "id": 155,
+    "name": "Orocovis",
+    "searchText": "orocovis"
+  },
+  {
+    "id": 156,
+    "name": "Otrobanda",
+    "searchText": "otrobanda"
+  },
+  {
+    "id": 157,
+    "name": "Palma Soriano",
+    "searchText": "palma soriano"
+  },
+  {
+    "id": 158,
+    "name": "Panama",
+    "searchText": "panama"
+  },
+  {
+    "id": 159,
+    "name": "Papine",
+    "searchText": "papine"
+  },
+  {
+    "id": 160,
+    "name": "Paramaribo",
+    "searchText": "paramaribo"
+  },
+  {
+    "id": 161,
+    "name": "Petit-Goâve",
+    "searchText": "petit go ve"
+  },
+  {
+    "id": 162,
+    "name": "Philipsburg",
+    "searchText": "philipsburg"
+  },
+  {
+    "id": 163,
+    "name": "Pietermaai",
+    "searchText": "pietermaai"
+  },
+  {
+    "id": 164,
+    "name": "Pilón",
+    "searchText": "pil n"
+  },
+  {
+    "id": 165,
+    "name": "Placetas",
+    "searchText": "placetas"
+  },
+  {
+    "id": 166,
+    "name": "Ponce",
+    "searchText": "ponce"
+  },
+  {
+    "id": 167,
+    "name": "Port Antonio",
+    "searchText": "port antonio"
+  },
+  {
+    "id": 168,
+    "name": "Port Maria",
+    "searchText": "port maria"
+  },
+  {
+    "id": 169,
+    "name": "Port Royal",
+    "searchText": "port royal"
+  },
+  {
+    "id": 170,
+    "name": "Port-Salut",
+    "searchText": "port salut"
+  },
+  {
+    "id": 171,
+    "name": "Port-au-Prince",
+    "searchText": "port au prince"
+  },
+  {
+    "id": 172,
+    "name": "Port-de-Paix",
+    "searchText": "port de paix"
+  },
+  {
+    "id": 173,
+    "name": "Port-à-Piment",
+    "searchText": "port   piment"
+  },
+  {
+    "id": 174,
+    "name": "Portmore",
+    "searchText": "portmore"
+  },
+  {
+    "id": 175,
+    "name": "Portobelo",
+    "searchText": "portobelo"
+  },
+  {
+    "id": 176,
+    "name": "Puerto Cabello",
+    "searchText": "puerto cabello"
+  },
+  {
+    "id": 177,
+    "name": "Puerto Principe",
+    "searchText": "puerto principe"
+  },
+  {
+    "id": 178,
+    "name": "Puerto de España",
+    "searchText": "puerto de espa a"
+  },
+  {
+    "id": 179,
+    "name": "Punda",
+    "searchText": "punda"
+  },
+  {
+    "id": 180,
+    "name": "Quebradillas",
+    "searchText": "quebradillas"
+  },
+  {
+    "id": 181,
+    "name": "Ranchuelo",
+    "searchText": "ranchuelo"
+  },
+  {
+    "id": 182,
+    "name": "Remedios",
+    "searchText": "remedios"
+  },
+  {
+    "id": 183,
+    "name": "Rio Bueno",
+    "searchText": "rio bueno"
+  },
+  {
+    "id": 184,
+    "name": "Riohacha",
+    "searchText": "riohacha"
+  },
+  {
+    "id": 185,
+    "name": "Riversdale",
+    "searchText": "riversdale"
+  },
+  {
+    "id": 186,
+    "name": "Rivière-Pilote",
+    "searchText": "rivi re pilote"
+  },
+  {
+    "id": 187,
+    "name": "Rivière-Salée",
+    "searchText": "rivi re sal e"
+  },
+  {
+    "id": 188,
+    "name": "Road Town",
+    "searchText": "road town"
+  },
+  {
+    "id": 189,
+    "name": "Roche-à-Bateau",
+    "searchText": "roche   bateau"
+  },
+  {
+    "id": 190,
+    "name": "Rodas",
+    "searchText": "rodas"
+  },
+  {
+    "id": 191,
+    "name": "Runaway Bay",
+    "searchText": "runaway bay"
+  },
+  {
+    "id": 192,
+    "name": "Sagua la Grande",
+    "searchText": "sagua la grande"
+  },
+  {
+    "id": 193,
+    "name": "Saint-Esprit",
+    "searchText": "saint esprit"
+  },
+  {
+    "id": 194,
+    "name": "Saint-Joseph",
+    "searchText": "saint joseph"
+  },
+  {
+    "id": 195,
+    "name": "Saint-Louis du Sud",
+    "searchText": "saint louis du sud"
+  },
+  {
+    "id": 196,
+    "name": "Saint-Marc",
+    "searchText": "saint marc"
+  },
+  {
+    "id": 197,
+    "name": "Saint-Pierre",
+    "searchText": "saint pierre"
+  },
+  {
+    "id": 198,
+    "name": "Sainte-Anne",
+    "searchText": "sainte anne"
+  },
+  {
+    "id": 199,
+    "name": "Sainte-Luce",
+    "searchText": "sainte luce"
+  },
+  {
+    "id": 200,
+    "name": "Sainte-Marie",
+    "searchText": "sainte marie"
+  },
+  {
+    "id": 201,
+    "name": "Salinas",
+    "searchText": "salinas"
+  },
+  {
+    "id": 202,
+    "name": "San Juan",
+    "searchText": "san juan"
+  },
+  {
+    "id": 203,
+    "name": "San Luis",
+    "searchText": "san luis"
+  },
+  {
+    "id": 204,
+    "name": "San Sebastián",
+    "searchText": "san sebasti n"
+  },
+  {
+    "id": 205,
+    "name": "Sancti Spiritus",
+    "searchText": "sancti spiritus"
+  },
+  {
+    "id": 206,
+    "name": "Santa Catharina",
+    "searchText": "santa catharina"
+  },
+  {
+    "id": 207,
+    "name": "Santa Clara",
+    "searchText": "santa clara"
+  },
+  {
+    "id": 208,
+    "name": "Santa Cruz del Sur",
+    "searchText": "santa cruz del sur"
+  },
+  {
+    "id": 209,
+    "name": "Santa Isabel",
+    "searchText": "santa isabel"
+  },
+  {
+    "id": 210,
+    "name": "Santa Marta",
+    "searchText": "santa marta"
+  },
+  {
+    "id": 211,
+    "name": "Santa Rosa",
+    "searchText": "santa rosa"
+  },
+  {
+    "id": 212,
+    "name": "Santiago de Cuba",
+    "searchText": "santiago de cuba"
+  },
+  {
+    "id": 213,
+    "name": "Santo Domingo",
+    "searchText": "santo domingo"
+  },
+  {
+    "id": 214,
+    "name": "Savanna-la-Mar",
+    "searchText": "savanna la mar"
+  },
+  {
+    "id": 215,
+    "name": "Savannah",
+    "searchText": "savannah"
+  },
+  {
+    "id": 216,
+    "name": "Scharloo",
+    "searchText": "scharloo"
+  },
+  {
+    "id": 217,
+    "name": "Schoelcher",
+    "searchText": "schoelcher"
+  },
+  {
+    "id": 218,
+    "name": "Seru Fortuna",
+    "searchText": "seru fortuna"
+  },
+  {
+    "id": 219,
+    "name": "Sherwood Content",
+    "searchText": "sherwood content"
+  },
+  {
+    "id": 220,
+    "name": "Siboney",
+    "searchText": "siboney"
+  },
+  {
+    "id": 221,
+    "name": "Soto",
+    "searchText": "soto"
+  },
+  {
+    "id": 222,
+    "name": "Spanish Town",
+    "searchText": "spanish town"
+  },
+  {
+    "id": 223,
+    "name": "St. Ann's Bay",
+    "searchText": "st  ann s bay"
+  },
+  {
+    "id": 224,
+    "name": "Tampico",
+    "searchText": "tampico"
+  },
+  {
+    "id": 225,
+    "name": "Tera Kòrá",
+    "searchText": "tera k r "
+  },
+  {
+    "id": 226,
+    "name": "Tiburon",
+    "searchText": "tiburon"
+  },
+  {
+    "id": 227,
+    "name": "Toa Alta",
+    "searchText": "toa alta"
+  },
+  {
+    "id": 228,
+    "name": "Toa Baja",
+    "searchText": "toa baja"
+  },
+  {
+    "id": 229,
+    "name": "Topes de Collantes",
+    "searchText": "topes de collantes"
+  },
+  {
+    "id": 230,
+    "name": "Torbeck",
+    "searchText": "torbeck"
+  },
+  {
+    "id": 231,
+    "name": "Tortuga",
+    "searchText": "tortuga"
+  },
+  {
+    "id": 232,
+    "name": "Trinidad",
+    "searchText": "trinidad"
+  },
+  {
+    "id": 233,
+    "name": "Trujillo Alto",
+    "searchText": "trujillo alto"
+  },
+  {
+    "id": 234,
+    "name": "Tunas de Zaza",
+    "searchText": "tunas de zaza"
+  },
+  {
+    "id": 235,
+    "name": "Utuado",
+    "searchText": "utuado"
+  },
+  {
+    "id": 236,
+    "name": "Vega Alta",
+    "searchText": "vega alta"
+  },
+  {
+    "id": 237,
+    "name": "Vega Baja",
+    "searchText": "vega baja"
+  },
+  {
+    "id": 238,
+    "name": "Vera Cruz",
+    "searchText": "vera cruz"
+  },
+  {
+    "id": 239,
+    "name": "Villalba",
+    "searchText": "villalba"
+  },
+  {
+    "id": 240,
+    "name": "Wakefield",
+    "searchText": "wakefield"
+  },
+  {
+    "id": 241,
+    "name": "Willemstad",
+    "searchText": "willemstad"
+  },
+  {
+    "id": 242,
+    "name": "Worthy Park",
+    "searchText": "worthy park"
+  },
+  {
+    "id": 243,
+    "name": "Yaguajay",
+    "searchText": "yaguajay"
+  }
+]

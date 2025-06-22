@@ -92,25 +92,18 @@
                     <div class="form-group">
                         <label for="price">Price (Reals)</label>
                         <input type="number" id="price" name="price" min="0" step="1" placeholder="Enter price in reals" required>
-                    </div>
-
-                    <!-- Port -->
+                    </div>                    <!-- Port -->
                     <div class="form-group">
                         <label for="port">Port</label>
-                        <select id="port" name="port" required>
-                            <option value="">Select port...</option>
-                            <option value="Bensalem">Bensalem</option>
-                            <option value="La Tortue">La Tortue</option>
-                            <option value="Vera Cruz">Vera Cruz</option>
-                            <option value="Port Royal">Port Royal</option>
-                            <option value="Havana">Havana</option>
-                            <option value="Cartagena">Cartagena</option>
-                            <option value="Nassau">Nassau</option>
-                            <option value="Charleston">Charleston</option>
-                            <option value="New Orleans">New Orleans</option>
-                            <option value="Savannah">Savannah</option>
-                            <option value="Other">Other (specify in notes)</option>
-                        </select>
+                        <div class="autocomplete-container">
+                            <input type="text" 
+                                   id="port" 
+                                   name="port" 
+                                   placeholder="Start typing port name..." 
+                                   autocomplete="off"
+                                   required>
+                            <div id="port-suggestions" class="autocomplete-suggestions"></div>
+                        </div>
                     </div>
 
                     <!-- Additional Notes -->

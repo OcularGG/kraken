@@ -80,6 +80,12 @@ class NavalMarketplace {
         document.getElementById('filter-subcategory').addEventListener('change', () => {
             this.filterListings();
         });
+
+        // Port autocomplete handler
+        const portInput = document.getElementById('port');
+        if (portInput) {
+            this.initializePortAutocomplete();
+        }
     }
 
     handleItemTypeChange(itemType) {
@@ -178,37 +184,63 @@ class NavalMarketplace {
             option.textContent = category;
             categorySelect.appendChild(option);
         });
-    }
-
-    populateItemsForCategory(category) {
+    }    populateItemsForCategory(category) {
         const itemsList = document.getElementById('category-items-list');
         const items = window.navalDataService.getItemsByCategory(category);
+        const subcategories = window.navalDataService.getItemSubcategories(category);
         
         itemsList.innerHTML = '';
         
-        items.forEach(item => {
-            const itemRow = document.createElement('div');
-            itemRow.className = 'category-item-row';
-            itemRow.innerHTML = `
-                <div class="category-item-name">${item.name}</div>
-                <div class="category-item-controls">
-                    <input type="number" 
-                           min="1" 
-                           step="1" 
-                           placeholder="Qty" 
-                           data-item-id="${item.id}"
-                           data-item-name="${item.name}"
-                           class="item-quantity">
-                    <input type="number" 
-                           min="0" 
-                           step="1" 
-                           placeholder="Price/unit" 
-                           data-item-id="${item.id}"
-                           class="price-per-unit">
-                </div>
-            `;
-            itemsList.appendChild(itemRow);
-        });
+        if (subcategories.length > 0) {
+            // Group items by subcategory
+            subcategories.forEach(subcategory => {
+                const subcategoryItems = window.navalDataService.getItemsBySubcategory(category, subcategory);
+                
+                if (subcategoryItems.length > 0) {
+                    // Add subcategory header
+                    const headerRow = document.createElement('div');
+                    headerRow.className = 'category-subcategory-header';
+                    headerRow.innerHTML = `<h4>${subcategory}</h4>`;
+                    itemsList.appendChild(headerRow);
+                    
+                    // Add items for this subcategory
+                    subcategoryItems.forEach(item => {
+                        const itemRow = this.createItemRow(item);
+                        itemsList.appendChild(itemRow);
+                    });
+                }
+            });
+        } else {
+            // No subcategories, just list all items
+            items.forEach(item => {
+                const itemRow = this.createItemRow(item);
+                itemsList.appendChild(itemRow);
+            });
+        }
+    }
+
+    createItemRow(item) {
+        const itemRow = document.createElement('div');
+        itemRow.className = 'category-item-row';
+        itemRow.innerHTML = `
+            <div class="category-item-name">${item.name}</div>
+            <div class="category-item-controls">
+                <input type="number" 
+                       min="1" 
+                       step="1" 
+                       placeholder="Qty" 
+                       data-item-id="${item.id}"
+                       data-item-name="${item.name}"
+                       class="item-quantity">
+                <input type="number" 
+                       min="0" 
+                       step="1" 
+                       placeholder="Price/unit" 
+                       data-item-id="${item.id}"
+                       class="price-per-unit">
+            </div>
+        `;
+        return itemRow;
     }
 
     populateFilterSubcategories() {
@@ -317,9 +349,7 @@ class NavalMarketplace {
         this.sendWebhookNotification(listing);
         
         alert('Listing created successfully!');
-    }
-
-    sendWebhookNotification(listing) {
+    }    async sendWebhookNotification(listing) {
         // Simplified webhook with less emojis and total price only
         const embed = {
             title: `New ${listing.type.toUpperCase()} Listing`,
@@ -359,8 +389,24 @@ class NavalMarketplace {
             });
         }
 
-        // This would send to your Discord webhook
-        console.log('Webhook data:', { embeds: [embed] });
+        // Send to Discord webhook
+        try {
+            const response = await fetch('/api/discord-webhook', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ embeds: [embed] })
+            });
+
+            if (response.ok) {
+                console.log('Successfully sent to Discord webhook');
+            } else {
+                console.error('Failed to send to Discord webhook:', response.status, response.statusText);
+            }
+        } catch (error) {
+            console.error('Error sending to Discord webhook:', error);
+        }
     }
 
     displayListings() {
@@ -494,6 +540,93 @@ class NavalMarketplace {
 
     saveListings() {
         localStorage.setItem('navalMarketplaceListings', JSON.stringify(this.listings));
+    }
+
+    initializePortAutocomplete() {
+        const portInput = document.getElementById('port');
+        const suggestionsContainer = document.getElementById('port-suggestions');
+        let currentSuggestionIndex = -1;
+
+        portInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            
+            if (query.length < 2) {
+                this.hidePortSuggestions();
+                return;
+            }
+
+            const suggestions = window.navalDataService.searchPorts(query);
+            this.showPortSuggestions(suggestions, suggestionsContainer);
+        });
+
+        portInput.addEventListener('keydown', (e) => {
+            const suggestions = suggestionsContainer.querySelectorAll('.autocomplete-suggestion');
+            
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                currentSuggestionIndex = Math.min(currentSuggestionIndex + 1, suggestions.length - 1);
+                this.highlightSuggestion(suggestions, currentSuggestionIndex);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                currentSuggestionIndex = Math.max(currentSuggestionIndex - 1, -1);
+                this.highlightSuggestion(suggestions, currentSuggestionIndex);
+            } else if (e.key === 'Enter' && currentSuggestionIndex >= 0) {
+                e.preventDefault();
+                const selectedSuggestion = suggestions[currentSuggestionIndex];
+                if (selectedSuggestion) {
+                    portInput.value = selectedSuggestion.textContent;
+                    this.hidePortSuggestions();
+                    currentSuggestionIndex = -1;
+                }
+            } else if (e.key === 'Escape') {
+                this.hidePortSuggestions();
+                currentSuggestionIndex = -1;
+            }
+        });
+
+        // Hide suggestions when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!portInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+                this.hidePortSuggestions();
+                currentSuggestionIndex = -1;
+            }
+        });
+    }
+
+    showPortSuggestions(suggestions, container) {
+        container.innerHTML = '';
+        
+        if (suggestions.length === 0) {
+            this.hidePortSuggestions();
+            return;
+        }
+
+        suggestions.forEach((port, index) => {
+            const suggestionElement = document.createElement('div');
+            suggestionElement.className = 'autocomplete-suggestion';
+            suggestionElement.textContent = port.name;
+            
+            suggestionElement.addEventListener('click', () => {
+                document.getElementById('port').value = port.name;
+                this.hidePortSuggestions();
+            });
+
+            container.appendChild(suggestionElement);
+        });
+
+        container.classList.add('active');
+    }
+
+    hidePortSuggestions() {
+        const suggestionsContainer = document.getElementById('port-suggestions');
+        suggestionsContainer.classList.remove('active');
+        suggestionsContainer.innerHTML = '';
+    }
+
+    highlightSuggestion(suggestions, index) {
+        suggestions.forEach((suggestion, i) => {
+            suggestion.classList.toggle('highlighted', i === index);
+        });
     }
 }
 

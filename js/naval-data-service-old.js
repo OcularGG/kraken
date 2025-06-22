@@ -1,10 +1,9 @@
-// Naval Action Marketplace Data Service - Fixed Version
+// Naval Action Marketplace Data Service
 class NavalActionDataService {
     constructor() {
         this.ships = [];
         this.items = {};
         this.itemCategories = {};
-        this.ports = [];
         this.loaded = false;
     }
 
@@ -24,15 +23,6 @@ class NavalActionDataService {
             const modulesResponse = await fetch('./data/modules.json');
             const modules = await modulesResponse.json();
 
-            // Load ports data
-            try {
-                const portsResponse = await fetch('./data/ports-complete.json');
-                this.ports = await portsResponse.json();
-            } catch (e) {
-                console.warn('Ports data not available, using fallback');
-                this.ports = [];
-            }
-
             // Categorize all items
             this.categorizeItems(resources, modules);
             this.loaded = true;
@@ -40,13 +30,10 @@ class NavalActionDataService {
             console.log('Naval Action data loaded successfully');
             console.log(`${this.ships.length} ships loaded`);
             console.log(`${Object.keys(this.itemCategories).length} item categories loaded`);
-            console.log(`${this.ports.length} ports loaded`);
         } catch (error) {
             console.error('Error loading Naval Action data:', error);
         }
-    }
-
-    categorizeItems(resources, modules) {
+    }    categorizeItems(resources, modules) {
         this.itemCategories = {
             'Woods': [],
             'Metals & Ores': [],
@@ -112,9 +99,7 @@ class NavalActionDataService {
         Object.keys(this.itemCategories).forEach(category => {
             this.itemCategories[category].sort((a, b) => a.name.localeCompare(b.name));
         });
-    }
-
-    determineCategory(name, type) {
+    }    determineCategory(name, type) {
         // Wood materials
         if (name.includes('oak') || name.includes('teak') || name.includes('fir') || 
             name.includes('cedar') || name.includes('mahogany') || name.includes('wood') ||
@@ -184,8 +169,44 @@ class NavalActionDataService {
 
         return 'Other Resources';
     }
+        if (name.includes('cotton') || name.includes('hemp') || name.includes('flax') ||
+            name.includes('silk') || name.includes('wool') || name.includes('cloth') ||
+            name.includes('canvas') || name.includes('sail')) {
+            return 'Textiles';
+        }
 
-    getShips() {
+        // Food and provisions
+        if (name.includes('rum') || name.includes('tobacco') || name.includes('sugar') ||
+            name.includes('coffee') || name.includes('tea') || name.includes('spice') ||
+            name.includes('salt') || name.includes('fish') || name.includes('beef') ||
+            name.includes('pork') || name.includes('grain') || name.includes('water') ||
+            name.includes('food') || name.includes('provision')) {
+            return 'Food & Provisions';
+        }
+
+        // Cannons and weapons
+        if (name.includes('cannon') || name.includes('gun') || name.includes('carronade') ||
+            name.includes('mortar') || name.includes('swivel') || name.includes('musket') ||
+            name.includes('pistol') || name.includes('sword') || name.includes('boarding') ||
+            name.includes('round shot') || name.includes('chain shot') || name.includes('grape shot')) {
+            return 'Cannons & Weapons';
+        }
+
+        // Trade goods
+        if (type === 'TradeGood' || name.includes('luxury') || name.includes('rare') ||
+            name.includes('exotic') || name.includes('dye') || name.includes('perfume')) {
+            return 'Trade Goods';
+        }
+
+        // Crafting materials
+        if (name.includes('tar') || name.includes('pitch') || name.includes('resin') ||
+            name.includes('coal') || name.includes('charcoal') || name.includes('tools') ||
+            name.includes('part') || name.includes('component')) {
+            return 'Crafting Materials';
+        }
+
+        return 'Other';
+    }    getShips() {
         return this.ships
             .map(ship => ({
                 id: ship.id,
@@ -202,19 +223,6 @@ class NavalActionDataService {
                 // Then sort by name
                 return a.name.localeCompare(b.name);
             });
-    }
-
-    getPorts() {
-        return this.ports;
-    }
-
-    searchPorts(query) {
-        if (!query || query.length < 2) return [];
-        
-        const searchTerm = query.toLowerCase();
-        return this.ports
-            .filter(port => port.searchText.includes(searchTerm) || port.name.toLowerCase().includes(searchTerm))
-            .slice(0, 10); // Limit to 10 results for performance
     }
 
     getItemCategories() {
@@ -288,13 +296,12 @@ class NavalActionDataService {
             return 'Other Woods';
         }
         
-        if (category === 'Metals & Ores') {
+        if (category === 'Metals') {
             if (name.includes('iron')) return 'Iron';
             if (name.includes('copper')) return 'Copper';
             if (name.includes('gold')) return 'Gold';
             if (name.includes('silver')) return 'Silver';
             if (name.includes('tin')) return 'Tin';
-            if (name.includes('lead')) return 'Lead';
             return 'Other Metals';
         }
         
@@ -302,18 +309,8 @@ class NavalActionDataService {
             if (name.includes('carronade')) return 'Carronades';
             if (name.includes('long')) return 'Long Guns';
             if (name.includes('medium')) return 'Medium Guns';
-            if (name.includes('short')) return 'Short Guns';
             if (name.includes('musket')) return 'Small Arms';
-            if (name.includes('gun sight') || name.includes('tackle') || name.includes('gunner')) return 'Gun Equipment';
             return 'Other Weapons';
-        }
-
-        if (category === 'Ship Modules') {
-            if (name.includes('hull')) return 'Hull Modules';
-            if (name.includes('sail')) return 'Sail Modules';
-            if (name.includes('crew')) return 'Crew Modules';
-            if (name.includes('speed')) return 'Speed Modules';
-            return 'Other Modules';
         }
         
         return null;
