@@ -1,0 +1,5436 @@
+[
+  {
+    "id": 538,
+    "name": "Ballast Relay - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 400,
+    "name": "Ballast Relay - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1659,
+    "name": "Ballast Relay - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 493,
+    "name": "Bow figure - Elephant - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 548,
+    "name": "Bow figure - Elephant - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1116,
+    "name": "Bow figure - Elephant - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 494,
+    "name": "Bow figure - Gazelle - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 550,
+    "name": "Bow figure - Gazelle - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 995,
+    "name": "Bow figure - Gazelle - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 497,
+    "name": "Bow figure - Katherine - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 552,
+    "name": "Bow figure - Katherine - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 996,
+    "name": "Bow figure - Katherine - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 525,
+    "name": "Bow figure - Lion - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 554,
+    "name": "Bow figure - Lion - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 997,
+    "name": "Bow figure - Lion - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 527,
+    "name": "Bow figure - Phoenix - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 555,
+    "name": "Bow figure - Phoenix - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1118,
+    "name": "Bow figure - Phoenix - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 542,
+    "name": "Bow figure - Rattlesnake - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 556,
+    "name": "Bow figure - Rattlesnake - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 998,
+    "name": "Bow figure - Rattlesnake - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1763,
+    "name": "Bow figure - Saint Brendan",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 545,
+    "name": "Bow figure - Turtle - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 557,
+    "name": "Bow figure - Turtle - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1286,
+    "name": "Bow figure - Turtle - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 547,
+    "name": "Bow figure - Whale - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1129,
+    "name": "Bow figure - Whale - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 999,
+    "name": "Bow figure - Whale - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1775,
+    "name": "Carpenters - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1776,
+    "name": "Carpenters - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1798,
+    "name": "Carpenters - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1378,
+    "name": "Copper Plating - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2562,
+    "name": "Copper Plating - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1811,
+    "name": "Copper Plating - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1745,
+    "name": "Cutlasses - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1747,
+    "name": "Cutlasses - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1785,
+    "name": "Cutlasses - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1994,
+    "name": "Diagonal Riders - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2559,
+    "name": "Diagonal Riders - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1655,
+    "name": "Diagonal Riders - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1991,
+    "name": "Gun Sights - L",
+    "type": "Module",
+    "weight": 18.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2560,
+    "name": "Gun Sights - M",
+    "type": "Module",
+    "weight": 6.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1024,
+    "name": "Gun Sights - S",
+    "type": "Module",
+    "weight": 1.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1774,
+    "name": "Gun Tackles - L",
+    "type": "Module",
+    "weight": 18.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1809,
+    "name": "Gun Tackles - M",
+    "type": "Module",
+    "weight": 6.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1657,
+    "name": "Gun Tackles - S",
+    "type": "Module",
+    "weight": 1.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1437,
+    "name": "Gunners - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1574,
+    "name": "Gunners - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1436,
+    "name": "Gunners - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1734,
+    "name": "Hammocks - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1752,
+    "name": "Hammocks - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1653,
+    "name": "Hammocks - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 962,
+    "name": "Hard Wood Planking - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 963,
+    "name": "Hard Wood Planking - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 961,
+    "name": "Hard Wood Planking - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 956,
+    "name": "Iron Knees - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 957,
+    "name": "Iron Knees - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 955,
+    "name": "Iron Knees - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1137,
+    "name": "Light Planking - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1139,
+    "name": "Light Planking - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1140,
+    "name": "Light Planking - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 144,
+    "name": "Light Sails - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 146,
+    "name": "Light Sails - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 142,
+    "name": "Light Sails - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1723,
+    "name": "Marines - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1377,
+    "name": "Marines - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1993,
+    "name": "Marines - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 401,
+    "name": "Master Ballast Relay - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 402,
+    "name": "Master Ballast Relay - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1395,
+    "name": "Master Ballast Relay - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1777,
+    "name": "Master Carpenters - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1779,
+    "name": "Master Carpenters - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1799,
+    "name": "Master Carpenters - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2564,
+    "name": "Master Copper Plating - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 951,
+    "name": "Master Copper Plating - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2563,
+    "name": "Master Copper Plating - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1748,
+    "name": "Master Cutlasses - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1750,
+    "name": "Master Cutlasses - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1749,
+    "name": "Master Cutlasses - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1597,
+    "name": "Master Diagonal Riders - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1658,
+    "name": "Master Diagonal Riders - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1432,
+    "name": "Master Diagonal Riders - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2840,
+    "name": "Master Gun Sights - L",
+    "type": "Module",
+    "weight": 18.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2841,
+    "name": "Master Gun Sights - M",
+    "type": "Module",
+    "weight": 6.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2839,
+    "name": "Master Gun Sights - S",
+    "type": "Module",
+    "weight": 1.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1810,
+    "name": "Master Gun Tackles - L",
+    "type": "Module",
+    "weight": 18.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1988,
+    "name": "Master Gun Tackles - M",
+    "type": "Module",
+    "weight": 6.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1147,
+    "name": "Master Gun Tackles - S",
+    "type": "Module",
+    "weight": 1.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1595,
+    "name": "Master Gunners - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1596,
+    "name": "Master Gunners - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1573,
+    "name": "Master Gunners - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1736,
+    "name": "Master Hammocks - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1737,
+    "name": "Master Hammocks - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1738,
+    "name": "Master Hammocks - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 964,
+    "name": "Master Hard Wood Planking - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 966,
+    "name": "Master Hard Wood Planking - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 965,
+    "name": "Master Hard Wood Planking - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 958,
+    "name": "Master Iron Knees - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 959,
+    "name": "Master Iron Knees - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1670,
+    "name": "Master Iron Knees - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1142,
+    "name": "Master Light Planking - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1143,
+    "name": "Master Light Planking - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1145,
+    "name": "Master Light Planking - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2561,
+    "name": "Master Light Sails  - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 157,
+    "name": "Master Light Sails  - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 155,
+    "name": "Master Light Sails  - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1126,
+    "name": "Master Marines - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1144,
+    "name": "Master Marines - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 541,
+    "name": "Master Marines - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1392,
+    "name": "Master Muskets - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1671,
+    "name": "Master Muskets - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1391,
+    "name": "Master Muskets - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1155,
+    "name": "Master Optimized Rudder - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1216,
+    "name": "Master Optimized Rudder - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1154,
+    "name": "Master Optimized Rudder - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1766,
+    "name": "Master Pikes - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1767,
+    "name": "Master Pikes - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1760,
+    "name": "Master Pikes - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1790,
+    "name": "Master Powder Monkeys - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1789,
+    "name": "Master Powder Monkeys - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1788,
+    "name": "Master Powder Monkeys - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 348,
+    "name": "Master Reinforced Masts - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 399,
+    "name": "Master Reinforced Masts - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 347,
+    "name": "Master Reinforced Masts - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1226,
+    "name": "Master Reinforced Rudder - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1227,
+    "name": "Master Reinforced Rudder - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1225,
+    "name": "Master Reinforced Rudder - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 109,
+    "name": "Master Reinforced Sails - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 111,
+    "name": "Master Reinforced Sails - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1579,
+    "name": "Master Reinforced Sails - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1414,
+    "name": "Master Rum Rations - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1415,
+    "name": "Master Rum Rations - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1770,
+    "name": "Master Rum Rations - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1742,
+    "name": "Master Sailors - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1746,
+    "name": "Master Sailors - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1731,
+    "name": "Master Sailors - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1128,
+    "name": "Master Soft Wood Planking - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1130,
+    "name": "Master Soft Wood Planking - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1131,
+    "name": "Master Soft Wood Planking - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1234,
+    "name": "Master Splinter Nets - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1235,
+    "name": "Master Splinter Nets - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1233,
+    "name": "Master Splinter Nets - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 198,
+    "name": "Master Square Sail Refit - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 202,
+    "name": "Master Square Sail Refit - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2569,
+    "name": "Master Square Sail Refit - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 200,
+    "name": "Master Stay Sail Refit - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 327,
+    "name": "Master Stay Sail Refit - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 183,
+    "name": "Master Stay Sail Refit - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1800,
+    "name": "Master Surgeonu2019s Mates - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1806,
+    "name": "Master Surgeonu2019s Mates - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1796,
+    "name": "Master Surgeonu2019s Mates - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1421,
+    "name": "Master Toolbox - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1431,
+    "name": "Master Toolbox - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1755,
+    "name": "Master Toolbox - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1389,
+    "name": "Muskets - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1390,
+    "name": "Muskets - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1778,
+    "name": "Muskets - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 403,
+    "name": "Navy Ballast Relay - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 490,
+    "name": "Navy Ballast Relay - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1762,
+    "name": "Navy Ballast Relay - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1781,
+    "name": "Navy Carpenters - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1782,
+    "name": "Navy Carpenters - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1780,
+    "name": "Navy Carpenters - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 953,
+    "name": "Navy Copper Plating - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 954,
+    "name": "Navy Copper Plating - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 952,
+    "name": "Navy Copper Plating - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1753,
+    "name": "Navy Cutlasses - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1754,
+    "name": "Navy Cutlasses - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1786,
+    "name": "Navy Cutlasses - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1804,
+    "name": "Navy Diagonal Riders - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1805,
+    "name": "Navy Diagonal Riders - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1803,
+    "name": "Navy Diagonal Riders - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2843,
+    "name": "Navy Gun Sights - L",
+    "type": "Module",
+    "weight": 18.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1992,
+    "name": "Navy Gun Sights - M",
+    "type": "Module",
+    "weight": 6.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 2842,
+    "name": "Navy Gun Sights - S",
+    "type": "Module",
+    "weight": 1.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1989,
+    "name": "Navy Gun Tackles - L",
+    "type": "Module",
+    "weight": 18.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1990,
+    "name": "Navy Gun Tackles - M",
+    "type": "Module",
+    "weight": 6.2,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1758,
+    "name": "Navy Gun Tackles - S",
+    "type": "Module",
+    "weight": 1.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1598,
+    "name": "Navy Gunners - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1600,
+    "name": "Navy Gunners - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1375,
+    "name": "Navy Gunners - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1741,
+    "name": "Navy Hammocks - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1744,
+    "name": "Navy Hammocks - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1740,
+    "name": "Navy Hammocks - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1025,
+    "name": "Navy Hard Wood Planking - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1026,
+    "name": "Navy Hard Wood Planking - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1388,
+    "name": "Navy Hard Wood Planking - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 960,
+    "name": "Navy Iron Knees - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1433,
+    "name": "Navy Iron Knees - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1441,
+    "name": "Navy Iron Knees - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1148,
+    "name": "Navy Light Planking - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1149,
+    "name": "Navy Light Planking - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1146,
+    "name": "Navy Light Planking - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 165,
+    "name": "Navy Light Sails - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 167,
+    "name": "Navy Light Sails - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 163,
+    "name": "Navy Light Sails - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1373,
+    "name": "Navy Marines - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1376,
+    "name": "Navy Marines - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1153,
+    "name": "Navy Marines - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1743,
+    "name": "Navy Muskets - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1773,
+    "name": "Navy Muskets - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1733,
+    "name": "Navy Muskets - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1221,
+    "name": "Navy Optimized Rudder - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1222,
+    "name": "Navy Optimized Rudder - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1217,
+    "name": "Navy Optimized Rudder - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1394,
+    "name": "Navy Pikes - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1405,
+    "name": "Navy Pikes - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1393,
+    "name": "Navy Pikes - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1793,
+    "name": "Navy Powder Monkeys - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1792,
+    "name": "Navy Powder Monkeys - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1791,
+    "name": "Navy Powder Monkeys - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 489,
+    "name": "Navy Reinforced Masts - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 523,
+    "name": "Navy Reinforced Masts - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1765,
+    "name": "Navy Reinforced Masts - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1229,
+    "name": "Navy Reinforced Rudder - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1230,
+    "name": "Navy Reinforced Rudder - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1228,
+    "name": "Navy Reinforced Rudder - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 124,
+    "name": "Navy Reinforced Sails - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 126,
+    "name": "Navy Reinforced Sails - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1732,
+    "name": "Navy Reinforced Sails - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1416,
+    "name": "Navy Rum Rations - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1417,
+    "name": "Navy Rum Rations - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1771,
+    "name": "Navy Rum Rations - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1764,
+    "name": "Navy Sailors - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1772,
+    "name": "Navy Sailors - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1761,
+    "name": "Navy Sailors - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1134,
+    "name": "Navy Soft Wood Planking - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1136,
+    "name": "Navy Soft Wood Planking - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1133,
+    "name": "Navy Soft Wood Planking - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1287,
+    "name": "Navy Splinter Nets - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1288,
+    "name": "Navy Splinter Nets - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1236,
+    "name": "Navy Splinter Nets - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 329,
+    "name": "Navy Square Sail Refit - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 331,
+    "name": "Navy Square Sail Refit - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 328,
+    "name": "Navy Square Sail Refit - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 330,
+    "name": "Navy Stay Sail Refit - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 343,
+    "name": "Navy Stay Sail Refit - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1735,
+    "name": "Navy Stay Sail Refit - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1808,
+    "name": "Navy Surgeonu2019s Mates - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1374,
+    "name": "Navy Surgeonu2019s Mates - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1807,
+    "name": "Navy Surgeonu2019s Mates - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1434,
+    "name": "Navy Toolbox - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1435,
+    "name": "Navy Toolbox - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1802,
+    "name": "Navy Toolbox - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1151,
+    "name": "Optimized Rudder - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1739,
+    "name": "Optimized Rudder - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1660,
+    "name": "Optimized Rudder - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1757,
+    "name": "Pikes - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1759,
+    "name": "Pikes - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1756,
+    "name": "Pikes - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1787,
+    "name": "Powder Monkeys - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1784,
+    "name": "Powder Monkeys - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1783,
+    "name": "Powder Monkeys - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 345,
+    "name": "Reinforced Masts - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 346,
+    "name": "Reinforced Masts - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 344,
+    "name": "Reinforced Masts - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1223,
+    "name": "Reinforced Rudder - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1224,
+    "name": "Reinforced Rudder - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 168,
+    "name": "Reinforced Rudder - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 107,
+    "name": "Reinforced Sails - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1656,
+    "name": "Reinforced Sails - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1996,
+    "name": "Reinforced Sails - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1406,
+    "name": "Rum Rations - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1413,
+    "name": "Rum Rations - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 153,
+    "name": "Rum Rations - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1654,
+    "name": "Sailors - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1667,
+    "name": "Sailors - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1602,
+    "name": "Sailors - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1117,
+    "name": "Soft Wood Planking - L",
+    "type": "Module",
+    "weight": 65,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1127,
+    "name": "Soft Wood Planking - M",
+    "type": "Module",
+    "weight": 22,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1801,
+    "name": "Soft Wood Planking - S",
+    "type": "Module",
+    "weight": 5,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1231,
+    "name": "Splinter Nets - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1232,
+    "name": "Splinter Nets - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1995,
+    "name": "Splinter Nets - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 185,
+    "name": "Square Sail Refit - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 190,
+    "name": "Square Sail Refit - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 170,
+    "name": "Square Sail Refit - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 187,
+    "name": "Stay Sail Refit - L",
+    "type": "Module",
+    "weight": 22.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 192,
+    "name": "Stay Sail Refit - M",
+    "type": "Module",
+    "weight": 7.7,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 172,
+    "name": "Stay Sail Refit - S",
+    "type": "Module",
+    "weight": 1.8,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1794,
+    "name": "Surgeonu2019s Mates - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1797,
+    "name": "Surgeonu2019s Mates - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1795,
+    "name": "Surgeonu2019s Mates - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1419,
+    "name": "Toolbox - L",
+    "type": "Module",
+    "weight": 13,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1420,
+    "name": "Toolbox - M",
+    "type": "Module",
+    "weight": 4.4,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  },
+  {
+    "id": 1418,
+    "name": "Toolbox - S",
+    "type": "Module",
+    "weight": 1,
+    "economy": {
+      "basePrice": 1,
+      "sellPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "tradeable": true,
+    "craftable": false
+  }
+]

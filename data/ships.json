@@ -1,0 +1,2777 @@
+[
+  {
+    "id": 359,
+    "name": "3rd Rate",
+    "type": "Ship",
+    "class": 3,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 10417,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2318,
+    "name": "Admiraal de Ruyter",
+    "type": "Ship",
+    "class": 3,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 11308,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 694,
+    "name": "Agamemnon",
+    "type": "Ship",
+    "class": 4,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 8955,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 413,
+    "name": "Basic Brig",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 0,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 275,
+    "name": "Basic Lynx",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 0,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 265,
+    "name": "Bellona",
+    "type": "Ship",
+    "class": 3,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 10525,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 266,
+    "name": "Brig",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1562,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 269,
+    "name": "Cerberus",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 2600,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 1664,
+    "name": "Christian",
+    "type": "Ship",
+    "class": 2,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 12947,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 1674,
+    "name": "Constitution",
+    "type": "Ship",
+    "class": 4,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 7560,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 271,
+    "name": "Cutter",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1154,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 1665,
+    "name": "Diana",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 6143,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2352,
+    "name": "Diana (i)",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 317,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 2898,
+    "name": "Duke of Kent",
+    "type": "Ship",
+    "class": 1,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 27952,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 768,
+    "name": "Endymion",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 6665,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 272,
+    "name": "Essex",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 5559,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 273,
+    "name": "Frigate",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 5242,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2963,
+    "name": "Galeon",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 245,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 695,
+    "name": "GunBoat",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 170,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 1675,
+    "name": "Hercules (i)",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 245,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 2223,
+    "name": "Hulk Indiaman",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 13058,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2235,
+    "name": "Implacable",
+    "type": "Ship",
+    "class": 3,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 12885,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 787,
+    "name": "Indefatigable",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 6170,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 425,
+    "name": "Indiaman",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 2909,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 395,
+    "name": "Ingermanland",
+    "type": "Ship",
+    "class": 4,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 8688,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 986,
+    "name": "L'Hermione (i)",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 317,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 650,
+    "name": "L'Ocu00E9an",
+    "type": "Ship",
+    "class": 1,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 18941,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 264,
+    "name": "La Belle-Poule",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 5122,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 285,
+    "name": "La Renommu00E9e",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 2982,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 268,
+    "name": "Le Bucentaure",
+    "type": "Ship",
+    "class": 2,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 12763,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 396,
+    "name": "Le Gros Ventre",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 2006,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 1561,
+    "name": "Le Gros Ventre Refit",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 3147,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 1676,
+    "name": "Le Requin (i)",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 245,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 2078,
+    "name": "Leopard (i)",
+    "type": "Ship",
+    "class": 4,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 317,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 274,
+    "name": "Lynx",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1030,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 276,
+    "name": "Mercury",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1950,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 267,
+    "name": "Mortar Brig",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 12354,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 277,
+    "name": "Navy Brig",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1755,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 278,
+    "name": "Niagara",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 2006,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 1020,
+    "name": "Pandora (i)",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 245,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 280,
+    "name": "Pickle",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1154,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 281,
+    "name": "Pirate Frigate",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 5269,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 1125,
+    "name": "Prince de Neufchu00E2tel",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1950,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 282,
+    "name": "Privateer",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1154,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 283,
+    "name": "Rattlesnake",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1755,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 284,
+    "name": "Rattlesnake Heavy",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 2532,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2229,
+    "name": "Redoutable (i)",
+    "type": "Ship",
+    "class": 3,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 317,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 1536,
+    "name": "Rookie Snow",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1500,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2895,
+    "name": "Rotterdam (i)",
+    "type": "Ship",
+    "class": 4,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 317,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 1938,
+    "name": "Ru00E4ttvisan (i)",
+    "type": "Ship",
+    "class": 4,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 317,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 2487,
+    "name": "San Pedro (i)",
+    "type": "Ship",
+    "class": 2,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 317,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 2892,
+    "name": "Santa Ana (i)",
+    "type": "Ship",
+    "class": 1,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 317,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 592,
+    "name": "Santa Cecilia",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 5686,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 286,
+    "name": "Santu00EDsima Trinidad",
+    "type": "Ship",
+    "class": 1,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 21991,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 287,
+    "name": "Snow",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 2140,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 279,
+    "name": "St. Pavel",
+    "type": "Ship",
+    "class": 2,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 11864,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 288,
+    "name": "Surprise",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 5016,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 289,
+    "name": "Traders Brig",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1517,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 290,
+    "name": "Traders Cutter",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1142,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 291,
+    "name": "Traders Lynx",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 1015,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 292,
+    "name": "Traders Snow",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 2090,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2483,
+    "name": "Travel Balloon (i)",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 170,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 293,
+    "name": "Trincomalee",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 6850,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 1535,
+    "name": "Tutorial Brig",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 3000,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2343,
+    "name": "Tutorial Brig",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 3000,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2454,
+    "name": "Tutorial Brig",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 3000,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2338,
+    "name": "Tutorial Cerberus",
+    "type": "Ship",
+    "class": 5,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 6059,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2339,
+    "name": "Tutorial Trader",
+    "type": "Ship",
+    "class": 6,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 2352,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 270,
+    "name": "USS United States",
+    "type": "Ship",
+    "class": 4,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 7560,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 294,
+    "name": "Victory",
+    "type": "Ship",
+    "class": 1,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 17118,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 2350,
+    "name": "Victory 1765 (i)",
+    "type": "Ship",
+    "class": 1,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 317,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 970,
+    "name": "Wapen von Hamburg",
+    "type": "Ship",
+    "class": 4,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 9431,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 1021,
+    "name": "Wasa",
+    "type": "Ship",
+    "class": 3,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 9149,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": true,
+    "hidden": false
+  },
+  {
+    "id": 295,
+    "name": "Yacht (i)",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 170,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  },
+  {
+    "id": 393,
+    "name": "Yacht Silver (i)",
+    "type": "Ship",
+    "class": 7,
+    "rating": 0,
+    "nationality": "Universal",
+    "stats": {
+      "structure": 0,
+      "armor": 0,
+      "crew": 0,
+      "guns": 0,
+      "speed": 0,
+      "turnSpeed": 0,
+      "upwindSpeed": 0,
+      "downwindSpeed": 0,
+      "acceleration": 0
+    },
+    "requirements": {
+      "rank": 0,
+      "craftingLevel": 0
+    },
+    "economy": {
+      "basePrice": 170,
+      "sellPrice": {
+        "x": 0.150000005960464,
+        "y": 0.150000005960464
+      },
+      "buyPrice": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    "weight": 0,
+    "tradeable": false,
+    "hidden": false
+  }
+]

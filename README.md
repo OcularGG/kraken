@@ -8,7 +8,11 @@ A neo-brutalist designed website for the KRAKEN Naval Action clan featuring an o
 - **Ocean Hero Section**: Animated background with floating KRAKEN logo
 - **Typewriter Effect**: Dynamic ship name cycling in the hero section
 - **Interactive Application Form**: Typeform-style conversational application process
-- **Naval Action Marketplace**: Integrated trading system for ships and items
+- **Naval Action Marketplace**: Real-time trading system with authentic Naval Action ships and items
+  - **Real Ship Data**: 100+ authentic ships from Naval Action API
+  - **Categorized Items**: Resources, trade goods, cannons, and ship modules organized by category
+  - **Advanced Filtering**: Search and filter by type, category, location, and contact
+  - **Quantity Management**: Support for bulk item trading with quantity controls
 - **Discord Integration**: Applications and marketplace notifications sent to Discord via webhook
 - **Responsive Design**: Optimized for all device sizes
 - **Sticky Navigation**: Easy access to all site sections
@@ -26,7 +30,7 @@ A neo-brutalist designed website for the KRAKEN Naval Action clan featuring an o
 ```
 kraken/
 ├── index.html              # Main homepage
-├── apply.html              # Application form page
+├── apply-typeform.html     # Application form page
 ├── marketplace.html        # Naval Action marketplace page
 ├── listing-viewer.html     # Individual listing viewer
 ├── style.css               # All styles and responsive design
@@ -36,9 +40,18 @@ kraken/
 ├── package.json            # Node.js dependencies and scripts
 ├── krakenlogo.png          # KRAKEN clan logo
 ├── unnamed.png             # Ocean background image
+├── data/                   # Naval Action game data
+│   ├── ships.json          # Real ship data from Naval Action API
+│   ├── resources.json      # Resources and trade goods data
+│   ├── modules.json        # Ship modules and upgrades data
+│   └── item-types-summary.json  # Data structure reference
+├── js/                     # JavaScript modules
+│   └── naval-data-service.js    # Naval Action data service
+├── scripts/                # Data extraction scripts
+│   ├── extract-game-data.js     # Original data extraction
+│   └── extract-clean-data.js    # Clean data extraction
 ├── api/
 │   └── discord-webhook.js  # Vercel serverless function for Discord
-├── files/                  # Original marketplace files (integrated)
 └── README.md               # This file
 ```
 

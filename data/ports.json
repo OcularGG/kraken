@@ -1,0 +1,1172 @@
+[
+  {
+    "id": 2347,
+    "name": "Port Development 1",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2404,
+    "name": "Port Development 10",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2405,
+    "name": "Port Development 11",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2406,
+    "name": "Port Development 12",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2407,
+    "name": "Port Development 13",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2408,
+    "name": "Port Development 14",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2409,
+    "name": "Port Development 15",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2410,
+    "name": "Port Development 16",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2411,
+    "name": "Port Development 17",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2412,
+    "name": "Port Development 18",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2413,
+    "name": "Port Development 19",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2348,
+    "name": "Port Development 2",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2414,
+    "name": "Port Development 20",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2415,
+    "name": "Port Development 21",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2416,
+    "name": "Port Development 22",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2417,
+    "name": "Port Development 23",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2418,
+    "name": "Port Development 24",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2419,
+    "name": "Port Development 25",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2349,
+    "name": "Port Development 3",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2420,
+    "name": "Port Development 4",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2421,
+    "name": "Port Development 5",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2422,
+    "name": "Port Development 6",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2423,
+    "name": "Port Development 7",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2424,
+    "name": "Port Development 8",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2425,
+    "name": "Port Development 9",
+    "type": "MegaChaka.Services.Items.ItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 602,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 604,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 605,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 669,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 670,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 671,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 672,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 744,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 984,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 985,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 1769,
+    "name": "PortBattleLootTableCrnotes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 411,
+    "name": "PortBattleLootTableModules",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 603,
+    "name": "PortBattleLootTableModules",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 1526,
+    "name": "PortBattleLootTableRegRes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 410,
+    "name": "PortBattleLootTableResources",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 1527,
+    "name": "PortBattleLootTableTradeRes",
+    "type": "MegaChaka.Services.Items.LootTableItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2351,
+    "name": "Transport: Port Battle",
+    "type": "MegaChaka.Services.Items.TeleportItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 10
+  },
+  {
+    "id": 2439,
+    "name": "Transport: Port Battle",
+    "type": "MegaChaka.Services.Items.RecipeTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": 205
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2444,
+    "name": "Transport: Port Battle",
+    "type": "MegaChaka.Services.Items.RecipeTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": 205
+    },
+    "description": "",
+    "weight": 0
+  },
+  {
+    "id": 2501,
+    "name": "Travel Balloon - Port Royal",
+    "type": "MegaChaka.Services.Items.ShipSkinItemTemplate, MegaChaka",
+    "template": "",
+    "nationality": "Neutral",
+    "region": "",
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "services": {
+      "shipyard": false,
+      "academy": false,
+      "warehouse": false,
+      "admiralty": false
+    },
+    "economy": {
+      "goldGeneration": 0,
+      "population": 0,
+      "basePrice": -1
+    },
+    "description": "",
+    "weight": 1
+  }
+]

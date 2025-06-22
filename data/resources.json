@@ -1,0 +1,2994 @@
+[
+  {
+    "id": 1895,
+    "name": "African Oak",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 15,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1873,
+    "name": "Aguayo cloth",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1876,
+    "name": "Akvavit",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1861,
+    "name": "Alligator hides",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1846,
+    "name": "Ambergris",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 31,
+    "name": "American Cotton",
+    "type": "Resource",
+    "weight": 82.76,
+    "maxStack": 1,
+    "economy": {
+      "basePrice": 2069,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1857,
+    "name": "Arabian books",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 801,
+    "name": "Arabian Coffee",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1837,
+    "name": "Atlantic salmon",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 2975,
+    "name": "Ball Ammo",
+    "type": "Resource",
+    "weight": 0.03,
+    "maxStack": 20000,
+    "economy": {
+      "basePrice": 5,
+      "sellPrice": {
+        "x": 0.439999997615814,
+        "y": 0.439999997615814
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 100,
+      "maxContract": 20000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1842,
+    "name": "Bananas",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 32,
+    "name": "Batavian Spices",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 813,
+    "name": "Bavarian wheat",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1847,
+    "name": "Beans",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 906,
+    "name": "Bermuda Cedar",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 15,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 851,
+    "name": "Black Ironwood",
+    "type": "Resource",
+    "weight": 82.76,
+    "maxStack": 1,
+    "economy": {
+      "basePrice": 2069,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1877,
+    "name": "Black Pepper",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1841,
+    "name": "Buffalo hides",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 821,
+    "name": "Burgundian Wine",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1860,
+    "name": "Cactus",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 797,
+    "name": "Carolina Tobacco",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 789,
+    "name": "Catalonian Olive Oil",
+    "type": "Resource",
+    "weight": 6.9,
+    "maxStack": 12,
+    "economy": {
+      "basePrice": 159,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 2976,
+    "name": "Chain Ammo",
+    "type": "Resource",
+    "weight": 0.09,
+    "maxStack": 20000,
+    "economy": {
+      "basePrice": 47,
+      "sellPrice": {
+        "x": 0.439999997615814,
+        "y": 0.439999997615814
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 100,
+      "maxContract": 20000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 805,
+    "name": "Chile saltpeter",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1887,
+    "name": "Chinese books",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1875,
+    "name": "Chinese tea",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 853,
+    "name": "Cocoa",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1843,
+    "name": "Coconut Fibres",
+    "type": "Resource",
+    "weight": 5.17,
+    "maxStack": 16,
+    "economy": {
+      "basePrice": 124,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1869,
+    "name": "Coconuts",
+    "type": "Resource",
+    "weight": 4.14,
+    "maxStack": 20,
+    "economy": {
+      "basePrice": 95,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 865,
+    "name": "Coffee",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 822,
+    "name": "Cognac",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 812,
+    "name": "Copper",
+    "type": "Resource",
+    "weight": 82.76,
+    "maxStack": 1,
+    "economy": {
+      "basePrice": 2069,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1848,
+    "name": "Corals",
+    "type": "Resource",
+    "weight": 5.17,
+    "maxStack": 16,
+    "economy": {
+      "basePrice": 124,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 888,
+    "name": "Cotton",
+    "type": "Resource",
+    "weight": 82.76,
+    "maxStack": 1,
+    "economy": {
+      "basePrice": 2069,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1000,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 854,
+    "name": "Cuban Tobacco",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1902,
+    "name": "Cuirass",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 33,
+    "name": "Danish Beer",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 814,
+    "name": "Danish Pickled Herring",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1894,
+    "name": "Danzic Oak",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 15,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 838,
+    "name": "Dutch Cacao",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 839,
+    "name": "Dutch Laudanum",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 840,
+    "name": "Dutch Peanut Butter",
+    "type": "Resource",
+    "weight": 6.9,
+    "maxStack": 12,
+    "economy": {
+      "basePrice": 159,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1878,
+    "name": "East Indian spices",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1924,
+    "name": "European books",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 824,
+    "name": "Fine Fabrics",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 858,
+    "name": "Fine Leather",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 26,
+    "name": "Fir Log",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 4,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 620,
+    "name": "Fish Meat",
+    "type": "Resource",
+    "weight": 0.5,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 4,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1840,
+    "name": "Flannel",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 844,
+    "name": "French perfume",
+    "type": "Resource",
+    "weight": 82.76,
+    "maxStack": 1,
+    "economy": {
+      "basePrice": 2069,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1854,
+    "name": "Garlic",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1864,
+    "name": "Gin",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1855,
+    "name": "Gobelins tapestry",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 841,
+    "name": "Gold Coast Ivory",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 846,
+    "name": "Gold ingots",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 2977,
+    "name": "Grape Ammo",
+    "type": "Resource",
+    "weight": 0.06,
+    "maxStack": 20000,
+    "economy": {
+      "basePrice": 30,
+      "sellPrice": {
+        "x": 0.439999997615814,
+        "y": 0.439999997615814
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 100,
+      "maxContract": 20000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1866,
+    "name": "Grapefruit",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 2978,
+    "name": "Gunpowder",
+    "type": "Resource",
+    "weight": 0.01,
+    "maxStack": 50000,
+    "economy": {
+      "basePrice": 5,
+      "sellPrice": {
+        "x": 0.439999997615814,
+        "y": 0.439999997615814
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 100,
+      "maxContract": 50000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 28,
+    "name": "Hemp",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 4,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 38,
+    "name": "Historical Artifact",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 833,
+    "name": "Honey",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1826,
+    "name": "Horses",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 790,
+    "name": "Iberian Dried Pork",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 802,
+    "name": "Indian tea",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 857,
+    "name": "Indigo",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 29,
+    "name": "Iron Ore",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 8,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 817,
+    "name": "Jutland Amber",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 798,
+    "name": "Kentucky Bourbon",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 806,
+    "name": "Lancashire Iron",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 825,
+    "name": "Languedoc Violins",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1853,
+    "name": "Lemons",
+    "type": "Resource",
+    "weight": 4.14,
+    "maxStack": 20,
+    "economy": {
+      "basePrice": 95,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 30,
+    "name": "Lignum Vitae Log",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 6,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1849,
+    "name": "Limes",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1859,
+    "name": "Liqueur",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 300,
+    "name": "Live Oak Log",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 15,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1858,
+    "name": "Livestock",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1850,
+    "name": "Logwood",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1845,
+    "name": "Lumber",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 845,
+    "name": "Madagascar Jewels",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 791,
+    "name": "Madeira Wine",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 894,
+    "name": "Mahogany Log",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 15,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 859,
+    "name": "Maize",
+    "type": "Resource",
+    "weight": 6.9,
+    "maxStack": 12,
+    "economy": {
+      "basePrice": 159,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 807,
+    "name": "Malabar Teak",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 15,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1871,
+    "name": "Mangoes",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1889,
+    "name": "Marble",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1844,
+    "name": "Medicinal bark",
+    "type": "Resource",
+    "weight": 0.25,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 10,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 365,
+    "name": "Medicine",
+    "type": "Resource",
+    "weight": 0.1,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 40,
+      "sellPrice": {
+        "x": 0.439999997615814,
+        "y": 0.439999997615814
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 100,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 792,
+    "name": "Merino Wool",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1890,
+    "name": "Molasses",
+    "type": "Resource",
+    "weight": 0.5,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 4,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1870,
+    "name": "Mosaic",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1891,
+    "name": "Muskets",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1898,
+    "name": "New England Fir",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 15,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 827,
+    "name": "Normandy Cider",
+    "type": "Resource",
+    "weight": 6.9,
+    "maxStack": 12,
+    "economy": {
+      "basePrice": 159,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 819,
+    "name": "Norwegian Fox Fur",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 39,
+    "name": "Oak Log",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 4,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1852,
+    "name": "Olmec stone mask",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 799,
+    "name": "Oregon Beaver Coats",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 828,
+    "name": "Parisian Furniture",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1888,
+    "name": "Pearl necklaces",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1867,
+    "name": "Pearls",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1872,
+    "name": "Pineapples",
+    "type": "Resource",
+    "weight": 4.14,
+    "maxStack": 20,
+    "economy": {
+      "basePrice": 95,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1913,
+    "name": "Porcelain",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1883,
+    "name": "Potato",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1868,
+    "name": "Quartz",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 863,
+    "name": "Rangoon Teak",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 15,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 842,
+    "name": "Red Chilli",
+    "type": "Resource",
+    "weight": 6.9,
+    "maxStack": 12,
+    "economy": {
+      "basePrice": 159,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1851,
+    "name": "Rubber",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 835,
+    "name": "Russian Vodka",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 820,
+    "name": "Sail duck",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 621,
+    "name": "Salt",
+    "type": "Resource",
+    "weight": 0.5,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 4,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 815,
+    "name": "Salted pork",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 864,
+    "name": "Saltpeter",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 6,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 794,
+    "name": "Sevilla Muskets",
+    "type": "Resource",
+    "weight": 82.76,
+    "maxStack": 1,
+    "economy": {
+      "basePrice": 2069,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 830,
+    "name": "Sevres Stained Glass",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1884,
+    "name": "Silk",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1881,
+    "name": "Silver ingots",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 796,
+    "name": "Spanish Dried Fruits",
+    "type": "Resource",
+    "weight": 6.9,
+    "maxStack": 12,
+    "economy": {
+      "basePrice": 159,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 43,
+    "name": "Stone Block",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 3,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 809,
+    "name": "Suffolk Cheese",
+    "type": "Resource",
+    "weight": 6.9,
+    "maxStack": 12,
+    "economy": {
+      "basePrice": 159,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 606,
+    "name": "Sugar",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1000,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 866,
+    "name": "Sulphur",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 5,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 843,
+    "name": "Suriname Indigo",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 836,
+    "name": "Swedish flax",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 37,
+    "name": "Swedish Iron",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 44,
+    "name": "Teak Log",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 10,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1862,
+    "name": "Tequila",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 811,
+    "name": "Textile Machinery",
+    "type": "Resource",
+    "weight": 82.76,
+    "maxStack": 1,
+    "economy": {
+      "basePrice": 2069,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 607,
+    "name": "Tobacco",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 4,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1882,
+    "name": "Tomato",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 100,
+    "economy": {
+      "basePrice": 19,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1874,
+    "name": "Topaz",
+    "type": "Resource",
+    "weight": 1,
+    "maxStack": 5,
+    "economy": {
+      "basePrice": 1000,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 800,
+    "name": "Vermont Maple Sugar",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 831,
+    "name": "Versailles Terracotta",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1865,
+    "name": "Whiskey",
+    "type": "Resource",
+    "weight": 27.59,
+    "maxStack": 3,
+    "economy": {
+      "basePrice": 690,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1359,
+    "name": "White Oak Log",
+    "type": "Resource",
+    "weight": 0.7,
+    "maxStack": 10000,
+    "economy": {
+      "basePrice": 10,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 250,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 1856,
+    "name": "White Pepper",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  },
+  {
+    "id": 808,
+    "name": "Wool",
+    "type": "Resource",
+    "weight": 13.79,
+    "maxStack": 6,
+    "economy": {
+      "basePrice": 331,
+      "sellPrice": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "buyPrice": {
+        "x": 1,
+        "y": 1
+      },
+      "minContract": 1,
+      "maxContract": 10000
+    },
+    "tradeable": true,
+    "teleportable": true
+  }
+]
