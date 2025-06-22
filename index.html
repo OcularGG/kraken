@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRAKEN | Naval Action RvR Clan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#join">Join</a></li>
+            <li><a href="#footer">Contact</a></li>
+            <li><a href="apply.html">Apply</a></li>
+        </ul>
+    </nav>
+    <!-- Hero Section with only the KRAKEN title card -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="clan-badge">
+                <img src="krakenlogo.png" alt="KRAKEN Logo" class="kraken-hero-logo">
+                <div class="typewriter-ship" id="typewriter-ship"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="features-grid" id="features">
+            <div class="feature-card shipbuilding">
+                <div class="feature-icon">⚓</div>
+                <h2 class="feature-title">SHIPBUILDING PROGRAM</h2>
+                <p class="feature-desc">Exclusive member discounts on <strong>ALL MAJOR SHIPS</strong>. From frigates to first-rates, we've got you covered.</p>
+                <div class="feature-highlight">MEMBER EXCLUSIVE</div>
+            </div>
+
+            <div class="feature-card consumables">
+                <div class="feature-icon">💥</div>
+                <h2 class="feature-title">CONSUMABLES CRAFTING</h2>
+                <p class="feature-desc">Steep discounts on <strong>CANNONBALLS, POWDER</strong> and all essential consumables. Never run out of ammo.</p>
+                <div class="feature-highlight">BULK DISCOUNTS</div>
+            </div>
+
+            <div class="feature-card wiki">
+                <div class="feature-icon">📚</div>
+                <h2 class="feature-title">DEDICATED WIKI</h2>
+                <p class="feature-desc">Comprehensive guides and video tutorials for new players. Learn from the best, dominate faster.</p>
+                <div class="feature-highlight">EXPERT GUIDES</div>
+            </div>
+
+            <div class="feature-card veterans">
+                <div class="feature-icon">⚔️</div>
+                <h2 class="feature-title">SEASONED VETERANS</h2>
+                <p class="feature-desc">Battle-tested <strong>RvR VETERANS</strong> and experienced fleet commanders lead our operations.</p>
+                <div class="feature-highlight">PROVEN LEADERS</div>
+            </div>
+
+            <div class="feature-card daily-content">
+                <div class="feature-icon">🏴‍☠️</div>
+                <h2 class="feature-title">DAILY PvP & RvR</h2>
+                <p class="feature-desc">Non-stop action with <strong>DAILY PvP</strong> raids and RvR operations. The seas never rest.</p>
+                <div class="feature-highlight">24/7 ACTION</div>
+            </div>
+        </section>
+
+        <section class="join-section" id="join">
+            <div class="join-card">
+                <h2 class="join-title">READY TO JOIN THE KRAKEN?</h2>
+                <p class="join-desc">Elite RvR clan seeking dedicated captains for conquest of the Caribbean</p>
+                <div class="join-requirements">
+                    <div class="req-item">• Active RvR Participation</div>
+                    <div class="req-item">• Discord Required</div>
+                    <div class="req-item">• Team Player Mentality</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-text">KRAKEN CLAN © 2025 | BENSALEM PORT | NAVAL ACTION</div>
+        </div>
+    </footer>
+
+    <script>
+// Typewriter effect for ship names
+const ships = [
+  "L'Ocean",
+  "Santisima Trinidad",
+  "Redoubtable",
+  "Trincomalee",
+  "Admiral de Ruyter",
+  "Duke of Kent",
+  "Santa Ana",
+  "Victory",
+  "Christian",
+  "Le Bucentaure",
+  "San Pedro",
+  "St. Pavel"
+];
+const phraseStart = "Set sail with us in your ";
+let shipIndex = 0;
+let charIndex = 0;
+let isErasing = false;
+let currentText = "";
+const el = document.getElementById('typewriter-ship');
+
+function typeShip() {
+  const ship = ships[shipIndex];
+  if (!isErasing) {
+    if (charIndex < ship.length) {
+      currentText = phraseStart + ship.slice(0, charIndex + 1);
+      charIndex++;
+      el.textContent = currentText + '|';
+      setTimeout(typeShip, 60);
+    } else {
+      el.textContent = phraseStart + ship + '|';
+      setTimeout(() => { isErasing = true; typeShip(); }, 1400);
+    }
+  } else {
+    if (charIndex > 0) {
+      charIndex--;
+      currentText = phraseStart + ship.slice(0, charIndex);
+      el.textContent = currentText + '|';
+      setTimeout(typeShip, 30);
+    } else {
+      isErasing = false;
+      shipIndex = (shipIndex + 1) % ships.length;
+      setTimeout(typeShip, 500);
+    }
+  }
+}
+typeShip();
+</script>
+</body>
+</html>

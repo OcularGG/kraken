@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply to KRAKEN | Naval Action RvR Clan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#join">Join</a></li>
+            <li><a href="index.html#footer">Contact</a></li>
+            <li><a href="apply.html" class="active">Apply</a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+      <section class="apply-section">
+        <div class="apply-header">
+          <img src="krakenlogo.png" alt="KRAKEN Logo" class="kraken-hero-logo" style="width:80px;display:block;margin:0 auto 1rem auto;">
+          <h2 style="text-align:center;">KRAKEN Application</h2>
+        </div>
+        <form id="kraken-application-form" autocomplete="off" class="typeform-style">
+          <div class="progress-dots" id="progress-dots"></div>
+          <div class="form-step" data-step="1">
+            <label>What is your Captain's name?
+              <input type="text" name="captainName" required autofocus>
+            </label>
+          </div>
+          <div class="form-step" data-step="2" style="display:none;">
+            <label>What previous clans have you been in?</label>
+            <div id="clan-fields">
+              <input type="text" name="previousClans[]" placeholder="Clan name">
+            </div>
+            <button type="button" id="add-clan">Add Another Clan</button>
+          </div>
+          <div class="form-step" data-step="3" style="display:none;">
+            <label>Do you have Discord?
+              <select name="hasDiscord" id="hasDiscord" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-step" data-step="4" style="display:none;">
+            <label>What is your Discord username?
+              <input type="text" name="discordUsername">
+            </label>
+          </div>
+          <div class="form-step" data-step="5" style="display:none;">
+            <label>Are you in the KRAKEN Discord?
+              <select name="inKrakenDiscord" id="inKrakenDiscord" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </label>
+            <div id="kraken-discord-invite" style="display:none;">
+              <p>Join our Discord: <a href="https://discord.gg/PDZNTxPU94" target="_blank">https://discord.gg/PDZNTxPU94</a></p>
+            </div>
+          </div>
+          <div class="form-step" data-step="6" style="display:none;">
+            <label>Are you in the British Admiralty Discord?
+              <select name="inAdmiraltyDiscord" id="inAdmiraltyDiscord" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </label>
+            <div id="admiralty-discord-invite" style="display:none;">
+              <p>Join the British Admiralty Discord: <a href="https://discord.gg/kHp7uRk9WV" target="_blank">https://discord.gg/kHp7uRk9WV</a></p>
+            </div>
+          </div>
+          <div class="form-step" data-step="7" style="display:none;">
+            <label>Are you a new player or a returning player?</label>
+            <div class="player-type">
+              <input type="radio" id="newPlayer" name="playerType" value="New" required>
+              <label for="newPlayer">New Player</label>
+              <input type="radio" id="returningPlayer" name="playerType" value="Returning">
+              <label for="returningPlayer">Returning Player</label>
+            </div>
+          </div>
+          <div class="form-step" data-step="8" style="display:none;">
+            <label>If you are a returning player, what is your current rank?
+              <select name="currentRank">
+                <option value="">Select Rank</option>
+                <option value="Midshipman">Midshipman</option>
+                <option value="Ensign">Ensign</option>
+                <option value="Second Lieutenant">Second Lieutenant</option>
+                <option value="First Lieutenant">First Lieutenant</option>
+                <option value="Lieutenant Commander">Lieutenant Commander</option>
+                <option value="Master and Commander">Master and Commander</option>
+                <option value="Post Captain">Post Captain</option>
+                <option value="Flag Captain">Flag Captain</option>
+                <option value="Commodore">Commodore</option>
+                <option value="Rear Admiral">Rear Admiral</option>
+                <option value="Vice-Admiral">Vice-Admiral</option>
+                <option value="Admiral">Admiral</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-step" data-step="9" style="display:none;">
+            <label>Are you familiar with RvR?
+              <select name="familiarWithRvR" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-step" data-step="10" style="display:none;">
+            <label>What kind of RvR experience do you have?
+              <textarea name="rvrExperience" rows="3" placeholder="Describe your experience"></textarea>
+            </label>
+          </div>
+          <div class="form-navigation">
+            <button type="button" id="back-btn" style="display:none;">Back</button>
+            <button type="button" id="next-btn">Next</button>
+            <button type="submit" id="submit-application" style="display:none;">Submit Application</button>
+          </div>
+          <div id="form-status" style="margin-top:10px;"></div>
+        </form>
+      </section>
+    </main>
+    <script>
+// Typeform-style application form logic for KRAKEN application
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Typeform-style navigation
+  const steps = Array.from(document.querySelectorAll('.form-step'));
+  let currentStep = 0;
+  const nextBtn = document.getElementById('next-btn');
+  const backBtn = document.getElementById('back-btn');
+  const submitBtn = document.getElementById('submit-application');
+  const form = document.getElementById('kraken-application-form');
+  const statusDiv = document.getElementById('form-status');
+  const progressDots = document.getElementById('progress-dots');
+  function updateProgressDots(idx) {
+    progressDots.innerHTML = '';
+    for (let i = 0; i < steps.length; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'progress-dot' + (i === idx ? ' active' : '');
+      progressDots.appendChild(dot);
+    }
+  }
+  function showStep(idx) {
+    steps.forEach((step, i) => {
+      step.style.display = i === idx ? 'block' : 'none';
+    });
+    backBtn.style.display = idx > 0 ? 'inline-block' : 'none';
+    nextBtn.style.display = idx < steps.length - 1 ? 'inline-block' : 'none';
+    submitBtn.style.display = idx === steps.length - 1 ? 'inline-block' : 'none';
+    updateProgressDots(idx);
+    
+    // Handle conditional step logic
+    handleConditionalSteps(idx);
+    
+    // Autofocus first input/select/textarea in step
+    const focusable = steps[idx].querySelector('input,select,textarea');
+    if (focusable) focusable.focus();
+  }
+  
+  function handleConditionalSteps(idx) {
+    // Conditional logic for Discord username (step 3, index 3)
+    if (idx === 3) {
+      const hasDiscord = form.elements['hasDiscord'].value;
+      if (hasDiscord !== 'Yes') {
+        setTimeout(() => nextStep(), 100); // Prevent infinite recursion
+        return;
+      }
+    }
+    // Conditional logic for KRAKEN Discord invite (step 4, index 4)
+    if (idx === 4) {
+      const inKraken = form.elements['inKrakenDiscord'].value;
+      document.getElementById('kraken-discord-invite').style.display = inKraken === 'No' ? 'block' : 'none';
+    }
+    // Conditional logic for Admiralty Discord invite (step 5, index 5)
+    if (idx === 5) {
+      const inAdmiralty = form.elements['inAdmiraltyDiscord'].value;
+      document.getElementById('admiralty-discord-invite').style.display = inAdmiralty === 'No' ? 'block' : 'none';
+    }
+    // Conditional logic for rank dropdown (step 7, index 7)
+    if (idx === 7) {
+      const playerType = form.elements['playerType'].value;
+      if (playerType !== 'Returning') {
+        setTimeout(() => nextStep(), 100); // Prevent infinite recursion
+        return;
+      }
+    }
+  }
+
+  function nextStep() {
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  }
+  function prevStep() {
+    if (currentStep > 0) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  }
+  nextBtn.onclick = nextStep;
+  backBtn.onclick = prevStep;
+
+  // Enter key for next
+  form.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && nextBtn.style.display !== 'none') {
+      e.preventDefault();
+      nextStep();
+    }
+  });
+
+  // Add previous clan fields
+  document.getElementById('add-clan').onclick = function(e) {
+    e.preventDefault();
+    const field = document.createElement('input');
+    field.type = 'text';
+    field.name = 'previousClans[]';
+    field.placeholder = 'Clan name';
+    document.getElementById('clan-fields').appendChild(field);
+  };
+  // Update on select/radio change for conditional steps
+  form.elements['hasDiscord'].onchange = function() {
+    if (currentStep === 2) nextStep();
+  };
+  form.elements['inKrakenDiscord'].onchange = function() {
+    if (currentStep === 4) nextStep();
+  };
+  form.elements['inAdmiraltyDiscord'].onchange = function() {
+    if (currentStep === 5) nextStep();
+  };
+  Array.from(form.elements['playerType']).forEach(radio => {
+    radio.onchange = function() {
+      if (currentStep === 6) nextStep();
+    };
+  });
+  // Form submission
+  form.onsubmit = async function(e) {
+    e.preventDefault();
+    statusDiv.textContent = 'Submitting...';
+    statusDiv.style.color = '#bfa140';
+    const data = new FormData(form);
+    const embed = buildDiscordEmbed(data);
+    try {
+      // Use the proxy server instead of direct Discord webhook
+      const res = await fetch('http://localhost:3001/api/discord-webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          embeds: [embed],
+          username: 'KRAKEN Application',
+          avatar_url: 'krakenlogo.png'
+        })
+      });
+      if (res.ok) {
+        statusDiv.textContent = 'Application submitted! We will contact you soon.';
+        statusDiv.style.color = 'green';
+        form.reset();
+        setTimeout(() => { window.location.href = 'index.html'; }, 2000);
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (err) {
+      statusDiv.textContent = 'Error submitting application. Please try again later.';
+      statusDiv.style.color = 'red';
+      console.error('Submission error:', err);
+    }
+  };
+
+  function buildDiscordEmbed(data) {
+    const clans = data.getAll('previousClans[]').filter(Boolean).join(', ') || 'None';
+    const fields = [
+      { name: "Captain's Name", value: data.get('captainName') || 'N/A', inline: true },
+      { name: 'Previous Clans', value: clans, inline: true },
+      { name: 'Has Discord', value: data.get('hasDiscord') || 'N/A', inline: true },
+      { name: 'Discord Username', value: data.get('discordUsername') || 'N/A', inline: true },
+      { name: 'In KRAKEN Discord', value: data.get('inKrakenDiscord') || 'N/A', inline: true },
+      { name: 'In Admiralty Discord', value: data.get('inAdmiraltyDiscord') || 'N/A', inline: true },
+      { name: 'Player Type', value: data.get('playerType') || 'N/A', inline: true },
+      { name: 'Current Rank', value: data.get('currentRank') || 'N/A', inline: true },
+      { name: 'Familiar with RvR', value: data.get('familiarWithRvR') || 'N/A', inline: true },
+      { name: 'RvR Experience', value: data.get('rvrExperience') || 'N/A', inline: false }
+    ];
+    return {
+      title: 'New KRAKEN Application',
+      color: 0xbfa140,
+      thumbnail: { url: 'krakenlogo.png' },
+      fields: fields,
+      timestamp: new Date().toISOString(),
+      footer: { text: 'Naval Action KRAKEN Clan' }
+    };
+  }
+
+  // Start at first step
+  showStep(currentStep);
+});
+    </script>
+</body>
+</html>
