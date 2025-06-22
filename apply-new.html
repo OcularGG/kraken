@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRAKEN Application | Naval Action RvR Clan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .simple-form-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #1a1a1a;
+            border: 3px solid #bfa140;
+            border-radius: 8px;
+        }
+
+        .simple-form-title {
+            color: #bfa140;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .simple-form-group {
+            margin-bottom: 25px;
+        }
+
+        .simple-form-label {
+            display: block;
+            color: #bfa140;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .simple-form-input,
+        .simple-form-select,
+        .simple-form-textarea {
+            width: 100%;
+            padding: 15px;
+            background: #2a2a2a;
+            border: 2px solid #333;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .simple-form-input:focus,
+        .simple-form-select:focus,
+        .simple-form-textarea:focus {
+            outline: none;
+            border-color: #bfa140;
+        }
+
+        .simple-form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .simple-form-submit {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(45deg, #bfa140, #d4b356);
+            border: none;
+            border-radius: 4px;
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .simple-form-submit:hover {
+            background: linear-gradient(45deg, #d4b356, #bfa140);
+            transform: translateY(-2px);
+        }
+
+        .simple-form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .simple-form-status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .simple-form-status.show {
+            display: block;
+        }
+
+        .simple-form-status.success {
+            background: #2d5a2d;
+            color: #90ee90;
+            border: 1px solid #4a8a4a;
+        }
+
+        .simple-form-status.error {
+            background: #5a2d2d;
+            color: #ff6b6b;
+            border: 1px solid #8a4a4a;
+        }
+
+        .simple-form-status.loading {
+            background: #3d3d2d;
+            color: #bfa140;
+            border: 1px solid #6a6a4a;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #bfa140;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #d4b356;
+        }
+
+        .required {
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#join">Join</a></li>
+            <li><a href="index.html#footer">Contact</a></li>
+            <li><a href="apply-new.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <div class="simple-form-container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <h1 class="simple-form-title">Join the KRAKEN</h1>
+        
+        <form id="applicationForm">
+            <div class="simple-form-group">
+                <label for="captainName" class="simple-form-label">Captain's Name <span class="required">*</span></label>
+                <input type="text" id="captainName" name="captainName" class="simple-form-input" required>
+            </div>
+
+            <div class="simple-form-group">
+                <label for="discordUsername" class="simple-form-label">Discord Username <span class="required">*</span></label>
+                <input type="text" id="discordUsername" name="discordUsername" class="simple-form-input" placeholder="username#1234" required>
+            </div>
+
+            <div class="simple-form-group">
+                <label for="playerType" class="simple-form-label">Player Type <span class="required">*</span></label>
+                <select id="playerType" name="playerType" class="simple-form-select" required>
+                    <option value="">Select your play style</option>
+                    <option value="Casual">Casual Player</option>
+                    <option value="Hardcore">Hardcore Player</option>
+                    <option value="Weekend Warrior">Weekend Warrior</option>
+                </select>
+            </div>
+
+            <div class="simple-form-group">
+                <label for="currentRank" class="simple-form-label">Current Rank</label>
+                <select id="currentRank" name="currentRank" class="simple-form-select">
+                    <option value="">Select your rank</option>
+                    <option value="Midshipman">Midshipman</option>
+                    <option value="Lieutenant">Lieutenant</option>
+                    <option value="Captain">Captain</option>
+                    <option value="Commodore">Commodore</option>
+                    <option value="Admiral">Admiral</option>
+                </select>
+            </div>
+
+            <div class="simple-form-group">
+                <label for="rvrExperience" class="simple-form-label">RvR Experience</label>
+                <select id="rvrExperience" name="rvrExperience" class="simple-form-select">
+                    <option value="">Select your experience level</option>
+                    <option value="None">No RvR Experience</option>
+                    <option value="Beginner">Beginner (1-5 battles)</option>
+                    <option value="Intermediate">Intermediate (6-20 battles)</option>
+                    <option value="Experienced">Experienced (20+ battles)</option>
+                    <option value="Veteran">Veteran (50+ battles)</option>
+                </select>
+            </div>
+
+            <div class="simple-form-group">
+                <label for="previousClans" class="simple-form-label">Previous Clans</label>
+                <input type="text" id="previousClans" name="previousClans" class="simple-form-input" placeholder="List any previous clans (optional)">
+            </div>
+
+            <div class="simple-form-group">
+                <label for="whyJoin" class="simple-form-label">Why do you want to join KRAKEN?</label>
+                <textarea id="whyJoin" name="whyJoin" class="simple-form-textarea" placeholder="Tell us why you're interested in joining our clan..."></textarea>
+            </div>
+
+            <button type="submit" class="simple-form-submit">Submit Application</button>
+        </form>
+
+        <div id="statusMessage" class="simple-form-status"></div>
+    </div>
+
+    <script>
+        document.getElementById('applicationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitButton = this.querySelector('.simple-form-submit');
+            const statusDiv = document.getElementById('statusMessage');
+            
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+            statusDiv.className = 'simple-form-status show loading';
+            statusDiv.textContent = 'Submitting your application...';
+            
+            try {
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                
+                // Create Discord embed
+                const embed = {
+                    title: '🦑 New KRAKEN Application',
+                    color: 0xbfa140,
+                    fields: [
+                        { name: "Captain's Name", value: data.captainName || 'N/A', inline: true },
+                        { name: 'Discord Username', value: data.discordUsername || 'N/A', inline: true },
+                        { name: 'Player Type', value: data.playerType || 'N/A', inline: true },
+                        { name: 'Current Rank', value: data.currentRank || 'Not specified', inline: true },
+                        { name: 'RvR Experience', value: data.rvrExperience || 'Not specified', inline: true },
+                        { name: 'Previous Clans', value: data.previousClans || 'None', inline: true },
+                        { name: 'Why join KRAKEN?', value: data.whyJoin || 'Not specified', inline: false }
+                    ],
+                    timestamp: new Date().toISOString(),
+                    footer: { text: 'Naval Action KRAKEN Clan Application' }
+                };
+
+                const payload = {
+                    embeds: [embed],
+                    username: 'KRAKEN Recruitment'
+                };
+
+                console.log('Sending payload:', JSON.stringify(payload, null, 2));
+
+                // Send to Discord webhook
+                const response = await fetch('/api/discord-webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    // Success
+                    statusDiv.className = 'simple-form-status show success';
+                    statusDiv.textContent = '✅ Application submitted successfully! We will contact you soon on Discord.';
+                    this.reset();
+                    
+                    // Redirect after 3 seconds
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 3000);
+                } else {
+                    // Error
+                    const errorData = await response.json().catch(() => ({}));
+                    console.error('Submission failed:', response.status, errorData);
+                    throw new Error(errorData.error || `HTTP ${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                statusDiv.className = 'simple-form-status show error';
+                statusDiv.textContent = `❌ Error: ${error.message}. Please try again or contact us directly.`;
+            } finally {
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit Application';
+            }
+        });
+    </script>
+</body>
+</html>
