@@ -2,7 +2,7 @@
 
 .tools-container {
     min-height: 100vh;
-    background: #0a0a0a;
+    background: #181818;
     color: #fff;
     padding: 2rem;
     font-family: 'Space Grotesk', sans-serif;
@@ -39,8 +39,8 @@
 
 .tool-card {
     background: #fff;
-    color: #0a0a0a;
-    border: 4px solid #0a0a0a;
+    color: #181818;
+    border: 4px solid #181818;
     border-radius: 0;
     padding: 2rem;
     box-shadow: 8px 8px 0px #bfa140;
@@ -50,7 +50,7 @@
 .tool-title {
     font-size: 2rem;
     font-weight: 800;
-    color: #0a0a0a;
+    color: #181818;
     margin-bottom: 1rem;
     text-transform: uppercase;
 }
@@ -69,12 +69,32 @@
     align-items: start;
 }
 
+@media (max-width: 768px) {
+    .tool-interface {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .tools-container {
+        padding: 1rem;
+        padding-top: 80px;
+    }
+    
+    .tools-title {
+        font-size: 2rem;
+    }
+    
+    .tool-card {
+        padding: 1.5rem;
+    }
+}
+
 .upload-section h3,
 .canvas-section h3,
 .download-section h3 {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #0a0a0a;
+    color: #181818;
     margin-bottom: 1rem;
     text-transform: uppercase;
     border-bottom: 2px solid #bfa140;
@@ -85,7 +105,7 @@
 .upload-area {
     border: 3px dashed #bfa140;
     background: #f9f9f9;
-    color: #0a0a0a;
+    color: #181818;
     padding: 3rem;
     text-align: center;
     cursor: pointer;
@@ -96,7 +116,7 @@
 .upload-area:hover {
     background: #bfa140;
     color: #fff;
-    border-color: #0a0a0a;
+    border-color: #181818;
     border-style: solid;
     transform: translateY(-2px);
     box-shadow: 4px 4px 0px #0a0a0a;
@@ -105,7 +125,7 @@
 .upload-area.drag-over {
     background: #bfa140;
     color: #fff;
-    border-color: #0a0a0a;
+    border-color: #181818;
     border-style: solid;
     transform: scale(1.02);
 }
@@ -132,7 +152,7 @@
 }
 
 #preview-canvas {
-    border: 4px solid #0a0a0a;
+    border: 4px solid #181818;
     background: #f0f0f0;
     max-width: 100%;
     height: auto;
@@ -154,7 +174,7 @@
 
 .control-group label {
     font-weight: 600;
-    color: #0a0a0a;
+    color: #181818;
     min-width: 80px;
 }
 
@@ -192,8 +212,8 @@
 
 .btn-primary {
     background: #bfa140;
-    color: #0a0a0a;
-    border: 4px solid #0a0a0a;
+    color: #181818;
+    border: 4px solid #181818;
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: 700;
@@ -205,7 +225,7 @@
 }
 
 .btn-primary:hover:not(:disabled) {
-    background: #0a0a0a;
+    background: #181818;
     color: #bfa140;
     transform: translate(-4px, -4px);
     box-shadow: 4px 4px 0px #bfa140;

@@ -236,8 +236,7 @@ class NavalInsigniaCreator {
         
         // Draw border template on top
         if (this.borderImage) {
-            this.ctx.drawImage(this.borderImage, 0, 0, this.canvas.width, this.canvas.height);
-        } else {
+            this.ctx.drawImage(this.borderImage, 0, 0, this.canvas.width, this.canvas.height);        } else {
             // Draw placeholder if border not loaded
             this.ctx.strokeStyle = '#bfa140';
             this.ctx.lineWidth = 3;

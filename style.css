@@ -460,10 +460,10 @@ body {
     position: sticky;
     top: 0;
     width: 100%;
-    background: rgba(24,24,24,0.72); /* more transparent */
+    background: rgba(24,24,24,0.95); /* less transparent for better visibility */
+    backdrop-filter: blur(10px);
     z-index: 100;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-    /* Removed gold border-bottom */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 .kraken-navbar ul {
