@@ -4,18 +4,6 @@
     {
       "src": "discord-proxy.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.png",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -27,10 +15,5 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ],
-  "functions": {
-    "discord-proxy.js": {
-      "maxDuration": 10
-    }
-  }
+  ]
 }
