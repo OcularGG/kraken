@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Battle Sign-up | KRAKEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #181818;
+            color: #fff;
+            padding-top: 100px;
+            line-height: 1.6;
+        }
+        
+        .signup-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #2a2a2a;
+            border: 4px solid #bfa140;
+            box-shadow: 8px 8px 0px #bfa140;
+        }
+        
+        .signup-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #bfa140;
+        }
+        
+        .pb-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .pb-details, .br-info {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border: 2px solid #bfa140;
+        }
+        
+        .pb-details h3, .br-info h3 {
+            color: #bfa140;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .detail-item {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .detail-label {
+            color: #bfa140;
+            font-weight: 600;
+        }
+        
+        .fleet-section {
+            background: #1a1a1a;
+            border: 2px solid #bfa140;
+            margin-bottom: 2rem;
+        }
+        
+        .fleet-header {
+            background: #bfa140;
+            color: #181818;
+            padding: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .fleet-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .fleet-table th {
+            background: #2a2a2a;
+            color: #bfa140;
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 2px solid #bfa140;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .fleet-table td {
+            padding: 0.5rem;
+            border-bottom: 1px solid #444;
+        }
+        
+        .fleet-table input, .fleet-table select {
+            width: 100%;
+            padding: 0.5rem;
+            background: #181818;
+            border: 1px solid #bfa140;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+        }
+        
+        .fleet-table input:focus, .fleet-table select:focus {
+            outline: none;
+            border-color: #fff;
+        }
+        
+        .ship-cell {
+            background: #2a2a2a;
+            font-weight: 600;
+            color: #bfa140;
+        }
+        
+        .br-cell {
+            text-align: center;
+            font-weight: 600;
+            color: #bfa140;
+        }
+        
+        .signed-up {
+            background: rgba(191, 161, 64, 0.2);
+        }
+        
+        .clans-list {
+            background: #1a1a1a;
+            border: 2px solid #bfa140;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .clans-list h3 {
+            color: #bfa140;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .clans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 0.5rem;
+            text-align: center;
+        }
+        
+        .clan-tag {
+            background: #2a2a2a;
+            color: #bfa140;
+            padding: 0.5rem;
+            border: 1px solid #bfa140;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .signup-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            
+            .pb-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .fleet-table {
+                font-size: 0.8rem;
+            }
+            
+            .fleet-table th, .fleet-table td {
+                padding: 0.5rem 0.25rem;
+            }
+            
+            .clans-grid {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="orgchart.html">Command</a></li>
+            <li><a href="pb.html">PB</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <div class="signup-container">
+        <header class="signup-header">
+            <h1 class="pb-title" id="pb-title">Port Battle Sign-up</h1>
+            <p class="pb-subtitle" id="pb-subtitle">Fleet Operations Coordination</p>
+        </header>
+
+        <div class="pb-info-grid">
+            <div class="pb-details">
+                <h3>Operation Details</h3>
+                <div class="detail-item">
+                    <span class="detail-label">Port:</span>
+                    <span id="port-name">Santo Domingo</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Type:</span>
+                    <span id="battle-type">Deep Water</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Meeting Time:</span>
+                    <span id="meeting-time">23/06/2025 19:00 UTC</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Battle Time:</span>
+                    <span id="battle-time">23/06/2025 20:00 UTC</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Meeting Location:</span>
+                    <span id="meeting-location">Port-au-Prince</span>
+                </div>
+            </div>
+            
+            <div class="br-info">
+                <h3>Fleet Composition</h3>
+                <div class="detail-item">
+                    <span class="detail-label">BR Limit:</span>
+                    <span id="br-limit">5000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">BR Used:</span>
+                    <span id="br-used">3420</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">BR Remaining:</span>
+                    <span id="br-remaining" style="color: #4ade80;">1580</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Ships Signed:</span>
+                    <span id="ships-signed">15/70</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="clans-list">
+            <h3>RvR Clans</h3>
+            <div class="clans-grid" id="clans-grid">
+                <!-- Clans will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="fleet-section">
+            <div class="fleet-header">Fleet Composition</div>
+            <table class="fleet-table" id="fleet-table">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">#</th>
+                        <th style="width: 15%;">Ship</th>
+                        <th style="width: 8%;">BR</th>
+                        <th style="width: 8%;">Books</th>
+                        <th style="width: 15%;">Alt Ship</th>
+                        <th style="width: 8%;">Alt Books</th>
+                        <th style="width: 8%;">Screen?</th>
+                        <th style="width: 15%;">Player Name</th>
+                        <th style="width: 10%;">Clan</th>
+                        <th style="width: 8%;">Comments</th>
+                    </tr>
+                </thead>
+                <tbody id="fleet-tbody">
+                    <!-- Fleet rows will be generated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const pbId = urlParams.get('id');
+
+        // Sample PB data (would normally come from server based on pbId)
+        const pbData = {
+            'example1': {
+                port: 'Santo Domingo',
+                type: 'deep',
+                brLimit: 5000,
+                meetingTime: '2025-06-23T19:00:00Z',
+                pbTime: '2025-06-23T20:00:00Z',
+                meetingLocation: 'Port-au-Prince'
+            },
+            'default': {
+                port: 'Santo Domingo',
+                type: 'deep',
+                brLimit: 5000,
+                meetingTime: '2025-06-23T19:00:00Z',
+                pbTime: '2025-06-23T20:00:00Z',
+                meetingLocation: 'Port-au-Prince'
+            }
+        };
+
+        // Get current PB data
+        const currentPB = pbData[pbId] || pbData['default'];
+
+        function formatDateTime(dateStr) {
+            return new Date(dateStr).toLocaleString('en-GB', {
+                timeZone: 'UTC',
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            }) + ' UTC';
+        }
+
+        function loadPBDetails() {
+            document.getElementById('pb-title').textContent = `${currentPB.port} Port Battle`;
+            document.getElementById('port-name').textContent = currentPB.port;
+            document.getElementById('battle-type').textContent = currentPB.type === 'deep' ? 'Deep Water' : 'Shallow Water';
+            document.getElementById('meeting-time').textContent = formatDateTime(currentPB.meetingTime);
+            document.getElementById('battle-time').textContent = formatDateTime(currentPB.pbTime);
+            document.getElementById('meeting-location').textContent = currentPB.meetingLocation;
+            document.getElementById('br-limit').textContent = currentPB.brLimit;
+        }
+        // Ship BR values
+        const shipBR = {
+            "Santisima": 278,
+            "L'Ocean": 239,
+            "Santa Ana": 225,
+            "Victory": 216,
+            "DLC Victory": 224,
+            "Christian VII": 164,
+            "Bucentaure": 161,
+            "Redoutable": 148,
+            "Implacable": 163,
+            "St. Pavel": 150,
+            "Bellona": 134,
+            "3rd Rate (74)": 132,
+            "Wasa": 125,
+            "USS United States": 96,
+            "Constitution": 96,
+            "Rättvisan": 107,
+            "Agamemnon": 114,
+            "Leopard": 95,
+            "Indefatigable": 79,
+            "Ingermanland": 111,
+            "Wapen von Hamburg III": 120,
+            "Endymion": 85,
+            "Trincomalee": 87,
+            "Diana": 78,
+            "L'Hermione": 72,
+            "Santa Cecilia": 72,
+            "Essex": 71,
+            "Pirate Frigate(Cherubim)": 67,
+            "Belle Poule": 65,
+            "Frigate (Cherubim)": 66,
+            "LGV Refit": 40,
+            "Indiaman": 37,
+            "Surprise": 64,
+            "Renommee": 38,
+            "Le Gros Ventre": 28,
+            "Hercules": 58,
+            "Rattlesnake Heavy": 32,
+            "Pandora": 65,
+            "Le Requin": 30,
+            "Cerberus": 33,
+            "Niagara": 25,
+            "Mortar Brig": 15,
+            "Prince de Neufchatel": 25,
+            "Snow (Ontario)": 27,
+            "Mercury": 25,
+            "Rattlesnake": 22,
+            "Navy Brig (Fair American)": 22,
+            "Trader Snow": 26,
+            "Brig (Fair American)": 20,
+            "Pickle": 15,
+            "Yacht": 15,
+            "Privateer": 15,
+            "Cutter (Alert)": 15,
+            "Trader Lynx": 13,
+            "Lynx": 13,
+            "ADR": 143,
+            "Duke Of Kent": 353,
+            "San Pedro": 164
+        };
+
+        // RvR Clans
+        const rvrClans = [
+            "HYDRA", "TGNT", "CKA", "1ST", "ACDC", "NINE", "95TH", "REB", "RAID", 
+            "SRREG", "CQRF", "NAKOR", "RED", "BTN", "DUCK", "HNS", "LRDST", "ORCAD", 
+            "CRED", "KRKEN", "SCRVY", "MTG", "LEGIO", "ROVER"
+        ];
+
+        // Sample fleet composition
+        const fleetComposition = [
+            { ship: "Santisima", books: 5, altShip: "L'Ocean", altBooks: 5, screen: "No" },
+            { ship: "Santisima", books: 5, altShip: "L'Ocean", altBooks: 5, screen: "No" },
+            { ship: "L'Ocean", books: 5, altShip: "Santa Ana", altBooks: 5, screen: "No" },
+            { ship: "L'Ocean", books: 5, altShip: "Santa Ana", altBooks: 5, screen: "No" },
+            { ship: "Victory", books: 5, altShip: "Bucentaure", altBooks: 5, screen: "No" },
+            { ship: "Victory", books: 5, altShip: "Bucentaure", altBooks: 5, screen: "No" },
+            { ship: "Bucentaure", books: 5, altShip: "Implacable", altBooks: 5, screen: "No" },
+            { ship: "Bucentaure", books: 5, altShip: "Implacable", altBooks: 5, screen: "No" },
+            { ship: "Implacable", books: 5, altShip: "Bellona", altBooks: 5, screen: "No" },
+            { ship: "Implacable", books: 5, altShip: "Bellona", altBooks: 5, screen: "No" },
+            { ship: "Bellona", books: 5, altShip: "3rd Rate (74)", altBooks: 5, screen: "Yes" },
+            { ship: "Bellona", books: 5, altShip: "3rd Rate (74)", altBooks: 5, screen: "Yes" },
+            { ship: "Indefatigable", books: 5, altShip: "Endymion", altBooks: 5, screen: "Yes" },
+            { ship: "Indefatigable", books: 5, altShip: "Endymion", altBooks: 5, screen: "Yes" },
+            { ship: "Endymion", books: 5, altShip: "Trincomalee", altBooks: 5, screen: "Yes" }
+        ];
+
+        function populateClans() {
+            const clansGrid = document.getElementById('clans-grid');
+            rvrClans.forEach(clan => {
+                const clanElement = document.createElement('div');
+                clanElement.className = 'clan-tag';
+                clanElement.textContent = clan;
+                clansGrid.appendChild(clanElement);
+            });
+        }
+
+        function createClanSelect() {
+            let options = '<option value="">Select Clan</option>';
+            rvrClans.forEach(clan => {
+                options += `<option value="${clan}">${clan}</option>`;
+            });
+            return options;
+        }
+
+        function populateFleet() {
+            const tbody = document.getElementById('fleet-tbody');
+            const clanOptions = createClanSelect();
+            
+            for (let i = 0; i < 70; i++) {
+                const row = document.createElement('tr');
+                const fleet = fleetComposition[i] || { ship: "", books: 1, altShip: "", altBooks: 1, screen: "No" };
+                const br = fleet.ship ? shipBR[fleet.ship] || 0 : 0;
+                
+                row.innerHTML = `
+                    <td class="ship-cell">${i + 1}</td>
+                    <td class="ship-cell">${fleet.ship}</td>
+                    <td class="br-cell">${br}</td>
+                    <td class="br-cell">${fleet.books}</td>
+                    <td class="ship-cell">${fleet.altShip}</td>
+                    <td class="br-cell">${fleet.altBooks}</td>
+                    <td class="br-cell">${fleet.screen}</td>
+                    <td><input type="text" placeholder="Your name" onchange="updateSignup(${i}, this.value)"></td>
+                    <td><select onchange="updateClan(${i}, this.value)">${clanOptions}</select></td>
+                    <td><input type="text" placeholder="Comments" maxlength="50"></td>
+                `;
+                
+                tbody.appendChild(row);
+            }
+        }
+
+        function updateSignup(rowIndex, playerName) {
+            const row = document.getElementById('fleet-tbody').children[rowIndex];
+            if (playerName.trim()) {
+                row.classList.add('signed-up');
+            } else {
+                row.classList.remove('signed-up');
+            }
+            updateBRCalculation();
+        }
+
+        function updateClan(rowIndex, clanValue) {
+            // Store clan selection for this row
+            console.log(`Row ${rowIndex} selected clan: ${clanValue}`);
+        }
+
+        function updateBRCalculation() {
+            const rows = document.getElementById('fleet-tbody').children;
+            let totalBR = 0;
+            let signedShips = 0;
+            
+            for (let i = 0; i < rows.length; i++) {
+                const row = rows[i];
+                const playerInput = row.querySelector('input[type="text"]');
+                if (playerInput.value.trim()) {
+                    const shipCell = row.children[1].textContent;
+                    const br = shipBR[shipCell] || 0;
+                    totalBR += br;
+                    signedShips++;
+                }
+            }
+            
+            const brLimit = parseInt(document.getElementById('br-limit').textContent);
+            const remaining = brLimit - totalBR;
+            
+            document.getElementById('br-used').textContent = totalBR;
+            document.getElementById('br-remaining').textContent = remaining;
+            document.getElementById('br-remaining').style.color = remaining >= 0 ? '#4ade80' : '#ff6b6b';
+            document.getElementById('ships-signed').textContent = `${signedShips}/70`;
+        }        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPBDetails();
+            populateClans();
+            populateFleet();
+            
+            // Auto-save functionality
+            setInterval(() => {
+                // In a real implementation, this would save to a database
+                console.log('Auto-saving sign-up data...');
+            }, 30000); // Save every 30 seconds
+        });
+    </script>
+</body>
+</html>

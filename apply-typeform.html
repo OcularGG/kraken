@@ -3,857 +3,1111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join KRAKEN | Naval Action RvR Clan</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="krakenlogo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Commission Application - KRAKEN Naval Squadron</title>    <link rel="stylesheet" href="style.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cedarville+Cursive&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }        body {
-            font-family: 'Space Grotesk', sans-serif;
+        }
+          body {
+            font-family: 'Cormorant Garamond', serif;
             background: #181818;
-            color: #fff;
-            overflow-x: hidden;
-            padding-top: 100px; /* Account for fixed navbar */
-        }
-        .typeform-container {
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 20px;
-            position: relative;
+            color: #2c1810;
+            padding-top: 80px;
         }
-        .wave-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.1;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23bfa140' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
-            animation: wave 20s ease-in-out infinite;
-        }
-        @keyframes wave {
-            0%, 100% { transform: translateX(0px); }
-            50% { transform: translateX(-50px); }
-        }
-        .form-wrapper {
+          .document {
             max-width: 800px;
-            width: 100%;
-            background: rgba(26, 26, 46, 0.9);
-            border-radius: 20px;
-            padding: 60px 40px;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(191, 161, 64, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            margin: 20px auto 50px;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(139, 69, 19, 0.02) 1px, transparent 1px),
+                linear-gradient(45deg, transparent 49%, rgba(139, 69, 19, 0.005) 50%, transparent 51%),
+                linear-gradient(135deg, #ffffff 0%, #fefefe 30%, #fcfcfc 70%, #f9f9f9 100%);
+            background-size: 30px 30px, 60px 60px, 100px 100px, 100% 100%;
+            border: 2px solid #d4c7b0;
+            border-radius: 8px;
+            padding: 50px;
+            box-shadow: 
+                0 8px 32px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.8),
+                inset 0 -1px 0 rgba(0,0,0,0.05);
             position: relative;
             overflow: hidden;
         }
-        .form-wrapper::before {
+        
+        .document::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #bfa140, #d4b356, #bfa140);
-            background-size: 200% 100%;
-            animation: shimmer 3s ease-in-out infinite;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 69, 19, 0.005) 2px,
+                    rgba(139, 69, 19, 0.005) 3px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 69, 19, 0.005) 2px,
+                    rgba(139, 69, 19, 0.005) 3px
+                );
+            background-size: 20px 20px, 20px 20px;
+            pointer-events: none;
+            opacity: 0.3;
         }
-        @keyframes shimmer {
-            0%, 100% { background-position: 200% 0; }
-            50% { background-position: -200% 0; }
+          .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            width: 300px;
+            height: 300px;
+            background-image: url('krakenlogo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1;
         }
-        .question-container {
-            display: none;
-            animation: fadeInUp 0.6s ease-out;
-        }
-        .question-container.active {
-            display: block;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .question-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-        .question-subtitle {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-        .input-group {
-            margin-bottom: 30px;
-        }
-        .form-input {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 3px solid #333;
-            padding: 20px 0;
-            font-size: 1.5rem;
-            color: #fff;
-            font-family: 'Space Grotesk', sans-serif;
-            transition: all 0.3s ease;
-            outline: none;
-        }
-        .form-input:focus {
-            border-bottom-color: #bfa140;
-        }
-        .form-input::placeholder {
-            color: #666;
-            font-weight: 300;
-        }
-        .form-textarea {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            font-size: 1.2rem;
-            color: #fff;
-            font-family: 'Space Grotesk', sans-serif;
-            min-height: 150px;
-            resize: vertical;
-            transition: all 0.3s ease;
-            outline: none;
-        }
-        .form-textarea:focus {
-            border-color: #bfa140;
-            background: rgba(191, 161, 64, 0.1);
-        }
-        .form-textarea::placeholder {
-            color: #666;
-        }
-        .options-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .option-button {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        
+        .header {
             text-align: center;
-            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
         }
-        .option-button:hover {
-            background: rgba(191, 161, 64, 0.1);
-            border-color: #bfa140;
-            transform: translateY(-2px);
+        
+        .crest {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: url('krakenlogo.png') no-repeat center center;
+            background-size: contain;
         }
-        .option-button.selected {
-            background: rgba(191, 161, 64, 0.2);
-            border-color: #bfa140;
-            color: #bfa140;
-        }
-        .navigation-buttons {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 50px;
-        }
-        .nav-button {
-            background: transparent;
-            border: 2px solid #bfa140;
-            color: #bfa140;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 1rem;
+        
+        .title {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Space Grotesk', sans-serif;
-            text-transform: uppercase;
+            color: #8b4513;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #5d4037;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+          .commission-number {
+            font-size: 14px;
+            color: #666;
+            font-family: monospace;
             letter-spacing: 1px;
         }
-        .nav-button:hover:not(:disabled) {
-            background: #bfa140;
-            color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(191, 161, 64, 0.4);
+        
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+            margin-top: 4px;
         }
-        .nav-button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
+        
+        .conditional-field {
+            display: none;
+            margin-top: 15px;
         }
-        .nav-button.primary {
-            background: linear-gradient(45deg, #bfa140, #d4b356);
-            color: #000;
-            border: none;
-            font-weight: 700;
+        
+        .conditional-field.show {
+            display: block;
         }
-        .nav-button.primary:hover:not(:disabled) {
-            background: linear-gradient(45deg, #d4b356, #bfa140);
-            transform: translateY(-2px) scale(1.05);
+          .signature-input {
+            font-family: 'Cedarville Cursive', cursive !important;
+            font-size: 24px !important;
+            font-weight: 400 !important;
+            color: #1a1a7e !important;
+            letter-spacing: 1px;
         }
-        .progress-bar {
-            position: fixed;
+          .declaration-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(139, 69, 19, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .declaration-checkbox:hover {
+            background: rgba(139, 69, 19, 0.08);
+        }
+          .checkbox-wrapper {
+            position: relative;
+            min-width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+        
+        .checkbox-wrapper input[type="checkbox"] {
+            opacity: 0;
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        .custom-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #8b4513;
+            border-radius: 4px;
+            background: white;
+            position: absolute;
             top: 0;
             left: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #bfa140, #d4b356);
-            transition: width 0.3s ease;
-            z-index: 1000;
-        }
-        .completion-screen {
-            text-align: center;
-            display: none;
-        }
-        .completion-screen.active {
-            display: block;
-            animation: fadeInUp 0.6s ease-out;
-        }
-        .success-icon {
-            font-size: 4rem;
-            color: #4CAF50;
-            margin-bottom: 20px;
-        }
-        .completion-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #bfa140;
-            margin-bottom: 15px;
-        }
-        .completion-message {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            margin-bottom: 30px;
-        }
-        .home-button {
-            background: linear-gradient(45deg, #bfa140, #d4b356);
-            color: #000;
-            padding: 20px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Space Grotesk', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            display: inline-block;
         }
-        .home-button:hover {
-            background: linear-gradient(45deg, #d4b356, #bfa140);
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(191, 161, 64, 0.4);
+        
+        .custom-checkbox::after {
+            content: "✓";
+            position: absolute;
+            top: -2px;
+            left: 2px;
+            font-family: 'Cedarville Cursive', cursive;
+            font-size: 20px;
+            font-weight: 400;
+            color: #1a1a7e;
+            opacity: 0;
+            transform: scale(0.5) rotate(-10deg);
+            transition: all 0.3s ease;
         }
-        .error-message {
-            background: rgba(244, 67, 54, 0.1);
-            border: 1px solid #f44336;
-            color: #f44336;
-            padding: 15px;
+        
+        .checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox {
+            background: rgba(139, 69, 19, 0.1);
+            border-color: #1a1a7e;
+        }
+        
+        .checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox::after {
+            opacity: 1;
+            transform: scale(1) rotate(-5deg);
+        }
+        
+        .declaration-text {
+            flex: 1;
+            line-height: 1.5;
+            color: #2c1810;
+        }
+        
+        .form-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(139, 69, 19, 0.2);
             border-radius: 8px;
-            margin-top: 20px;
-            display: none;
         }
-        .loading-spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #333;
-            border-radius: 50%;
-            border-top-color: #bfa140;
-            animation: spin 1s ease-in-out infinite;
-            margin-left: 10px;
+        
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
         }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        .clan-input-group {
+          .form-row {
             display: flex;
-            align-items: center;
-            margin-bottom: 15px;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
         }
-        .clan-input {
+        
+        .form-group {
             flex: 1;
         }
-        .remove-clan-btn {
-            margin-left: 15px;
-            background: #ff4444;
-            color: white;
-            border: none;
-            padding: 10px 15px;
+        
+        .form-group.full-width {
+            flex: 100%;
+        }
+        
+        .form-group.half-width {
+            flex: 50%;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            color: #5d4037;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #d7ccc8;
+            border-radius: 6px;
+            font-family: 'Crimson Text', serif;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #2c1810;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #8b4513;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 8px rgba(139, 69, 19, 0.3);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(139, 69, 19, 0.2);
             border-radius: 5px;
             cursor: pointer;
-            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
-        .remove-clan-btn:hover {
-            background: #ff6666;
+        
+        .checkbox-item:hover {
+            background: rgba(139, 69, 19, 0.1);
         }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+        
+        .declaration {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05), rgba(139, 69, 19, 0.1));
+            border: 2px solid rgba(139, 69, 19, 0.3);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-style: italic;
+        }
+        
+        .declaration p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .signature-box {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .signature-line {
+            border-bottom: 2px solid #8b4513;
+            height: 50px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .signature-label {
+            font-weight: 600;
+            color: #5d4037;
+            font-size: 14px;
+        }
+        
+        .submit-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+          .print-btn {
+            background: linear-gradient(135deg, #2c5530, #3e7b3e);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Crimson Text', serif;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+            display: none;
+        }
+        
+        .print-btn:hover {
+            background: linear-gradient(135deg, #3e7b3e, #2c5530);
+            transform: translateY(-1px);
+        }
+          @media print {
+            .submit-section { display: none; }
+            .document { margin: 0; box-shadow: none; }
+            body { background: white; }
+        }
+        
         @media (max-width: 768px) {
-            .form-wrapper {
-                padding: 40px 20px;
-                margin: 10px;
-            }
-            .question-title {
-                font-size: 2rem;
-            }
-            .question-subtitle {
-                font-size: 1rem;
-            }
-            .form-input {
-                font-size: 1.2rem;
-            }
-            .options-grid {
-                grid-template-columns: 1fr;
-            }
-            .navigation-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .nav-button {
-                width: 100%;
-            }
+            .document { padding: 30px 20px; margin: 80px 10px 30px; }
+            .form-row { flex-direction: column; gap: 10px; }
+            .signature-section { flex-direction: column; gap: 20px; }
+            .nav-links { display: none; }
+        }
+        
+        /* Success Page Styles */
+        .success-page {
+            display: none;
+        }
+        
+        .success-page.show {
+            display: block;
+        }
+        
+        .form-page.hide {
+            display: none;
+        }
+        
+        .wax-seal {
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #b8860b 0%, #8b6914 30%, #6b4e03  70%, #4a3600 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                inset 0 0 20px rgba(0,0,0,0.3),
+                0 5px 15px rgba(0,0,0,0.4),
+                0 2px 4px rgba(0,0,0,0.2);
+            border: 3px solid #6b4e03;
+            transform: rotate(-5deg);
+        }
+        
+        .wax-seal::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url('krakenlogo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.8;
+        }
+        
+        .wax-seal-text {
+            font-family: 'Cinzel', serif;
+            color: #2c1810;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 25px;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .submitted-data {
+            color: #2c1810;
+            line-height: 1.6;
+        }
+        
+        .submitted-data .field-label {
+            font-weight: 600;
+            color: #5d4037;
+            display: inline-block;
+            min-width: 150px;
+        }
+        
+        .submitted-data .field-value {
+            color: #2c1810;
+        }
+        
+        .back-to-form {
+            background: linear-gradient(135deg, #5d4037, #8b4513);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-form:hover {
+            background: linear-gradient(135deg, #8b4513, #5d4037);
+            transform: translateY(-1px);
         }
     </style>
 </head>
-<body>    <!-- Navigation Menu -->    <nav class="kraken-navbar">
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="naval-action-marketplace.html">Marketplace</a></li>
             <li><a href="tools.html">Tools</a></li>
             <li><a href="orgchart.html">Command</a></li>
+            <li><a href="pb.html">PB</a></li>
             <li><a href="apply-typeform.html" class="active">Apply</a></li>
-        </ul>
-    </nav>
-    
-    <div class="wave-background"></div>
-    <div class="progress-bar" id="progressBar"></div>
+        </ul>    </nav>
 
-    <div class="typeform-container">
-        <div class="form-wrapper">
-            <!-- Question 0: Welcome -->
-            <div class="question-container active" data-question="0">
-                <h1 class="question-title">Ahoy, Captain! 🦑</h1>
-                <p class="question-subtitle">Ready to join the most elite Naval Action RvR clan? Let's get to know you better.</p>
-                <div class="navigation-buttons">
-                    <div></div>
-                    <button class="nav-button primary" onclick="nextQuestion()">Let's Begin</button>
-                </div>
-            </div>
-
-            <!-- Question 1: Captain's Name -->
-            <div class="question-container" data-question="1">
-                <h2 class="question-title">What is your Captain's name?</h2>
-                <p class="question-subtitle">Tell us what you're called on the high seas</p>
-                <div class="input-group">
-                    <input type="text" class="form-input" id="captainName" placeholder="Enter your captain's name" required>
-                </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="nameNext">Continue</button>
-                </div>
-            </div>
-
-            <!-- Question 2: Previous Clans -->
-            <div class="question-container" data-question="2">
-                <h2 class="question-title">What previous clans have you been in?</h2>
-                <p class="question-subtitle">List any clans you've sailed with before (optional)</p>
-                <div class="input-group" id="previousClansContainer">
-                    <div class="clan-input-group">
-                        <input type="text" class="form-input clan-input" placeholder="Enter clan name (or leave blank if none)">
+    <div class="document">
+        <div class="watermark"></div>
+        
+        <div class="form-page" id="formPage">
+            <div class="header">
+                <div class="crest"></div>
+                <h1 class="title">COMMISSION APPLICATION</h1>
+                <p class="subtitle">Application to be commissioned in His Majesty's Royal Navy</p>
+                <p class="subtitle">under the banner of the KRAKEN Squadron</p>
+                <p class="commission-number">KRKN-F-RN-2025</p>
+                <div style="margin-top: 20px; padding: 15px; border: 1px solid rgba(139, 69, 19, 0.3); background: rgba(139, 69, 19, 0.05); border-radius: 5px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 14px; color: #5d4037;">
+                        <div style="text-align: left;">
+                            <strong>Admiral of the Fleet</strong><br>
+                            Tommery Templeman
+                        </div>
+                        <div style="text-align: right;">
+                            <strong>First Sea Lord</strong><br>
+                            CHOSEN
+                        </div>
                     </div>
                 </div>
-                <button class="nav-button" onclick="addClanField()" style="margin-bottom: 20px;">Add Another Clan</button>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()">Continue</button>
+            </div>
+        
+        <form class="form-content" action="#" method="POST">            <div class="section">
+                <h2 class="section-title">I. Personal Particulars</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="captainName">Name (Captain Name):</label>
+                        <input type="text" id="captainName" name="captainName" required>
+                        <div class="help-text">This is the name of your Captain in-game</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferredName">Preferred Name:</label>
+                        <input type="text" id="preferredName" name="preferredName" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <select id="age" name="age" required>
+                            <option value="">Select Age Range</option>
+                            <option value="18-21">18-21</option>
+                            <option value="21-29">21-29</option>
+                            <option value="30+">30+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="discord">Discord:</label>
+                        <input type="text" id="discord" name="discord" required>
+                        <div class="help-text">Your Discord username</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="timezone">Time Zone:</label>
+                        <select id="timezone" name="timezone" required>
+                            <option value="">Select Time Zone</option>
+                            <optgroup label="North American Time Zones">
+                                <option value="NST">NST (Newfoundland Standard Time)</option>
+                                <option value="AST">AST (Atlantic Standard Time)</option>
+                                <option value="EST">EST (Eastern Standard Time)</option>
+                                <option value="CST">CST (Central Standard Time)</option>
+                                <option value="MST">MST (Mountain Standard Time)</option>
+                                <option value="PST">PST (Pacific Standard Time)</option>
+                                <option value="AKST">AKST (Alaska Standard Time)</option>
+                                <option value="HST">HST (Hawaii Standard Time)</option>
+                            </optgroup>
+                            <optgroup label="European Time Zones">
+                                <option value="GMT">GMT (Greenwich Mean Time)</option>
+                                <option value="CET">CET (Central European Time)</option>
+                                <option value="EET">EET (Eastern European Time)</option>
+                                <option value="WET">WET (Western European Time)</option>
+                                <option value="MSK">MSK (Moscow Time)</option>
+                                <option value="IST">IST (Irish Standard Time)</option>
+                                <option value="BST">BST (British Summer Time)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nation">Current Nation:</label>
+                        <select id="nation" name="nation" required>
+                            <option value="">Select Nation</option>
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="France">France</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="United States">United States</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Prussia">Prussia</option>
+                            <option value="Pirates">Pirates</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-
-            <!-- Question 3: Do you have Discord -->
-            <div class="question-container" data-question="3">
-                <h2 class="question-title">Do you have Discord?</h2>
-                <p class="question-subtitle">We use Discord for all clan coordination and RvR planning</p>
-                <div class="options-grid">
-                    <button class="option-button" data-value="Yes" onclick="selectOption(this, 'hasDiscord')">
-                        ✅ Yes<br>
-                        <small style="opacity: 0.7;">I have Discord</small>
-                    </button>
-                    <button class="option-button" data-value="No" onclick="selectOption(this, 'hasDiscord')">
-                        ❌ No<br>
-                        <small style="opacity: 0.7;">I don't have Discord</small>
-                    </button>
+              <div class="section">
+                <h2 class="section-title">II. Naval Experience</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="hoursPlayed">Hours in Naval Action:</label>
+                        <input type="text" id="hoursPlayed" name="hoursPlayed" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="currentRank">Current Rank:</label>
+                        <select id="currentRank" name="currentRank" required>
+                            <option value="">Select Rank</option>
+                            <option value="Midshipman">Midshipman</option>
+                            <option value="Master and Commander">Master and Commander</option>
+                            <option value="Captain">Captain</option>
+                            <option value="Commodore">Commodore</option>
+                            <option value="Rear Admiral">Rear Admiral</option>
+                            <option value="Vice Admiral">Vice Admiral</option>
+                            <option value="Admiral">Admiral</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="hasDiscordNext">Continue</button>
+                
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="previousClans">Previous Naval Commands:</label>
+                        <textarea id="previousClans" name="previousClans" placeholder="List any previous clans or naval organizations, including duration of service..."></textarea>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Question 4: Discord Username -->
-            <div class="question-container" data-question="4">
-                <h2 class="question-title">What is your Discord username?</h2>
-                <p class="question-subtitle">We'll use this to contact you</p>
-                <div class="input-group">
-                    <input type="text" class="form-input" id="discordUsername" placeholder="username" required>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pbRole">Preferred Port Battle Role:</label>
+                        <select id="pbRole" name="pbRole" required>
+                            <option value="">Select Role</option>
+                            <option value="Screener">Screener</option>
+                            <option value="Line of Battle">Line of Battle</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pbCommander">Are you a Port Battle Commander?</label>
+                        <select id="pbCommander" name="pbCommander" required onchange="togglePBExperience()">
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="discordNext">Continue</button>
-                </div>
-            </div>
-
-            <!-- Question 5: Are you in KRAKEN Discord -->
-            <div class="question-container" data-question="5">
-                <h2 class="question-title">Are you in the KRAKEN Discord?</h2>
-                <p class="question-subtitle">Our main clan communication hub</p>
-                <div class="options-grid">
-                    <button class="option-button" data-value="Yes" onclick="selectOption(this, 'inKrakenDiscord')">
-                        ✅ Yes<br>
-                        <small style="opacity: 0.7;">Already a member</small>
-                    </button>
-                    <button class="option-button" data-value="No" onclick="selectOption(this, 'inKrakenDiscord')">
-                        ❌ No<br>
-                        <small style="opacity: 0.7;">Not yet</small>
-                    </button>
-                </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="inKrakenDiscordNext">Continue</button>
-                </div>
-            </div>
-
-            <!-- Question 6: KRAKEN Discord Invite -->
-            <div class="question-container" data-question="6">
-                <h2 class="question-title">Join our Discord!</h2>
-                <p class="question-subtitle">Here's your invite to the KRAKEN Discord server:</p>
-                <div class="input-group">
-                    <a href="https://discord.gg/PDZNTxPU94" target="_blank" class="nav-button primary" style="display: inline-block; text-decoration: none; margin-bottom: 20px;">
-                        🎮 Join KRAKEN Discord
-                    </a>
-                </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()">Continue</button>
-                </div>
-            </div>
-
-            <!-- Question 7: Are you in British Admiralty Discord -->
-            <div class="question-container" data-question="7">
-                <h2 class="question-title">Are you in the British Admiralty Discord?</h2>
-                <p class="question-subtitle">The main British nation coordination server</p>
-                <div class="options-grid">
-                    <button class="option-button" data-value="Yes" onclick="selectOption(this, 'inAdmiraltyDiscord')">
-                        ✅ Yes<br>
-                        <small style="opacity: 0.7;">Already a member</small>
-                    </button>
-                    <button class="option-button" data-value="No" onclick="selectOption(this, 'inAdmiraltyDiscord')">
-                        ❌ No<br>
-                        <small style="opacity: 0.7;">Not yet</small>
-                    </button>
-                </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="inAdmiraltyDiscordNext">Continue</button>
+                
+                <div class="form-row">
+                    <div class="form-group full-width conditional-field" id="pbExperienceField">
+                        <label for="pbExperience">If you are a Port Battle Commander please describe your prior experience:</label>
+                        <textarea id="pbExperience" name="pbExperience" placeholder="Describe your port battle command experience, including major battles led, fleet sizes commanded, tactical approaches, etc..."></textarea>
+                    </div>
+                </div>            </div>
+            
+            <div class="section">
+                <h2 class="section-title">III. Crafting Experience</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="crafter">Are you a Crafter?</label>
+                        <select id="crafter" name="crafter" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-
-            <!-- Question 8: British Admiralty Discord Invite -->
-            <div class="question-container" data-question="8">
-                <h2 class="question-title">Join the British Admiralty!</h2>
-                <p class="question-subtitle">Here's your invite to the British Admiralty Discord server:</p>
-                <div class="input-group">
-                    <a href="https://discord.gg/kHp7uRk9WV" target="_blank" class="nav-button primary" style="display: inline-block; text-decoration: none; margin-bottom: 20px;">
-                        🇬🇧 Join British Admiralty
-                    </a>
+            
+            <div class="section">
+                <h2 class="section-title">IV. Availability & Commitment</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="playTime">Weekly Play Time (hours):</label>
+                        <input type="text" id="playTime" name="playTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="portBattles">Port Battle Availability:</label>
+                        <select id="portBattles" name="portBattles" required>
+                            <option value="">Select Availability</option>
+                            <option value="Weekday">Weekday</option>
+                            <option value="Weekends">Weekends</option>
+                            <option value="Everyday">Everyday</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()">Continue</button>
-                </div>
-            </div>
-
-            <!-- Question 9: New or Returning Player -->
-            <div class="question-container" data-question="9">
-                <h2 class="question-title">Are you a new player or a returning player?</h2>
-                <p class="question-subtitle">Help us understand your Naval Action experience</p>
-                <div class="options-grid">
-                    <button class="option-button" data-value="New Player" onclick="selectOption(this, 'playerType')">
-                        🆕 New Player<br>
-                        <small style="opacity: 0.7;">Just started Naval Action</small>
-                    </button>
-                    <button class="option-button" data-value="Returning Player" onclick="selectOption(this, 'playerType')">
-                        🔄 Returning Player<br>
-                        <small style="opacity: 0.7;">Been playing for a while</small>
-                    </button>
-                </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="playerTypeNext">Continue</button>
+                
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="schedule">Typical Playing Schedule:</label>
+                        <textarea id="schedule" name="schedule" placeholder="Describe your typical playing times, including weekdays and weekends..."></textarea>
+                    </div>
                 </div>
             </div>
-
-            <!-- Question 10: Current Rank (for returning players) -->
-            <div class="question-container" data-question="10">
-                <h2 class="question-title">What is your current rank?</h2>
-                <p class="question-subtitle">Select your current Naval Action rank</p>
-                <div class="input-group">
-                    <select class="form-input" id="currentRank" style="text-align: left; padding-left: 20px;">
-                        <option value="">Select your rank</option>
-                        <option value="Midshipman">⚓ Midshipman</option>
-                        <option value="Ensign">🎖️ Ensign</option>
-                        <option value="Second Lieutenant">🎖️ Second Lieutenant</option>
-                        <option value="First Lieutenant">🎖️ First Lieutenant</option>
-                        <option value="Lieutenant Commander">⭐ Lieutenant Commander</option>
-                        <option value="Master and Commander">⭐ Master and Commander</option>
-                        <option value="Post Captain">⭐⭐ Post Captain</option>
-                        <option value="Flag Captain">⭐⭐ Flag Captain</option>
-                        <option value="Commodore">🌊 Commodore</option>
-                        <option value="Rear Admiral">🌊⭐ Rear Admiral</option>
-                        <option value="Vice-Admiral">🌊⭐⭐ Vice-Admiral</option>
-                        <option value="Admiral">🌊⭐⭐⭐ Admiral</option>
-                    </select>
+              <div class="section">
+                <h2 class="section-title">V. Motivation & Background</h2>
+                
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="whyJoin">Why do you wish to join KRAKEN?</label>
+                        <textarea id="whyJoin" name="whyJoin" required placeholder="Explain your reasons for wanting to join our naval squadron..."></textarea>
+                    </div>
                 </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="rankNext">Continue</button>
+                
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="contribution">What can you contribute to the squadron?</label>
+                        <textarea id="contribution" name="contribution" required placeholder="Describe your skills, experience, and what you can bring to KRAKEN..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="additionalInfo">Additional Information:</label>
+                        <textarea id="additionalInfo" name="additionalInfo" placeholder="Any additional information you would like to share..."></textarea>
+                    </div>
+                </div>            </div>
+            
+            <div class="section">
+                <h2 class="section-title">VI. Declaration of Service</h2>
+                
+                <div class="declaration-checkbox">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="oath1" name="oath1" required>
+                        <div class="custom-checkbox"></div>
+                    </div>
+                    <div class="declaration-text">
+                        I hereby declare that the information provided in this application is true and accurate to the best of my knowledge. I understand that providing false information may result in the rejection of this application or termination of service.
+                    </div>
+                </div>
+                
+                <div class="declaration-checkbox">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="oath2" name="oath2" required>
+                        <div class="custom-checkbox"></div>
+                    </div>
+                    <div class="declaration-text">
+                        I pledge to uphold the honor and traditions of His Majesty's Naval Service and the KRAKEN Squadron, to conduct myself with integrity and professionalism, and to serve with distinction in all naval operations.
+                    </div>
+                </div>
+                
+                <div class="declaration-checkbox">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="oath3" name="oath3" required>
+                        <div class="custom-checkbox"></div>
+                    </div>
+                    <div class="declaration-text">
+                        I understand that membership in KRAKEN requires adherence to squadron rules, regular participation in organized activities, and maintaining the high standards expected of a Royal Navy officer.
+                    </div>
                 </div>
             </div>
-
-            <!-- Question 11: Familiar with RvR -->
-            <div class="question-container" data-question="11">
-                <h2 class="question-title">Are you familiar with RvR?</h2>
-                <p class="question-subtitle">RvR (Realm vs Realm) is our main focus - port battles and territorial conquest</p>
-                <div class="options-grid">
-                    <button class="option-button" data-value="Yes" onclick="selectOption(this, 'familiarWithRvR')">
-                        ✅ Yes<br>
-                        <small style="opacity: 0.7;">I know RvR</small>
-                    </button>
-                    <button class="option-button" data-value="No" onclick="selectOption(this, 'familiarWithRvR')">
-                        ❌ No<br>
-                        <small style="opacity: 0.7;">New to RvR</small>
-                    </button>
+              <div class="signature-section">
+                <div class="signature-box">
+                    <input type="text" class="signature-input" placeholder="Type your signature here" name="signature" required style="border: none; border-bottom: 2px solid #8b4513; background: transparent; text-align: center; margin-bottom: 10px; padding: 10px;">
+                    <div class="signature-label">Applicant's Signature</div>
+                </div>                <div class="signature-box">
+                    <input type="text" class="signature-input" id="currentDate" name="date" readonly style="border: none; border-bottom: 2px solid #8b4513; background: transparent; text-align: center; margin-bottom: 10px; padding: 10px; font-family: 'Cedarville Cursive', cursive; font-size: 20px; color: #1a1a7e;">
+                    <div class="signature-label">Date</div>
                 </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="familiarWithRvRNext">Continue</button>
+            </div>            <div class="submit-section">
+                <button type="submit" class="submit-btn">Submit Commission Application</button>
+            </div>
+        </form>
+        </div>
+        
+        <div class="success-page" id="successPage">
+            <div class="header">
+                <div class="crest"></div>
+                <h1 class="title">COMMISSION APPROVED</h1>
+                <p class="subtitle">Application Successfully Submitted</p>
+                <p class="subtitle">His Majesty's Royal Navy - KRAKEN Squadron</p>
+                <p class="commission-number">KRKN-F-RN-2025</p>
+                <div style="margin-top: 20px; padding: 15px; border: 1px solid rgba(139, 69, 19, 0.3); background: rgba(139, 69, 19, 0.05); border-radius: 5px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 14px; color: #5d4037;">
+                        <div style="text-align: left;">
+                            <strong>Admiral of the Fleet</strong><br>
+                            Tommery Templeman
+                        </div>
+                        <div style="text-align: right;">
+                            <strong>First Sea Lord</strong><br>
+                            CHOSEN
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Question 12: RvR Experience -->
-            <div class="question-container" data-question="12">
-                <h2 class="question-title">What kind of RvR experience do you have?</h2>
-                <p class="question-subtitle">Tell us about your port battle experience, strategies you know, or what you'd like to learn</p>
-                <div class="input-group">
-                    <textarea class="form-textarea" id="rvrExperience" placeholder="Share your RvR experience... What port battles have you participated in? What roles do you prefer? What would you like to learn?"></textarea>
+            
+            <div class="section">
+                <h2 class="section-title">Commission Application - Submitted</h2>
+                <div class="submitted-data" id="submittedData">
+                    <!-- Form data will be populated here -->
                 </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="submitApplication()" id="submitBtn">
-                        Submit Application
-                        <span class="loading-spinner" id="loadingSpinner" style="display: none;"></span>
-                    </button>
-                </div>
-                <div class="error-message" id="errorMessage"></div>
             </div>
-
-            <!-- Completion Screen -->
-            <div class="completion-screen" id="completionScreen">
-                <div class="success-icon">⚓</div>
-                <h2 class="completion-title">Welcome aboard, Captain! 🦑</h2>
-                <p class="completion-message">
-                    Your application has been submitted successfully.<br>
-                    We'll review it and contact you on Discord soon.<br><br>
-                    Prepare for conquest of the Caribbean!
-                </p>
-                <a href="index.html" class="home-button">Return to Port</a>
+            
+            <div class="wax-seal">
+                <div class="wax-seal-text">KRAKEN</div>
+            </div>
+            
+            <div class="submit-section">
+                <button type="button" class="back-to-form" onclick="showForm()">Submit Another Application</button>
             </div>
         </div>
-    </div>
-
-    <script>
-        let currentQuestion = 0;
-        let totalQuestions = 13;
-        const formData = {};
-
-        // Update progress bar
-        function updateProgress() {
-            const progress = (currentQuestion / (totalQuestions - 1)) * 100;
-            document.getElementById('progressBar').style.width = `${progress}%`;
-        }
-
-        // Show specific question
-        function showQuestion(index) {
-            document.querySelectorAll('.question-container').forEach(q => q.classList.remove('active'));
-            const questionElement = document.querySelector(`[data-question="${index}"]`);
-            if (questionElement) {
-                questionElement.classList.add('active');
-                currentQuestion = index;
-                updateProgress();
-            }
-        }
-
-        // Check if question should be shown based on conditions
-        function shouldShowQuestion(questionIndex) {
-            switch (questionIndex) {
-                case 4: // Discord username - only if has Discord
-                    return formData.hasDiscord === 'Yes';
-                case 6: // KRAKEN Discord invite - only if not in KRAKEN Discord
-                    return formData.inKrakenDiscord === 'No';
-                case 8: // British Admiralty invite - only if not in Admiralty Discord
-                    return formData.inAdmiraltyDiscord === 'No';
-                case 10: // Current rank - only if returning player
-                    return formData.playerType === 'Returning Player';
-                default:
-                    return true;
-            }
-        }
-
-        // Find next valid question
-        function findNextQuestion(fromIndex) {
-            for (let i = fromIndex + 1; i < totalQuestions; i++) {
-                if (shouldShowQuestion(i)) {
-                    return i;
-                }
-            }
-            return -1; // No more questions
-        }
-
-        // Find previous valid question
-        function findPrevQuestion(fromIndex) {
-            for (let i = fromIndex - 1; i >= 0; i--) {
-                if (shouldShowQuestion(i)) {
-                    return i;
-                }
-            }
-            return 0; // Go to start
-        }
-
-        // Next question
-        function nextQuestion() {
-            saveCurrentData();
-            const nextIndex = findNextQuestion(currentQuestion);
-            if (nextIndex === -1) {
-                // No more questions, show submit
-                showQuestion(12); // RvR Experience is always the last question
+    </div>    <script>        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentDate = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('currentDate').value = currentDate;
+              // Add click handlers for custom checkboxes
+            document.querySelectorAll('.checkbox-wrapper').forEach(wrapper => {
+                const checkbox = wrapper.querySelector('input[type="checkbox"]');
+                const customCheckbox = wrapper.querySelector('.custom-checkbox');
+                
+                // Make the entire wrapper clickable
+                wrapper.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    checkbox.checked = !checkbox.checked;
+                    
+                    // Trigger change event for validation
+                    const event = new Event('change', { bubbles: true });
+                    checkbox.dispatchEvent(event);
+                });
+                
+                // Also handle direct checkbox clicks
+                checkbox.addEventListener('change', function() {
+                    // Update visual state if needed
+                    if (this.checked) {
+                        customCheckbox.style.borderColor = '#1a1a7e';
+                        customCheckbox.style.backgroundColor = 'rgba(139, 69, 19, 0.1)';
+                    } else {
+                        customCheckbox.style.borderColor = '#8b4513';
+                        customCheckbox.style.backgroundColor = 'white';
+                    }
+                });
+            });
+            
+            // Make entire declaration boxes clickable
+            document.querySelectorAll('.declaration-checkbox').forEach(declarationBox => {
+                declarationBox.addEventListener('click', function(e) {
+                    // Don't trigger if clicking on the checkbox wrapper (avoid double-trigger)
+                    if (e.target.closest('.checkbox-wrapper')) {
+                        return;
+                    }
+                    
+                    const checkbox = this.querySelector('input[type="checkbox"]');
+                    if (checkbox) {
+                        checkbox.checked = !checkbox.checked;
+                        
+                        // Trigger change event for validation
+                        const event = new Event('change', { bubbles: true });
+                        checkbox.dispatchEvent(event);
+                    }
+                });
+            });
+        });
+        
+        // Toggle PB Experience field
+        function togglePBExperience() {
+            const pbCommander = document.getElementById('pbCommander').value;
+            const pbExperienceField = document.getElementById('pbExperienceField');
+            
+            if (pbCommander === 'Yes') {
+                pbExperienceField.classList.add('show');
+                document.getElementById('pbExperience').required = true;
             } else {
-                showQuestion(nextIndex);
+                pbExperienceField.classList.remove('show');
+                document.getElementById('pbExperience').required = false;
             }
         }
-
-        // Previous question
-        function prevQuestion() {
-            const prevIndex = findPrevQuestion(currentQuestion);
-            showQuestion(prevIndex);
-        }
-
-        // Save current form data
-        function saveCurrentData() {
-            const activeQuestion = document.querySelector('.question-container.active');
-            if (!activeQuestion) return;
-
-            const inputs = activeQuestion.querySelectorAll('input, textarea, select');
-            inputs.forEach(input => {
-                if (input.value.trim()) {
-                    formData[input.id] = input.value.trim();
-                }
+        
+        // Show form page
+        function showForm() {
+            document.getElementById('formPage').classList.remove('hide');
+            document.getElementById('successPage').classList.remove('show');
+            // Reset form
+            document.querySelector('form').reset();
+            // Reset current date
+            const currentDate = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
             });
-
-            // Save previous clans as array
-            const clanInputs = document.querySelectorAll('.clan-input');
-            if (clanInputs.length > 0) {
-                formData.previousClans = Array.from(clanInputs)
-                    .map(input => input.value.trim())
-                    .filter(value => value !== '');
+            document.getElementById('currentDate').value = currentDate;
+        }
+        
+        // Show success page
+        function showSuccess(formData) {
+            document.getElementById('formPage').classList.add('hide');
+            document.getElementById('successPage').classList.add('show');
+            
+            // Populate submitted data
+            const submittedDataDiv = document.getElementById('submittedData');
+            let html = '';
+            
+            // Personal Particulars
+            html += '<h3 style="color: #8b4513; margin-bottom: 15px;">Personal Particulars</h3>';
+            html += `<p><span class="field-label">Captain Name:</span> <span class="field-value">${formData.captainName || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Preferred Name:</span> <span class="field-value">${formData.preferredName || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Age:</span> <span class="field-value">${formData.age || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Discord:</span> <span class="field-value">${formData.discord || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Time Zone:</span> <span class="field-value">${formData.timezone || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Current Nation:</span> <span class="field-value">${formData.nation || 'N/A'}</span></p>`;
+            
+            // Naval Experience
+            html += '<h3 style="color: #8b4513; margin: 25px 0 15px 0;">Naval Experience</h3>';
+            html += `<p><span class="field-label">Hours in Naval Action:</span> <span class="field-value">${formData.hoursPlayed || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Current Rank:</span> <span class="field-value">${formData.currentRank || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Previous Commands:</span> <span class="field-value">${formData.previousClans || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Preferred PB Role:</span> <span class="field-value">${formData.pbRole || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">PB Commander:</span> <span class="field-value">${formData.pbCommander || 'N/A'}</span></p>`;
+            if (formData.pbExperience) {
+                html += `<p><span class="field-label">PB Experience:</span> <span class="field-value">${formData.pbExperience}</span></p>`;
             }
-
-            // Save selected options
-            const selectedOptions = activeQuestion.querySelectorAll('.option-button.selected');
-            selectedOptions.forEach(option => {
-                const questionIndex = parseInt(activeQuestion.dataset.question);
-                const value = option.dataset.value;
-
-                switch (questionIndex) {
-                    case 3: formData.hasDiscord = value; break;
-                    case 5: formData.inKrakenDiscord = value; break;
-                    case 7: formData.inAdmiraltyDiscord = value; break;
-                    case 9: formData.playerType = value; break;
-                    case 11: formData.familiarWithRvR = value; break;
-                }
-            });
+            
+            // Crafting Experience
+            html += '<h3 style="color: #8b4513; margin: 25px 0 15px 0;">Crafting Experience</h3>';
+            html += `<p><span class="field-label">Crafter:</span> <span class="field-value">${formData.crafter || 'N/A'}</span></p>`;
+            
+            // Availability
+            html += '<h3 style="color: #8b4513; margin: 25px 0 15px 0;">Availability & Commitment</h3>';
+            html += `<p><span class="field-label">Weekly Play Time:</span> <span class="field-value">${formData.playTime || 'N/A'} hours</span></p>`;
+            html += `<p><span class="field-label">PB Availability:</span> <span class="field-value">${formData.portBattles || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Schedule:</span> <span class="field-value">${formData.schedule || 'N/A'}</span></p>`;
+            
+            // Motivation
+            html += '<h3 style="color: #8b4513; margin: 25px 0 15px 0;">Motivation & Background</h3>';
+            html += `<p><span class="field-label">Why Join KRAKEN:</span> <span class="field-value">${formData.whyJoin || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Contribution:</span> <span class="field-value">${formData.contribution || 'N/A'}</span></p>`;
+            if (formData.additionalInfo) {
+                html += `<p><span class="field-label">Additional Info:</span> <span class="field-value">${formData.additionalInfo}</span></p>`;
+            }
+            
+            // Signature
+            html += '<h3 style="color: #8b4513; margin: 25px 0 15px 0;">Declaration</h3>';
+            html += `<p><span class="field-label">Signature:</span> <span class="field-value" style="font-family: 'Cedarville Cursive', cursive; font-size: 24px; color: #1a1a7e;">${formData.signature || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Date:</span> <span class="field-value">${formData.date || 'N/A'}</span></p>`;
+            
+            submittedDataDiv.innerHTML = html;
         }
-
-        // Select option
-        function selectOption(button, type) {
-            // Remove selection from siblings
-            button.parentElement.querySelectorAll('.option-button').forEach(btn => {
-                btn.classList.remove('selected');
-            });
-
-            // Select current option
-            button.classList.add('selected');
-
-            // Enable next button
-            const nextBtn = document.getElementById(type + 'Next');
-            if (nextBtn) nextBtn.disabled = false;
-        }
-
-        // Add clan field
-        function addClanField() {
-            const container = document.getElementById('previousClansContainer');
-            const newGroup = document.createElement('div');
-            newGroup.className = 'clan-input-group';
-            newGroup.innerHTML = `
-                <input type="text" class="form-input clan-input" placeholder="Enter clan name">
-                <button type="button" class="remove-clan-btn" onclick="removeClanField(this)">Remove</button>
-            `;
-            container.appendChild(newGroup);
-        }
-
-        // Remove clan field
-        function removeClanField(button) {
-            button.parentElement.remove();
-        }
-
-        // Input validation
-        function setupValidation() {
-            // Captain name validation
-            document.getElementById('captainName').addEventListener('input', function() {
-                const nextBtn = document.getElementById('nameNext');
-                nextBtn.disabled = this.value.trim().length < 2;
-            });
-
-            // Discord username validation
-            document.getElementById('discordUsername').addEventListener('input', function() {
-                const nextBtn = document.getElementById('discordNext');
-                const isValid = this.value.trim().length > 2;
-                nextBtn.disabled = !isValid;
-            });
-
-            // Rank selection validation
-            document.getElementById('currentRank').addEventListener('change', function() {
-                const nextBtn = document.getElementById('rankNext');
-                nextBtn.disabled = this.value === '';
-            });
-        }
-
-        // Submit application
-        async function submitApplication() {
-            saveCurrentData();
-
-            const submitBtn = document.getElementById('submitBtn');
-            const loadingSpinner = document.getElementById('loadingSpinner');
-            const errorMessage = document.getElementById('errorMessage');
-
-            // Show loading state
-            submitBtn.disabled = true;
-            loadingSpinner.style.display = 'inline-block';
-            submitBtn.innerHTML = 'Submitting Application <span class="loading-spinner"></span>';
-            errorMessage.style.display = 'none';
-
+        
+        // Send to webhook
+        async function sendToWebhook(formData) {
             try {
-                // Create Discord embed
-                const fields = [
-                    { name: "Captain's Name", value: formData.captainName || 'N/A', inline: true },
-                    { name: 'Previous Clans', value: formData.previousClans && formData.previousClans.length > 0 ? formData.previousClans.join(', ') : 'None', inline: true },
-                    { name: 'Has Discord', value: formData.hasDiscord || 'N/A', inline: true }
-                ];
-
-                if (formData.hasDiscord === 'Yes') {
-                    fields.push({ name: 'Discord Username', value: formData.discordUsername || 'N/A', inline: true });
-                    fields.push({ name: 'In KRAKEN Discord', value: formData.inKrakenDiscord || 'N/A', inline: true });
-                    fields.push({ name: 'In Admiralty Discord', value: formData.inAdmiraltyDiscord || 'N/A', inline: true });
-                }
-
-                fields.push({ name: 'Player Type', value: formData.playerType || 'N/A', inline: true });
-
-                if (formData.playerType === 'Returning Player') {
-                    fields.push({ name: 'Current Rank', value: formData.currentRank || 'Not specified', inline: true });
-                }
-
-                fields.push({ name: 'Familiar with RvR', value: formData.familiarWithRvR || 'N/A', inline: true });
-                fields.push({ name: 'RvR Experience', value: formData.rvrExperience || 'Not specified', inline: false });
-
-                const embed = {
-                    title: '🦑 New KRAKEN Application',
-                    color: 0xbfa140,
-                    fields: fields,
-                    timestamp: new Date().toISOString(),
-                    footer: { text: 'Naval Action KRAKEN Clan Application' }
+                // Take a screenshot of the success page for the webhook
+                const successPage = document.getElementById('successPage');
+                
+                // Create a formatted message for Discord
+                const discordMessage = {
+                    content: "🚢 **NEW COMMISSION APPLICATION SUBMITTED** 🚢",
+                    embeds: [{
+                        title: "Royal Navy Commission Application",
+                        color: 0xBFA140,
+                        thumbnail: {
+                            url: "https://cdn.discordapp.com/attachments/your-attachment-url/krakenlogo.png"
+                        },
+                        fields: [
+                            {
+                                name: "👤 Personal Information",
+                                value: `**Captain Name:** ${formData.captainName}
+**Preferred Name:** ${formData.preferredName}
+**Age:** ${formData.age}
+**Discord:** ${formData.discord}
+**Timezone:** ${formData.timezone}
+**Nation:** ${formData.nation}`,
+                                inline: false
+                            },
+                            {
+                                name: "⚓ Naval Experience", 
+                                value: `**Hours Played:** ${formData.hoursPlayed}
+**Current Rank:** ${formData.currentRank}
+**PB Role:** ${formData.pbRole}
+**PB Commander:** ${formData.pbCommander}`,
+                                inline: false
+                            },
+                            {
+                                name: "🔨 Crafting & Availability",
+                                value: `**Crafter:** ${formData.crafter}
+**Weekly Hours:** ${formData.playTime}
+**PB Availability:** ${formData.portBattles}`,
+                                inline: false
+                            },
+                            {
+                                name: "💭 Motivation",
+                                value: `${formData.whyJoin.substring(0, 500)}${formData.whyJoin.length > 500 ? '...' : ''}`,
+                                inline: false
+                            }
+                        ],
+                        footer: {
+                            text: `Application submitted on ${formData.date} | KRAKEN Naval Squadron`
+                        },
+                        timestamp: new Date().toISOString()
+                    }]
                 };
-
-                const payload = {
-                    embeds: [embed],
-                    username: 'KRAKEN Recruitment Bot'
-                };
-
-                // Send to Discord webhook
-                const response = await fetch('/api/discord-webhook', {
+                  // Send to Discord webhook
+                const response = await fetch('api/discord-webhook.js', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify(discordMessage)
                 });
-
-                if (response.ok) {
-                    // Show completion screen
-                    document.querySelector('.form-wrapper').style.transform = 'translateY(-20px)';
-                    setTimeout(() => {
-                        document.querySelectorAll('.question-container').forEach(q => q.classList.remove('active'));
-                        document.getElementById('completionScreen').classList.add('active');
-                        document.getElementById('progressBar').style.width = '100%';
-                    }, 300);
-                } else {
-                    throw new Error('Failed to submit application');
+                
+                if (!response.ok) {
+                    throw new Error('Webhook request failed');
                 }
+                
+                console.log('Application sent to Discord successfully');
             } catch (error) {
-                console.error('Submission error:', error);
-                errorMessage.textContent = 'Failed to submit application. Please try again or contact us directly on Discord.';
-                errorMessage.style.display = 'block';
-            } finally {
-                // Reset button state
-                submitBtn.disabled = false;
-                loadingSpinner.style.display = 'none';
-                submitBtn.innerHTML = 'Submit Application';
+                console.error('Error sending to webhook:', error);
+                // Still show success page even if webhook fails
             }
         }
-
-        // Initialize
-        updateProgress();
-        setupValidation();
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                const activeQuestion = document.querySelector('.question-container.active');
-                const nextBtn = activeQuestion.querySelector('.nav-button.primary');
-                if (nextBtn && !nextBtn.disabled) {
-                    e.preventDefault();
-                    nextBtn.click();
+        
+        // Form validation and submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const requiredFields = this.querySelectorAll('[required]');
+            let allValid = true;
+            
+            requiredFields.forEach(field => {
+                if (field.type === 'checkbox') {
+                    if (!field.checked) {
+                        field.parentElement.style.borderColor = '#d32f2f';
+                        allValid = false;
+                    } else {
+                        field.parentElement.style.borderColor = 'transparent';
+                    }
+                } else {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = '#d32f2f';
+                        allValid = false;
+                    } else {
+                        field.style.borderColor = '#d7ccc8';
+                    }
                 }
+            });
+            
+            if (allValid) {
+                // Collect form data
+                const formData = new FormData(this);
+                const data = {};
+                
+                for (let [key, value] of formData.entries()) {
+                    if (data[key]) {
+                        if (Array.isArray(data[key])) {
+                            data[key].push(value);
+                        } else {
+                            data[key] = [data[key], value];
+                        }
+                    } else {
+                        data[key] = value;
+                    }
+                }
+                
+                console.log('Form Data:', data);
+                
+                // Send to webhook
+                sendToWebhook(data);
+                
+                // Show success page
+                showSuccess(data);
+                
+            } else {
+                alert('Please fill in all required fields and check all required declarations.');
             }
+        });
+        
+        // Auto-resize textareas
+        document.querySelectorAll('textarea').forEach(textarea => {
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = this.scrollHeight + 'px';
+            });
         });
     </script>
 </body>

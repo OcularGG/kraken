@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Battle Admin | KRAKEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #181818;
+            color: #fff;
+            padding-top: 100px;
+            line-height: 1.6;
+        }
+        
+        .admin-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #2a2a2a;
+            border: 4px solid #bfa140;
+            box-shadow: 8px 8px 0px #bfa140;
+        }
+        
+        .admin-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #bfa140;
+        }
+        
+        .admin-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #bfa140;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .pb-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .detail-card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border: 2px solid #bfa140;
+        }
+        
+        .detail-card h3 {
+            color: #bfa140;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        .commander-assignments {
+            margin-bottom: 3rem;
+        }
+        
+        .commander-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .commander-card {
+            background: #1a1a1a;
+            padding: 1rem;
+            border: 2px solid #444;
+            text-align: center;
+        }
+        
+        .commander-card.assigned {
+            border-color: #bfa140;
+            background: #2a2a1a;
+        }
+        
+        .commander-role {
+            color: #bfa140;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .commander-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .assign-btn {
+            padding: 0.3rem 0.8rem;
+            background: transparent;
+            border: 1px solid #bfa140;
+            color: #bfa140;
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .assign-btn:hover {
+            background: #bfa140;
+            color: #181818;
+        }
+        
+        .fleet-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: #1a1a1a;
+        }
+        
+        .fleet-table th,
+        .fleet-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        
+        .fleet-table th {
+            background: #bfa140;
+            color: #181818;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .fleet-table tbody tr:hover {
+            background: #2a2a2a;
+        }
+        
+        .status-pending {
+            color: #ffa500;
+        }
+        
+        .status-approved {
+            color: #4CAF50;
+        }
+        
+        .status-rejected {
+            color: #f44336;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn-small {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.8rem;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .btn-approve {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .btn-reject {
+            background: #f44336;
+            color: white;
+        }
+        
+        .btn-edit {
+            background: #bfa140;
+            color: #181818;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: #1a1a1a;
+            padding: 1rem;
+            border: 2px solid #bfa140;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #bfa140;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #ccc;
+        }
+        
+        @media (max-width: 768px) {
+            .admin-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            
+            .pb-details-grid,
+            .commander-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="orgchart.html">Command</a></li>
+            <li><a href="pb.html">PB</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title">Port Battle Administration</h1>
+            <p id="pb-info" style="color: #ccc; font-size: 1.1rem;">Loading PB details...</p>
+        </div>
+
+        <!-- PB Details -->
+        <div class="pb-details-grid">
+            <div class="detail-card">
+                <h3>Battle Information</h3>
+                <div id="battle-info">
+                    <p><strong>Port:</strong> <span id="detail-port">-</span></p>
+                    <p><strong>Type:</strong> <span id="detail-type">-</span></p>
+                    <p><strong>BR Limit:</strong> <span id="detail-br">-</span></p>
+                    <p><strong>Meeting Time:</strong> <span id="detail-meeting-time">-</span></p>
+                    <p><strong>PB Time:</strong> <span id="detail-pb-time">-</span></p>
+                </div>
+            </div>
+            
+            <div class="detail-card">
+                <h3>Sign-up Information</h3>
+                <div id="signup-info">
+                    <p><strong>Sign-up URL:</strong> <a id="signup-url" href="#" target="_blank" style="color: #bfa140;">-</a></p>
+                    <p><strong>Total Signups:</strong> <span id="total-signups">0</span></p>
+                    <p><strong>Approved:</strong> <span id="approved-signups">0</span></p>
+                    <p><strong>Pending:</strong> <span id="pending-signups">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number" id="stat-total-br">0</span>
+                <span class="stat-label">Total BR</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="stat-avg-br">0</span>
+                <span class="stat-label">Avg BR</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="stat-total-ships">0</span>
+                <span class="stat-label">Total Ships</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="stat-completion">0%</span>
+                <span class="stat-label">Capacity</span>
+            </div>
+        </div>
+
+        <!-- Commander Assignments -->
+        <div class="commander-assignments">
+            <h2 style="color: #bfa140; margin-bottom: 1rem;">Fleet Command Structure</h2>
+            <div class="commander-grid">
+                <div class="commander-card" id="pb-commander-card">
+                    <div class="commander-role">PB Commander</div>
+                    <div class="commander-name" id="pb-commander-name">Not Assigned</div>
+                    <button class="assign-btn" onclick="assignCommander('pb')">Assign</button>
+                </div>
+                <div class="commander-card" id="second-commander-card">
+                    <div class="commander-role">2nd Commander</div>
+                    <div class="commander-name" id="second-commander-name">Not Assigned</div>
+                    <button class="assign-btn" onclick="assignCommander('second')">Assign</button>
+                </div>
+                <div class="commander-card" id="req-commander-card">
+                    <div class="commander-role">Req Commander</div>
+                    <div class="commander-name" id="req-commander-name">Not Assigned</div>
+                    <button class="assign-btn" onclick="assignCommander('req')">Assign</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fleet Sign-ups Table -->
+        <div>
+            <h2 style="color: #bfa140; margin-bottom: 1rem;">Fleet Sign-ups</h2>
+            <table class="fleet-table" id="fleet-table">
+                <thead>
+                    <tr>
+                        <th>Captain</th>
+                        <th>Ship</th>
+                        <th>BR</th>
+                        <th>Class</th>
+                        <th>Clan</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="fleet-tbody">
+                    <!-- Table rows will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const pbId = urlParams.get('id');
+        const adminCode = urlParams.get('code');
+
+        // Sample PB data (would normally come from server)
+        const pbData = {
+            id: pbId || 'example1',
+            port: 'Santo Domingo',
+            type: 'deep',
+            brLimit: 5000,
+            meetingTime: '2025-06-23T19:00:00Z',
+            pbTime: '2025-06-23T20:00:00Z',
+            meetingLocation: 'Port-au-Prince',
+            adminCode: adminCode || '12345678',
+            commanders: {
+                pb: null,
+                second: null,
+                req: null
+            }
+        };
+
+        // Sample fleet signup data
+        const fleetSignups = [
+            {
+                id: 1,
+                captain: 'Admiral Nelson',
+                ship: 'HMS Victory',
+                br: 850,
+                shipClass: '1st Rate',
+                clan: 'KRAKEN',
+                status: 'approved'
+            },
+            {
+                id: 2,
+                captain: 'Captain Blackbeard',
+                ship: 'Queen Anne\'s Revenge',
+                br: 720,
+                shipClass: '4th Rate',
+                clan: 'KRAKEN',
+                status: 'pending'
+            },
+            {
+                id: 3,
+                captain: 'Commodore Drake',
+                ship: 'Golden Hind',
+                br: 650,
+                shipClass: '5th Rate',
+                clan: 'ALLIES',
+                status: 'approved'
+            }
+        ];
+
+        function formatDateTime(dateStr) {
+            return new Date(dateStr).toLocaleString('en-GB', {
+                timeZone: 'UTC',
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            }) + ' UTC';
+        }
+
+        function loadPBDetails() {
+            // Verify admin access
+            if (!pbId || !adminCode) {
+                alert('Invalid access. Missing PB ID or admin code.');
+                window.location.href = 'pb.html';
+                return;
+            }
+
+            // Update page with PB details
+            document.getElementById('pb-info').textContent = `${pbData.port} - ${pbData.type === 'deep' ? 'Deep Water' : 'Shallow Water'} (Admin)`;
+            document.getElementById('detail-port').textContent = pbData.port;
+            document.getElementById('detail-type').textContent = pbData.type === 'deep' ? 'Deep Water' : 'Shallow Water';
+            document.getElementById('detail-br').textContent = pbData.brLimit;
+            document.getElementById('detail-meeting-time').textContent = formatDateTime(pbData.meetingTime);
+            document.getElementById('detail-pb-time').textContent = formatDateTime(pbData.pbTime);
+            
+            const signupUrl = `${window.location.origin}/pb-signup.html?id=${pbId}`;
+            const signupLink = document.getElementById('signup-url');
+            signupLink.href = signupUrl;
+            signupLink.textContent = signupUrl;
+
+            loadFleetTable();
+            updateStatistics();
+            updateCommanderCards();
+        }
+
+        function loadFleetTable() {
+            const tbody = document.getElementById('fleet-tbody');
+            tbody.innerHTML = '';
+
+            fleetSignups.forEach(signup => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${signup.captain}</td>
+                    <td>${signup.ship}</td>
+                    <td>${signup.br}</td>
+                    <td>${signup.shipClass}</td>
+                    <td>${signup.clan}</td>
+                    <td><span class="status-${signup.status}">${signup.status.toUpperCase()}</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            ${signup.status === 'pending' ? `
+                                <button class="btn-small btn-approve" onclick="approveSignup(${signup.id})">Approve</button>
+                                <button class="btn-small btn-reject" onclick="rejectSignup(${signup.id})">Reject</button>
+                            ` : `
+                                <button class="btn-small btn-edit" onclick="editSignup(${signup.id})">Edit</button>
+                            `}
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function updateStatistics() {
+            const approvedSignups = fleetSignups.filter(s => s.status === 'approved');
+            const totalBR = approvedSignups.reduce((sum, s) => sum + s.br, 0);
+            const avgBR = approvedSignups.length > 0 ? Math.round(totalBR / approvedSignups.length) : 0;
+            const capacity = Math.round((fleetSignups.length / 70) * 100);
+
+            document.getElementById('total-signups').textContent = fleetSignups.length;
+            document.getElementById('approved-signups').textContent = approvedSignups.length;
+            document.getElementById('pending-signups').textContent = fleetSignups.filter(s => s.status === 'pending').length;
+            
+            document.getElementById('stat-total-br').textContent = totalBR.toLocaleString();
+            document.getElementById('stat-avg-br').textContent = avgBR;
+            document.getElementById('stat-total-ships').textContent = approvedSignups.length;
+            document.getElementById('stat-completion').textContent = `${capacity}%`;
+        }
+
+        function updateCommanderCards() {
+            ['pb', 'second', 'req'].forEach(role => {
+                const card = document.getElementById(`${role}-commander-card`);
+                const nameElement = document.getElementById(`${role}-commander-name`);
+                
+                if (pbData.commanders[role]) {
+                    nameElement.textContent = pbData.commanders[role];
+                    card.classList.add('assigned');
+                } else {
+                    nameElement.textContent = 'Not Assigned';
+                    card.classList.remove('assigned');
+                }
+            });
+        }
+
+        function assignCommander(role) {
+            const captainName = prompt(`Assign ${role.toUpperCase()} Commander:\n\nEnter captain name:`);
+            if (captainName && captainName.trim()) {
+                pbData.commanders[role] = captainName.trim();
+                updateCommanderCards();
+                // In a real app, this would save to server
+                alert(`${captainName} assigned as ${role.toUpperCase()} Commander`);
+            }
+        }
+
+        function approveSignup(signupId) {
+            const signup = fleetSignups.find(s => s.id === signupId);
+            if (signup) {
+                signup.status = 'approved';
+                loadFleetTable();
+                updateStatistics();
+                // In a real app, this would save to server
+            }
+        }
+
+        function rejectSignup(signupId) {
+            const signup = fleetSignups.find(s => s.id === signupId);
+            if (signup) {
+                signup.status = 'rejected';
+                loadFleetTable();
+                updateStatistics();
+                // In a real app, this would save to server
+            }
+        }
+
+        function editSignup(signupId) {
+            const signup = fleetSignups.find(s => s.id === signupId);
+            if (signup) {
+                alert(`Edit functionality would open a modal to edit ${signup.captain}'s signup details.`);
+                // In a real app, this would open an edit modal
+            }
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPBDetails();
+        });
+    </script>
+</body>
+</html>

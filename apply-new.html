@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Navy Commission Application | KRAKEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #181818;
+            color: #fff;
+            padding-top: 100px;
+            line-height: 1.6;
+        }
+        
+        .application-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #2a2a2a;
+            border: 4px solid #bfa140;
+            box-shadow: 8px 8px 0px #bfa140;
+        }
+        
+        .application-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #bfa140;
+        }
+        
+        .application-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #bfa140;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .application-subtitle {
+            font-size: 1.2rem;
+            color: #fff;
+            font-style: italic;
+        }
+        
+        .form-section {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: #1a1a1a;
+            border: 2px solid #bfa140;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #bfa140;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #bfa140;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group.two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #bfa140;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: #181818;
+            border: 2px solid #bfa140;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #fff;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            accent-color: #bfa140;
+        }
+        
+        .submit-section {
+            text-align: center;
+            padding: 2rem;
+            background: #1a1a1a;
+            border: 2px solid #bfa140;
+        }
+        
+        .submit-btn {
+            background: #bfa140;
+            color: #181818;
+            border: 3px solid #bfa140;
+            padding: 1rem 3rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: #fff;
+            border-color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 0px #bfa140;
+        }
+        
+        .disclaimer {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #bfa140;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .application-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            
+            .application-title {
+                font-size: 2rem;
+            }
+            
+            .form-group.two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="orgchart.html">Command</a></li>
+            <li><a href="pb.html">PB</a></li>
+            <li><a href="apply-typeform.html" class="active">Apply</a></li>
+        </ul>
+    </nav>
+
+    <div class="application-container">
+        <header class="application-header">
+            <h1 class="application-title">Royal Navy Commission Application</h1>
+            <p class="application-subtitle">His Majesty's Naval Service - Officer Candidate Evaluation</p>
+        </header>
+
+        <form id="commission-application">
+            <!-- Personal Information -->
+            <section class="form-section">
+                <h2 class="section-title">Personal Information</h2>
+                
+                <div class="form-group two-column">
+                    <div>
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+                    <div>
+                        <label for="given-names">Given Names</label>
+                        <input type="text" id="given-names" name="given-names" required>
+                    </div>
+                </div>
+                
+                <div class="form-group two-column">
+                    <div>
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="18" max="65" required>
+                    </div>
+                    <div>
+                        <label for="nationality">Nationality</label>
+                        <input type="text" id="nationality" name="nationality" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="in-game-name">In-Game Name</label>
+                    <input type="text" id="in-game-name" name="in-game-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="discord-handle">Discord Handle</label>
+                    <input type="text" id="discord-handle" name="discord-handle" placeholder="username#1234" required>
+                </div>
+            </section>
+
+            <!-- Naval Experience -->
+            <section class="form-section">
+                <h2 class="section-title">Naval Experience & Qualifications</h2>
+                
+                <div class="form-group">
+                    <label for="naval-experience">Previous Naval Action Experience</label>
+                    <select id="naval-experience" name="naval-experience" required>
+                        <option value="">Select Experience Level</option>
+                        <option value="beginner">New to Naval Action (0-6 months)</option>
+                        <option value="intermediate">Intermediate (6 months - 2 years)</option>
+                        <option value="experienced">Experienced (2-5 years)</option>
+                        <option value="veteran">Veteran (5+ years)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="previous-clans">Previous Clan/Organization Service</label>
+                    <textarea id="previous-clans" name="previous-clans" placeholder="List any previous clans or organizations you've served with, including your role and duration of service"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ship-specialization">Preferred Ship Classification</label>
+                    <select id="ship-specialization" name="ship-specialization" required>
+                        <option value="">Select Ship Type</option>
+                        <option value="first-rate">First Rate (100+ guns)</option>
+                        <option value="second-rate">Second Rate (84-98 guns)</option>
+                        <option value="third-rate">Third Rate (64-80 guns)</option>
+                        <option value="fourth-rate">Fourth Rate (50-60 guns)</option>
+                        <option value="frigate">Frigate (28-44 guns)</option>
+                        <option value="light-frigate">Light Frigate (20-32 guns)</option>
+                        <option value="sloop">Sloop/Brig (10-20 guns)</option>
+                        <option value="any">Any vessel as needed</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Naval Combat Skills (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="gunnery" name="skills" value="gunnery">
+                            <label for="gunnery">Gunnery & Artillery</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="navigation" name="skills" value="navigation">
+                            <label for="navigation">Navigation & Seamanship</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="tactics" name="skills" value="tactics">
+                            <label for="tactics">Naval Tactics</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="leadership" name="skills" value="leadership">
+                            <label for="leadership">Leadership & Command</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="boarding" name="skills" value="boarding">
+                            <label for="boarding">Boarding Actions</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="logistics" name="skills" value="logistics">
+                            <label for="logistics">Supply & Logistics</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Availability & Commitment -->
+            <section class="form-section">
+                <h2 class="section-title">Service Availability</h2>
+                
+                <div class="form-group">
+                    <label for="timezone">Time Zone</label>
+                    <input type="text" id="timezone" name="timezone" placeholder="e.g., GMT, EST, PST" required>
+                </div>
+                
+                <div class="form-group two-column">
+                    <div>
+                        <label for="weekday-hours">Weekday Availability (Hours per day)</label>
+                        <select id="weekday-hours" name="weekday-hours" required>
+                            <option value="">Select Hours</option>
+                            <option value="1-2">1-2 hours</option>
+                            <option value="2-4">2-4 hours</option>
+                            <option value="4-6">4-6 hours</option>
+                            <option value="6+">6+ hours</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="weekend-hours">Weekend Availability (Hours per day)</label>
+                        <select id="weekend-hours" name="weekend-hours" required>
+                            <option value="">Select Hours</option>
+                            <option value="1-2">1-2 hours</option>
+                            <option value="2-4">2-4 hours</option>
+                            <option value="4-6">4-6 hours</option>
+                            <option value="6+">6+ hours</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="port-battle-availability">Port Battle Participation</label>
+                    <select id="port-battle-availability" name="port-battle-availability" required>
+                        <option value="">Select Availability</option>
+                        <option value="always">Available for all scheduled Port Battles</option>
+                        <option value="most">Available for most Port Battles (75%+)</option>
+                        <option value="some">Available for some Port Battles (50%+)</option>
+                        <option value="occasional">Occasional participation (25%+)</option>
+                        <option value="rare">Rarely available for Port Battles</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Motivation & Goals -->
+            <section class="form-section">
+                <h2 class="section-title">Service Motivation</h2>
+                
+                <div class="form-group">
+                    <label for="why-join">Why do you wish to serve with KRAKEN?</label>
+                    <textarea id="why-join" name="why-join" placeholder="Describe your motivation for joining KRAKEN and what you hope to achieve" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contribution">How do you plan to contribute to the fleet?</label>
+                    <textarea id="contribution" name="contribution" placeholder="Describe how your skills and experience will benefit KRAKEN operations" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="leadership-interest">Interest in Leadership Roles</label>
+                    <select id="leadership-interest" name="leadership-interest" required>
+                        <option value="">Select Interest Level</option>
+                        <option value="immediate">Immediate interest in command positions</option>
+                        <option value="future">Future interest with experience</option>
+                        <option value="support">Prefer supporting roles</option>
+                        <option value="follow">Happy to follow orders</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Declaration -->
+            <section class="form-section">
+                <h2 class="section-title">Officer's Declaration</h2>
+                
+                <div class="form-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="oath" name="oath" required>
+                        <label for="oath">I solemnly swear to serve His Majesty's Naval Service with honor, courage, and loyalty. I will obey lawful orders from my superior officers and conduct myself in accordance with the traditions and values of the Royal Navy.</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="conduct" name="conduct" required>
+                        <label for="conduct">I understand that conduct unbecoming of an officer, including but not limited to insubordination, cowardice, or actions detrimental to fleet morale, may result in disciplinary action or discharge from service.</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="commitment" name="commitment" required>
+                        <label for="commitment">I am committed to active participation in fleet operations and understand that extended periods of absence without leave may affect my commission status.</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submit -->
+            <section class="submit-section">
+                <button type="submit" class="submit-btn">Submit Commission Application</button>
+                <p class="disclaimer">
+                    Your application will be reviewed by the Admiralty Board. Successful candidates will be contacted for interview within 7 days.
+                </p>
+            </section>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('commission-application').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const applicationData = {};
+            
+            for (let [key, value] of formData.entries()) {
+                if (applicationData[key]) {
+                    if (Array.isArray(applicationData[key])) {
+                        applicationData[key].push(value);
+                    } else {
+                        applicationData[key] = [applicationData[key], value];
+                    }
+                } else {
+                    applicationData[key] = value;
+                }
+            }
+            
+            // Simulate form submission
+            alert('Your commission application has been submitted successfully! The Admiralty Board will review your application and contact you within 7 days. God save the King!');
+            
+            // In a real implementation, you would send this data to your server
+            console.log('Application submitted:', applicationData);
+        });
+    </script>
+</body>
+</html>

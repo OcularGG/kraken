@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Battle Management | KRAKEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #181818;
+            color: #fff;
+            padding-top: 100px;
+            line-height: 1.6;
+        }
+        
+        .pb-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #2a2a2a;
+            border: 4px solid #bfa140;
+            box-shadow: 8px 8px 0px #bfa140;
+        }
+        
+        .pb-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #bfa140;
+        }
+        
+        .pb-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #bfa140;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .pb-subtitle {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: 3px solid #bfa140;
+            background: #bfa140;
+            color: #181818;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: #fff;
+            border-color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 0px #bfa140;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #bfa140;
+        }
+        
+        .btn-secondary:hover {
+            background: #bfa140;
+            color: #181818;
+        }
+        
+        .pb-list {
+            margin-top: 2rem;
+        }
+        
+        .pb-item {
+            background: #1a1a1a;
+            border: 2px solid #bfa140;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .pb-info h3 {
+            color: #bfa140;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pb-details {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        .pb-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #2a2a2a;
+            border: 4px solid #bfa140;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #bfa140;
+        }
+        
+        .close {
+            background: none;
+            border: none;
+            color: #bfa140;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #bfa140;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background: #181818;
+            border: 2px solid #bfa140;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #fff;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;        }
+        
+        .port-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #181818;
+            border: 2px solid #bfa140;
+            border-top: none;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .autocomplete-suggestion {
+            padding: 0.75rem;
+            cursor: pointer;
+            border-bottom: 1px solid #444;
+            color: #fff;
+        }
+        
+        .autocomplete-suggestion:hover,
+        .autocomplete-suggestion.highlighted {
+            background: #bfa140;
+            color: #181818;
+        }
+        
+        @media (max-width: 768px) {
+            .pb-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            
+            .pb-title {
+                font-size: 2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .pb-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="orgchart.html">Command</a></li>
+            <li><a href="pb.html" class="active">PB</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <div class="pb-container">
+        <header class="pb-header">
+            <h1 class="pb-title">Port Battle Management</h1>
+            <p class="pb-subtitle">Coordinate fleet operations and manage sign-ups</p>
+        </header>
+
+        <div class="action-buttons">
+            <button class="btn" onclick="createNewPB()">Create New Port Battle</button>
+            <button class="btn btn-secondary" onclick="viewActivePBs()">View Active Operations</button>
+        </div>
+
+        <div class="pb-list" id="pb-list">
+            <!-- Port battles will be dynamically loaded here -->
+            <div class="pb-item">
+                <div class="pb-info">
+                    <h3>Example: Santo Domingo Defense</h3>
+                    <div class="pb-details">
+                        Deep Water • 5000 BR Limit • Tomorrow 20:00 UTC<br>
+                        Meeting at Port-au-Prince • 45/70 signed up
+                    </div>
+                </div>
+                <div class="pb-actions">
+                    <button class="btn btn-small" onclick="viewPBDetails('example1')">View Details</button>
+                    <button class="btn btn-small btn-secondary" onclick="managePB('example1')">Manage</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create PB Modal -->
+    <div id="createPBModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 style="color: #bfa140;">Create New Port Battle</h2>
+                <button class="close" onclick="closeModal('createPBModal')">&times;</button>
+            </div>
+            <form id="createPBForm">                <div class="form-group">
+                    <label for="pb-port">Port Battle Location</label>
+                    <div style="position: relative;">
+                        <input type="text" id="pb-port" name="pb-port" placeholder="Port name" required>
+                        <div id="port-suggestions" class="port-suggestions"></div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pb-type">Battle Type</label>
+                        <select id="pb-type" name="pb-type" required>
+                            <option value="">Select Type</option>
+                            <option value="shallow">Shallow Water</option>
+                            <option value="deep">Deep Water</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="br-limit">BR Limit</label>
+                        <input type="number" id="br-limit" name="br-limit" placeholder="5000" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="meeting-time">Meeting Time (UTC)</label>
+                        <input type="datetime-local" id="meeting-time" name="meeting-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pb-time">PB Time (UTC)</label>
+                        <input type="datetime-local" id="pb-time" name="pb-time" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="meeting-location">Meeting Location</label>
+                    <input type="text" id="meeting-location" name="meeting-location" placeholder="Port name" required>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button type="submit" class="btn">Create Port Battle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sample data
+        const portBattles = [
+            {
+                id: 'example1',
+                port: 'Santo Domingo',
+                type: 'deep',
+                brLimit: 5000,
+                meetingTime: '2025-06-23T19:00:00Z',
+                pbTime: '2025-06-23T20:00:00Z',
+                meetingLocation: 'Port-au-Prince',
+                signups: 45,
+                maxSignups: 70,
+                adminCode: '12345678'
+            }
+        ];
+
+        // Port data for autocomplete (subset of common ports)
+        const navalPorts = [
+            'Santo Domingo', 'Port-au-Prince', 'Kingston', 'Bridgetown', 'Fort-de-France',
+            'Willemstad', 'Gustavia', 'Road Town', 'Oranjestad', 'Kralendijk',
+            'Marigot', 'Castries', 'Roseau', 'Saint George\'s', 'Port of Spain',
+            'Nassau', 'Havana', 'Santiago de Cuba', 'Baracoa', 'Nueva Gerona',
+            'Remedios', 'Cayo Hueso', 'Charleston', 'Savannah', 'Wilmington',
+            'Norfolk', 'New York', 'Boston', 'Portland', 'Eastport',
+            'Mortimer Town', 'Bluefields', 'Truxillo', 'San Juan del Norte',
+            'Cartagena de Indias', 'Riohacha', 'La Guaira', 'Cumana',
+            'Grand Turk', 'Cockburn Town', 'George Town', 'West End'
+        ];
+
+        // Port autocomplete functionality
+        function initializePortAutocomplete() {
+            const portInput = document.getElementById('pb-port');
+            const suggestionsContainer = document.getElementById('port-suggestions');
+            let currentSuggestionIndex = -1;
+
+            portInput.addEventListener('input', (e) => {
+                const query = e.target.value.trim();
+                
+                if (query.length < 2) {
+                    hideSuggestions();
+                    return;
+                }
+
+                const suggestions = navalPorts.filter(port => 
+                    port.toLowerCase().includes(query.toLowerCase())
+                ).slice(0, 10);
+                
+                showSuggestions(suggestions, suggestionsContainer);
+            });
+
+            portInput.addEventListener('keydown', (e) => {
+                const suggestions = suggestionsContainer.querySelectorAll('.autocomplete-suggestion');
+                
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    currentSuggestionIndex = Math.min(currentSuggestionIndex + 1, suggestions.length - 1);
+                    highlightSuggestion(suggestions, currentSuggestionIndex);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    currentSuggestionIndex = Math.max(currentSuggestionIndex - 1, -1);
+                    highlightSuggestion(suggestions, currentSuggestionIndex);
+                } else if (e.key === 'Enter' && currentSuggestionIndex >= 0) {
+                    e.preventDefault();
+                    const selectedSuggestion = suggestions[currentSuggestionIndex];
+                    if (selectedSuggestion) {
+                        portInput.value = selectedSuggestion.textContent;
+                        hideSuggestions();
+                    }
+                } else if (e.key === 'Escape') {
+                    hideSuggestions();
+                }
+            });
+
+            // Hide suggestions when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!portInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+                    hideSuggestions();
+                }
+            });
+        }
+
+        function showSuggestions(suggestions, container) {
+            container.innerHTML = '';
+            
+            if (suggestions.length === 0) {
+                hideSuggestions();
+                return;
+            }
+
+            suggestions.forEach(port => {
+                const suggestionElement = document.createElement('div');
+                suggestionElement.className = 'autocomplete-suggestion';
+                suggestionElement.textContent = port;
+                suggestionElement.addEventListener('click', () => {
+                    document.getElementById('pb-port').value = port;
+                    hideSuggestions();
+                });
+                container.appendChild(suggestionElement);
+            });
+
+            container.style.display = 'block';
+        }
+
+        function hideSuggestions() {
+            const container = document.getElementById('port-suggestions');
+            container.style.display = 'none';
+        }
+
+        function highlightSuggestion(suggestions, index) {
+            suggestions.forEach((suggestion, i) => {
+                if (i === index) {
+                    suggestion.classList.add('highlighted');
+                } else {
+                    suggestion.classList.remove('highlighted');
+                }
+            });
+        }
+
+        // Utility functions
+        function generateAdminCode() {
+            return Math.floor(10000000 + Math.random() * 90000000).toString();
+        }
+
+        function formatDateTime(dateStr) {
+            return new Date(dateStr).toLocaleString('en-GB', {
+                timeZone: 'UTC',
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            }) + ' UTC';
+        }
+
+        // Enhanced PB functions
+        function viewPBDetails(pbId) {
+            const pb = portBattles.find(p => p.id === pbId);
+            if (!pb) return;
+            
+            const signupUrl = `${window.location.origin}/pb-signup.html?id=${pbId}`;
+            const adminUrl = `${window.location.origin}/pb-admin.html?id=${pbId}&code=${pb.adminCode}`;
+            
+            alert(`Port Battle Details:
+Port: ${pb.port} (${pb.type === 'deep' ? 'Deep Water' : 'Shallow Water'})
+BR Limit: ${pb.brLimit}
+Meeting: ${formatDateTime(pb.meetingTime)} at ${pb.meetingLocation}
+PB Time: ${formatDateTime(pb.pbTime)}
+Sign-ups: ${pb.signups}/${pb.maxSignups}
+
+✅ Sign-up URL: ${signupUrl}
+🔐 Admin Code: ${pb.adminCode}
+⚙️ Admin URL: ${adminUrl}
+
+📋 Share the sign-up URL with your fleet members
+🔒 Keep the admin code secure!`);
+        }
+
+        function managePB(pbId) {
+            const pb = portBattles.find(p => p.id === pbId);
+            if (!pb) return;
+            
+            const adminCode = prompt('Enter admin code:');
+            if (adminCode === pb.adminCode) {
+                const adminUrl = `pb-admin.html?id=${pbId}&code=${adminCode}`;
+                window.open(adminUrl, '_blank');
+            } else {
+                alert('❌ Invalid admin code!');
+            }
+        }
+
+        // Enhanced PB data management with localStorage
+        function savePBData() {
+            localStorage.setItem('krakenPBData', JSON.stringify(portBattles));
+        }
+
+        function loadPBData() {
+            const saved = localStorage.getItem('krakenPBData');
+            if (saved) {
+                const savedData = JSON.parse(saved);
+                portBattles.length = 0; // Clear array
+                portBattles.push(...savedData); // Add saved data
+            }
+        }
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Main functions
+        function createNewPB() {
+            openModal('createPBModal');
+        }
+
+        function viewActivePBs() {
+            loadPortBattles();        }
+
+        function loadPortBattles() {
+            const listContainer = document.getElementById('pb-list');
+            listContainer.innerHTML = '';
+            
+            portBattles.forEach(pb => {
+                const pbElement = document.createElement('div');
+                pbElement.className = 'pb-item';
+                pbElement.innerHTML = `
+                    <div class="pb-info">
+                        <h3>${pb.port} ${pb.type === 'deep' ? 'Deep Water' : 'Shallow Water'}</h3>
+                        <div class="pb-details">
+                            ${pb.brLimit} BR Limit • PB: ${formatDateTime(pb.pbTime)}<br>
+                            Meeting at ${pb.meetingLocation} • ${pb.signups}/${pb.maxSignups} signed up
+                        </div>
+                    </div>
+                    <div class="pb-actions">
+                        <button class="btn btn-small" onclick="viewPBDetails('${pb.id}')">View Details</button>
+                        <button class="btn btn-small btn-secondary" onclick="managePB('${pb.id}')">Manage</button>
+                    </div>
+                `;
+                listContainer.appendChild(pbElement);
+            });
+        }        // Form submission
+        document.getElementById('createPBForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const newPB = {
+                id: 'pb_' + Date.now(),
+                port: formData.get('pb-port'),
+                type: formData.get('pb-type'),
+                brLimit: parseInt(formData.get('br-limit')),
+                meetingTime: formData.get('meeting-time'),
+                pbTime: formData.get('pb-time'),
+                meetingLocation: formData.get('meeting-location'),
+                signups: 0,
+                maxSignups: 70,
+                adminCode: generateAdminCode()
+            };
+            
+            portBattles.push(newPB);
+            savePBData(); // Save to localStorage
+            closeModal('createPBModal');
+            loadPortBattles();
+            
+            // Show the created PB details
+            setTimeout(() => viewPBDetails(newPB.id), 100);
+            
+            this.reset();
+        });
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPBData();
+            loadPortBattles();
+            initializePortAutocomplete();
+        });
+    </script>
+</body>
+</html>
