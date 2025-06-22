@@ -8,18 +8,16 @@
     <link rel="stylesheet" href="marketplace.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">KRAKEN</a>
-            </div>            <div class="nav-links">
-                <a href="index.html" class="nav-link">HOME</a>
-                <a href="index.html#join" class="nav-link">APPLY</a>
-                <a href="marketplace.html" class="nav-link active">MARKETPLACE</a>
-            </div>
-        </div>
+<body>    <!-- Navigation -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#join">Join</a></li>
+            <li><a href="marketplace.html" class="active">Marketplace</a></li>
+            <li><a href="index.html#footer">Contact</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+        </ul>
     </nav>
 
     <div class="marketplace-container">
@@ -57,57 +55,77 @@
                             <option value="ship">Ships</option>
                             <option value="item">Items & Resources</option>
                         </select>
-                    </div>
-
-                    <!-- Ship Selection (hidden by default) -->
+                    </div>                    <!-- Ship Selection (hidden by default) -->
                     <div id="ship-selection" class="form-group" style="display: none;">
                         <label for="ship-select">Ship</label>
                         <select id="ship-select" name="ship">
                             <option value="">Select ship...</option>
                         </select>
-                    </div>
-
-                    <!-- Item Selection (hidden by default) -->
+                        
+                        <div id="ship-options" style="margin-top: 1rem; display: none;">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="ship-with-cannons" name="ship-with-cannons"> 
+                                Includes Cannons
+                            </label>
+                        </div>
+                    </div>                    <!-- Item Selection (hidden by default) -->
                     <div id="item-selection" class="form-group" style="display: none;">
                         <label for="item-category">Item Category</label>
                         <select id="item-category" name="item-category">
                             <option value="">Select category...</option>
                         </select>
                         
-                        <label for="item-select" style="margin-top: 1rem;">Item</label>
-                        <select id="item-select" name="item" style="display: none;">
-                            <option value="">Select item...</option>
+                        <div id="item-category-items" style="display: none; margin-top: 1rem;">
+                            <label>Items in Category</label>
+                            <div id="category-items-list" class="category-items-list">
+                                <!-- Dynamic items with quantities will be populated here -->
+                            </div>
+                        </div>
+                        
+                        <div id="item-subcategory" style="display: none; margin-top: 1rem;">
+                            <label for="item-subcategory-select">Subcategory</label>
+                            <select id="item-subcategory-select" name="item-subcategory">
+                                <option value="">All Items</option>
+                            </select>
+                        </div>
+                    </div>                    <!-- Price -->
+                    <div class="form-group">
+                        <label for="price">Price (Reals)</label>
+                        <input type="number" id="price" name="price" min="0" step="1" placeholder="Enter price in reals" required>
+                    </div>
+
+                    <!-- Port -->
+                    <div class="form-group">
+                        <label for="port">Port</label>
+                        <select id="port" name="port" required>
+                            <option value="">Select port...</option>
+                            <option value="Bensalem">Bensalem</option>
+                            <option value="La Tortue">La Tortue</option>
+                            <option value="Vera Cruz">Vera Cruz</option>
+                            <option value="Port Royal">Port Royal</option>
+                            <option value="Havana">Havana</option>
+                            <option value="Cartagena">Cartagena</option>
+                            <option value="Nassau">Nassau</option>
+                            <option value="Charleston">Charleston</option>
+                            <option value="New Orleans">New Orleans</option>
+                            <option value="Savannah">Savannah</option>
+                            <option value="Other">Other (specify in notes)</option>
                         </select>
-                    </div>
-
-                    <!-- Quantity (for items) -->
-                    <div id="quantity-group" class="form-group" style="display: none;">
-                        <label for="quantity">Quantity</label>
-                        <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter quantity">
-                    </div>
-
-                    <!-- Price -->
-                    <div class="form-group">
-                        <label for="price">Price (Gold)</label>
-                        <input type="number" id="price" name="price" min="0" step="1" placeholder="Enter price in gold" required>
-                    </div>
-
-                    <!-- Location -->
-                    <div class="form-group">
-                        <label for="location">Location</label>
-                        <input type="text" id="location" name="location" placeholder="Port name or region" required>
                     </div>
 
                     <!-- Additional Notes -->
                     <div class="form-group">
                         <label for="notes">Additional Notes</label>
                         <textarea id="notes" name="notes" placeholder="Any additional information about the item..."></textarea>
-                    </div>
-
-                    <!-- Contact Information -->
+                    </div>                    <!-- Contact Information -->
                     <div class="form-group">
-                        <label for="contact">Contact (Discord/In-game)</label>
-                        <input type="text" id="contact" name="contact" placeholder="Your Discord username or in-game name" required>
+                        <label for="ingame-name">In-Game Name</label>
+                        <input type="text" id="ingame-name" name="ingame-name" placeholder="Your Naval Action character name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="discord-name">Discord Name</label>
+                        <input type="text" id="discord-name" name="discord-name" placeholder="Your Discord username" required>
                     </div>
 
                     <!-- Add Item Button (for multiple items) -->
@@ -135,8 +153,7 @@
         <!-- Active Listings Section -->
         <section class="listings-section">
             <div class="section-header">
-                <h2>ACTIVE LISTINGS</h2>
-                <div class="filters">
+                <h2>ACTIVE LISTINGS</h2>                <div class="filters">
                     <select id="filter-type">
                         <option value="">All Types</option>
                         <option value="sell">Selling</option>
@@ -146,6 +163,9 @@
                         <option value="">All Categories</option>
                         <option value="ship">Ships</option>
                         <option value="item">Items</option>
+                    </select>
+                    <select id="filter-subcategory" style="display: none;">
+                        <option value="">All Subcategories</option>
                     </select>
                     <input type="text" id="search-listings" placeholder="Search listings...">
                 </div>

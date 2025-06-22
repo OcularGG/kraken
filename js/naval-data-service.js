@@ -135,15 +135,23 @@ class NavalActionDataService {
         }
 
         return 'Other';
-    }
-
-    getShips() {
-        return this.ships.map(ship => ({
-            id: ship.id,
-            name: ship.name,
-            class: ship.class,
-            nationality: ship.nationality
-        }));
+    }    getShips() {
+        return this.ships
+            .map(ship => ({
+                id: ship.id,
+                name: ship.name,
+                class: ship.class,
+                nationality: ship.nationality
+            }))
+            .filter(ship => ship.name && ship.name !== 'Ship' && ship.name !== 'Unknown')
+            .sort((a, b) => {
+                // Sort by class first (1st rate to 7th rate)
+                if (a.class !== b.class) {
+                    return (a.class || 99) - (b.class || 99);
+                }
+                // Then sort by name
+                return a.name.localeCompare(b.name);
+            });
     }
 
     getItemCategories() {
@@ -185,6 +193,67 @@ class NavalActionDataService {
         });
 
         return results;
+    }
+
+    getItemSubcategories(category) {
+        if (!this.itemCategories[category]) return [];
+        
+        const items = this.itemCategories[category];
+        const subcategories = new Set();
+        
+        items.forEach(item => {
+            const subcategory = this.determineSubcategory(item.name, category);
+            if (subcategory) {
+                subcategories.add(subcategory);
+            }
+        });
+        
+        return Array.from(subcategories).sort();
+    }
+
+    determineSubcategory(itemName, category) {
+        const name = itemName.toLowerCase();
+        
+        if (category === 'Woods') {
+            if (name.includes('oak')) return 'Oak';
+            if (name.includes('teak')) return 'Teak';
+            if (name.includes('fir')) return 'Fir';
+            if (name.includes('cedar')) return 'Cedar';
+            if (name.includes('mahogany')) return 'Mahogany';
+            if (name.includes('sabicu')) return 'Sabicu';
+            if (name.includes('pine')) return 'Pine';
+            return 'Other Woods';
+        }
+        
+        if (category === 'Metals') {
+            if (name.includes('iron')) return 'Iron';
+            if (name.includes('copper')) return 'Copper';
+            if (name.includes('gold')) return 'Gold';
+            if (name.includes('silver')) return 'Silver';
+            if (name.includes('tin')) return 'Tin';
+            return 'Other Metals';
+        }
+        
+        if (category === 'Cannons & Weapons') {
+            if (name.includes('carronade')) return 'Carronades';
+            if (name.includes('long')) return 'Long Guns';
+            if (name.includes('medium')) return 'Medium Guns';
+            if (name.includes('musket')) return 'Small Arms';
+            return 'Other Weapons';
+        }
+        
+        return null;
+    }
+
+    getItemsBySubcategory(category, subcategory) {
+        if (!this.itemCategories[category]) return [];
+        
+        if (!subcategory) return this.itemCategories[category];
+        
+        return this.itemCategories[category].filter(item => {
+            const itemSubcategory = this.determineSubcategory(item.name, category);
+            return itemSubcategory === subcategory;
+        });
     }
 }
 

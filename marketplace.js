@@ -1,4 +1,4 @@
-// Naval Action Marketplace JavaScript
+// Naval Action Marketplace JavaScript - Enhanced Version
 class NavalMarketplace {
     constructor() {
         this.currentListing = [];
@@ -52,6 +52,12 @@ class NavalMarketplace {
             this.handleItemCategoryChange(e.target.value);
         });
 
+        // Ship selection change handler
+        document.getElementById('ship-select').addEventListener('change', (e) => {
+            const shipOptions = document.getElementById('ship-options');
+            shipOptions.style.display = e.target.value ? 'block' : 'none';
+        });
+
         // Form submission
         document.getElementById('listing-form').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -67,7 +73,11 @@ class NavalMarketplace {
             this.filterListings();
         });
 
-        document.getElementById('filter-category').addEventListener('change', () => {
+        document.getElementById('filter-category').addEventListener('change', (e) => {
+            this.handleFilterCategoryChange(e.target.value);
+        });
+
+        document.getElementById('filter-subcategory').addEventListener('change', () => {
             this.filterListings();
         });
     }
@@ -75,42 +85,61 @@ class NavalMarketplace {
     handleItemTypeChange(itemType) {
         const shipSelection = document.getElementById('ship-selection');
         const itemSelection = document.getElementById('item-selection');
-        const quantityGroup = document.getElementById('quantity-group');
 
         // Reset all selections
         shipSelection.style.display = 'none';
         itemSelection.style.display = 'none';
-        quantityGroup.style.display = 'none';
-        document.getElementById('item-select').style.display = 'none';
+        document.getElementById('ship-options').style.display = 'none';
+        document.getElementById('item-category-items').style.display = 'none';
 
         if (itemType === 'ship') {
             shipSelection.style.display = 'block';
         } else if (itemType === 'item') {
             itemSelection.style.display = 'block';
-            quantityGroup.style.display = 'block';
         }
     }
 
     handleItemCategoryChange(category) {
-        const itemSelect = document.getElementById('item-select');
+        const itemCategoryItems = document.getElementById('item-category-items');
+        const subcategorySelect = document.getElementById('item-subcategory-select');
         
         if (category) {
-            // Populate items for the selected category
-            const items = window.navalDataService.getItemsByCategory(category);
-            itemSelect.innerHTML = '<option value="">Select item...</option>';
-            
-            items.forEach(item => {
-                const option = document.createElement('option');
-                option.value = item.id;
-                option.textContent = item.name;
-                option.dataset.itemName = item.name;
-                itemSelect.appendChild(option);
-            });
-            
-            itemSelect.style.display = 'block';
+            // Show item list for category
+            this.populateItemsForCategory(category);
+            itemCategoryItems.style.display = 'block';
+
+            // Populate subcategories if available
+            const subcategories = window.navalDataService.getItemSubcategories(category);
+            if (subcategories.length > 0) {
+                document.getElementById('item-subcategory').style.display = 'block';
+                subcategorySelect.innerHTML = '<option value="">All Items</option>';
+                subcategories.forEach(subcat => {
+                    const option = document.createElement('option');
+                    option.value = subcat;
+                    option.textContent = subcat;
+                    subcategorySelect.appendChild(option);
+                });
+            } else {
+                document.getElementById('item-subcategory').style.display = 'none';
+            }
         } else {
-            itemSelect.style.display = 'none';
+            itemCategoryItems.style.display = 'none';
+            document.getElementById('item-subcategory').style.display = 'none';
         }
+    }
+
+    handleFilterCategoryChange(category) {
+        const subcategoryFilter = document.getElementById('filter-subcategory');
+        
+        if (category === 'item') {
+            // Show subcategory filter
+            subcategoryFilter.style.display = 'block';
+            this.populateFilterSubcategories();
+        } else {
+            subcategoryFilter.style.display = 'none';
+        }
+        
+        this.filterListings();
     }
 
     populateShipDropdown() {
@@ -122,7 +151,15 @@ class NavalMarketplace {
         ships.forEach(ship => {
             const option = document.createElement('option');
             option.value = ship.id;
-            option.textContent = `${ship.name} (${ship.class ? ship.class + ' Rate' : 'Unclassified'})`;
+            
+            // Use proper ordinal numbers for rates
+            let ratingText = '';
+            if (ship.class) {
+                const ordinals = ['', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th'];
+                ratingText = ` (${ordinals[ship.class] || ship.class} Rate)`;
+            }
+            
+            option.textContent = `${ship.name}${ratingText}`;
             option.dataset.shipName = ship.name;
             option.dataset.shipClass = ship.class;
             shipSelect.appendChild(option);
@@ -143,47 +180,127 @@ class NavalMarketplace {
         });
     }
 
-    handleFormSubmission() {
-        const formData = new FormData(document.getElementById('listing-form'));
-        const listingType = formData.get('listing-type');
-        const itemType = formData.get('item-type');
-        const price = formData.get('price');
-        const location = formData.get('location');
-        const contact = formData.get('contact');
-        const notes = formData.get('notes');
+    populateItemsForCategory(category) {
+        const itemsList = document.getElementById('category-items-list');
+        const items = window.navalDataService.getItemsByCategory(category);
+        
+        itemsList.innerHTML = '';
+        
+        items.forEach(item => {
+            const itemRow = document.createElement('div');
+            itemRow.className = 'category-item-row';
+            itemRow.innerHTML = `
+                <div class="category-item-name">${item.name}</div>
+                <div class="category-item-controls">
+                    <input type="number" 
+                           min="1" 
+                           step="1" 
+                           placeholder="Qty" 
+                           data-item-id="${item.id}"
+                           data-item-name="${item.name}"
+                           class="item-quantity">
+                    <input type="number" 
+                           min="0" 
+                           step="1" 
+                           placeholder="Price/unit" 
+                           data-item-id="${item.id}"
+                           class="price-per-unit">
+                </div>
+            `;
+            itemsList.appendChild(itemRow);
+        });
+    }
 
-        let itemName = '';
-        let quantity = 1;
+    populateFilterSubcategories() {
+        const subcategoryFilter = document.getElementById('filter-subcategory');
+        const allSubcategories = new Set();
+        
+        // Collect all subcategories from all item categories
+        window.navalDataService.getItemCategories().forEach(category => {
+            const subcategories = window.navalDataService.getItemSubcategories(category);
+            subcategories.forEach(subcat => allSubcategories.add(subcat));
+        });
+        
+        subcategoryFilter.innerHTML = '<option value="">All Subcategories</option>';
+        Array.from(allSubcategories).sort().forEach(subcat => {
+            const option = document.createElement('option');
+            option.value = subcat;
+            option.textContent = subcat;
+            subcategoryFilter.appendChild(option);
+        });
+    }
 
+    collectItemsFromForm() {
+        const items = [];
+        const itemType = document.getElementById('item-type').value;
+        
         if (itemType === 'ship') {
             const shipSelect = document.getElementById('ship-select');
             const selectedOption = shipSelect.options[shipSelect.selectedIndex];
+            const withCannons = document.getElementById('ship-with-cannons').checked;
+            
             if (selectedOption && selectedOption.dataset.shipName) {
-                itemName = selectedOption.dataset.shipName;
+                items.push({
+                    type: 'ship',
+                    name: selectedOption.dataset.shipName,
+                    quantity: 1,
+                    pricePerUnit: parseInt(document.getElementById('price').value) || 0,
+                    withCannons: withCannons
+                });
             }
         } else if (itemType === 'item') {
-            const itemSelect = document.getElementById('item-select');
-            const selectedOption = itemSelect.options[itemSelect.selectedIndex];
-            if (selectedOption && selectedOption.dataset.itemName) {
-                itemName = selectedOption.dataset.itemName;
-            }
-            quantity = parseInt(formData.get('quantity')) || 1;
+            const quantityInputs = document.querySelectorAll('.item-quantity');
+            const priceInputs = document.querySelectorAll('.price-per-unit');
+            
+            quantityInputs.forEach((qtyInput, index) => {
+                const quantity = parseInt(qtyInput.value);
+                const pricePerUnit = parseInt(priceInputs[index].value);
+                
+                if (quantity > 0 && pricePerUnit >= 0) {
+                    items.push({
+                        type: 'item',
+                        name: qtyInput.dataset.itemName,
+                        quantity: quantity,
+                        pricePerUnit: pricePerUnit
+                    });
+                }
+            });
         }
+        
+        return items;
+    }
 
-        if (!itemName) {
-            alert('Please select an item to list.');
+    calculateTotalPrice(items) {
+        return items.reduce((total, item) => {
+            return total + (item.quantity * item.pricePerUnit);
+        }, 0);
+    }
+
+    handleFormSubmission() {
+        const formData = new FormData(document.getElementById('listing-form'));
+        const listingType = formData.get('listing-type');
+        const port = formData.get('port');
+        const ingameName = formData.get('ingame-name');
+        const discordName = formData.get('discord-name');
+        const notes = formData.get('notes');
+
+        const items = this.collectItemsFromForm();
+        
+        if (items.length === 0) {
+            alert('Please add at least one item to your listing.');
             return;
         }
+
+        const totalPrice = this.calculateTotalPrice(items);
 
         const listing = {
             id: Date.now().toString(),
             type: listingType,
-            itemType: itemType,
-            itemName: itemName,
-            quantity: quantity,
-            price: parseInt(price),
-            location: location,
-            contact: contact,
+            items: items,
+            totalPrice: totalPrice,
+            port: port,
+            ingameName: ingameName,
+            discordName: discordName,
             notes: notes,
             dateCreated: new Date().toISOString()
         };
@@ -196,17 +313,54 @@ class NavalMarketplace {
         document.getElementById('listing-form').reset();
         this.handleItemTypeChange('');
         
+        // Send webhook notification (simplified version)
+        this.sendWebhookNotification(listing);
+        
         alert('Listing created successfully!');
     }
 
-    addItemToListing() {
-        // This functionality can be expanded for multiple items per listing
-        alert('Multiple items per listing feature coming soon!');
-    }
+    sendWebhookNotification(listing) {
+        // Simplified webhook with less emojis and total price only
+        const embed = {
+            title: `New ${listing.type.toUpperCase()} Listing`,
+            color: listing.type === 'sell' ? 0x22c55e : 0x3b82f6,
+            fields: [
+                {
+                    name: "Items",
+                    value: listing.items.map(item => 
+                        `${item.name}${item.quantity > 1 ? ` x${item.quantity}` : ''}${item.withCannons ? ' (with cannons)' : ''}`
+                    ).join('\n'),
+                    inline: false
+                },
+                {
+                    name: "Total Price",
+                    value: `${listing.totalPrice.toLocaleString()} Reals`,
+                    inline: true
+                },
+                {
+                    name: "Port",
+                    value: listing.port,
+                    inline: true
+                },
+                {
+                    name: "Contact",
+                    value: `**In-game:** ${listing.ingameName}\n**Discord:** ${listing.discordName}`,
+                    inline: false
+                }
+            ],
+            timestamp: new Date().toISOString()
+        };
 
-    clearCurrentListing() {
-        this.currentListing = [];
-        document.getElementById('current-listing').style.display = 'none';
+        if (listing.notes) {
+            embed.fields.push({
+                name: "Notes",
+                value: listing.notes,
+                inline: false
+            });
+        }
+
+        // This would send to your Discord webhook
+        console.log('Webhook data:', { embeds: [embed] });
     }
 
     displayListings() {
@@ -214,84 +368,128 @@ class NavalMarketplace {
         container.innerHTML = '';
 
         if (this.listings.length === 0) {
-            container.innerHTML = '<p style="text-align: center; color: var(--kraken-white); grid-column: 1 / -1;">No listings found. Create the first one!</p>';
+            container.innerHTML = '<p class="no-listings">No listings available</p>';
             return;
         }
 
         this.listings.forEach(listing => {
-            const card = this.createListingCard(listing);
-            container.appendChild(card);
+            const listingCard = this.createListingCard(listing);
+            container.appendChild(listingCard);
         });
     }
 
     createListingCard(listing) {
         const card = document.createElement('div');
-        card.className = 'listing-card';
+        card.className = `listing-card ${listing.type}`;
         
-        const quantityText = listing.itemType === 'item' && listing.quantity > 1 ? ` (x${listing.quantity})` : '';
-        
-        card.innerHTML = `
-            <div class="listing-type ${listing.type}">${listing.type.toUpperCase()}</div>
-            <div class="listing-title">${listing.itemName}${quantityText}</div>
-            <div class="listing-price">${listing.price.toLocaleString()} Gold</div>
-            <div class="listing-details">
-                <div><strong>Type:</strong> ${listing.itemType === 'ship' ? 'Ship' : 'Item'}</div>
-                <div><strong>Location:</strong> ${listing.location}</div>
-                ${listing.notes ? `<div><strong>Notes:</strong> ${listing.notes}</div>` : ''}
-                <div><strong>Posted:</strong> ${new Date(listing.dateCreated).toLocaleDateString()}</div>
-            </div>
-            <div class="listing-contact">
-                <strong>Contact:</strong> ${listing.contact}
-            </div>
-            <button class="remove-listing" onclick="navalMarketplace.removeListing('${listing.id}')" 
-                    style="position: absolute; top: 10px; right: 10px; background: #ff6b6b; color: white; border: none; padding: 5px 8px; cursor: pointer; font-size: 12px;">
-                ✕
-            </button>
-        `;
-        
-        return card;
-    }
+        const itemsText = listing.items.map(item => 
+            `${item.name}${item.quantity > 1 ? ` x${item.quantity}` : ''}${item.withCannons ? ' (with cannons)' : ''}`
+        ).join(', ');
 
-    removeListing(listingId) {
-        if (confirm('Are you sure you want to remove this listing?')) {
-            this.listings = this.listings.filter(listing => listing.id !== listingId);
-            this.saveListings();
-            this.displayListings();
-        }
+        card.innerHTML = `
+            <div class="listing-header">
+                <span class="listing-type ${listing.type}">${listing.type.toUpperCase()}</span>
+                <span class="listing-date">${new Date(listing.dateCreated).toLocaleDateString()}</span>
+            </div>
+            <div class="listing-content">
+                <h3 class="listing-title">${itemsText}</h3>
+                <div class="listing-price">Total: ${listing.totalPrice.toLocaleString()} Reals</div>
+                <div class="listing-location">Port: ${listing.port}</div>
+                <div class="listing-contact">
+                    <div>In-game: ${listing.ingameName}</div>
+                    <div>Discord: ${listing.discordName}</div>
+                </div>
+                ${listing.notes ? `<div class="listing-notes">${listing.notes}</div>` : ''}
+            </div>
+            <div class="listing-actions">
+                <button onclick="marketplace.deleteListing('${listing.id}')" class="btn-danger">Delete</button>
+            </div>
+        `;
+
+        return card;
     }
 
     filterListings() {
         const searchTerm = document.getElementById('search-listings').value.toLowerCase();
         const typeFilter = document.getElementById('filter-type').value;
         const categoryFilter = document.getElementById('filter-category').value;
+        const subcategoryFilter = document.getElementById('filter-subcategory').value;
 
         const filteredListings = this.listings.filter(listing => {
-            const matchesSearch = listing.itemName.toLowerCase().includes(searchTerm) ||
-                                  listing.location.toLowerCase().includes(searchTerm) ||
-                                  listing.contact.toLowerCase().includes(searchTerm);
-            
-            const matchesType = !typeFilter || listing.type === typeFilter;
-            const matchesCategory = !categoryFilter || listing.itemType === categoryFilter;
+            // Type filter
+            if (typeFilter && listing.type !== typeFilter) return false;
 
-            return matchesSearch && matchesType && matchesCategory;
+            // Category filter
+            if (categoryFilter === 'ship') {
+                if (!listing.items.some(item => item.type === 'ship')) return false;
+            } else if (categoryFilter === 'item') {
+                if (!listing.items.some(item => item.type === 'item')) return false;
+            }
+
+            // Subcategory filter (for items only)
+            if (subcategoryFilter && categoryFilter === 'item') {
+                const hasMatchingSubcategory = listing.items.some(item => {
+                    if (item.type !== 'item') return false;
+                    // Check if item belongs to the selected subcategory
+                    const itemCategory = this.findItemCategory(item.name);
+                    if (!itemCategory) return false;
+                    const itemSubcategory = window.navalDataService.determineSubcategory(item.name, itemCategory);
+                    return itemSubcategory === subcategoryFilter;
+                });
+                if (!hasMatchingSubcategory) return false;
+            }
+
+            // Search term filter
+            if (searchTerm) {
+                const searchText = (
+                    listing.items.map(item => item.name).join(' ') + ' ' +
+                    listing.port + ' ' +
+                    listing.ingameName + ' ' +
+                    listing.discordName + ' ' +
+                    (listing.notes || '')
+                ).toLowerCase();
+                
+                if (!searchText.includes(searchTerm)) return false;
+            }
+
+            return true;
         });
 
         this.displayFilteredListings(filteredListings);
     }
 
-    displayFilteredListings(filteredListings) {
+    findItemCategory(itemName) {
+        const categories = window.navalDataService.getItemCategories();
+        for (const category of categories) {
+            const items = window.navalDataService.getItemsByCategory(category);
+            if (items.some(item => item.name === itemName)) {
+                return category;
+            }
+        }
+        return null;
+    }
+
+    displayFilteredListings(listings) {
         const container = document.getElementById('listings-container');
         container.innerHTML = '';
 
-        if (filteredListings.length === 0) {
-            container.innerHTML = '<p style="text-align: center; color: var(--kraken-white); grid-column: 1 / -1;">No listings match your filters.</p>';
+        if (listings.length === 0) {
+            container.innerHTML = '<p class="no-listings">No listings match your filters</p>';
             return;
         }
 
-        filteredListings.forEach(listing => {
-            const card = this.createListingCard(listing);
-            container.appendChild(card);
+        listings.forEach(listing => {
+            const listingCard = this.createListingCard(listing);
+            container.appendChild(listingCard);
         });
+    }
+
+    deleteListing(id) {
+        if (confirm('Are you sure you want to delete this listing?')) {
+            this.listings = this.listings.filter(listing => listing.id !== id);
+            this.saveListings();
+            this.displayListings();
+        }
     }
 
     saveListings() {
@@ -299,31 +497,22 @@ class NavalMarketplace {
     }
 }
 
-// Global functions for HTML onclick handlers
+// Utility functions
 function toggleSection(sectionId) {
     const content = document.getElementById(sectionId);
-    const button = event.target;
-    const span = button.querySelector('span');
+    const button = content.previousElementSibling.querySelector('.btn-toggle span');
     
-    if (content.style.display === 'none') {
+    if (content.style.display === 'none' || !content.style.display) {
         content.style.display = 'block';
-        span.textContent = '▲';
+        button.textContent = '▲';
     } else {
         content.style.display = 'none';
-        span.textContent = '▼';
+        button.textContent = '▼';
     }
 }
 
-function addItemToListing() {
-    navalMarketplace.addItemToListing();
-}
-
-function clearCurrentListing() {
-    navalMarketplace.clearCurrentListing();
-}
-
-// Initialize marketplace when page loads
-let navalMarketplace;
+// Initialize marketplace when DOM is loaded
+let marketplace;
 document.addEventListener('DOMContentLoaded', () => {
-    navalMarketplace = new NavalMarketplace();
+    marketplace = new NavalMarketplace();
 });
