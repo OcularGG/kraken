@@ -156,8 +156,7 @@
             background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
         }
-        
-        .modal-content {
+          .modal-content {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -165,9 +164,9 @@
             background: #2a2a2a;
             border: 4px solid #bfa140;
             padding: 2rem;
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
+            max-width: 800px;
+            width: 95%;
+            max-height: 90vh;
             overflow-y: auto;
         }
         
@@ -369,12 +368,95 @@
                         <label for="pb-time">PB Time (UTC)</label>
                         <input type="datetime-local" id="pb-time" name="pb-time" required>
                     </div>
-                </div>
-                  <div class="form-group">
+                </div>                <div class="form-group">
                     <label for="meeting-location">Meeting Location</label>
                     <div style="position: relative;">
                         <input type="text" id="meeting-location" name="meeting-location" placeholder="Port name" required>
                         <div id="meeting-suggestions" class="port-suggestions"></div>
+                    </div>
+                </div>
+
+                <!-- Screening Fleet Section -->
+                <div style="border-top: 2px solid #bfa140; margin: 2rem 0; padding-top: 2rem;">
+                    <h3 style="color: #bfa140; margin-bottom: 1rem;">Screening Fleet Configuration</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="screening-type">Screening Operation Type</label>
+                            <select id="screening-type" name="screening-type" required>
+                                <option value="">Select Type</option>
+                                <option value="defensive">Defensive Screening</option>
+                                <option value="offensive">Offensive Screening</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="screening-br-limit">Screening BR Limit</label>
+                            <input type="number" id="screening-br-limit" name="screening-br-limit" placeholder="5000" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ship-selection-type">Ship Selection Method</label>
+                        <select id="ship-selection-type" name="ship-selection-type" required onchange="toggleShipSelection()">
+                            <option value="">Select Method</option>
+                            <option value="specific">Specific Ships</option>
+                            <option value="rates">Ship Rates</option>
+                        </select>
+                    </div>
+
+                    <div id="ship-rates-section" style="display: none;" class="form-group">
+                        <label>Allowed Ship Rates</label>
+                        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+                            <label style="display: flex; align-items: center; color: #fff;">
+                                <input type="checkbox" name="allowed-rates" value="1st" style="margin-right: 0.5rem;"> 1st Rates
+                            </label>
+                            <label style="display: flex; align-items: center; color: #fff;">
+                                <input type="checkbox" name="allowed-rates" value="2nd" style="margin-right: 0.5rem;"> 2nd Rates
+                            </label>
+                            <label style="display: flex; align-items: center; color: #fff;">
+                                <input type="checkbox" name="allowed-rates" value="3rd" style="margin-right: 0.5rem;"> 3rd Rates
+                            </label>
+                            <label style="display: flex; align-items: center; color: #fff;">
+                                <input type="checkbox" name="allowed-rates" value="4th" style="margin-right: 0.5rem;"> 4th Rates
+                            </label>
+                            <label style="display: flex; align-items: center; color: #fff;">
+                                <input type="checkbox" name="allowed-rates" value="5th" style="margin-right: 0.5rem;"> 5th Rates
+                            </label>
+                            <label style="display: flex; align-items: center; color: #fff;">
+                                <input type="checkbox" name="allowed-rates" value="6th" style="margin-right: 0.5rem;"> 6th Rates
+                            </label>
+                            <label style="display: flex; align-items: center; color: #fff;">
+                                <input type="checkbox" name="allowed-rates" value="7th" style="margin-right: 0.5rem;"> 7th Rates
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="specific-ships-section" style="display: none;" class="form-group">
+                        <label for="allowed-ships">Allowed Ships (comma-separated)</label>
+                        <textarea id="allowed-ships" name="allowed-ships" placeholder="Santisima Trinidad, Victory, Constitution..." rows="3"></textarea>
+                    </div>
+
+                    <div id="screening-fleets-container">
+                        <div class="screening-fleet-config" data-fleet="1">
+                            <h4 style="color: #bfa140; margin: 1rem 0;">Screening Fleet 1</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fleet-1-nation">Fleet Nation</label>
+                                    <select id="fleet-1-nation" name="fleet-1-nation" required>
+                                        <option value="">Select Nation</option>
+                                        <!-- Will be populated by JavaScript -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fleet-1-commander">Fleet Commander</label>
+                                    <input type="text" id="fleet-1-commander" name="fleet-1-commander" placeholder="Commander name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin: 1rem 0;">
+                        <button type="button" class="btn btn-small" onclick="addScreeningFleet()">Add Another Screening Fleet</button>
                     </div>
                 </div>
                 
@@ -384,10 +466,12 @@
             </form>
         </div>
     </div>    <script>
-        // Naval Action API for ports
+        // Naval Action API for ports and nations
         let allPorts = [];
+        let allNations = [];
+        let screeningFleetCount = 1;
         
-        // Fetch ports from Naval Action API
+        // Fetch ports and nations from Naval Action API
         async function fetchPorts() {
             try {
                 const response = await fetch('https://na-map.github.io/api-v1/ports/');
@@ -397,10 +481,15 @@
                     nation: port.nation,
                     region: port.region
                 })).sort((a, b) => a.name.localeCompare(b.name));
-                console.log('Loaded', allPorts.length, 'ports from Naval Action API');
+                
+                // Extract unique nations
+                allNations = [...new Set(data.map(port => port.nation))].sort();
+                populateNationSelects();
+                
+                console.log('Loaded', allPorts.length, 'ports and', allNations.length, 'nations from Naval Action API');
             } catch (error) {
                 console.error('Error fetching ports:', error);
-                // Fallback ports if API fails
+                // Fallback data if API fails
                 allPorts = [
                     { name: 'Bridgetown', nation: 'Great Britain', region: 'Caribbean' },
                     { name: 'Kingston', nation: 'Great Britain', region: 'Caribbean' },
@@ -411,9 +500,92 @@
                     { name: 'Charleston', nation: 'United States', region: 'Caribbean' },
                     { name: 'New Orleans', nation: 'United States', region: 'Caribbean' }
                 ];
+                allNations = ['Great Britain', 'France', 'Spain', 'Netherlands', 'United States', 'Denmark-Norway', 'Sweden-Finland', 'Russia', 'Ottoman Empire', 'Pirate'];
+                populateNationSelects();
             }
         }
-        
+
+        // Populate nation selects
+        function populateNationSelects() {
+            const selects = document.querySelectorAll('select[name$="-nation"]');
+            selects.forEach(select => {
+                select.innerHTML = '<option value="">Select Nation</option>';
+                allNations.forEach(nation => {
+                    const option = document.createElement('option');
+                    option.value = nation;
+                    option.textContent = nation;
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        // Toggle ship selection method
+        function toggleShipSelection() {
+            const method = document.getElementById('ship-selection-type').value;
+            const ratesSection = document.getElementById('ship-rates-section');
+            const shipsSection = document.getElementById('specific-ships-section');
+            
+            if (method === 'rates') {
+                ratesSection.style.display = 'block';
+                shipsSection.style.display = 'none';
+            } else if (method === 'specific') {
+                ratesSection.style.display = 'none';
+                shipsSection.style.display = 'block';
+            } else {
+                ratesSection.style.display = 'none';
+                shipsSection.style.display = 'none';
+            }
+        }
+
+        // Add screening fleet
+        function addScreeningFleet() {
+            if (screeningFleetCount >= 10) {
+                alert('Maximum 10 screening fleets allowed');
+                return;
+            }
+            
+            screeningFleetCount++;
+            const container = document.getElementById('screening-fleets-container');
+            
+            const fleetDiv = document.createElement('div');
+            fleetDiv.className = 'screening-fleet-config';
+            fleetDiv.setAttribute('data-fleet', screeningFleetCount);
+            fleetDiv.innerHTML = `
+                <h4 style="color: #bfa140; margin: 1rem 0;">
+                    Screening Fleet ${screeningFleetCount}
+                    <button type="button" onclick="removeScreeningFleet(${screeningFleetCount})" style="background: #f44336; color: white; border: none; padding: 0.25rem 0.5rem; margin-left: 1rem; cursor: pointer;">Remove</button>
+                </h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fleet-${screeningFleetCount}-nation">Fleet Nation</label>
+                        <select id="fleet-${screeningFleetCount}-nation" name="fleet-${screeningFleetCount}-nation" required>
+                            <option value="">Select Nation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fleet-${screeningFleetCount}-commander">Fleet Commander</label>
+                        <input type="text" id="fleet-${screeningFleetCount}-commander" name="fleet-${screeningFleetCount}-commander" placeholder="Commander name">
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(fleetDiv);
+            populateNationSelects(); // Populate the new select
+        }
+
+        // Remove screening fleet
+        function removeScreeningFleet(fleetNumber) {
+            const fleetDiv = document.querySelector(`[data-fleet="${fleetNumber}"]`);
+            if (fleetDiv && screeningFleetCount > 1) {
+                fleetDiv.remove();
+                // Don't decrease screeningFleetCount to maintain unique IDs
+            }        }
+
+        // Generate access codes
+        function generateAccessCode() {
+            return Math.random().toString(36).substring(2, 8).toUpperCase();
+        }
+
         // Initialize port search for both fields
         function initializePortSearch() {
             setupPortSuggestions('pb-port', 'port-suggestions');
@@ -611,17 +783,59 @@
             }) + ' UTC';
         }        // Enhanced PB functions
         function openSignup(pbId) {
-            const signupUrl = `pb-signup.html?id=${pbId}`;
-            window.open(signupUrl, '_blank');
+            const pb = portBattles.find(p => p.id === pbId);
+            if (!pb) return;
+            
+            const accessCode = prompt('Enter access code to join this Port Battle:');
+            if (accessCode === pb.accessCode) {
+                const signupUrl = `pb-signup.html?id=${pbId}&code=${accessCode}`;
+                window.open(signupUrl, '_blank');
+            } else if (accessCode !== null) {
+                alert('❌ Invalid access code!');
+            }
         }
-        
-        function promptAdminAccess() {
+          function promptAdminAccess() {
             const password = prompt('Enter admin password:');
             if (password === 'UnionJack123') {
-                window.location.href = 'pb-admin.html';
+                showAllAccessCodes();
             } else if (password !== null) {
                 alert('Incorrect password. Access denied.');
             }
+        }
+
+        function showAllAccessCodes() {
+            let codesDisplay = 'PORT BATTLE ACCESS CODES\n\n';
+            
+            if (portBattles.length === 0) {
+                codesDisplay += 'No port battles created yet.';
+            } else {
+                portBattles.forEach((pb, index) => {
+                    codesDisplay += `${index + 1}. ${pb.port} (${formatDateTime(pb.pbTime)})\n`;
+                    codesDisplay += `   Player Access Code: ${pb.accessCode}\n`;
+                    codesDisplay += `   Admin Code: ${pb.adminCode}\n`;
+                    codesDisplay += `   Sign-up URL: pb-signup.html?id=${pb.id}&code=${pb.accessCode}\n\n`;
+                });
+            }
+            
+            // Create a modal to display codes instead of alert
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.style.display = 'block';
+            modal.innerHTML = `
+                <div class="modal-content" style="max-width: 800px;">
+                    <div class="modal-header">
+                        <h2 style="color: #bfa140;">Port Battle Access Codes</h2>
+                        <button class="close" onclick="this.closest('.modal').remove()">&times;</button>
+                    </div>
+                    <div style="font-family: monospace; white-space: pre-wrap; background: #1a1a1a; padding: 1rem; border: 1px solid #bfa140; max-height: 500px; overflow-y: auto;">
+${codesDisplay}
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <button class="btn" onclick="window.location.href='pb-admin.html'">Go to Admin Panel</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
         }
 
         function managePB(pbId) {
@@ -695,6 +909,26 @@
             e.preventDefault();
             
             const formData = new FormData(this);
+            
+            // Collect screening fleet data
+            const screeningFleets = [];
+            const fleetConfigs = document.querySelectorAll('.screening-fleet-config');
+            fleetConfigs.forEach((config, index) => {
+                const fleetNumber = config.getAttribute('data-fleet');
+                screeningFleets.push({
+                    id: fleetNumber,
+                    nation: formData.get(`fleet-${fleetNumber}-nation`),
+                    commander: formData.get(`fleet-${fleetNumber}-commander`) || 'TBD',
+                    signups: [],
+                    maxSignups: 70
+                });
+            });
+
+            // Collect allowed rates
+            const allowedRates = [];
+            const rateCheckboxes = document.querySelectorAll('input[name="allowed-rates"]:checked');
+            rateCheckboxes.forEach(checkbox => allowedRates.push(checkbox.value));
+
             const newPB = {
                 id: 'pb_' + Date.now(),
                 port: formData.get('pb-port'),
@@ -705,7 +939,18 @@
                 meetingLocation: formData.get('meeting-location'),
                 signups: 0,
                 maxSignups: 70,
-                adminCode: generateAdminCode()
+                adminCode: generateAdminCode(),
+                accessCode: generateAccessCode(),
+                
+                // Screening fleet data
+                screening: {
+                    type: formData.get('screening-type'),
+                    brLimit: parseInt(formData.get('screening-br-limit')),
+                    shipSelectionType: formData.get('ship-selection-type'),
+                    allowedRates: allowedRates,
+                    allowedShips: formData.get('allowed-ships') ? formData.get('allowed-ships').split(',').map(s => s.trim()) : [],
+                    fleets: screeningFleets
+                }
             };
             
             portBattles.push(newPB);
@@ -716,7 +961,27 @@
             // Show the created PB details
             setTimeout(() => viewPBDetails(newPB.id), 100);
             
+            // Reset form and screening fleet count
             this.reset();
+            screeningFleetCount = 1;
+            document.getElementById('screening-fleets-container').innerHTML = `
+                <div class="screening-fleet-config" data-fleet="1">
+                    <h4 style="color: #bfa140; margin: 1rem 0;">Screening Fleet 1</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fleet-1-nation">Fleet Nation</label>
+                            <select id="fleet-1-nation" name="fleet-1-nation" required>
+                                <option value="">Select Nation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fleet-1-commander">Fleet Commander</label>
+                            <input type="text" id="fleet-1-commander" name="fleet-1-commander" placeholder="Commander name">
+                        </div>
+                    </div>
+                </div>
+            `;
+            populateNationSelects();
         });
 
         // Close modals when clicking outside

@@ -325,39 +325,204 @@
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
-                </thead>
-                <tbody id="fleet-tbody">
+                </thead>                <tbody id="fleet-tbody">
                     <!-- Table rows will be populated by JavaScript -->
                 </tbody>
             </table>
         </div>
-    </div>
 
-    <script>
-        // Get URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const pbId = urlParams.get('id');
-        const adminCode = urlParams.get('code');
-
-        // Sample PB data (would normally come from server)
-        const pbData = {
-            id: pbId || 'example1',
-            port: 'Santo Domingo',
-            type: 'deep',
-            brLimit: 5000,
-            meetingTime: '2025-06-23T19:00:00Z',
-            pbTime: '2025-06-23T20:00:00Z',
-            meetingLocation: 'Port-au-Prince',
-            adminCode: adminCode || '12345678',
-            commanders: {
-                pb: null,
-                second: null,
-                req: null
+        <!-- Screening Fleets Admin Section -->
+        <div id="screening-admin-section" style="display: none;">
+            <h2 style="color: #bfa140; margin-bottom: 1rem;">Screening Fleet Management</h2>
+            <div id="screening-fleets-admin">
+                <!-- Screening fleet admin panels will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>    <script>
+        // Load PB data from localStorage
+        let currentPB = null;
+        
+        function loadPBData() {
+            const savedData = localStorage.getItem('krakenPBData');
+            if (savedData) {
+                const portBattles = JSON.parse(savedData);
+                // If no specific PB ID, show all PBs admin panel
+                if (!window.location.search.includes('id=')) {
+                    showAllPBsAdmin(portBattles);
+                    return;
+                }
+                
+                const pbId = new URLSearchParams(window.location.search).get('id');
+                currentPB = portBattles.find(pb => pb.id === pbId);
+                
+                if (!currentPB) {
+                    alert('Port Battle not found!');
+                    window.location.href = 'pb.html';
+                    return;
+                }
+                
+                loadPBDetails();
+            } else {
+                alert('No port battle data found!');
+                window.location.href = 'pb.html';
             }
-        };
+        }
 
-        // Sample fleet signup data
-        const fleetSignups = [
+        function showAllPBsAdmin(portBattles) {
+            document.querySelector('.admin-title').textContent = 'All Port Battles - Admin Panel';
+            document.querySelector('.admin-container').innerHTML = `
+                <div class="admin-header">
+                    <h1 class="admin-title">All Port Battles - Admin Panel</h1>
+                </div>
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="color: #bfa140; margin-bottom: 1rem;">Access Codes & Information</h2>
+                    ${portBattles.length === 0 ? 
+                        '<p style="text-align: center; color: #888;">No port battles created yet.</p>' :
+                        portBattles.map(pb => `
+                            <div style="background: #1a1a1a; border: 2px solid #bfa140; padding: 1rem; margin-bottom: 1rem;">
+                                <h3 style="color: #bfa140;">${pb.port} - ${new Date(pb.pbTime).toLocaleDateString()}</h3>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                                    <div><strong>Player Access Code:</strong> ${pb.accessCode}</div>
+                                    <div><strong>Admin Code:</strong> ${pb.adminCode}</div>
+                                    <div><strong>Sign-up URL:</strong> pb-signup.html?id=${pb.id}&code=${pb.accessCode}</div>
+                                    <div><strong>Admin URL:</strong> pb-admin.html?id=${pb.id}</div>
+                                </div>
+                                <div style="text-align: center; margin-top: 1rem;">
+                                    <button onclick="window.location.href='pb-admin.html?id=${pb.id}'" class="btn">Manage This PB</button>
+                                </div>
+                            </div>
+                        `).join('')
+                    }
+                </div>
+            `;        }
+
+        function loadPBDetails() {
+            if (!currentPB) return;
+            
+            document.getElementById('pb-title').textContent = `${currentPB.port} Port Battle - Admin Panel`;
+            document.getElementById('pb-port').textContent = currentPB.port;
+            document.getElementById('pb-type').textContent = currentPB.type === 'deep' ? 'Deep Water' : 'Shallow Water';
+            document.getElementById('pb-meeting-time').textContent = formatDateTime(currentPB.meetingTime);
+            document.getElementById('pb-time').textContent = formatDateTime(currentPB.pbTime);
+            document.getElementById('pb-meeting-location').textContent = currentPB.meetingLocation;
+            document.getElementById('pb-br-limit').textContent = currentPB.brLimit;
+            document.getElementById('pb-admin-code').textContent = currentPB.adminCode;
+            document.getElementById('pb-access-code').textContent = currentPB.accessCode;
+            
+            // Load screening fleets if they exist
+            if (currentPB.screening && currentPB.screening.fleets && currentPB.screening.fleets.length > 0) {
+                loadScreeningAdmin();
+            }
+            
+            updateCommanderCards();
+            loadFleetTable();
+            updateStatistics();
+        }
+
+        function loadScreeningAdmin() {
+            const screeningSection = document.getElementById('screening-admin-section');
+            const container = document.getElementById('screening-fleets-admin');
+            
+            screeningSection.style.display = 'block';
+            container.innerHTML = '';
+            
+            currentPB.screening.fleets.forEach(fleet => {
+                const fleetDiv = document.createElement('div');
+                fleetDiv.style.marginBottom = '2rem';
+                
+                fleetDiv.innerHTML = `
+                    <div style="background: #1a1a1a; border: 2px solid #bfa140; padding: 1.5rem;">
+                        <h3 style="color: #bfa140; margin-bottom: 1rem;">
+                            Screening Fleet ${fleet.id} - ${fleet.nation}
+                            <span style="float: right; font-size: 0.9rem;">
+                                Commander: ${fleet.commander} | ${fleet.signups ? fleet.signups.length : 0}/70 signed up
+                            </span>
+                        </h3>
+                        <div style="margin-bottom: 1rem;">
+                            <strong>Type:</strong> ${currentPB.screening.type} | 
+                            <strong>BR Limit:</strong> ${currentPB.screening.brLimit} | 
+                            <strong>Ship Selection:</strong> ${currentPB.screening.shipSelectionType}
+                        </div>
+                        <table class="fleet-table">
+                            <thead>
+                                <tr>
+                                    <th>Player</th>
+                                    <th>Clan</th>
+                                    <th>Ship</th>
+                                    <th>BR</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${fleet.signups ? fleet.signups.map(signup => `
+                                    <tr>
+                                        <td>${signup.playerName}</td>
+                                        <td>${signup.clan}</td>
+                                        <td>${signup.ship}</td>
+                                        <td>${signup.br}</td>
+                                        <td>
+                                            <span style="color: ${signup.approved ? '#4ade80' : signup.confirmed ? '#fbbf24' : '#ef4444'};">
+                                                ${signup.approved ? '✓ Approved' : signup.confirmed ? '⏳ Confirmed' : '❌ Unconfirmed'}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button onclick="approveScreeningSignup('${fleet.id}', '${signup.id}')" class="btn-small btn-approve">Approve</button>
+                                                <button onclick="rejectScreeningSignup('${fleet.id}', '${signup.id}')" class="btn-small btn-reject">Reject</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                `).join('') : '<tr><td colspan="6" style="text-align: center; color: #888;">No sign-ups yet</td></tr>'}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+                
+                container.appendChild(fleetDiv);
+            });
+        }
+
+        function approveScreeningSignup(fleetId, signupId) {
+            const fleet = currentPB.screening.fleets.find(f => f.id === fleetId);
+            if (!fleet) return;
+            
+            const signup = fleet.signups.find(s => s.id === signupId);
+            if (!signup) return;
+            
+            signup.approved = true;
+            signup.confirmed = true;
+            saveAdminData();
+            loadScreeningAdmin();
+        }
+
+        function rejectScreeningSignup(fleetId, signupId) {
+            const fleet = currentPB.screening.fleets.find(f => f.id === fleetId);
+            if (!fleet) return;
+            
+            const signup = fleet.signups.find(s => s.id === signupId);
+            if (!signup) return;
+            
+            signup.approved = false;
+            signup.confirmed = false;
+            saveAdminData();
+            loadScreeningAdmin();
+        }
+
+        function saveAdminData() {
+            const savedData = localStorage.getItem('krakenPBData');
+            if (savedData) {
+                const portBattles = JSON.parse(savedData);
+                const pbIndex = portBattles.findIndex(pb => pb.id === currentPB.id);
+                if (pbIndex !== -1) {
+                    portBattles[pbIndex] = currentPB;
+                    localStorage.setItem('krakenPBData', JSON.stringify(portBattles));
+                }
+            }
+        }
+
+        // Sample fleet signup data (fallback if no real data)
+        const sampleFleetSignups = [
             {
                 id: 1,
                 captain: 'Admiral Nelson',
@@ -519,11 +684,9 @@
                 alert(`Edit functionality would open a modal to edit ${signup.captain}'s signup details.`);
                 // In a real app, this would open an edit modal
             }
-        }
-
-        // Initialize page
+        }        // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
-            loadPBDetails();
+            loadPBData();
         });
     </script>
 </body>
