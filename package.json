@@ -2,12 +2,9 @@
   "name": "kraken-clan-website",
   "version": "1.0.0",
   "description": "KRAKEN Naval Action clan website with Discord application form",
-  "main": "discord-proxy.js",
-  "scripts": {
+  "main": "discord-proxy.js",  "scripts": {
     "start": "node discord-proxy.js",
-    "dev": "nodemon discord-proxy.js",
-    "build": "echo 'No build step required for static site'",
-    "vercel-build": "echo 'Build complete'"
+    "dev": "nodemon discord-proxy.js"
   },
   "dependencies": {
     "express": "^4.18.2",
