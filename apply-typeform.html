@@ -97,17 +97,7 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        .question-number {
-            color: #bfa140;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-
-        .question-title {
+        }        .question-title {
             font-size: 2.5rem;
             font-weight: 700;
             color: #fff;
@@ -386,11 +376,8 @@
                     <div></div>
                     <button class="nav-button primary" onclick="nextQuestion()">Let's Begin</button>
                 </div>
-            </div>
-
-            <!-- Question 2: Captain's Name -->
+            </div>            <!-- Question 2: Captain's Name -->
             <div class="question-container" data-question="1">
-                <div class="question-number">Question 1 of 6</div>
                 <h2 class="question-title">What's your captain's name?</h2>
                 <p class="question-subtitle">Tell us what you're called on the high seas</p>
                 <div class="input-group">
@@ -400,25 +387,18 @@
                     <button class="nav-button" onclick="prevQuestion()">Back</button>
                     <button class="nav-button primary" onclick="nextQuestion()" disabled id="nameNext">Continue</button>
                 </div>
-            </div>
-
-            <!-- Question 3: Discord Username -->
+            </div>            <!-- Question 3: Discord Username -->
             <div class="question-container" data-question="2">
-                <div class="question-number">Question 2 of 6</div>
                 <h2 class="question-title">What's your Discord username?</h2>
-                <p class="question-subtitle">We use Discord for all clan coordination and RvR planning</p>
-                <div class="input-group">
-                    <input type="text" class="form-input" id="discordUsername" placeholder="username#1234" required>
+                <p class="question-subtitle">We use Discord for all clan coordination and RvR planning</p>                <div class="input-group">
+                    <input type="text" class="form-input" id="discordUsername" placeholder="username" required>
                 </div>
                 <div class="navigation-buttons">
                     <button class="nav-button" onclick="prevQuestion()">Back</button>
                     <button class="nav-button primary" onclick="nextQuestion()" disabled id="discordNext">Continue</button>
                 </div>
-            </div>
-
-            <!-- Question 4: Player Type -->
+            </div>            <!-- Question 4: Player Type -->
             <div class="question-container" data-question="3">
-                <div class="question-number">Question 3 of 6</div>
                 <h2 class="question-title">What type of player are you?</h2>
                 <p class="question-subtitle">Help us understand your play style and availability</p>
                 <div class="options-grid">
@@ -439,11 +419,8 @@
                     <button class="nav-button" onclick="prevQuestion()">Back</button>
                     <button class="nav-button primary" onclick="nextQuestion()" disabled id="playerTypeNext">Continue</button>
                 </div>
-            </div>
-
-            <!-- Question 5: RvR Experience -->
+            </div>            <!-- Question 5: RvR Experience -->
             <div class="question-container" data-question="4">
-                <div class="question-number">Question 4 of 6</div>
                 <h2 class="question-title">What's your RvR experience?</h2>
                 <p class="question-subtitle">Don't worry if you're new - we train our captains!</p>
                 <div class="options-grid">
@@ -472,11 +449,8 @@
                     <button class="nav-button" onclick="prevQuestion()">Back</button>
                     <button class="nav-button primary" onclick="nextQuestion()" disabled id="rvrNext">Continue</button>
                 </div>
-            </div>
-
-            <!-- Question 6: Why Join -->
+            </div>            <!-- Question 6: Why Join -->
             <div class="question-container" data-question="5">
-                <div class="question-number">Question 5 of 6</div>
                 <h2 class="question-title">Why do you want to join KRAKEN?</h2>
                 <p class="question-subtitle">Tell us what motivates you to sail with our crew</p>
                 <div class="input-group">
@@ -486,11 +460,8 @@
                     <button class="nav-button" onclick="prevQuestion()">Back</button>
                     <button class="nav-button primary" onclick="nextQuestion()">Continue</button>
                 </div>
-            </div>
-
-            <!-- Question 7: Previous Clans (Optional) -->
+            </div>            <!-- Question 7: Previous Clans (Optional) -->
             <div class="question-container" data-question="6">
-                <div class="question-number">Question 6 of 6</div>
                 <h2 class="question-title">Any previous clans?</h2>
                 <p class="question-subtitle">Optional - helps us understand your Naval Action journey</p>
                 <div class="input-group">
@@ -595,12 +566,10 @@
             document.getElementById('captainName').addEventListener('input', function() {
                 const nextBtn = document.getElementById('nameNext');
                 nextBtn.disabled = this.value.trim().length < 2;
-            });
-
-            // Discord username validation
+            });            // Discord username validation
             document.getElementById('discordUsername').addEventListener('input', function() {
                 const nextBtn = document.getElementById('discordNext');
-                const isValid = this.value.trim().length > 3 && (this.value.includes('#') || this.value.includes('@'));
+                const isValid = this.value.trim().length > 2;
                 nextBtn.disabled = !isValid;
             });
         }
