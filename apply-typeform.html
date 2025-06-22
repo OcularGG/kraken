@@ -97,7 +97,9 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }        .question-title {
+        }
+
+        .question-title {
             font-size: 2.5rem;
             font-weight: 700;
             color: #fff;
@@ -328,6 +330,31 @@
             to { transform: rotate(360deg); }
         }
 
+        .clan-input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .clan-input {
+            flex: 1;
+        }
+
+        .remove-clan-btn {
+            margin-left: 15px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .remove-clan-btn:hover {
+            background: #ff6666;
+        }
+
         @media (max-width: 768px) {
             .form-wrapper {
                 padding: 40px 20px;
@@ -367,18 +394,19 @@
     
     <div class="typeform-container">
         <div class="form-wrapper">
-            <!-- Question 1: Welcome -->
+            <!-- Question 0: Welcome -->
             <div class="question-container active" data-question="0">
-                <div class="question-number">Welcome to KRAKEN</div>
                 <h1 class="question-title">Ahoy, Captain! 🦑</h1>
                 <p class="question-subtitle">Ready to join the most elite Naval Action RvR clan? Let's get to know you better.</p>
                 <div class="navigation-buttons">
                     <div></div>
                     <button class="nav-button primary" onclick="nextQuestion()">Let's Begin</button>
                 </div>
-            </div>            <!-- Question 2: Captain's Name -->
+            </div>
+
+            <!-- Question 1: Captain's Name -->
             <div class="question-container" data-question="1">
-                <h2 class="question-title">What's your captain's name?</h2>
+                <h2 class="question-title">What is your Captain's name?</h2>
                 <p class="question-subtitle">Tell us what you're called on the high seas</p>
                 <div class="input-group">
                     <input type="text" class="form-input" id="captainName" placeholder="Enter your captain's name" required>
@@ -387,85 +415,200 @@
                     <button class="nav-button" onclick="prevQuestion()">Back</button>
                     <button class="nav-button primary" onclick="nextQuestion()" disabled id="nameNext">Continue</button>
                 </div>
-            </div>            <!-- Question 3: Discord Username -->
+            </div>
+
+            <!-- Question 2: Previous Clans -->
             <div class="question-container" data-question="2">
-                <h2 class="question-title">What's your Discord username?</h2>
-                <p class="question-subtitle">We use Discord for all clan coordination and RvR planning</p>                <div class="input-group">
+                <h2 class="question-title">What previous clans have you been in?</h2>
+                <p class="question-subtitle">List any clans you've sailed with before (optional)</p>
+                <div class="input-group" id="previousClansContainer">
+                    <div class="clan-input-group">
+                        <input type="text" class="form-input clan-input" placeholder="Enter clan name (or leave blank if none)">
+                    </div>
+                </div>
+                <button class="nav-button" onclick="addClanField()" style="margin-bottom: 20px;">Add Another Clan</button>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 3: Do you have Discord -->
+            <div class="question-container" data-question="3">
+                <h2 class="question-title">Do you have Discord?</h2>
+                <p class="question-subtitle">We use Discord for all clan coordination and RvR planning</p>
+                <div class="options-grid">
+                    <button class="option-button" data-value="Yes" onclick="selectOption(this, 'hasDiscord')">
+                        ✅ Yes<br>
+                        <small style="opacity: 0.7;">I have Discord</small>
+                    </button>
+                    <button class="option-button" data-value="No" onclick="selectOption(this, 'hasDiscord')">
+                        ❌ No<br>
+                        <small style="opacity: 0.7;">I don't have Discord</small>
+                    </button>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="hasDiscordNext">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 4: Discord Username -->
+            <div class="question-container" data-question="4">
+                <h2 class="question-title">What is your Discord username?</h2>
+                <p class="question-subtitle">We'll use this to contact you</p>
+                <div class="input-group">
                     <input type="text" class="form-input" id="discordUsername" placeholder="username" required>
                 </div>
                 <div class="navigation-buttons">
                     <button class="nav-button" onclick="prevQuestion()">Back</button>
                     <button class="nav-button primary" onclick="nextQuestion()" disabled id="discordNext">Continue</button>
                 </div>
-            </div>            <!-- Question 4: Player Type -->
-            <div class="question-container" data-question="3">
-                <h2 class="question-title">What type of player are you?</h2>
-                <p class="question-subtitle">Help us understand your play style and availability</p>
+            </div>
+
+            <!-- Question 5: Are you in KRAKEN Discord -->
+            <div class="question-container" data-question="5">
+                <h2 class="question-title">Are you in the KRAKEN Discord?</h2>
+                <p class="question-subtitle">Our main clan communication hub</p>
                 <div class="options-grid">
-                    <button class="option-button" data-value="Casual" onclick="selectOption(this, 'playerType')">
-                        🏴‍☠️ Casual Player<br>
-                        <small style="opacity: 0.7;">Few hours per week</small>
+                    <button class="option-button" data-value="Yes" onclick="selectOption(this, 'inKrakenDiscord')">
+                        ✅ Yes<br>
+                        <small style="opacity: 0.7;">Already a member</small>
                     </button>
-                    <button class="option-button" data-value="Hardcore" onclick="selectOption(this, 'playerType')">
-                        ⚔️ Hardcore Player<br>
-                        <small style="opacity: 0.7;">Daily gaming sessions</small>
+                    <button class="option-button" data-value="No" onclick="selectOption(this, 'inKrakenDiscord')">
+                        ❌ No<br>
+                        <small style="opacity: 0.7;">Not yet</small>
                     </button>
-                    <button class="option-button" data-value="Weekend Warrior" onclick="selectOption(this, 'playerType')">
-                        🗓️ Weekend Warrior<br>
-                        <small style="opacity: 0.7;">Weekends mostly</small>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="inKrakenDiscordNext">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 6: KRAKEN Discord Invite -->
+            <div class="question-container" data-question="6">
+                <h2 class="question-title">Join our Discord!</h2>
+                <p class="question-subtitle">Here's your invite to the KRAKEN Discord server:</p>
+                <div class="input-group">
+                    <a href="https://discord.gg/PDZNTxPU94" target="_blank" class="nav-button primary" style="display: inline-block; text-decoration: none; margin-bottom: 20px;">
+                        🎮 Join KRAKEN Discord
+                    </a>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 7: Are you in British Admiralty Discord -->
+            <div class="question-container" data-question="7">
+                <h2 class="question-title">Are you in the British Admiralty Discord?</h2>
+                <p class="question-subtitle">The main British nation coordination server</p>
+                <div class="options-grid">
+                    <button class="option-button" data-value="Yes" onclick="selectOption(this, 'inAdmiraltyDiscord')">
+                        ✅ Yes<br>
+                        <small style="opacity: 0.7;">Already a member</small>
+                    </button>
+                    <button class="option-button" data-value="No" onclick="selectOption(this, 'inAdmiraltyDiscord')">
+                        ❌ No<br>
+                        <small style="opacity: 0.7;">Not yet</small>
+                    </button>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="inAdmiraltyDiscordNext">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 8: British Admiralty Discord Invite -->
+            <div class="question-container" data-question="8">
+                <h2 class="question-title">Join the British Admiralty!</h2>
+                <p class="question-subtitle">Here's your invite to the British Admiralty Discord server:</p>
+                <div class="input-group">
+                    <a href="https://discord.gg/kHp7uRk9WV" target="_blank" class="nav-button primary" style="display: inline-block; text-decoration: none; margin-bottom: 20px;">
+                        🇬🇧 Join British Admiralty
+                    </a>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 9: New or Returning Player -->
+            <div class="question-container" data-question="9">
+                <h2 class="question-title">Are you a new player or a returning player?</h2>
+                <p class="question-subtitle">Help us understand your Naval Action experience</p>
+                <div class="options-grid">
+                    <button class="option-button" data-value="New Player" onclick="selectOption(this, 'playerType')">
+                        🆕 New Player<br>
+                        <small style="opacity: 0.7;">Just started Naval Action</small>
+                    </button>
+                    <button class="option-button" data-value="Returning Player" onclick="selectOption(this, 'playerType')">
+                        🔄 Returning Player<br>
+                        <small style="opacity: 0.7;">Been playing for a while</small>
                     </button>
                 </div>
                 <div class="navigation-buttons">
                     <button class="nav-button" onclick="prevQuestion()">Back</button>
                     <button class="nav-button primary" onclick="nextQuestion()" disabled id="playerTypeNext">Continue</button>
                 </div>
-            </div>            <!-- Question 5: RvR Experience -->
-            <div class="question-container" data-question="4">
-                <h2 class="question-title">What's your RvR experience?</h2>
-                <p class="question-subtitle">Don't worry if you're new - we train our captains!</p>
+            </div>
+
+            <!-- Question 10: Current Rank (for returning players) -->
+            <div class="question-container" data-question="10">
+                <h2 class="question-title">What is your current rank?</h2>
+                <p class="question-subtitle">Select your current Naval Action rank</p>
+                <div class="input-group">
+                    <select class="form-input" id="currentRank" style="text-align: left; padding-left: 20px;">
+                        <option value="">Select your rank</option>
+                        <option value="Midshipman">⚓ Midshipman</option>
+                        <option value="Ensign">🎖️ Ensign</option>
+                        <option value="Second Lieutenant">🎖️ Second Lieutenant</option>
+                        <option value="First Lieutenant">🎖️ First Lieutenant</option>
+                        <option value="Lieutenant Commander">⭐ Lieutenant Commander</option>
+                        <option value="Master and Commander">⭐ Master and Commander</option>
+                        <option value="Post Captain">⭐⭐ Post Captain</option>
+                        <option value="Flag Captain">⭐⭐ Flag Captain</option>
+                        <option value="Commodore">🌊 Commodore</option>
+                        <option value="Rear Admiral">🌊⭐ Rear Admiral</option>
+                        <option value="Vice-Admiral">🌊⭐⭐ Vice-Admiral</option>
+                        <option value="Admiral">🌊⭐⭐⭐ Admiral</option>
+                    </select>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="rankNext">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 11: Familiar with RvR -->
+            <div class="question-container" data-question="11">
+                <h2 class="question-title">Are you familiar with RvR?</h2>
+                <p class="question-subtitle">RvR (Realm vs Realm) is our main focus - port battles and territorial conquest</p>
                 <div class="options-grid">
-                    <button class="option-button" data-value="None" onclick="selectOption(this, 'rvrExperience')">
-                        🆕 New to RvR<br>
-                        <small style="opacity: 0.7;">Ready to learn!</small>
+                    <button class="option-button" data-value="Yes" onclick="selectOption(this, 'familiarWithRvR')">
+                        ✅ Yes<br>
+                        <small style="opacity: 0.7;">I know RvR</small>
                     </button>
-                    <button class="option-button" data-value="Beginner" onclick="selectOption(this, 'rvrExperience')">
-                        ⭐ Beginner<br>
-                        <small style="opacity: 0.7;">1-5 battles</small>
-                    </button>
-                    <button class="option-button" data-value="Intermediate" onclick="selectOption(this, 'rvrExperience')">
-                        ⭐⭐ Intermediate<br>
-                        <small style="opacity: 0.7;">6-20 battles</small>
-                    </button>
-                    <button class="option-button" data-value="Experienced" onclick="selectOption(this, 'rvrExperience')">
-                        ⭐⭐⭐ Experienced<br>
-                        <small style="opacity: 0.7;">20+ battles</small>
-                    </button>
-                    <button class="option-button" data-value="Veteran" onclick="selectOption(this, 'rvrExperience')">
-                        ⭐⭐⭐⭐ Veteran<br>
-                        <small style="opacity: 0.7;">50+ battles</small>
+                    <button class="option-button" data-value="No" onclick="selectOption(this, 'familiarWithRvR')">
+                        ❌ No<br>
+                        <small style="opacity: 0.7;">New to RvR</small>
                     </button>
                 </div>
                 <div class="navigation-buttons">
                     <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="rvrNext">Continue</button>
+                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="familiarWithRvRNext">Continue</button>
                 </div>
-            </div>            <!-- Question 6: Why Join -->
-            <div class="question-container" data-question="5">
-                <h2 class="question-title">Why do you want to join KRAKEN?</h2>
-                <p class="question-subtitle">Tell us what motivates you to sail with our crew</p>
+            </div>
+
+            <!-- Question 12: RvR Experience -->
+            <div class="question-container" data-question="12">
+                <h2 class="question-title">What kind of RvR experience do you have?</h2>
+                <p class="question-subtitle">Tell us about your port battle experience, strategies you know, or what you'd like to learn</p>
                 <div class="input-group">
-                    <textarea class="form-textarea" id="whyJoin" placeholder="Share your thoughts... What draws you to KRAKEN? What are you looking for in a clan?"></textarea>
-                </div>
-                <div class="navigation-buttons">
-                    <button class="nav-button" onclick="prevQuestion()">Back</button>
-                    <button class="nav-button primary" onclick="nextQuestion()">Continue</button>
-                </div>
-            </div>            <!-- Question 7: Previous Clans (Optional) -->
-            <div class="question-container" data-question="6">
-                <h2 class="question-title">Any previous clans?</h2>
-                <p class="question-subtitle">Optional - helps us understand your Naval Action journey</p>
-                <div class="input-group">
-                    <input type="text" class="form-input" id="previousClans" placeholder="List previous clans (or leave blank if none)">
+                    <textarea class="form-textarea" id="rvrExperience" placeholder="Share your RvR experience... What port battles have you participated in? What roles do you prefer? What would you like to learn?"></textarea>
                 </div>
                 <div class="navigation-buttons">
                     <button class="nav-button" onclick="prevQuestion()">Back</button>
@@ -493,7 +636,7 @@
 
     <script>
         let currentQuestion = 0;
-        const totalQuestions = 7;
+        let totalQuestions = 13;
         const formData = {};
 
         // Update progress bar
@@ -505,43 +648,102 @@
         // Show specific question
         function showQuestion(index) {
             document.querySelectorAll('.question-container').forEach(q => q.classList.remove('active'));
-            document.querySelector(`[data-question="${index}"]`).classList.add('active');
-            currentQuestion = index;
-            updateProgress();
+            const questionElement = document.querySelector(`[data-question="${index}"]`);
+            if (questionElement) {
+                questionElement.classList.add('active');
+                currentQuestion = index;
+                updateProgress();
+            }
+        }
+
+        // Check if question should be shown based on conditions
+        function shouldShowQuestion(questionIndex) {
+            switch (questionIndex) {
+                case 4: // Discord username - only if has Discord
+                    return formData.hasDiscord === 'Yes';
+                case 6: // KRAKEN Discord invite - only if not in KRAKEN Discord
+                    return formData.inKrakenDiscord === 'No';
+                case 8: // British Admiralty invite - only if not in Admiralty Discord  
+                    return formData.inAdmiraltyDiscord === 'No';
+                case 10: // Current rank - only if returning player
+                    return formData.playerType === 'Returning Player';
+                default:
+                    return true;
+            }
+        }
+
+        // Find next valid question
+        function findNextQuestion(fromIndex) {
+            for (let i = fromIndex + 1; i < totalQuestions; i++) {
+                if (shouldShowQuestion(i)) {
+                    return i;
+                }
+            }
+            return -1; // No more questions
+        }
+
+        // Find previous valid question
+        function findPrevQuestion(fromIndex) {
+            for (let i = fromIndex - 1; i >= 0; i--) {
+                if (shouldShowQuestion(i)) {
+                    return i;
+                }
+            }
+            return 0; // Go to start
         }
 
         // Next question
         function nextQuestion() {
-            if (currentQuestion < totalQuestions - 1) {
-                saveCurrentData();
-                showQuestion(currentQuestion + 1);
+            saveCurrentData();
+            
+            const nextIndex = findNextQuestion(currentQuestion);
+            if (nextIndex === -1) {
+                // No more questions, show submit
+                showQuestion(12); // RvR Experience is always the last question
+            } else {
+                showQuestion(nextIndex);
             }
         }
 
-        // Previous question
+        // Previous question  
         function prevQuestion() {
-            if (currentQuestion > 0) {
-                showQuestion(currentQuestion - 1);
-            }
+            const prevIndex = findPrevQuestion(currentQuestion);
+            showQuestion(prevIndex);
         }
 
         // Save current form data
         function saveCurrentData() {
-            const question = document.querySelector(`[data-question="${currentQuestion}"]`);
-            const inputs = question.querySelectorAll('input, textarea');
-            
+            const activeQuestion = document.querySelector('.question-container.active');
+            if (!activeQuestion) return;
+
+            const inputs = activeQuestion.querySelectorAll('input, textarea, select');
             inputs.forEach(input => {
                 if (input.value.trim()) {
                     formData[input.id] = input.value.trim();
                 }
             });
 
-            // Save selected options
-            const selectedOptions = question.querySelectorAll('.option-button.selected');
+            // Save previous clans as array
+            const clanInputs = document.querySelectorAll('.clan-input');
+            if (clanInputs.length > 0) {
+                formData.previousClans = Array.from(clanInputs)
+                    .map(input => input.value.trim())
+                    .filter(value => value !== '');
+            }
+
+            // Save selected options  
+            const selectedOptions = activeQuestion.querySelectorAll('.option-button.selected');
             selectedOptions.forEach(option => {
-                const questionType = option.closest('[data-question]').dataset.question;
-                if (questionType === '3') formData.playerType = option.dataset.value;
-                if (questionType === '4') formData.rvrExperience = option.dataset.value;
+                const questionIndex = parseInt(activeQuestion.dataset.question);
+                const value = option.dataset.value;
+                
+                switch (questionIndex) {
+                    case 3: formData.hasDiscord = value; break;
+                    case 5: formData.inKrakenDiscord = value; break;
+                    case 7: formData.inAdmiraltyDiscord = value; break;
+                    case 9: formData.playerType = value; break;
+                    case 11: formData.familiarWithRvR = value; break;
+                }
             });
         }
 
@@ -560,17 +762,42 @@
             if (nextBtn) nextBtn.disabled = false;
         }
 
+        // Add clan field
+        function addClanField() {
+            const container = document.getElementById('previousClansContainer');
+            const newGroup = document.createElement('div');
+            newGroup.className = 'clan-input-group';
+            newGroup.innerHTML = `
+                <input type="text" class="form-input clan-input" placeholder="Enter clan name">
+                <button type="button" class="remove-clan-btn" onclick="removeClanField(this)">Remove</button>
+            `;
+            container.appendChild(newGroup);
+        }
+
+        // Remove clan field
+        function removeClanField(button) {
+            button.parentElement.remove();
+        }
+
         // Input validation
         function setupValidation() {
             // Captain name validation
             document.getElementById('captainName').addEventListener('input', function() {
                 const nextBtn = document.getElementById('nameNext');
                 nextBtn.disabled = this.value.trim().length < 2;
-            });            // Discord username validation
+            });
+
+            // Discord username validation
             document.getElementById('discordUsername').addEventListener('input', function() {
                 const nextBtn = document.getElementById('discordNext');
                 const isValid = this.value.trim().length > 2;
                 nextBtn.disabled = !isValid;
+            });
+
+            // Rank selection validation
+            document.getElementById('currentRank').addEventListener('change', function() {
+                const nextBtn = document.getElementById('rankNext');
+                nextBtn.disabled = this.value === '';
             });
         }
 
@@ -590,17 +817,31 @@
 
             try {
                 // Create Discord embed
+                const fields = [
+                    { name: "Captain's Name", value: formData.captainName || 'N/A', inline: true },
+                    { name: 'Previous Clans', value: formData.previousClans && formData.previousClans.length > 0 ? formData.previousClans.join(', ') : 'None', inline: true },
+                    { name: 'Has Discord', value: formData.hasDiscord || 'N/A', inline: true }
+                ];
+
+                if (formData.hasDiscord === 'Yes') {
+                    fields.push({ name: 'Discord Username', value: formData.discordUsername || 'N/A', inline: true });
+                    fields.push({ name: 'In KRAKEN Discord', value: formData.inKrakenDiscord || 'N/A', inline: true });
+                    fields.push({ name: 'In Admiralty Discord', value: formData.inAdmiraltyDiscord || 'N/A', inline: true });
+                }
+
+                fields.push({ name: 'Player Type', value: formData.playerType || 'N/A', inline: true });
+                
+                if (formData.playerType === 'Returning Player') {
+                    fields.push({ name: 'Current Rank', value: formData.currentRank || 'Not specified', inline: true });
+                }
+
+                fields.push({ name: 'Familiar with RvR', value: formData.familiarWithRvR || 'N/A', inline: true });
+                fields.push({ name: 'RvR Experience', value: formData.rvrExperience || 'Not specified', inline: false });
+
                 const embed = {
                     title: '🦑 New KRAKEN Application',
                     color: 0xbfa140,
-                    fields: [
-                        { name: "Captain's Name", value: formData.captainName || 'N/A', inline: true },
-                        { name: 'Discord Username', value: formData.discordUsername || 'N/A', inline: true },
-                        { name: 'Player Type', value: formData.playerType || 'Not specified', inline: true },
-                        { name: 'RvR Experience', value: formData.rvrExperience || 'Not specified', inline: true },
-                        { name: 'Previous Clans', value: formData.previousClans || 'None', inline: true },
-                        { name: 'Why join KRAKEN?', value: formData.whyJoin || 'Not specified', inline: false }
-                    ],
+                    fields: fields,
                     timestamp: new Date().toISOString(),
                     footer: { text: 'Naval Action KRAKEN Clan Application' }
                 };
