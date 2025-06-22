@@ -12,16 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="kraken-navbar">
+    <!-- Navigation -->    <nav class="kraken-navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#join">Join</a></li>
             <li><a href="marketplace.html">Marketplace</a></li>
             <li><a href="tools.html">Tools</a></li>
             <li><a href="orgchart.html" class="active">Command</a></li>
-            <li><a href="index.html#footer">Contact</a></li>
             <li><a href="apply-typeform.html">Apply</a></li>
         </ul>
     </nav>
@@ -32,962 +28,8 @@
             <p class="orgchart-subtitle">Royal Navy Hierarchy & Chain of Command</p>
         </header>
 
-        <!-- Display Style Selector -->
-        <section class="style-selector">
-            <h2>Choose Display Style</h2>
-            <div class="style-buttons">
-                <button class="style-btn active" data-style="hierarchical">Hierarchical Tree</button>
-                <button class="style-btn" data-style="grid">Grid Layout</button>
-                <button class="style-btn" data-style="cards">Command Cards</button>
-                <button class="style-btn" data-style="pyramid">Pyramid Structure</button>
-                <button class="style-btn" data-style="naval">Naval Formation</button>
-            </div>
-        </section>        <!-- Hierarchical Tree View -->
-        <section id="hierarchical" class="org-display active">
-            <h2>Hierarchical Command Tree</h2>
-            <div class="hierarchy-tree">
-                <!-- First Sea Lord -->
-                <div class="rank-level level-0">
-                    <div class="officer first-sea-lord">
-                        <div class="insignia">
-                            <img src="insignia/five-star-admiral.png" alt="First Sea Lord">
-                        </div>
-                        <div class="officer-info">
-                            <h3>CHOSEN</h3>
-                            <p class="rank">First Sea Lord</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Second Sea Lord -->
-                <div class="rank-level level-1">
-                    <div class="officer second-sea-lord">
-                        <div class="insignia">
-                            <img src="insignia/admiral.png" alt="Second Sea Lord">
-                        </div>
-                        <div class="officer-info">
-                            <h3>WarLord4082</h3>
-                            <p class="rank">Second Sea Lord</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sea Lords 3-5 -->
-                <div class="rank-level level-2">
-                    <div class="sea-lords-row">
-                        <div class="officer third-sea-lord">
-                            <div class="insignia">
-                                <img src="insignia/vice-admiral.png" alt="Third Sea Lord">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Magoo</h3>
-                                <p class="rank">Third Sea Lord</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer fourth-sea-lord">
-                            <div class="insignia">
-                                <img src="insignia/vice-admiral.png" alt="Fourth Sea Lord">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Kpt. Gneisenau</h3>
-                                <p class="rank">Fourth Sea Lord</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer fifth-sea-lord">
-                            <div class="insignia">
-                                <img src="insignia/vice-admiral.png" alt="Fifth Sea Lord">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Kpt. Scharnhorst</h3>
-                                <p class="rank">Fifth Sea Lord</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Admiral of the Fleet -->
-                <div class="rank-level level-3">
-                    <div class="officer admiral-fleet">
-                        <div class="insignia">
-                            <img src="insignia/admiral-of-fleet.png" alt="Admiral of the Fleet">
-                        </div>
-                        <div class="officer-info">
-                            <h3>Tommy Templeman</h3>
-                            <p class="rank">Admiral of the Fleet</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Admirals -->
-                <div class="rank-level level-4">
-                    <div class="sea-lords-row">
-                        <div class="officer admiral">
-                            <div class="insignia">
-                                <img src="insignia/admiral.png" alt="Admiral">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Admiral Johnson</h3>
-                                <p class="rank">Admiral</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer admiral">
-                            <div class="insignia">
-                                <img src="insignia/admiral.png" alt="Admiral">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Admiral Smith</h3>
-                                <p class="rank">Admiral</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Rear Admirals -->
-                <div class="rank-level level-5">
-                    <div class="sea-lords-row">
-                        <div class="officer rear-admiral">
-                            <div class="insignia">
-                                <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Rear Admiral Brown</h3>
-                                <p class="rank">Rear Admiral</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer rear-admiral">
-                            <div class="insignia">
-                                <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Rear Admiral Davis</h3>
-                                <p class="rank">Rear Admiral</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer rear-admiral">
-                            <div class="insignia">
-                                <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Rear Admiral Wilson</h3>
-                                <p class="rank">Rear Admiral</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Commodores -->
-                <div class="rank-level level-6">
-                    <div class="sea-lords-row">
-                        <div class="officer commodore">
-                            <div class="insignia">
-                                <img src="insignia/commodore.png" alt="Commodore">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Commodore Taylor</h3>
-                                <p class="rank">Commodore</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer commodore">
-                            <div class="insignia">
-                                <img src="insignia/commodore.png" alt="Commodore">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Commodore Anderson</h3>
-                                <p class="rank">Commodore</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer commodore">
-                            <div class="insignia">
-                                <img src="insignia/commodore.png" alt="Commodore">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Commodore Thomas</h3>
-                                <p class="rank">Commodore</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer commodore">
-                            <div class="insignia">
-                                <img src="insignia/commodore.png" alt="Commodore">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Commodore Jackson</h3>
-                                <p class="rank">Commodore</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Captains -->
-                <div class="rank-level level-7">
-                    <div class="sea-lords-row">
-                        <div class="officer captain">
-                            <div class="insignia">
-                                <img src="insignia/captain.png" alt="Captain">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Captain White</h3>
-                                <p class="rank">Captain</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer captain">
-                            <div class="insignia">
-                                <img src="insignia/captain.png" alt="Captain">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Captain Harris</h3>
-                                <p class="rank">Captain</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer captain">
-                            <div class="insignia">
-                                <img src="insignia/captain.png" alt="Captain">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Captain Martin</h3>
-                                <p class="rank">Captain</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer captain">
-                            <div class="insignia">
-                                <img src="insignia/captain.png" alt="Captain">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Captain Thompson</h3>
-                                <p class="rank">Captain</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer captain">
-                            <div class="insignia">
-                                <img src="insignia/captain.png" alt="Captain">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Captain Garcia</h3>
-                                <p class="rank">Captain</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Commanders -->
-                <div class="rank-level level-8">
-                    <div class="sea-lords-row">
-                        <div class="officer commander">
-                            <div class="insignia">
-                                <img src="insignia/commander.png" alt="Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Commander Martinez</h3>
-                                <p class="rank">Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer commander">
-                            <div class="insignia">
-                                <img src="insignia/commander.png" alt="Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Commander Robinson</h3>
-                                <p class="rank">Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer commander">
-                            <div class="insignia">
-                                <img src="insignia/commander.png" alt="Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Commander Clark</h3>
-                                <p class="rank">Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer commander">
-                            <div class="insignia">
-                                <img src="insignia/commander.png" alt="Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Commander Rodriguez</h3>
-                                <p class="rank">Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer commander">
-                            <div class="insignia">
-                                <img src="insignia/commander.png" alt="Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Commander Lewis</h3>
-                                <p class="rank">Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer commander">
-                            <div class="insignia">
-                                <img src="insignia/commander.png" alt="Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Commander Lee</h3>
-                                <p class="rank">Commander</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Lieutenant Commanders -->
-                <div class="rank-level level-9">
-                    <div class="sea-lords-row">
-                        <div class="officer lt-commander">
-                            <div class="insignia">
-                                <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Lt. Cmdr. Walker</h3>
-                                <p class="rank">Lieutenant Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer lt-commander">
-                            <div class="insignia">
-                                <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Lt. Cmdr. Hall</h3>
-                                <p class="rank">Lieutenant Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer lt-commander">
-                            <div class="insignia">
-                                <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Lt. Cmdr. Allen</h3>
-                                <p class="rank">Lieutenant Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer lt-commander">
-                            <div class="insignia">
-                                <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Lt. Cmdr. Young</h3>
-                                <p class="rank">Lieutenant Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer lt-commander">
-                            <div class="insignia">
-                                <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Lt. Cmdr. Hernandez</h3>
-                                <p class="rank">Lieutenant Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer lt-commander">
-                            <div class="insignia">
-                                <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Lt. Cmdr. King</h3>
-                                <p class="rank">Lieutenant Commander</p>
-                            </div>
-                        </div>
-                        
-                        <div class="officer lt-commander">
-                            <div class="insignia">
-                                <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            </div>
-                            <div class="officer-info">
-                                <h3>Lt. Cmdr. Wright</h3>
-                                <p class="rank">Lieutenant Commander</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>        <!-- Grid Layout View -->
-        <section id="grid" class="org-display">
-            <h2>Command Grid</h2>
-            <div class="grid-layout">
-                <!-- Sea Lords Row -->
-                <div class="grid-row sea-lords">
-                    <div class="grid-card first-sea-lord">
-                        <div class="card-header">
-                            <img src="insignia/five-star-admiral.png" alt="First Sea Lord">
-                            <h3>CHOSEN</h3>
-                        </div>
-                        <p class="rank-title">First Sea Lord</p>
-                        <p class="rank-desc">Supreme Naval Commander</p>
-                    </div>
-                    
-                    <div class="grid-card second-sea-lord">
-                        <div class="card-header">
-                            <img src="insignia/admiral.png" alt="Second Sea Lord">
-                            <h3>WarLord4082</h3>
-                        </div>
-                        <p class="rank-title">Second Sea Lord</p>
-                        <p class="rank-desc">Fleet Operations</p>
-                    </div>
-                </div>
-
-                <!-- Other Sea Lords Row -->
-                <div class="grid-row other-sea-lords">
-                    <div class="grid-card third-sea-lord">
-                        <div class="card-header">
-                            <img src="insignia/vice-admiral.png" alt="Third Sea Lord">
-                            <h3>Magoo</h3>
-                        </div>
-                        <p class="rank-title">Third Sea Lord</p>
-                        <p class="rank-desc">Naval Personnel</p>
-                    </div>
-                    
-                    <div class="grid-card fourth-sea-lord">
-                        <div class="card-header">
-                            <img src="insignia/vice-admiral.png" alt="Fourth Sea Lord">
-                            <h3>Kpt. Gneisenau</h3>
-                        </div>
-                        <p class="rank-title">Fourth Sea Lord</p>
-                        <p class="rank-desc">Logistics & Supply</p>
-                    </div>
-                    
-                    <div class="grid-card fifth-sea-lord">
-                        <div class="card-header">
-                            <img src="insignia/vice-admiral.png" alt="Fifth Sea Lord">
-                            <h3>Kpt. Scharnhorst</h3>
-                        </div>
-                        <p class="rank-title">Fifth Sea Lord</p>
-                        <p class="rank-desc">Strategic Planning</p>
-                    </div>
-                </div>
-
-                <!-- Admiral of the Fleet -->
-                <div class="grid-row fleet-command">
-                    <div class="grid-card admiral-fleet">
-                        <div class="card-header">
-                            <img src="insignia/admiral-of-fleet.png" alt="Admiral of the Fleet">
-                            <h3>Tommy Templeman</h3>
-                        </div>
-                        <p class="rank-title">Admiral of the Fleet</p>
-                        <p class="rank-desc">Fleet Command & Operations</p>
-                    </div>
-                </div>
-
-                <!-- Admirals Row -->
-                <div class="grid-row admirals">
-                    <div class="grid-card admiral">
-                        <div class="card-header">
-                            <img src="insignia/admiral.png" alt="Admiral">
-                            <h3>Admiral Johnson</h3>
-                        </div>
-                        <p class="rank-title">Admiral</p>
-                        <p class="rank-desc">Naval Operations</p>
-                    </div>
-                    
-                    <div class="grid-card admiral">
-                        <div class="card-header">
-                            <img src="insignia/admiral.png" alt="Admiral">
-                            <h3>Admiral Smith</h3>
-                        </div>
-                        <p class="rank-title">Admiral</p>
-                        <p class="rank-desc">Fleet Strategy</p>
-                    </div>
-                </div>
-
-                <!-- Rear Admirals Row -->
-                <div class="grid-row rear-admirals">
-                    <div class="grid-card rear-admiral">
-                        <div class="card-header">
-                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                            <h3>Rear Admiral Brown</h3>
-                        </div>
-                        <p class="rank-title">Rear Admiral</p>
-                        <p class="rank-desc">Squadron Command</p>
-                    </div>
-                    
-                    <div class="grid-card rear-admiral">
-                        <div class="card-header">
-                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                            <h3>Rear Admiral Davis</h3>
-                        </div>
-                        <p class="rank-title">Rear Admiral</p>
-                        <p class="rank-desc">Tactical Operations</p>
-                    </div>
-                    
-                    <div class="grid-card rear-admiral">
-                        <div class="card-header">
-                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                            <h3>Rear Admiral Wilson</h3>
-                        </div>
-                        <p class="rank-title">Rear Admiral</p>
-                        <p class="rank-desc">Intelligence</p>
-                    </div>
-                </div>
-
-                <!-- Commodores Row -->
-                <div class="grid-row commodores">
-                    <div class="grid-card commodore">
-                        <div class="card-header">
-                            <img src="insignia/commodore.png" alt="Commodore">
-                            <h3>Commodore Taylor</h3>
-                        </div>
-                        <p class="rank-title">Commodore</p>
-                        <p class="rank-desc">Division Command</p>
-                    </div>
-                    
-                    <div class="grid-card commodore">
-                        <div class="card-header">
-                            <img src="insignia/commodore.png" alt="Commodore">
-                            <h3>Commodore Anderson</h3>
-                        </div>
-                        <p class="rank-title">Commodore</p>
-                        <p class="rank-desc">Training Operations</p>
-                    </div>
-                    
-                    <div class="grid-card commodore">
-                        <div class="card-header">
-                            <img src="insignia/commodore.png" alt="Commodore">
-                            <h3>Commodore Thomas</h3>
-                        </div>
-                        <p class="rank-title">Commodore</p>
-                        <p class="rank-desc">Engineering Division</p>
-                    </div>
-                    
-                    <div class="grid-card commodore">
-                        <div class="card-header">
-                            <img src="insignia/commodore.png" alt="Commodore">
-                            <h3>Commodore Jackson</h3>
-                        </div>
-                        <p class="rank-title">Commodore</p>
-                        <p class="rank-desc">Communications</p>
-                    </div>
-                </div>
-
-                <!-- Captains Row -->
-                <div class="grid-row captains">
-                    <div class="grid-card captain">
-                        <div class="card-header">
-                            <img src="insignia/captain.png" alt="Captain">
-                            <h3>Captain White</h3>
-                        </div>
-                        <p class="rank-title">Captain</p>
-                        <p class="rank-desc">Ship Command</p>
-                    </div>
-                    
-                    <div class="grid-card captain">
-                        <div class="card-header">
-                            <img src="insignia/captain.png" alt="Captain">
-                            <h3>Captain Harris</h3>
-                        </div>
-                        <p class="rank-title">Captain</p>
-                        <p class="rank-desc">Ship Command</p>
-                    </div>
-                    
-                    <div class="grid-card captain">
-                        <div class="card-header">
-                            <img src="insignia/captain.png" alt="Captain">
-                            <h3>Captain Martin</h3>
-                        </div>
-                        <p class="rank-title">Captain</p>
-                        <p class="rank-desc">Ship Command</p>
-                    </div>
-                    
-                    <div class="grid-card captain">
-                        <div class="card-header">
-                            <img src="insignia/captain.png" alt="Captain">
-                            <h3>Captain Thompson</h3>
-                        </div>
-                        <p class="rank-title">Captain</p>
-                        <p class="rank-desc">Ship Command</p>
-                    </div>
-                    
-                    <div class="grid-card captain">
-                        <div class="card-header">
-                            <img src="insignia/captain.png" alt="Captain">
-                            <h3>Captain Garcia</h3>
-                        </div>
-                        <p class="rank-title">Captain</p>
-                        <p class="rank-desc">Ship Command</p>
-                    </div>
-                </div>
-
-                <!-- Commanders Row -->
-                <div class="grid-row commanders">
-                    <div class="grid-card commander">
-                        <div class="card-header">
-                            <img src="insignia/commander.png" alt="Commander">
-                            <h3>Commander Martinez</h3>
-                        </div>
-                        <p class="rank-title">Commander</p>
-                        <p class="rank-desc">Senior Officer</p>
-                    </div>
-                    
-                    <div class="grid-card commander">
-                        <div class="card-header">
-                            <img src="insignia/commander.png" alt="Commander">
-                            <h3>Commander Robinson</h3>
-                        </div>
-                        <p class="rank-title">Commander</p>
-                        <p class="rank-desc">Senior Officer</p>
-                    </div>
-                    
-                    <div class="grid-card commander">
-                        <div class="card-header">
-                            <img src="insignia/commander.png" alt="Commander">
-                            <h3>Commander Clark</h3>
-                        </div>
-                        <p class="rank-title">Commander</p>
-                        <p class="rank-desc">Senior Officer</p>
-                    </div>
-                    
-                    <div class="grid-card commander">
-                        <div class="card-header">
-                            <img src="insignia/commander.png" alt="Commander">
-                            <h3>Commander Rodriguez</h3>
-                        </div>
-                        <p class="rank-title">Commander</p>
-                        <p class="rank-desc">Senior Officer</p>
-                    </div>
-                    
-                    <div class="grid-card commander">
-                        <div class="card-header">
-                            <img src="insignia/commander.png" alt="Commander">
-                            <h3>Commander Lewis</h3>
-                        </div>
-                        <p class="rank-title">Commander</p>
-                        <p class="rank-desc">Senior Officer</p>
-                    </div>
-                    
-                    <div class="grid-card commander">
-                        <div class="card-header">
-                            <img src="insignia/commander.png" alt="Commander">
-                            <h3>Commander Lee</h3>
-                        </div>
-                        <p class="rank-title">Commander</p>
-                        <p class="rank-desc">Senior Officer</p>
-                    </div>
-                </div>
-
-                <!-- Lieutenant Commanders Row -->
-                <div class="grid-row lt-commanders">
-                    <div class="grid-card lt-commander">
-                        <div class="card-header">
-                            <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            <h3>Lt. Cmdr. Walker</h3>
-                        </div>
-                        <p class="rank-title">Lieutenant Commander</p>
-                        <p class="rank-desc">Department Head</p>
-                    </div>
-                    
-                    <div class="grid-card lt-commander">
-                        <div class="card-header">
-                            <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            <h3>Lt. Cmdr. Hall</h3>
-                        </div>
-                        <p class="rank-title">Lieutenant Commander</p>
-                        <p class="rank-desc">Department Head</p>
-                    </div>
-                    
-                    <div class="grid-card lt-commander">
-                        <div class="card-header">
-                            <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            <h3>Lt. Cmdr. Allen</h3>
-                        </div>
-                        <p class="rank-title">Lieutenant Commander</p>
-                        <p class="rank-desc">Department Head</p>
-                    </div>
-                    
-                    <div class="grid-card lt-commander">
-                        <div class="card-header">
-                            <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            <h3>Lt. Cmdr. Young</h3>
-                        </div>
-                        <p class="rank-title">Lieutenant Commander</p>
-                        <p class="rank-desc">Department Head</p>
-                    </div>
-                    
-                    <div class="grid-card lt-commander">
-                        <div class="card-header">
-                            <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            <h3>Lt. Cmdr. Hernandez</h3>
-                        </div>
-                        <p class="rank-title">Lieutenant Commander</p>
-                        <p class="rank-desc">Department Head</p>
-                    </div>
-                    
-                    <div class="grid-card lt-commander">
-                        <div class="card-header">
-                            <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            <h3>Lt. Cmdr. King</h3>
-                        </div>
-                        <p class="rank-title">Lieutenant Commander</p>
-                        <p class="rank-desc">Department Head</p>
-                    </div>
-                    
-                    <div class="grid-card lt-commander">
-                        <div class="card-header">
-                            <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                            <h3>Lt. Cmdr. Wright</h3>
-                        </div>
-                        <p class="rank-title">Lieutenant Commander</p>
-                        <p class="rank-desc">Department Head</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-                        </div>
-                        <p class="rank-title">Fifth Sea Lord</p>
-                        <p class="rank-desc">Intelligence & Reconnaissance</p>
-                    </div>
-                </div>
-
-                <div class="grid-row fleet-command">
-                    <div class="grid-card admiral-fleet">
-                        <div class="card-header">
-                            <img src="insignia/admiral-of-fleet.png" alt="Admiral of the Fleet">
-                            <h3>Tommy Templeman</h3>
-                        </div>
-                        <p class="rank-title">Admiral of the Fleet</p>
-                        <p class="rank-desc">Fleet Commander</p>
-                    </div>
-                </div>
-            </div>
-        </section>        <!-- Command Cards View -->
-        <section id="cards" class="org-display">
-            <h2>Command Cards</h2>
-            <div class="cards-layout">
-                <div class="command-card first-sea-lord-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/five-star-admiral.png" alt="First Sea Lord">
-                        </div>
-                        <h3 class="officer-name">CHOSEN</h3>
-                        <h4 class="officer-rank">First Sea Lord</h4>
-                        <p class="officer-desc">Supreme Commander of the KRAKEN Fleet. Responsible for all naval operations and strategic command decisions.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Supreme</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card second-sea-lord-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/admiral.png" alt="Second Sea Lord">
-                        </div>
-                        <h3 class="officer-name">WarLord4082</h3>
-                        <h4 class="officer-rank">Second Sea Lord</h4>
-                        <p class="officer-desc">Deputy Commander responsible for fleet operations and tactical coordination across all naval theaters.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">High Command</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card third-sea-lord-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/vice-admiral.png" alt="Third Sea Lord">
-                        </div>
-                        <h3 class="officer-name">Magoo</h3>
-                        <h4 class="officer-rank">Third Sea Lord</h4>
-                        <p class="officer-desc">Naval Personnel and Administrative Command. Oversees recruitment, training, and personnel management.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Departmental</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card fourth-sea-lord-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/vice-admiral.png" alt="Fourth Sea Lord">
-                        </div>
-                        <h3 class="officer-name">Kpt. Gneisenau</h3>
-                        <h4 class="officer-rank">Fourth Sea Lord</h4>
-                        <p class="officer-desc">Logistics and Supply Chain Command. Manages fleet resources, equipment, and supply operations.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Departmental</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card fifth-sea-lord-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/vice-admiral.png" alt="Fifth Sea Lord">
-                        </div>
-                        <h3 class="officer-name">Kpt. Scharnhorst</h3>
-                        <h4 class="officer-rank">Fifth Sea Lord</h4>
-                        <p class="officer-desc">Strategic Planning and Intelligence. Coordinates long-term strategy and intelligence operations.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Departmental</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card admiral-fleet-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/admiral-of-fleet.png" alt="Admiral of the Fleet">
-                        </div>
-                        <h3 class="officer-name">Tommy Templeman</h3>
-                        <h4 class="officer-rank">Admiral of the Fleet</h4>
-                        <p class="officer-desc">Fleet Command and Operations. Direct command of all fleet movements and tactical operations.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Operational</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card admiral-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/admiral.png" alt="Admiral">
-                        </div>
-                        <h3 class="officer-name">Admiral Johnson</h3>
-                        <h4 class="officer-rank">Admiral</h4>
-                        <p class="officer-desc">Naval Operations Command. Oversees major fleet operations and strategic deployments.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Senior</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card admiral-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/admiral.png" alt="Admiral">
-                        </div>
-                        <h3 class="officer-name">Admiral Smith</h3>
-                        <h4 class="officer-rank">Admiral</h4>
-                        <p class="officer-desc">Fleet Strategy Command. Develops and implements strategic naval doctrine and fleet tactics.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Senior</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card rear-admiral-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                        </div>
-                        <h3 class="officer-name">Rear Admiral Brown</h3>
-                        <h4 class="officer-rank">Rear Admiral</h4>
-                        <p class="officer-desc">Squadron Command. Leads squadron operations and tactical formations in naval engagements.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Squadron</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card rear-admiral-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                        </div>
-                        <h3 class="officer-name">Rear Admiral Davis</h3>
-                        <h4 class="officer-rank">Rear Admiral</h4>
-                        <p class="officer-desc">Tactical Operations. Specializes in combat tactics and battlefield coordination.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Squadron</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card rear-admiral-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                        </div>
-                        <h3 class="officer-name">Rear Admiral Wilson</h3>
-                        <h4 class="officer-rank">Rear Admiral</h4>
-                        <p class="officer-desc">Intelligence Operations. Manages naval intelligence gathering and reconnaissance missions.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Squadron</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-card commodore-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-insignia">
-                            <img src="insignia/commodore.png" alt="Commodore">
-                        </div>
-                        <h3 class="officer-name">Commodore Taylor</h3>
-                        <h4 class="officer-rank">Commodore</h4>
-                        <p class="officer-desc">Division Command. Leads naval divisions and coordinates multi-ship operations.</p>
-                        <div class="card-stats">
-                            <div class="stat">
-                                <span class="stat-label">Authority Level</span>
-                                <span class="stat-value">Division</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>        <!-- Pyramid Structure View -->
-        <section id="pyramid" class="org-display">
+        <!-- Pyramid Structure View -->
+        <section id="pyramid" class="org-display active">
             <h2>Naval Pyramid</h2>
             <div class="pyramid-structure">
                 <!-- Sea Lords Section -->
@@ -998,7 +40,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/five-star-admiral.png" alt="First Sea Lord">
                             <h4>CHOSEN</h4>
-                            <p>First Sea Lord</p>
                             <button class="info-btn" onclick="toggleInfo('first-sea-lord-info')">ℹ️</button>
                             <div id="first-sea-lord-info" class="info-panel" style="display: none;">
                                 <p>Supreme Commander of the KRAKEN Fleet. Responsible for all naval operations, strategic command decisions, and overall fleet leadership. Reports directly to no one and has ultimate authority over all naval matters.</p>
@@ -1010,7 +51,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/admiral.png" alt="Second Sea Lord">
                             <h4>WarLord4082</h4>
-                            <p>Second Sea Lord</p>
                             <button class="info-btn" onclick="toggleInfo('second-sea-lord-info')">ℹ️</button>
                             <div id="second-sea-lord-info" class="info-panel" style="display: none;">
                                 <p>Deputy Commander responsible for fleet operations and tactical coordination across all naval theaters. Serves as the primary lieutenant to the First Sea Lord and manages day-to-day operational activities.</p>
@@ -1022,7 +62,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/vice-admiral.png" alt="Third Sea Lord">
                             <h4>Magoo</h4>
-                            <p>Third Sea Lord</p>
                             <button class="info-btn" onclick="toggleInfo('third-sea-lord-info')">ℹ️</button>
                             <div id="third-sea-lord-info" class="info-panel" style="display: none;">
                                 <p>Naval Personnel and Administrative Command. Oversees recruitment, training, personnel management, and ensures the fleet maintains proper staffing and skill development across all ranks.</p>
@@ -1031,7 +70,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/vice-admiral.png" alt="Fourth Sea Lord">
                             <h4>Kpt. Gneisenau</h4>
-                            <p>Fourth Sea Lord</p>
                             <button class="info-btn" onclick="toggleInfo('fourth-sea-lord-info')">ℹ️</button>
                             <div id="fourth-sea-lord-info" class="info-panel" style="display: none;">
                                 <p>Logistics and Supply Chain Command. Manages fleet resources, equipment procurement, maintenance schedules, and ensures all ships are properly supplied for extended operations.</p>
@@ -1040,7 +78,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/vice-admiral.png" alt="Fifth Sea Lord">
                             <h4>Kpt. Scharnhorst</h4>
-                            <p>Fifth Sea Lord</p>
                             <button class="info-btn" onclick="toggleInfo('fifth-sea-lord-info')">ℹ️</button>
                             <div id="fifth-sea-lord-info" class="info-panel" style="display: none;">
                                 <p>Strategic Planning and Intelligence Command. Coordinates long-term strategy, intelligence operations, enemy analysis, and develops tactical doctrines for the fleet.</p>
@@ -1057,7 +94,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/admiral-of-fleet.png" alt="Admiral of the Fleet">
                             <h4>Tommy Templeman</h4>
-                            <p>Admiral of the Fleet</p>
                             <button class="info-btn" onclick="toggleInfo('admiral-fleet-info')">ℹ️</button>
                             <div id="admiral-fleet-info" class="info-panel" style="display: none;">
                                 <p>Fleet Command and Operations. Direct command of all fleet movements, tactical operations, and battle coordination. Leads the fleet in major engagements and oversees all naval combat operations.</p>
@@ -1069,7 +105,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/admiral.png" alt="Admiral">
                             <h4>Admiral Johnson</h4>
-                            <p>Admiral</p>
                             <button class="info-btn" onclick="toggleInfo('admiral-johnson-info')">ℹ️</button>
                             <div id="admiral-johnson-info" class="info-panel" style="display: none;">
                                 <p>Naval Operations Command. Oversees major fleet operations, strategic deployments, and coordinates with other admirals to ensure effective fleet management and tactical execution.</p>
@@ -1078,7 +113,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/admiral.png" alt="Admiral">
                             <h4>Admiral Smith</h4>
-                            <p>Admiral</p>
                             <button class="info-btn" onclick="toggleInfo('admiral-smith-info')">ℹ️</button>
                             <div id="admiral-smith-info" class="info-panel" style="display: none;">
                                 <p>Fleet Strategy Command. Develops and implements strategic naval doctrine, fleet tactics, and long-term operational planning. Works closely with intelligence to adapt strategies.</p>
@@ -1090,7 +124,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/rear-admiral.png" alt="Rear Admiral">
                             <h4>R. Adm. Brown</h4>
-                            <p>Rear Admiral</p>
                             <button class="info-btn" onclick="toggleInfo('rear-adm-brown-info')">ℹ️</button>
                             <div id="rear-adm-brown-info" class="info-panel" style="display: none;">
                                 <p>Squadron Command. Leads squadron operations and tactical formations in naval engagements. Commands multiple ships in coordinated attacks and defensive maneuvers.</p>
@@ -1099,7 +132,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/rear-admiral.png" alt="Rear Admiral">
                             <h4>R. Adm. Davis</h4>
-                            <p>Rear Admiral</p>
                             <button class="info-btn" onclick="toggleInfo('rear-adm-davis-info')">ℹ️</button>
                             <div id="rear-adm-davis-info" class="info-panel" style="display: none;">
                                 <p>Tactical Operations. Specializes in combat tactics, battlefield coordination, and real-time tactical decision making during naval conflicts and strategic operations.</p>
@@ -1108,7 +140,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/rear-admiral.png" alt="Rear Admiral">
                             <h4>R. Adm. Wilson</h4>
-                            <p>Rear Admiral</p>
                             <button class="info-btn" onclick="toggleInfo('rear-adm-wilson-info')">ℹ️</button>
                             <div id="rear-adm-wilson-info" class="info-panel" style="display: none;">
                                 <p>Intelligence Operations. Manages naval intelligence gathering, reconnaissance missions, enemy analysis, and provides critical information for strategic planning.</p>
@@ -1125,7 +156,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/commodore.png" alt="Commodore">
                             <h4>Cmdre. Taylor</h4>
-                            <p>Commodore</p>
                             <button class="info-btn" onclick="toggleInfo('commodore-taylor-info')">ℹ️</button>
                             <div id="commodore-taylor-info" class="info-panel" style="display: none;">
                                 <p>Division Command. Leads naval divisions and coordinates multi-ship operations. Manages tactical formations and ensures effective communication between ships.</p>
@@ -1134,7 +164,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/commodore.png" alt="Commodore">
                             <h4>Cmdre. Anderson</h4>
-                            <p>Commodore</p>
                             <button class="info-btn" onclick="toggleInfo('commodore-anderson-info')">ℹ️</button>
                             <div id="commodore-anderson-info" class="info-panel" style="display: none;">
                                 <p>Training Operations. Oversees naval training programs, skill development, and ensures all crew members maintain combat readiness and operational expertise.</p>
@@ -1143,7 +172,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/commodore.png" alt="Commodore">
                             <h4>Cmdre. Thomas</h4>
-                            <p>Commodore</p>
                             <button class="info-btn" onclick="toggleInfo('commodore-thomas-info')">ℹ️</button>
                             <div id="commodore-thomas-info" class="info-panel" style="display: none;">
                                 <p>Engineering Division. Manages ship maintenance, technical operations, upgrades, and ensures all vessels maintain optimal performance and combat capability.</p>
@@ -1152,7 +180,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/commodore.png" alt="Commodore">
                             <h4>Cmdre. Jackson</h4>
-                            <p>Commodore</p>
                             <button class="info-btn" onclick="toggleInfo('commodore-jackson-info')">ℹ️</button>
                             <div id="commodore-jackson-info" class="info-panel" style="display: none;">
                                 <p>Communications Command. Oversees all fleet communications, signal coordination, intelligence distribution, and maintains secure communication networks.</p>
@@ -1164,7 +191,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/captain.png" alt="Captain">
                             <h4>Capt. White</h4>
-                            <p>Captain</p>
                             <button class="info-btn" onclick="toggleInfo('captain-white-info')">ℹ️</button>
                             <div id="captain-white-info" class="info-panel" style="display: none;">
                                 <p>Ship Command. Commands individual vessels, responsible for crew management, ship operations, and tactical execution of orders from higher command.</p>
@@ -1173,7 +199,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/captain.png" alt="Captain">
                             <h4>Capt. Harris</h4>
-                            <p>Captain</p>
                             <button class="info-btn" onclick="toggleInfo('captain-harris-info')">ℹ️</button>
                             <div id="captain-harris-info" class="info-panel" style="display: none;">
                                 <p>Ship Command. Leads individual ship operations, manages crew performance, and executes tactical maneuvers as directed by squadron and fleet command.</p>
@@ -1182,7 +207,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/captain.png" alt="Captain">
                             <h4>Capt. Martin</h4>
-                            <p>Captain</p>
                             <button class="info-btn" onclick="toggleInfo('captain-martin-info')">ℹ️</button>
                             <div id="captain-martin-info" class="info-panel" style="display: none;">
                                 <p>Ship Command. Responsible for ship-level tactical decisions, crew coordination, and maintaining vessel readiness for combat and strategic operations.</p>
@@ -1191,7 +215,6 @@
                         <div class="pyramid-officer">
                             <img src="insignia/captain.png" alt="Captain">
                             <h4>Capt. Thompson</h4>
-                            <p>Captain</p>
                             <button class="info-btn" onclick="toggleInfo('captain-thompson-info')">ℹ️</button>
                             <div id="captain-thompson-info" class="info-panel" style="display: none;">
                                 <p>Ship Command. Manages individual vessel operations, oversees crew training, and ensures optimal ship performance in both combat and support roles.</p>
@@ -1200,10 +223,9 @@
                         <div class="pyramid-officer">
                             <img src="insignia/captain.png" alt="Captain">
                             <h4>Capt. Garcia</h4>
-                            <p>Captain</p>
                             <button class="info-btn" onclick="toggleInfo('captain-garcia-info')">ℹ️</button>
                             <div id="captain-garcia-info" class="info-panel" style="display: none;">
-                                <p>Ship Command. Leads ship operations, maintains crew discipline, and coordinates with other captains to execute fleet-wide tactical objectives.</p>
+                                <p>Ship Command. Leads vessel operations with emphasis on strategic positioning and coordination with fleet movements during major operations.</p>
                             </div>
                         </div>
                     </div>
@@ -1212,353 +234,51 @@
                         <div class="pyramid-officer">
                             <img src="insignia/commander.png" alt="Commander">
                             <h4>Cmdr. Martinez</h4>
-                            <p>Commander</p>
                             <button class="info-btn" onclick="toggleInfo('commander-martinez-info')">ℹ️</button>
                             <div id="commander-martinez-info" class="info-panel" style="display: none;">
-                                <p>Senior Officer. Serves as executive officer or department head, manages specific ship systems, and assists captains in operational decision-making.</p>
+                                <p>Senior Officer. Responsible for departmental operations, crew management, and serves as executive officer on major vessels during operations.</p>
                             </div>
                         </div>
                         <div class="pyramid-officer">
                             <img src="insignia/commander.png" alt="Commander">
                             <h4>Cmdr. Robinson</h4>
-                            <p>Commander</p>
                             <button class="info-btn" onclick="toggleInfo('commander-robinson-info')">ℹ️</button>
                             <div id="commander-robinson-info" class="info-panel" style="display: none;">
-                                <p>Senior Officer. Oversees critical ship departments, provides tactical expertise, and serves as second-in-command for vessel operations.</p>
+                                <p>Senior Officer. Manages tactical operations and coordinates with other commanders to ensure effective execution of fleet strategies.</p>
                             </div>
                         </div>
                         <div class="pyramid-officer">
                             <img src="insignia/commander.png" alt="Commander">
                             <h4>Cmdr. Clark</h4>
-                            <p>Commander</p>
                             <button class="info-btn" onclick="toggleInfo('commander-clark-info')">ℹ️</button>
                             <div id="commander-clark-info" class="info-panel" style="display: none;">
-                                <p>Senior Officer. Manages specialized operations, coordinates with other departments, and provides operational expertise for complex missions.</p>
+                                <p>Senior Officer. Oversees specialized operations and provides expertise in naval combat tactics and strategic planning.</p>
                             </div>
                         </div>
                         <div class="pyramid-officer">
                             <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
                             <h4>Lt. Cmdr. Walker</h4>
-                            <p>Lieutenant Commander</p>
                             <button class="info-btn" onclick="toggleInfo('lt-commander-walker-info')">ℹ️</button>
                             <div id="lt-commander-walker-info" class="info-panel" style="display: none;">
-                                <p>Department Head. Leads specific ship departments, manages junior officers, and ensures operational efficiency in assigned areas of responsibility.</p>
+                                <p>Department Head. Manages specific departmental functions and serves as a key liaison between senior officers and operational crews.</p>
                             </div>
                         </div>
                         <div class="pyramid-officer">
                             <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
                             <h4>Lt. Cmdr. Hall</h4>
-                            <p>Lieutenant Commander</p>
                             <button class="info-btn" onclick="toggleInfo('lt-commander-hall-info')">ℹ️</button>
                             <div id="lt-commander-hall-info" class="info-panel" style="display: none;">
-                                <p>Department Head. Oversees departmental operations, trains junior personnel, and implements tactical procedures within their area of expertise.</p>
+                                <p>Department Head. Responsible for operational coordination and ensures effective implementation of command directives across departments.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- Naval Formation View -->
-        <section id="naval" class="org-display">
-            <h2>Fleet Formation</h2>
-            <div class="naval-formation">
-                <!-- Flagship - First Sea Lord -->
-                <div class="flagship">
-                    <div class="command-ship">
-                        <div class="ship-icon">🚢</div>
-                        <div class="ship-info">
-                            <h4>HMS CHOSEN</h4>
-                            <p>CHOSEN - First Sea Lord</p>
-                            <img src="insignia/five-star-admiral.png" alt="First Sea Lord">
+                        <div class="pyramid-officer">
+                            <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
+                            <h4>Lt. Cmdr. Allen</h4>
+                            <button class="info-btn" onclick="toggleInfo('lt-commander-allen-info')">ℹ️</button>
+                            <div id="lt-commander-allen-info" class="info-panel" style="display: none;">
+                                <p>Department Head. Manages administrative functions and maintains operational readiness across assigned units and personnel.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Second Sea Lord Line -->
-                <div class="escort-line">
-                    <div class="escort-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS WARLORD</h4>
-                            <p>WarLord4082</p>
-                            <p>Second Sea Lord</p>
-                            <img src="insignia/admiral.png" alt="Second Sea Lord">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Sea Lords 3-5 Line -->
-                <div class="fleet-line">
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS MAGOO</h4>
-                            <p>Magoo</p>
-                            <p>Third Sea Lord</p>
-                            <img src="insignia/vice-admiral.png" alt="Third Sea Lord">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS GNEISENAU</h4>
-                            <p>Kpt. Gneisenau</p>
-                            <p>Fourth Sea Lord</p>
-                            <img src="insignia/vice-admiral.png" alt="Fourth Sea Lord">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS SCHARNHORST</h4>
-                            <p>Kpt. Scharnhorst</p>
-                            <p>Fifth Sea Lord</p>
-                            <img src="insignia/vice-admiral.png" alt="Fifth Sea Lord">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Admiral of the Fleet -->
-                <div class="command-line">
-                    <div class="command-ship">
-                        <div class="ship-icon">🏴‍☠️</div>
-                        <div class="ship-info">
-                            <h4>HMS TEMPLEMAN</h4>
-                            <p>Tommy Templeman</p>
-                            <p>Admiral of the Fleet</p>
-                            <img src="insignia/admiral-of-fleet.png" alt="Admiral of the Fleet">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Admirals Line -->
-                <div class="fleet-line">
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS JOHNSON</h4>
-                            <p>Admiral Johnson</p>
-                            <p>Admiral</p>
-                            <img src="insignia/admiral.png" alt="Admiral">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS SMITH</h4>
-                            <p>Admiral Smith</p>
-                            <p>Admiral</p>
-                            <img src="insignia/admiral.png" alt="Admiral">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Rear Admirals Line -->
-                <div class="fleet-line">
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS BROWN</h4>
-                            <p>Rear Admiral Brown</p>
-                            <p>Rear Admiral</p>
-                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS DAVIS</h4>
-                            <p>Rear Admiral Davis</p>
-                            <p>Rear Admiral</p>
-                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS WILSON</h4>
-                            <p>Rear Admiral Wilson</p>
-                            <p>Rear Admiral</p>
-                            <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Commodores Line -->
-                <div class="fleet-line">
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS TAYLOR</h4>
-                            <p>Commodore Taylor</p>
-                            <p>Commodore</p>
-                            <img src="insignia/commodore.png" alt="Commodore">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS ANDERSON</h4>
-                            <p>Commodore Anderson</p>
-                            <p>Commodore</p>
-                            <img src="insignia/commodore.png" alt="Commodore">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS THOMAS</h4>
-                            <p>Commodore Thomas</p>
-                            <p>Commodore</p>
-                            <img src="insignia/commodore.png" alt="Commodore">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS JACKSON</h4>
-                            <p>Commodore Jackson</p>
-                            <p>Commodore</p>
-                            <img src="insignia/commodore.png" alt="Commodore">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Captains Line -->
-                <div class="fleet-line">
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS WHITE</h4>
-                            <p>Captain White</p>
-                            <p>Captain</p>
-                            <img src="insignia/captain.png" alt="Captain">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS HARRIS</h4>
-                            <p>Captain Harris</p>
-                            <p>Captain</p>
-                            <img src="insignia/captain.png" alt="Captain">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS MARTIN</h4>
-                            <p>Captain Martin</p>
-                            <p>Captain</p>
-                            <img src="insignia/captain.png" alt="Captain">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS THOMPSON</h4>
-                            <p>Captain Thompson</p>
-                            <p>Captain</p>
-                            <img src="insignia/captain.png" alt="Captain">
-                        </div>
-                    </div>
-                    
-                    <div class="fleet-ship">
-                        <div class="ship-icon">⚓</div>
-                        <div class="ship-info">
-                            <h4>HMS GARCIA</h4>
-                            <p>Captain Garcia</p>
-                            <p>Captain</p>
-                            <img src="insignia/captain.png" alt="Captain">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rank Legend -->
-        <section class="rank-legend">
-            <h2>Naval Rank Structure</h2>
-            <div class="legend-grid">
-                <div class="legend-item">
-                    <img src="insignia/five-star-admiral.png" alt="First Sea Lord">
-                    <div class="legend-info">
-                        <h4>First Sea Lord</h4>
-                        <p>Supreme Naval Command</p>
-                    </div>
-                </div>
-                
-                <div class="legend-item">
-                    <img src="insignia/admiral.png" alt="Admiral">
-                    <div class="legend-info">
-                        <h4>Admiral / Second Sea Lord</h4>
-                        <p>Fleet Command & Operations</p>
-                    </div>
-                </div>
-                
-                <div class="legend-item">
-                    <img src="insignia/vice-admiral.png" alt="Vice Admiral">
-                    <div class="legend-info">
-                        <h4>Vice Admiral / Sea Lords 3-5</h4>
-                        <p>Departmental Command</p>
-                    </div>
-                </div>
-                
-                <div class="legend-item">
-                    <img src="insignia/admiral-of-fleet.png" alt="Admiral of the Fleet">
-                    <div class="legend-info">
-                        <h4>Admiral of the Fleet</h4>
-                        <p>Fleet Operations Commander</p>
-                    </div>
-                </div>
-                
-                <div class="legend-item">
-                    <img src="insignia/rear-admiral.png" alt="Rear Admiral">
-                    <div class="legend-info">
-                        <h4>Rear Admiral</h4>
-                        <p>Squadron Command</p>
-                    </div>
-                </div>
-                
-                <div class="legend-item">
-                    <img src="insignia/commodore.png" alt="Commodore">
-                    <div class="legend-info">
-                        <h4>Commodore</h4>
-                        <p>Division Command</p>
-                    </div>
-                </div>
-                
-                <div class="legend-item">
-                    <img src="insignia/captain.png" alt="Captain">
-                    <div class="legend-info">
-                        <h4>Captain</h4>
-                        <p>Ship Command</p>
-                    </div>
-                </div>
-                
-                <div class="legend-item">
-                    <img src="insignia/commander.png" alt="Commander">
-                    <div class="legend-info">
-                        <h4>Commander</h4>
-                        <p>Senior Officer</p>
-                    </div>
-                </div>
-                
-                <div class="legend-item">
-                    <img src="insignia/lieutenant-commander.png" alt="Lieutenant Commander">
-                    <div class="legend-info">
-                        <h4>Lieutenant Commander</h4>
-                        <p>Department Head</p>
                     </div>
                 </div>
             </div>
