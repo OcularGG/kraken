@@ -3,12 +3,33 @@ let itemTemplates = [];
 let selectedItems = new Map();
 let currentListing = null;
 
+// Debug function to clear all marketplace data
+function clearMarketplaceData() {
+    localStorage.removeItem('krakenListings');
+    console.log('Marketplace data cleared');
+}
+
 // Initialize marketplace
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Marketplace initializing...');
+    
+    // Check if modals are properly hidden
+    const successModal = document.getElementById('successModal');
+    const confirmModal = document.getElementById('confirmModal');
+    
+    console.log('Success modal classes:', successModal.className);
+    console.log('Confirm modal classes:', confirmModal.className);
+    
+    // Ensure modals are hidden
+    successModal.classList.add('hidden');
+    confirmModal.classList.add('hidden');
+    
     showCreateListing();
     
     // Add event listeners
     setupEventListeners();
+    
+    console.log('Marketplace initialized successfully');
 });
 
 function setupEventListeners() {
@@ -363,9 +384,18 @@ function getServerName(serverCode) {
 }
 
 function showSuccessModal() {
+    console.log('showSuccessModal called with currentListing:', currentListing);
+    
+    if (!currentListing) {
+        console.error('showSuccessModal called but currentListing is null');
+        return;
+    }
+    
     const modal = document.getElementById('successModal');
     document.getElementById('listingId').textContent = currentListing.id;
     modal.classList.remove('hidden');
+    
+    console.log('Success modal should now be visible');
 }
 
 function closeSuccessModal() {
