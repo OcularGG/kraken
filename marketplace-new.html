@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRAKEN Marketplace | Naval Action Trading</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Marketplace-specific styles */
+        .marketplace-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 80vh;
+        }
+        
+        .marketplace-hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        
+        .marketplace-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        
+        .marketplace-subtitle {
+            font-size: 1.2rem;
+            color: #ffd700;
+            font-weight: 600;
+        }
+        
+        .section-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 3px solid #ffd700;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #000;
+            border: 2px solid #333;
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+            outline: none;
+        }
+        
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .checkbox-input {
+            width: 20px;
+            height: 20px;
+            accent-color: #ffd700;
+            cursor: pointer;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 4px;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            border: 2px solid #ffd700;
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        }
+        
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 4px solid #ffd700;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            border-radius: 8px;
+            box-shadow: 0 16px 64px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #ffd700;
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+        }
+        
+        .close-btn:hover {
+            color: #fff;
+        }
+        
+        .listing-preview {
+            background: #333;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ffd700;
+            margin: 1rem 0;
+        }
+        
+        .success-message {
+            text-align: center;
+            color: #4CAF50;
+        }
+        
+        @media (max-width: 768px) {
+            .marketplace-container {
+                padding: 1rem;
+            }
+            
+            .marketplace-title {
+                font-size: 2rem;
+            }
+            
+            .section-card {
+                padding: 1rem;
+            }
+            
+            .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#join">Join</a></li>
+            <li><a href="marketplace-new.html" class="active">Marketplace</a></li>
+            <li><a href="index.html#footer">Contact</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <div class="marketplace-container">
+        <!-- Hero Section -->
+        <div class="marketplace-hero">
+            <img src="krakenlogo.png" alt="KRAKEN Logo" style="width: 80px; height: 80px; margin-bottom: 1rem;">
+            <h1 class="marketplace-title">NAVAL ACTION MARKETPLACE</h1>
+            <p class="marketplace-subtitle">Trade ships, items, and goods with fellow captains</p>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button class="btn" onclick="showCreateForm()">Create Listing</button>
+            <button class="btn btn-secondary" onclick="showListings()">View Listings</button>
+        </div>
+
+        <!-- Create Listing Form -->
+        <div id="createForm" class="section-card">
+            <h2 class="section-title">Create New Listing</h2>
+            
+            <form id="listingForm">
+                <div class="form-group">
+                    <label class="form-label" for="captainName">Captain Name*</label>
+                    <input type="text" id="captainName" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="discordUsername">Discord Username*</label>
+                    <input type="text" id="discordUsername" class="form-input" required placeholder="username#1234">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="server">Server*</label>
+                    <select id="server" class="form-input" required>
+                        <option value="">Select Server</option>
+                        <option value="EU-PVP">EU PvP</option>
+                        <option value="EU-PVE">EU PvE</option>
+                        <option value="US-PVP">US PvP</option>
+                    </select>
+                </div>
+                
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="sellingShip" class="checkbox-input">
+                    <label class="form-label" for="sellingShip">Selling Ship</label>
+                </div>
+                
+                <div id="shipSection" class="hidden">
+                    <div class="form-group">
+                        <label class="form-label" for="shipName">Ship Name/Type</label>
+                        <input type="text" id="shipName" class="form-input" placeholder="e.g., Victory, L'Ocean">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="shipPrice">Ship Price</label>
+                        <input type="text" id="shipPrice" class="form-input" placeholder="e.g., 5,000,000 gold">
+                    </div>
+                </div>
+                
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="sellingItems" class="checkbox-input">
+                    <label class="form-label" for="sellingItems">Selling Items</label>
+                </div>
+                
+                <div id="itemsSection" class="hidden">
+                    <div class="form-group">
+                        <label class="form-label" for="itemsList">Items Description</label>
+                        <textarea id="itemsList" class="form-input form-textarea" placeholder="List the items you're selling with quantities and prices..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="description">Additional Description</label>
+                    <textarea id="description" class="form-input form-textarea" placeholder="Any additional information about your listing..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="location">Location/Port</label>
+                    <input type="text" id="location" class="form-input" placeholder="e.g., Kingston, La Tortue">
+                </div>
+                
+                <button type="submit" class="btn">Create Listing</button>
+            </form>
+        </div>
+
+        <!-- Listings View -->
+        <div id="listingsView" class="section-card hidden">
+            <h2 class="section-title">Active Listings</h2>
+            <div id="listingsContainer"></div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <h2 class="section-title">Confirm Listing</h2>
+            <p>Please review your listing before posting:</p>
+            <div id="previewContent" class="listing-preview"></div>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                <button class="btn" onclick="confirmListing()">Post Listing</button>
+                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div id="successModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeSuccessModal()">&times;</button>
+            <h2 class="section-title">Listing Posted!</h2>
+            <div class="success-message">
+                <p>✅ Your listing has been created successfully!</p>
+                <p>🎯 Discord notification sent to the KRAKEN marketplace channel!</p>
+                <div style="margin: 2rem 0; padding: 1rem; background: #333; border-radius: 4px;">
+                    <strong>Listing ID:</strong> <span id="listingIdDisplay"></span>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; text-align: center;">
+                <button class="btn" onclick="closeSuccessModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">KRAKEN CLAN © 2025 | NAVAL ACTION MARKETPLACE</div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple marketplace functionality
+        let currentListing = null;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Fresh marketplace initialized');
+            setupEventListeners();
+            showCreateForm();
+        });
+        
+        function setupEventListeners() {
+            // Toggle ship section
+            document.getElementById('sellingShip').addEventListener('change', function() {
+                const shipSection = document.getElementById('shipSection');
+                if (this.checked) {
+                    shipSection.classList.remove('hidden');
+                } else {
+                    shipSection.classList.add('hidden');
+                }
+            });
+            
+            // Toggle items section
+            document.getElementById('sellingItems').addEventListener('change', function() {
+                const itemsSection = document.getElementById('itemsSection');
+                if (this.checked) {
+                    itemsSection.classList.remove('hidden');
+                } else {
+                    itemsSection.classList.add('hidden');
+                }
+            });
+            
+            // Form submission
+            document.getElementById('listingForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                handleFormSubmission();
+            });
+        }
+        
+        function showCreateForm() {
+            document.getElementById('createForm').classList.remove('hidden');
+            document.getElementById('listingsView').classList.add('hidden');
+        }
+        
+        function showListings() {
+            document.getElementById('createForm').classList.add('hidden');
+            document.getElementById('listingsView').classList.remove('hidden');
+            loadListings();
+        }
+        
+        function handleFormSubmission() {
+            const form = document.getElementById('listingForm');
+            const formData = new FormData(form);
+            
+            // Create listing object
+            const listing = {
+                id: 'KRAKEN-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5),
+                captainName: document.getElementById('captainName').value,
+                discordUsername: document.getElementById('discordUsername').value,
+                server: document.getElementById('server').value,
+                sellingShip: document.getElementById('sellingShip').checked,
+                shipName: document.getElementById('shipName').value,
+                shipPrice: document.getElementById('shipPrice').value,
+                sellingItems: document.getElementById('sellingItems').checked,
+                itemsList: document.getElementById('itemsList').value,
+                description: document.getElementById('description').value,
+                location: document.getElementById('location').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Validate
+            if (!listing.captainName || !listing.discordUsername || !listing.server) {
+                alert('Please fill in all required fields (Captain Name, Discord, Server)');
+                return;
+            }
+            
+            if (!listing.sellingShip && !listing.sellingItems) {
+                alert('Please select what you are selling (ship or items)');
+                return;
+            }
+            
+            currentListing = listing;
+            showConfirmModal();
+        }
+        
+        function showConfirmModal() {
+            const modal = document.getElementById('confirmModal');
+            const preview = document.getElementById('previewContent');
+            
+            let previewHTML = `
+                <p><strong>Captain:</strong> ${currentListing.captainName}</p>
+                <p><strong>Discord:</strong> ${currentListing.discordUsername}</p>
+                <p><strong>Server:</strong> ${currentListing.server}</p>
+            `;
+            
+            if (currentListing.location) {
+                previewHTML += `<p><strong>Location:</strong> ${currentListing.location}</p>`;
+            }
+            
+            if (currentListing.sellingShip) {
+                previewHTML += `<p><strong>Ship:</strong> ${currentListing.shipName || 'Not specified'}</p>`;
+                previewHTML += `<p><strong>Ship Price:</strong> ${currentListing.shipPrice || 'Negotiable'}</p>`;
+            }
+            
+            if (currentListing.sellingItems && currentListing.itemsList) {
+                previewHTML += `<p><strong>Items:</strong></p><div style="background: #222; padding: 0.5rem; border-radius: 4px;">${currentListing.itemsList.replace(/\n/g, '<br>')}</div>`;
+            }
+            
+            if (currentListing.description) {
+                previewHTML += `<p><strong>Description:</strong></p><div style="background: #222; padding: 0.5rem; border-radius: 4px;">${currentListing.description.replace(/\n/g, '<br>')}</div>`;
+            }
+            
+            preview.innerHTML = previewHTML;
+            modal.classList.remove('hidden');
+        }
+        
+        function closeModal() {
+            document.getElementById('confirmModal').classList.add('hidden');
+        }
+        
+        async function confirmListing() {
+            try {
+                // Save to localStorage
+                const listings = JSON.parse(localStorage.getItem('krakenListings') || '[]');
+                listings.push(currentListing);
+                localStorage.setItem('krakenListings', JSON.stringify(listings));
+                
+                // Send to Discord
+                await sendToDiscord();
+                
+                closeModal();
+                showSuccessModal();
+                resetForm();
+            } catch (error) {
+                console.error('Error creating listing:', error);
+                alert('Error creating listing. Please try again.');
+            }
+        }
+        
+        async function sendToDiscord() {
+            const webhookData = {
+                content: `🏴‍☠️ **New KRAKEN Marketplace Listing!** 🏴‍☠️`,
+                embeds: [{
+                    title: '⚓ Naval Action Marketplace - New Listing',
+                    description: `Captain **${currentListing.captainName}** has posted a new listing`,
+                    fields: [
+                        {
+                            name: '👤 Captain',
+                            value: currentListing.captainName,
+                            inline: true
+                        },
+                        {
+                            name: '💬 Discord',
+                            value: currentListing.discordUsername,
+                            inline: true
+                        },
+                        {
+                            name: '🌊 Server',
+                            value: currentListing.server,
+                            inline: true
+                        }
+                    ],
+                    color: 11961339, // Gold color
+                    timestamp: new Date().toISOString(),
+                    footer: {
+                        text: 'KRAKEN Naval Action Marketplace'
+                    }
+                }]
+            };
+            
+            // Add location if provided
+            if (currentListing.location) {
+                webhookData.embeds[0].fields.push({
+                    name: '📍 Location',
+                    value: currentListing.location,
+                    inline: true
+                });
+            }
+            
+            // Add ship info
+            if (currentListing.sellingShip) {
+                webhookData.embeds[0].fields.push({
+                    name: '🚢 Ship',
+                    value: `${currentListing.shipName || 'Ship'} - ${currentListing.shipPrice || 'Price negotiable'}`,
+                    inline: false
+                });
+            }
+            
+            // Add items info
+            if (currentListing.sellingItems && currentListing.itemsList) {
+                webhookData.embeds[0].fields.push({
+                    name: '📦 Items',
+                    value: currentListing.itemsList.length > 200 ? 
+                           currentListing.itemsList.substring(0, 200) + '...' : 
+                           currentListing.itemsList,
+                    inline: false
+                });
+            }
+            
+            // Add description
+            if (currentListing.description) {
+                webhookData.embeds[0].fields.push({
+                    name: '📝 Description',
+                    value: currentListing.description.length > 200 ? 
+                           currentListing.description.substring(0, 200) + '...' : 
+                           currentListing.description,
+                    inline: false
+                });
+            }
+            
+            // Add listing ID
+            webhookData.embeds[0].fields.push({
+                name: '🆔 Listing ID',
+                value: currentListing.id,
+                inline: false
+            });
+            
+            // Send to Discord webhook
+            const response = await fetch('/api/discord-webhook', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(webhookData)
+            });
+            
+            if (!response.ok) {
+                throw new Error('Failed to send Discord notification');
+            }
+        }
+        
+        function showSuccessModal() {
+            document.getElementById('listingIdDisplay').textContent = currentListing.id;
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+        
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+        
+        function resetForm() {
+            document.getElementById('listingForm').reset();
+            document.getElementById('shipSection').classList.add('hidden');
+            document.getElementById('itemsSection').classList.add('hidden');
+        }
+        
+        function loadListings() {
+            const container = document.getElementById('listingsContainer');
+            const listings = JSON.parse(localStorage.getItem('krakenListings') || '[]');
+            
+            if (listings.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: #ffd700;">
+                        <p>No listings yet. Be the first to create one!</p>
+                        <button class="btn" onclick="showCreateForm()" style="margin-top: 1rem;">Create First Listing</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = listings
+                .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+                .map(listing => `
+                    <div style="background: #333; border: 2px solid #ffd700; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px;">
+                        <h3 style="color: #ffd700; margin-bottom: 1rem;">
+                            ${listing.captainName} - ${listing.server}
+                        </h3>
+                        <div style="display: grid; gap: 0.5rem;">
+                            <p><strong>Discord:</strong> ${listing.discordUsername}</p>
+                            ${listing.location ? `<p><strong>Location:</strong> ${listing.location}</p>` : ''}
+                            ${listing.sellingShip && listing.shipName ? `<p><strong>Ship:</strong> ${listing.shipName} - ${listing.shipPrice || 'Negotiable'}</p>` : ''}
+                            ${listing.sellingItems && listing.itemsList ? `<p><strong>Items:</strong> ${listing.itemsList.substring(0, 100)}${listing.itemsList.length > 100 ? '...' : ''}</p>` : ''}
+                            ${listing.description ? `<p><strong>Description:</strong> ${listing.description.substring(0, 100)}${listing.description.length > 100 ? '...' : ''}</p>` : ''}
+                            <p style="font-size: 0.8rem; color: #999; margin-top: 1rem;">
+                                <strong>ID:</strong> ${listing.id} | 
+                                <strong>Posted:</strong> ${new Date(listing.timestamp).toLocaleDateString()}
+                            </p>
+                        </div>
+                    </div>
+                `).join('');
+        }
+        
+        // Debug function
+        function clearAllData() {
+            localStorage.removeItem('krakenListings');
+            alert('All marketplace data cleared');
+            loadListings();
+        }
+    </script>
+</body>
+</html>
