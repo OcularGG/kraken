@@ -648,9 +648,8 @@
                 }
             });
         }
-        
-        // Sample data
-        const portBattles = [
+          // Sample data
+        let portBattles = [
             {
                 id: 'example1',
                 port: 'Santo Domingo',
@@ -834,6 +833,38 @@ ${codesDisplay}
                         <button class="btn" onclick="window.location.href='pb-admin.html'">Go to Admin Panel</button>
                     </div>
                 </div>
+            `;            document.body.appendChild(modal);
+        }
+
+        function showAccessCodesPopup(pb) {
+            // Create a modal to display the access codes for the newly created PB
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.style.display = 'block';
+            modal.innerHTML = `
+                <div class="modal-content" style="max-width: 600px;">
+                    <div class="modal-header">
+                        <h2 style="color: #bfa140;">🎉 Port Battle Created Successfully!</h2>
+                        <button class="close" onclick="this.closest('.modal').remove()">&times;</button>
+                    </div>
+                    <div style="background: #1a1a1a; padding: 1.5rem; border: 2px solid #bfa140; margin: 1rem 0;">
+                        <h3 style="color: #bfa140; margin-bottom: 1rem;">Access Codes for ${pb.port}</h3>
+                        <div style="font-family: monospace; font-size: 1.1rem;">
+                            <p><strong style="color: #bfa140;">Player Access Code:</strong><br>
+                            <span style="background: #333; padding: 0.5rem; border-radius: 4px; display: inline-block; margin: 0.5rem 0; letter-spacing: 2px;">${pb.accessCode}</span></p>
+                            
+                            <p><strong style="color: #bfa140;">Admin Code:</strong><br>
+                            <span style="background: #333; padding: 0.5rem; border-radius: 4px; display: inline-block; margin: 0.5rem 0; letter-spacing: 2px;">${pb.adminCode}</span></p>
+                            
+                            <p><strong style="color: #bfa140;">Sign-up URL:</strong><br>
+                            <span style="background: #333; padding: 0.5rem; border-radius: 4px; display: inline-block; margin: 0.5rem 0; word-break: break-all;">pb-signup.html?id=${pb.id}&code=${pb.accessCode}</span></p>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <button class="btn" onclick="navigator.clipboard.writeText('Player Code: ${pb.accessCode}\\nAdmin Code: ${pb.adminCode}\\nURL: pb-signup.html?id=${pb.id}&code=${pb.accessCode}').then(() => alert('Access codes copied to clipboard!'))">📋 Copy All Codes</button>
+                        <button class="btn btn-secondary" onclick="this.closest('.modal').remove()" style="margin-left: 1rem;">Close</button>
+                    </div>
+                </div>
             `;
             document.body.appendChild(modal);
         }
@@ -952,14 +983,13 @@ ${codesDisplay}
                     fleets: screeningFleets
                 }
             };
-            
-            portBattles.push(newPB);
+              portBattles.push(newPB);
             savePBData(); // Save to localStorage
             closeModal('createPBModal');
             loadPortBattles();
             
-            // Show the created PB details
-            setTimeout(() => viewPBDetails(newPB.id), 100);
+            // Show access codes popup immediately after creation
+            showAccessCodesPopup(newPB);
             
             // Reset form and screening fleet count
             this.reset();
@@ -991,8 +1021,14 @@ ${codesDisplay}
                 if (event.target === modal) {
                     modal.style.display = 'none';
                 }
-            });
-        }        // Initialize
+            });        }
+
+        function displayPortBattles() {
+            loadPBData(); // Load from localStorage first
+            loadPortBattles(); // Then display them
+        }
+
+        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             fetchPorts().then(() => {
                 initializePortSearch();
