@@ -246,11 +246,9 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
     statusDiv.textContent = 'Submitting...';
     statusDiv.style.color = '#bfa140';
-    const data = new FormData(form);    const embed = buildDiscordEmbed(data);
-    const payload = {
+    const data = new FormData(form);    const embed = buildDiscordEmbed(data);    const payload = {
       embeds: [embed],
-      username: 'KRAKEN Application',
-      avatar_url: 'https://cdn.discordapp.com/attachments/1234567890/1234567890/krakenlogo.png'
+      username: 'KRAKEN Application'
     };
     
     console.log('Sending payload:', JSON.stringify(payload, null, 2));
@@ -297,11 +295,9 @@ document.addEventListener('DOMContentLoaded', function() {
       { name: 'Current Rank', value: data.get('currentRank') || 'N/A', inline: true },
       { name: 'Familiar with RvR', value: data.get('familiarWithRvR') || 'N/A', inline: true },
       { name: 'RvR Experience', value: data.get('rvrExperience') || 'N/A', inline: false }
-    ];
-    return {
+    ];    return {
       title: 'New KRAKEN Application',
       color: 0xbfa140,
-      thumbnail: { url: 'krakenlogo.png' },
       fields: fields,
       timestamp: new Date().toISOString(),
       footer: { text: 'Naval Action KRAKEN Clan' }
