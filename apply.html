@@ -264,17 +264,18 @@ document.addEventListener('DOMContentLoaded', function() {
           username: 'KRAKEN Application',
           avatar_url: 'krakenlogo.png'
         })
-      });
-      if (res.ok) {
+      });      if (res.ok) {
         statusDiv.textContent = 'Application submitted! We will contact you soon.';
         statusDiv.style.color = 'green';
         form.reset();
         setTimeout(() => { window.location.href = 'index.html'; }, 2000);
       } else {
-        throw new Error('Failed to submit');
+        const errorData = await res.json().catch(() => ({}));
+        console.error('Submission failed:', res.status, errorData);
+        throw new Error(`Failed to submit: ${errorData.error || res.statusText}`);
       }
     } catch (err) {
-      statusDiv.textContent = 'Error submitting application. Please try again later.';
+      statusDiv.textContent = `Error submitting application: ${err.message}. Please try again later.`;
       statusDiv.style.color = 'red';
       console.error('Submission error:', err);
     }
