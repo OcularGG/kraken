@@ -246,25 +246,28 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
     statusDiv.textContent = 'Submitting...';
     statusDiv.style.color = '#bfa140';
-    const data = new FormData(form);
-    const embed = buildDiscordEmbed(data);
+    const data = new FormData(form);    const embed = buildDiscordEmbed(data);
+    const payload = {
+      embeds: [embed],
+      username: 'KRAKEN Application',
+      avatar_url: 'https://cdn.discordapp.com/attachments/1234567890/1234567890/krakenlogo.png'
+    };
+    
+    console.log('Sending payload:', JSON.stringify(payload, null, 2));
     
     // Determine the correct API URL based on environment
     const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
     const apiUrl = isProduction 
       ? `${window.location.origin}/api/discord-webhook`
       : 'http://localhost:3001/api/discord-webhook';
-    
-    try {
+      try {
       const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          embeds: [embed],
-          username: 'KRAKEN Application',
-          avatar_url: 'krakenlogo.png'
-        })
-      });      if (res.ok) {
+        body: JSON.stringify(payload)
+      });
+      
+      if (res.ok) {
         statusDiv.textContent = 'Application submitted! We will contact you soon.';
         statusDiv.style.color = 'green';
         form.reset();
