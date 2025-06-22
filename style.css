@@ -497,6 +497,14 @@ body {
     border-bottom: 2px solid var(--kraken-gold);
 }
 
+.kraken-navbar a.active {
+    background: var(--kraken-gold);
+    color: var(--kraken-black);
+    font-weight: 700;
+    border-radius: 4px;
+    border-bottom: 2px solid var(--kraken-gold);
+}
+
 @media (max-width: 600px) {
     .kraken-navbar ul {
         flex-direction: column;

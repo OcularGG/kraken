@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRAKEN Marketplace Listing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="marketplace.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#join">Join</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="index.html#footer">Contact</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="marketplace-actions">
+                <button class="btn" onclick="window.location.href='marketplace.html'">← Back to Marketplace</button>
+            </div>
+
+            <!-- Listing Display -->
+            <section class="form-section">
+                <h2 class="section-title">Marketplace Listing</h2>
+                <div id="listingContainer">
+                    <div style="text-align: center; padding: 2rem; color: #ffd700;">
+                        <div class="loading"></div>
+                        <p>Loading listing...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="form-section" id="contactSection" style="display: none;">
+                <h2 class="section-title">Contact Seller</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="buyerDiscord">Your Discord Username*</label>
+                        <input type="text" id="buyerDiscord" name="buyerDiscord" required placeholder="username#1234">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" placeholder="Additional message for the seller..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Contact Seller</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">KRAKEN CLAN © 2025 | NAVAL ACTION MARKETPLACE</div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="contactSuccessModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeContactModal()">&times;</span>
+            <h2 class="section-title">Message Sent!</h2>
+            <p>The seller has been notified via Discord. They should contact you soon!</p>
+            <div style="margin-top: 2rem;">
+                <button class="btn" onclick="closeContactModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentListing = null;
+
+        // Load listing on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadListing();
+            setupContactForm();
+        });
+
+        function loadListing() {
+            // Get listing ID from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const listingId = urlParams.get('id');
+            
+            if (!listingId) {
+                showError('No listing ID provided');
+                return;
+            }
+
+            // Load listing from localStorage
+            const listings = JSON.parse(localStorage.getItem('krakenListings') || '[]');
+            const listing = listings.find(l => l.id === listingId);
+            
+            if (!listing) {
+                showError('Listing not found');
+                return;
+            }
+
+            currentListing = listing;
+            displayListing(listing);
+        }
+
+        function displayListing(listing) {
+            const container = document.getElementById('listingContainer');
+            
+            container.innerHTML = `
+                <div style="background: #2d2d2d; padding: 2rem; border-radius: 8px; border: 2px solid #ffd700;">
+                    <div style="display: grid; gap: 1rem;">
+                        <div class="info-row">
+                            <strong style="color: #ffd700;">Captain:</strong>
+                            <span>${listing.captainName}</span>
+                        </div>
+                        
+                        <div class="info-row">
+                            <strong style="color: #ffd700;">Discord:</strong>
+                            <span>${listing.discordUsername}</span>
+                        </div>
+                        
+                        <div class="info-row">
+                            <strong style="color: #ffd700;">Server:</strong>
+                            <span>${getServerName(listing.server)}</span>
+                        </div>
+                        
+                        ${listing.location ? `
+                            <div class="info-row">
+                                <strong style="color: #ffd700;">Location:</strong>
+                                <span>${listing.location}</span>
+                            </div>
+                        ` : ''}
+                        
+                        ${listing.sellingShip ? `
+                            <div class="ship-section" style="margin: 1rem 0; padding: 1rem; background: #1a1a1a; border-radius: 4px;">
+                                <h3 style="color: #ffd700; margin-bottom: 1rem;">🚢 Ship for Sale</h3>
+                                ${listing.shipImage ? `
+                                    <img src="${listing.shipImage}" 
+                                         style="width: 100%; max-width: 600px; border: 2px solid #ffd700; border-radius: 4px; margin-bottom: 1rem;"
+                                         alt="Ship screenshot">
+                                ` : ''}
+                                <p><strong>Price:</strong> ${listing.shipPrice || 'Negotiable'}</p>
+                            </div>
+                        ` : ''}
+                        
+                        ${listing.sellingItems && listing.items.length > 0 ? `
+                            <div class="items-section" style="margin: 1rem 0; padding: 1rem; background: #1a1a1a; border-radius: 4px;">
+                                <h3 style="color: #ffd700; margin-bottom: 1rem;">📦 Items for Sale</h3>
+                                <div style="display: grid; gap: 0.5rem;">
+                                    ${listing.items.map(item => `
+                                        <div style="display: flex; justify-content: space-between; padding: 0.5rem; background: #2d2d2d; border-radius: 4px;">
+                                            <span><strong>${item.name}</strong></span>
+                                            <span>x${item.quantity} - ${item.price || 'Negotiable'}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        
+                        ${listing.description ? `
+                            <div class="description-section" style="margin: 1rem 0; padding: 1rem; background: #1a1a1a; border-radius: 4px;">
+                                <h3 style="color: #ffd700; margin-bottom: 1rem;">📝 Description</h3>
+                                <p>${listing.description}</p>
+                            </div>
+                        ` : ''}
+                        
+                        <div class="listing-meta" style="margin-top: 1rem; padding: 1rem; background: #1a1a1a; border-radius: 4px; font-size: 0.9rem; color: #999;">
+                            <p><strong>Listing ID:</strong> ${listing.id}</p>
+                            <p><strong>Posted:</strong> ${new Date(listing.timestamp).toLocaleString()}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Show contact section
+            document.getElementById('contactSection').style.display = 'block';
+        }
+
+        function showError(message) {
+            const container = document.getElementById('listingContainer');
+            container.innerHTML = `
+                <div style="text-align: center; padding: 2rem; color: #ff6b6b;">
+                    <h3>Error</h3>
+                    <p>${message}</p>
+                    <button class="btn" onclick="window.location.href='marketplace.html'">Go to Marketplace</button>
+                </div>
+            `;
+        }
+
+        function getServerName(serverCode) {
+            const servers = {
+                'cleanopenworldprodeu1': 'EU PvP',
+                'cleanopenworldprodeu2': 'EU PvE',
+                'cleanopenworldprodus2': 'US PvP'
+            };
+            return servers[serverCode] || serverCode;
+        }
+
+        function setupContactForm() {
+            document.getElementById('contactForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                if (!currentListing) {
+                    alert('Error: No listing loaded');
+                    return;
+                }
+                
+                const buyerDiscord = document.getElementById('buyerDiscord').value;
+                const message = document.getElementById('message').value;
+                
+                if (!buyerDiscord) {
+                    alert('Please enter your Discord username');
+                    return;
+                }
+                
+                try {
+                    await sendContactMessage(buyerDiscord, message);
+                    document.getElementById('contactSuccessModal').classList.remove('hidden');
+                } catch (error) {
+                    console.error('Error sending contact message:', error);
+                    alert('Error sending message. Please try again.');
+                }
+            });
+        }
+
+        async function sendContactMessage(buyerDiscord, message) {
+            const webhookData = {
+                content: `📨 **Marketplace Contact Request**`,
+                embeds: [{
+                    title: '💬 Someone is interested in your listing!',
+                    description: `<@${currentListing.discordUsername}> A buyer wants to contact you about your Naval Action listing.`,
+                    fields: [
+                        {
+                            name: '👤 Buyer Discord',
+                            value: buyerDiscord,
+                            inline: true
+                        },
+                        {
+                            name: '🆔 Listing ID',
+                            value: currentListing.id,
+                            inline: true
+                        },
+                        {
+                            name: '📋 Listing Summary',
+                            value: `**Captain:** ${currentListing.captainName}\n**Server:** ${getServerName(currentListing.server)}${currentListing.location ? `\n**Location:** ${currentListing.location}` : ''}`,
+                            inline: false
+                        }
+                    ],
+                    color: 11961339, // Dark gold color
+                    timestamp: new Date().toISOString(),
+                    footer: {
+                        text: 'KRAKEN Naval Action Marketplace'
+                    }
+                }]
+            };
+
+            // Add custom message if provided
+            if (message.trim()) {
+                webhookData.embeds[0].fields.push({
+                    name: '💬 Buyer Message',
+                    value: message.trim(),
+                    inline: false
+                });
+            }
+
+            // Add listing details
+            let listingDetails = '';
+            if (currentListing.sellingShip) {
+                listingDetails += `🚢 **Ship:** ${currentListing.shipPrice || 'Negotiable'}\n`;
+            }
+            if (currentListing.sellingItems && currentListing.items.length > 0) {
+                listingDetails += `📦 **Items:** ${currentListing.items.length} item(s)\n`;
+            }
+            
+            if (listingDetails) {
+                webhookData.embeds[0].fields.push({
+                    name: '🔍 What they\'re interested in',
+                    value: listingDetails.trim(),
+                    inline: false
+                });
+            }
+
+            // Send to Discord
+            const response = await fetch('/api/discord-webhook', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(webhookData)
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to send contact message');
+            }
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactSuccessModal').classList.add('hidden');
+            // Clear the form
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
+            padding: 2rem;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .listing-card::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: -8px;
+            bottom: -8px;
+            background-color: var(--dark-gold);
+            z-index: -1;
+        }
+
+        .info-section {
+            margin-bottom: 2rem;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--dark-gold);
+        }
+
+        .info-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--dark-gold);
+            width: 150px;
+        }
+
+        .ship-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 1rem 0;
+            border: 3px solid var(--dark-gold);
+        }
+
+        .items-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .item-card {
+            background-color: var(--light-gray);
+            border: 2px solid var(--dark-gold);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: var(--white);
+            color: var(--black);
+            border: 3px solid var(--black);
+            padding: 1rem 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-gold);
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--white);
+        }
+
+        .btn-gold {
+            background-color: var(--dark-gold);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--white);
+        }
+
+        .contact-section {
+            background-color: var(--light-gray);
+            border: 3px solid var(--dark-gold);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gold);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--black);
+            border: 2px solid var(--white);
+            color: var(--white);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .error {
+            background-color: var(--light-gray);
+            border: 3px solid var(--dark-gold);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .error h2 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Naval Action Marketplace</h1>
+        
+        <div id="content"></div>
+    </div>
+
+    <script>
+        // Get listing ID from URL
+        const listingId = window.location.pathname.split('/').pop();
+        
+        // Load listing from localStorage (in production, this would be from a database)
+        const listings = JSON.parse(localStorage.getItem('naListings') || '[]');
+        const listing = listings.find(l => l.id === listingId);
+        
+        const contentDiv = document.getElementById('content');
+        
+        if (!listing) {
+            contentDiv.innerHTML = `
+                <div class="error">
+                    <h2>Listing Not Found</h2>
+                    <p>The listing you're looking for doesn't exist or has been removed.</p>
+                    <a href="/" class="btn" style="margin-top: 1rem;">Back to Home</a>
+                </div>
+            `;
+        } else {
+            contentDiv.innerHTML = `
+                <div class="listing-card">
+                    <div class="info-section">
+                        <div class="info-row">
+                            <span class="info-label">Captain</span>
+                            <span>${listing.captainName}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Server</span>
+                            <span>${listing.server}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Location</span>
+                            <span>${listing.location || 'Not specified'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Posted</span>
+                            <span>${new Date(listing.timestamp).toLocaleString()}</span>
+                        </div>
+                    </div>
+                    
+                    ${listing.sellingShip ? `
+                        <div class="info-section">
+                            <h2 style="color: var(--dark-gold); margin-bottom: 1rem;">SHIP FOR SALE</h2>
+                            <div class="info-row">
+                                <span class="info-label">Price</span>
+                                <span>${listing.shipPrice || 'Negotiable'}</span>
+                            </div>
+                            ${listing.shipImage ? `<img src="${listing.shipImage}" alt="Ship Screenshot" class="ship-image">` : ''}
+                        </div>
+                    ` : ''}
+                    
+                    ${listing.sellingItems && listing.items.length > 0 ? `
+                        <div class="info-section">
+                            <h2 style="color: var(--dark-gold); margin-bottom: 1rem;">ITEMS FOR SALE</h2>
+                            <div class="items-grid">
+                                ${listing.items.map(item => `
+                                    <div class="item-card">
+                                        <div>
+                                            <strong>${item.name}</strong>
+                                            <span style="margin-left: 1rem;">Quantity: ${item.quantity}</span>
+                                        </div>
+                                        <div style="color: var(--dark-gold);">
+                                            ${item.price || 'Negotiable'}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                    
+                    ${listing.description ? `
+                        <div class="info-section">
+                            <h2 style="color: var(--dark-gold); margin-bottom: 1rem;">DESCRIPTION</h2>
+                            <p>${listing.description}</p>
+                        </div>
+                    ` : ''}
+                </div>
+                
+                <div class="contact-section">
+                    <h2 style="margin-bottom: 1rem;">CONTACT SELLER</h2>
+                    <p style="margin-bottom: 1rem;">Interested in this listing? Enter your Discord username to contact the seller.</p>
+                    <div class="form-group">
+                        <label for="buyerDiscord">Your Discord Username</label>
+                        <input type="text" id="buyerDiscord" placeholder="username#1234">
+                    </div>
+                    <button class="btn btn-gold" onclick="contactSeller()">Send Contact Request</button>
+                </div>
+            `;
+        }
+        
+        async function contactSeller() {
+            const buyerDiscord = document.getElementById('buyerDiscord').value;
+            if (!buyerDiscord) {
+                alert('Please enter your Discord username');
+                return;
+            }
+            
+            // This would send to your configured webhook URL
+            const webhookData = {
+                content: `<@${listing.discordUsername}> New buyer interested in your listing!`,
+                embeds: [{
+                    title: 'Naval Action Marketplace - Buyer Interest',
+                    description: `A buyer is interested in your listing`,
+                    fields: [
+                        {
+                            name: 'Buyer Discord',
+                            value: buyerDiscord,
+                            inline: true
+                        },
+                        {
+                            name: 'Captain',
+                            value: listing.captainName,
+                            inline: true
+                        },
+                        {
+                            name: 'Listing ID',
+                            value: listing.id,
+                            inline: true
+                        },
+                        {
+                            name: 'Listing URL',
+                            value: window.location.href
+                        }
+                    ],
+                    color: 11961339, // Dark gold color
+                    timestamp: new Date().toISOString()
+                }]
+            };
+            
+            // In production, replace with your actual webhook URL
+            console.log('Webhook data:', webhookData);
+            alert('Your contact request has been sent! The seller will contact you on Discord.');
+        }
+    </script>
+</body>
+</html>

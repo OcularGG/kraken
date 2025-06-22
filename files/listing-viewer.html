@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naval Action Listing</title>
+    <style>
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --dark-gold: #B8860B;
+            --gray: #1a1a1a;
+            --light-gray: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--black);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: 4px solid var(--dark-gold);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+
+        .listing-card {
+            background-color: var(--gray);
+            border: 3px solid var(--white);
+            padding: 2rem;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .listing-card::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: -8px;
+            bottom: -8px;
+            background-color: var(--dark-gold);
+            z-index: -1;
+        }
+
+        .info-section {
+            margin-bottom: 2rem;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--dark-gold);
+        }
+
+        .info-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--dark-gold);
+            width: 150px;
+        }
+
+        .ship-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 1rem 0;
+            border: 3px solid var(--dark-gold);
+        }
+
+        .items-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .item-card {
+            background-color: var(--light-gray);
+            border: 2px solid var(--dark-gold);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: var(--white);
+            color: var(--black);
+            border: 3px solid var(--black);
+            padding: 1rem 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-gold);
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--white);
+        }
+
+        .btn-gold {
+            background-color: var(--dark-gold);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--white);
+        }
+
+        .contact-section {
+            background-color: var(--light-gray);
+            border: 3px solid var(--dark-gold);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gold);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--black);
+            border: 2px solid var(--white);
+            color: var(--white);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .error {
+            background-color: var(--light-gray);
+            border: 3px solid var(--dark-gold);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .error h2 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Naval Action Marketplace</h1>
+        
+        <div id="content"></div>
+    </div>
+
+    <script>
+        // Get listing ID from URL
+        const listingId = window.location.pathname.split('/').pop();
+        
+        // Load listing from localStorage (in production, this would be from a database)
+        const listings = JSON.parse(localStorage.getItem('naListings') || '[]');
+        const listing = listings.find(l => l.id === listingId);
+        
+        const contentDiv = document.getElementById('content');
+        
+        if (!listing) {
+            contentDiv.innerHTML = `
+                <div class="error">
+                    <h2>Listing Not Found</h2>
+                    <p>The listing you're looking for doesn't exist or has been removed.</p>
+                    <a href="/" class="btn" style="margin-top: 1rem;">Back to Home</a>
+                </div>
+            `;
+        } else {
+            contentDiv.innerHTML = `
+                <div class="listing-card">
+                    <div class="info-section">
+                        <div class="info-row">
+                            <span class="info-label">Captain</span>
+                            <span>${listing.captainName}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Server</span>
+                            <span>${listing.server}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Location</span>
+                            <span>${listing.location || 'Not specified'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Posted</span>
+                            <span>${new Date(listing.timestamp).toLocaleString()}</span>
+                        </div>
+                    </div>
+                    
+                    ${listing.sellingShip ? `
+                        <div class="info-section">
+                            <h2 style="color: var(--dark-gold); margin-bottom: 1rem;">SHIP FOR SALE</h2>
+                            <div class="info-row">
+                                <span class="info-label">Price</span>
+                                <span>${listing.shipPrice || 'Negotiable'}</span>
+                            </div>
+                            ${listing.shipImage ? `<img src="${listing.shipImage}" alt="Ship Screenshot" class="ship-image">` : ''}
+                        </div>
+                    ` : ''}
+                    
+                    ${listing.sellingItems && listing.items.length > 0 ? `
+                        <div class="info-section">
+                            <h2 style="color: var(--dark-gold); margin-bottom: 1rem;">ITEMS FOR SALE</h2>
+                            <div class="items-grid">
+                                ${listing.items.map(item => `
+                                    <div class="item-card">
+                                        <div>
+                                            <strong>${item.name}</strong>
+                                            <span style="margin-left: 1rem;">Quantity: ${item.quantity}</span>
+                                        </div>
+                                        <div style="color: var(--dark-gold);">
+                                            ${item.price || 'Negotiable'}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                    
+                    ${listing.description ? `
+                        <div class="info-section">
+                            <h2 style="color: var(--dark-gold); margin-bottom: 1rem;">DESCRIPTION</h2>
+                            <p>${listing.description}</p>
+                        </div>
+                    ` : ''}
+                </div>
+                
+                <div class="contact-section">
+                    <h2 style="margin-bottom: 1rem;">CONTACT SELLER</h2>
+                    <p style="margin-bottom: 1rem;">Interested in this listing? Enter your Discord username to contact the seller.</p>
+                    <div class="form-group">
+                        <label for="buyerDiscord">Your Discord Username</label>
+                        <input type="text" id="buyerDiscord" placeholder="username#1234">
+                    </div>
+                    <button class="btn btn-gold" onclick="contactSeller()">Send Contact Request</button>
+                </div>
+            `;
+        }
+        
+        async function contactSeller() {
+            const buyerDiscord = document.getElementById('buyerDiscord').value;
+            if (!buyerDiscord) {
+                alert('Please enter your Discord username');
+                return;
+            }
+            
+            // This would send to your configured webhook URL
+            const webhookData = {
+                content: `<@${listing.discordUsername}> New buyer interested in your listing!`,
+                embeds: [{
+                    title: 'Naval Action Marketplace - Buyer Interest',
+                    description: `A buyer is interested in your listing`,
+                    fields: [
+                        {
+                            name: 'Buyer Discord',
+                            value: buyerDiscord,
+                            inline: true
+                        },
+                        {
+                            name: 'Captain',
+                            value: listing.captainName,
+                            inline: true
+                        },
+                        {
+                            name: 'Listing ID',
+                            value: listing.id,
+                            inline: true
+                        },
+                        {
+                            name: 'Listing URL',
+                            value: window.location.href
+                        }
+                    ],
+                    color: 11961339, // Dark gold color
+                    timestamp: new Date().toISOString()
+                }]
+            };
+            
+            // In production, replace with your actual webhook URL
+            console.log('Webhook data:', webhookData);
+            alert('Your contact request has been sent! The seller will contact you on Discord.');
+        }
+    </script>
+</body>
+</html>

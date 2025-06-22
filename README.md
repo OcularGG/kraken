@@ -8,7 +8,8 @@ A neo-brutalist designed website for the KRAKEN Naval Action clan featuring an o
 - **Ocean Hero Section**: Animated background with floating KRAKEN logo
 - **Typewriter Effect**: Dynamic ship name cycling in the hero section
 - **Interactive Application Form**: Typeform-style conversational application process
-- **Discord Integration**: Applications automatically sent to Discord via webhook
+- **Naval Action Marketplace**: Integrated trading system for ships and items
+- **Discord Integration**: Applications and marketplace notifications sent to Discord via webhook
 - **Responsive Design**: Optimized for all device sizes
 - **Sticky Navigation**: Easy access to all site sections
 
@@ -26,11 +27,18 @@ A neo-brutalist designed website for the KRAKEN Naval Action clan featuring an o
 kraken/
 ├── index.html              # Main homepage
 ├── apply.html              # Application form page
+├── marketplace.html        # Naval Action marketplace page
+├── listing-viewer.html     # Individual listing viewer
 ├── style.css               # All styles and responsive design
+├── marketplace.css         # Marketplace-specific styling
+├── marketplace.js          # Marketplace functionality
 ├── discord-proxy.js        # Node.js proxy server for Discord webhook
 ├── package.json            # Node.js dependencies and scripts
 ├── krakenlogo.png          # KRAKEN clan logo
 ├── unnamed.png             # Ocean background image
+├── api/
+│   └── discord-webhook.js  # Vercel serverless function for Discord
+├── files/                  # Original marketplace files (integrated)
 └── README.md               # This file
 ```
 

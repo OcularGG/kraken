@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRAKEN Marketplace | Naval Action Trading</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="marketplace.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#join">Join</a></li>
+            <li><a href="marketplace.html" class="active">Marketplace</a></li>
+            <li><a href="index.html#footer">Contact</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="marketplace-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="marketplace-badge">
+                <img src="krakenlogo.png" alt="KRAKEN Logo" class="kraken-hero-logo">
+                <h1 class="marketplace-title">NAVAL ACTION MARKETPLACE</h1>
+                <p class="marketplace-subtitle">Trade ships, items, and goods with fellow captains</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="marketplace-actions">
+                <button class="btn btn-primary" onclick="showCreateListing()">Create Listing</button>
+                <button class="btn" onclick="showAllListings()">View All Listings</button>
+            </div>
+
+            <!-- Create Listing Form -->
+            <section id="createListingSection" class="form-section">
+                <h2 class="section-title">Create New Listing</h2>
+                
+                <form id="listingForm">
+                    <div class="form-group">
+                        <label for="captainName">Captain Name*</label>
+                        <input type="text" id="captainName" name="captainName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="discordUsername">Discord Username*</label>
+                        <input type="text" id="discordUsername" name="discordUsername" required placeholder="username#1234">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="server">Server*</label>
+                        <select id="server" name="server" required>
+                            <option value="">Select Server</option>
+                            <option value="cleanopenworldprodeu1">EU PvP</option>
+                            <option value="cleanopenworldprodeu2">EU PvE</option>
+                            <option value="cleanopenworldprodus2">US PvP</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="sellingShip" name="sellingShip">
+                        <label for="sellingShip">Selling Ship</label>
+                    </div>
+                    
+                    <div id="shipSection" class="hidden">
+                        <div class="form-group">
+                            <label for="shipScreenshot">Ship Screenshot*</label>
+                            <input type="file" id="shipScreenshot" name="shipScreenshot" accept="image/*">
+                            <img id="shipPreview" class="ship-preview hidden" alt="Ship preview">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="shipPrice">Ship Price</label>
+                            <input type="text" id="shipPrice" name="shipPrice" placeholder="e.g., 5,000,000 gold">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="sellingItems" name="sellingItems">
+                        <label for="sellingItems">Selling Items</label>
+                    </div>
+                    
+                    <div id="itemsSection" class="hidden">
+                        <div class="form-group">
+                            <label for="itemSearch">Search Items</label>
+                            <input type="text" id="itemSearch" placeholder="Type to search items...">
+                        </div>
+                        
+                        <div id="itemsContainer"></div>
+                        
+                        <div class="selected-items hidden" id="selectedItemsContainer">
+                            <h3>Selected Items:</h3>
+                            <div id="selectedItemsList"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Additional Description</label>
+                        <textarea id="description" name="description" placeholder="Any additional information about your listing..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Location/Port</label>
+                        <input type="text" id="location" name="location" placeholder="e.g., Kingston">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Create Listing</button>
+                </form>
+            </section>
+
+            <!-- Listings View -->
+            <section id="listingsSection" class="hidden">
+                <h2 class="section-title">Active Listings</h2>
+                <div id="listingsContainer"></div>
+            </section>
+
+            <!-- Preview Section -->
+            <div id="previewSection" class="preview-section hidden">
+                <h2 class="section-title">Listing Preview</h2>
+                <div id="previewContent"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-text">KRAKEN CLAN © 2025 | NAVAL ACTION MARKETPLACE</div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="confirmModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 class="section-title">Confirm Listing</h2>
+            <p>Are you sure you want to create this listing?</p>
+            <div id="modalPreview"></div>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                <button class="btn btn-primary" onclick="confirmListing()">Confirm</button>
+                <button class="btn" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="successModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeSuccessModal()">&times;</span>
+            <h2 class="section-title">Listing Created!</h2>
+            <p>Your listing has been created successfully and posted to our Discord!</p>
+            <div class="listing-link">
+                <strong>Listing ID:</strong><br>
+                <span id="listingId"></span>
+            </div>
+            <div class="webhook-section">
+                <h3>Contact Seller</h3>
+                <p>Interested buyers can contact you directly via Discord or use the marketplace notification system.</p>
+            </div>
+            <div style="margin-top: 2rem;">
+                <button class="btn" onclick="closeSuccessModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="marketplace.js"></script>
+</body>
+</html>
