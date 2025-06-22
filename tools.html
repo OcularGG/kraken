@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naval Tools | KRAKEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tools.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#join">Join</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="tools.html" class="active">Tools</a></li>
+            <li><a href="index.html#footer">Contact</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <div class="tools-container">
+        <header class="tools-header">
+            <h1 class="tools-title">NAVAL TOOLS</h1>
+            <p class="tools-subtitle">Create your own naval insignia and ship emblems</p>
+        </header>
+
+        <!-- Naval Border Tool -->
+        <section class="tool-section">
+            <div class="tool-card">
+                <h2 class="tool-title">Naval Insignia Creator</h2>
+                <p class="tool-description">Upload your image and create a professional naval insignia with authentic borders</p>
+                  <div class="tool-interface">
+                    <!-- Border Selection -->
+                    <div class="border-selection">
+                        <h3>1. Choose Naval Border</h3>
+                        <div class="border-options">
+                            <div class="border-option" data-border="IMG_9973.png">
+                                <img src="IMG_9973.png" alt="Naval Border 1">
+                                <span>Classic Navy</span>
+                            </div>
+                            <div class="border-option" data-border="IMG_9976.png">
+                                <img src="IMG_9976.png" alt="Naval Border 2">
+                                <span>Admiral Style</span>
+                            </div>
+                            <div class="border-option" data-border="IMG_0046.png">
+                                <img src="IMG_0046.png" alt="Naval Border 3">
+                                <span>Royal Navy</span>
+                            </div>
+                            <div class="border-option" data-border="IMG_0049.png">
+                                <img src="IMG_0049.png" alt="Naval Border 4">
+                                <span>Fleet Command</span>
+                            </div>
+                            <div class="border-option active" data-border="IMG_0092.png">
+                                <img src="IMG_0092.png" alt="Naval Border 5">
+                                <span>Captain's Mark</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="upload-section">
+                        <h3>2. Upload Your Image</h3>
+                        <div class="upload-area" id="upload-area">
+                            <div class="upload-content">
+                                <div class="upload-icon">📁</div>
+                                <p>Click to upload or drag & drop your image</p>
+                                <small>Supports JPG, PNG, GIF</small>
+                            </div>
+                            <input type="file" id="image-upload" accept="image/*" hidden>
+                        </div>
+                    </div>
+
+                    <!-- Preview Canvas -->
+                    <div class="canvas-section">
+                        <h3>3. Position Your Image</h3>
+                        <div class="canvas-container">
+                            <canvas id="preview-canvas" width="500" height="500"></canvas>
+                            <div class="canvas-controls" style="display: none;">
+                                <div class="control-group">
+                                    <label>Position X:</label>
+                                    <input type="range" id="pos-x" min="-100" max="100" value="0">
+                                    <span id="pos-x-value">0</span>
+                                </div>
+                                <div class="control-group">
+                                    <label>Position Y:</label>
+                                    <input type="range" id="pos-y" min="-100" max="100" value="0">
+                                    <span id="pos-y-value">0</span>
+                                </div>
+                                <div class="control-group">
+                                    <label>Scale:</label>
+                                    <input type="range" id="scale" min="0.5" max="2" step="0.1" value="1">
+                                    <span id="scale-value">1.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Download -->
+                    <div class="download-section">
+                        <h3>4. Download Your Insignia</h3>
+                        <button id="download-btn" class="btn-primary" disabled>
+                            Download Naval Insignia
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="tools.js"></script>
+</body>
+</html>

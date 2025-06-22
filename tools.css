@@ -1,0 +1,326 @@
+/* Naval Tools CSS - Neo-Brutalist Theme */
+
+.tools-container {
+    min-height: 100vh;
+    background: #0a0a0a;
+    color: #fff;
+    padding: 2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    padding-top: 100px; /* Account for navbar */
+}
+
+.tools-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    border-bottom: 3px solid #bfa140;
+}
+
+.tools-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #bfa140;
+}
+
+.tools-subtitle {
+    font-size: 1.2rem;
+    color: #bfa140;
+    font-weight: 600;
+}
+
+.tool-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tool-card {
+    background: #fff;
+    color: #0a0a0a;
+    border: 4px solid #0a0a0a;
+    border-radius: 0;
+    padding: 2rem;
+    box-shadow: 8px 8px 0px #bfa140;
+    margin-bottom: 2rem;
+}
+
+.tool-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0a0a0a;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.tool-description {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.tool-interface {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.upload-section h3,
+.canvas-section h3,
+.download-section h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #bfa140;
+    padding-bottom: 0.5rem;
+}
+
+/* Upload Area */
+.upload-area {
+    border: 3px dashed #bfa140;
+    background: #f9f9f9;
+    color: #0a0a0a;
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.upload-area:hover {
+    background: #bfa140;
+    color: #fff;
+    border-color: #0a0a0a;
+    border-style: solid;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px #0a0a0a;
+}
+
+.upload-area.drag-over {
+    background: #bfa140;
+    color: #fff;
+    border-color: #0a0a0a;
+    border-style: solid;
+    transform: scale(1.02);
+}
+
+.upload-content .upload-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.upload-content p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.upload-content small {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Canvas Section */
+.canvas-container {
+    text-align: center;
+}
+
+#preview-canvas {
+    border: 4px solid #0a0a0a;
+    background: #f0f0f0;
+    max-width: 100%;
+    height: auto;
+}
+
+.canvas-controls {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border: 2px solid #bfa140;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.control-group label {
+    font-weight: 600;
+    color: #0a0a0a;
+    min-width: 80px;
+}
+
+.control-group input[type="range"] {
+    flex: 1;
+    height: 8px;
+    background: #ddd;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #bfa140;
+    cursor: pointer;
+    border-radius: 0;
+    border: 2px solid #0a0a0a;
+}
+
+.control-group span {
+    font-weight: 700;
+    color: #bfa140;
+    min-width: 40px;
+    text-align: center;
+}
+
+/* Download Section */
+.download-section {
+    text-align: center;
+}
+
+.btn-primary {
+    background: #bfa140;
+    color: #0a0a0a;
+    border: 4px solid #0a0a0a;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Space Grotesk', sans-serif;
+    border-radius: 0;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #0a0a0a;
+    color: #bfa140;
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0px #bfa140;
+}
+
+.btn-primary:disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    border-color: #999;
+}
+
+/* Border Selection Styles */
+.border-selection {
+    margin-bottom: 2rem;
+}
+
+.border-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.border-option {
+    background: #f9f9f9;
+    border: 3px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.border-option:hover {
+    border-color: #bfa140;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px #bfa140;
+}
+
+.border-option.active {
+    border-color: #bfa140;
+    background: #fff;
+    box-shadow: 4px 4px 0px #bfa140;
+    transform: translateY(-2px);
+}
+
+.border-option img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+
+.border-option span {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0a0a0a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tool-interface {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .tools-title {
+        font-size: 2rem;
+    }
+    
+    .tool-card {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    #preview-canvas {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #bfa140;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success/Error Messages */
+.message {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px solid;
+    font-weight: 600;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}

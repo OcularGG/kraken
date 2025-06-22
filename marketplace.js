@@ -217,9 +217,7 @@ class NavalMarketplace {
                 itemsList.appendChild(itemRow);
             });
         }
-    }
-
-    createItemRow(item) {
+    }    createItemRow(item) {
         const itemRow = document.createElement('div');
         itemRow.className = 'category-item-row';
         itemRow.innerHTML = `
@@ -231,13 +229,16 @@ class NavalMarketplace {
                        placeholder="Qty" 
                        data-item-id="${item.id}"
                        data-item-name="${item.name}"
-                       class="item-quantity">
+                       class="item-quantity"
+                       value="">
                 <input type="number" 
                        min="0" 
                        step="1" 
                        placeholder="Price/unit" 
                        data-item-id="${item.id}"
-                       class="price-per-unit">
+                       data-item-name="${item.name}"
+                       class="price-per-unit"
+                       value="">
             </div>
         `;
         return itemRow;
@@ -260,9 +261,7 @@ class NavalMarketplace {
             option.textContent = subcat;
             subcategoryFilter.appendChild(option);
         });
-    }
-
-    collectItemsFromForm() {
+    }    collectItemsFromForm() {
         const items = [];
         const itemType = document.getElementById('item-type').value;
         
@@ -270,13 +269,14 @@ class NavalMarketplace {
             const shipSelect = document.getElementById('ship-select');
             const selectedOption = shipSelect.options[shipSelect.selectedIndex];
             const withCannons = document.getElementById('ship-with-cannons').checked;
+            const priceValue = document.getElementById('price').value;
             
-            if (selectedOption && selectedOption.dataset.shipName) {
+            if (selectedOption && selectedOption.dataset.shipName && priceValue) {
                 items.push({
                     type: 'ship',
                     name: selectedOption.dataset.shipName,
                     quantity: 1,
-                    pricePerUnit: parseInt(document.getElementById('price').value) || 0,
+                    pricePerUnit: parseInt(priceValue) || 0,
                     withCannons: withCannons
                 });
             }
@@ -284,14 +284,19 @@ class NavalMarketplace {
             const quantityInputs = document.querySelectorAll('.item-quantity');
             const priceInputs = document.querySelectorAll('.price-per-unit');
             
-            quantityInputs.forEach((qtyInput, index) => {
+            quantityInputs.forEach((qtyInput) => {
                 const quantity = parseInt(qtyInput.value);
-                const pricePerUnit = parseInt(priceInputs[index].value);
+                const itemName = qtyInput.dataset.itemName;
+                const itemId = qtyInput.dataset.itemId;
                 
-                if (quantity > 0 && pricePerUnit >= 0) {
+                // Find corresponding price input for this item
+                const priceInput = document.querySelector(`.price-per-unit[data-item-id="${itemId}"]`);
+                const pricePerUnit = priceInput ? parseInt(priceInput.value) : 0;
+                
+                if (quantity > 0 && pricePerUnit >= 0 && itemName) {
                     items.push({
                         type: 'item',
-                        name: qtyInput.dataset.itemName,
+                        name: itemName,
                         quantity: quantity,
                         pricePerUnit: pricePerUnit
                     });
@@ -306,9 +311,9 @@ class NavalMarketplace {
         return items.reduce((total, item) => {
             return total + (item.quantity * item.pricePerUnit);
         }, 0);
-    }
-
-    handleFormSubmission() {
+    }    handleFormSubmission() {
+        console.log('Form submission started');
+        
         const formData = new FormData(document.getElementById('listing-form'));
         const listingType = formData.get('listing-type');
         const port = formData.get('port');
@@ -316,10 +321,28 @@ class NavalMarketplace {
         const discordName = formData.get('discord-name');
         const notes = formData.get('notes');
 
+        console.log('Form data:', { listingType, port, ingameName, discordName });
+
         const items = this.collectItemsFromForm();
+        console.log('Collected items:', items);
         
         if (items.length === 0) {
             alert('Please add at least one item to your listing.');
+            return;
+        }
+
+        if (!listingType) {
+            alert('Please select a listing type (Selling or Buying).');
+            return;
+        }
+
+        if (!port) {
+            alert('Please enter a port.');
+            return;
+        }
+
+        if (!ingameName || !discordName) {
+            alert('Please fill in both your in-game name and Discord name.');
             return;
         }
 
