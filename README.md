@@ -69,6 +69,47 @@ kraken/
 2. Replace the webhook URL in `discord-proxy.js` with your own
 3. Restart the proxy server
 
+## 🌐 **Vercel Deployment**
+
+This site is optimized for deployment on Vercel with both static hosting and serverless functions.
+
+### Quick Deploy to Vercel
+
+1. **Connect GitHub to Vercel:**
+   - Go to [vercel.com](https://vercel.com)
+   - Sign in with your GitHub account
+   - Click "New Project"
+   - Select your `kraken` repository
+
+2. **Environment Variables:**
+   - In Vercel dashboard, go to your project settings
+   - Add these environment variables:
+     ```
+     DISCORD_WEBHOOK_URL=your_discord_webhook_url_here
+     NODE_ENV=production
+     ```
+
+3. **Deploy:**
+   - Vercel will automatically deploy from your `main` branch
+   - Any new commits will trigger automatic deployments
+
+### Local Development with Vercel
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Run locally with Vercel functions
+vercel dev
+```
+
+### Vercel Configuration
+
+The site includes a `vercel.json` configuration that:
+- Serves static files (HTML, CSS, images)
+- Runs the Discord proxy as a serverless function
+- Routes API calls to `/api/discord-webhook`
+
 ## 🎮 Clan Features Highlighted
 
 - **Shipbuilding Program**: Member exclusive discounts on all major ships

@@ -5,7 +5,9 @@
   "main": "discord-proxy.js",
   "scripts": {
     "start": "node discord-proxy.js",
-    "dev": "nodemon discord-proxy.js"
+    "dev": "nodemon discord-proxy.js",
+    "build": "echo 'No build step required for static site'",
+    "vercel-build": "echo 'Build complete'"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -15,7 +17,10 @@
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "keywords": ["naval-action", "clan", "discord", "website"],
+  "engines": {
+    "node": ">=14.x"
+  },
+  "keywords": ["naval-action", "clan", "discord", "website", "vercel"],
   "author": "KRAKEN Clan",
   "license": "MIT"
 }

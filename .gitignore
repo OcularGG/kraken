@@ -1,3 +1,7 @@
+# Environment Variables for Vercel
+DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/1386130290640162857/1WB7lqwj3RVAcib7H08ygsfBozw7u5PHDSgAgOLCn1SpKy1Fkjlrc0byPmN2Wl8vgpzG
+NODE_ENV=production
+
 # Dependencies
 node_modules/
 npm-debug.log*

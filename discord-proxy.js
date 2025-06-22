@@ -3,12 +3,18 @@ const fetch = require('node-fetch');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
-const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1386130290640162857/1WB7lqwj3RVAcib7H08ygsfBozw7u5PHDSgAgOLCn1SpKy1Fkjlrc0byPmN2Wl8vgpzG';
+const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || 'https://discord.com/api/webhooks/1386130290640162857/1WB7lqwj3RVAcib7H08ygsfBozw7u5PHDSgAgOLCn1SpKy1Fkjlrc0byPmN2Wl8vgpzG';
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://kraken-oculargg.vercel.app', 'https://*.vercel.app'],
+  credentials: true
+}));
 app.use(express.json());
+
+// Vercel serverless function export
+module.exports = app;
 
 app.post('/api/discord-webhook', async (req, res) => {
   try {
@@ -33,6 +39,9 @@ app.post('/api/discord-webhook', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Discord proxy server running on http://localhost:${PORT}`);
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Discord proxy server running on http://localhost:${PORT}`);
+  });
+}

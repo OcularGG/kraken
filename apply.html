@@ -241,17 +241,22 @@ document.addEventListener('DOMContentLoaded', function() {
     radio.onchange = function() {
       if (currentStep === 6) nextStep();
     };
-  });
-  // Form submission
+  });  // Form submission
   form.onsubmit = async function(e) {
     e.preventDefault();
     statusDiv.textContent = 'Submitting...';
     statusDiv.style.color = '#bfa140';
     const data = new FormData(form);
     const embed = buildDiscordEmbed(data);
+    
+    // Determine the correct API URL based on environment
+    const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+    const apiUrl = isProduction 
+      ? `${window.location.origin}/api/discord-webhook`
+      : 'http://localhost:3001/api/discord-webhook';
+    
     try {
-      // Use the proxy server instead of direct Discord webhook
-      const res = await fetch('http://localhost:3001/api/discord-webhook', {
+      const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
