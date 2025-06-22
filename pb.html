@@ -26,12 +26,35 @@
             border: 4px solid #bfa140;
             box-shadow: 8px 8px 0px #bfa140;
         }
-        
-        .pb-header {
+          .pb-header {
             text-align: center;
             margin-bottom: 3rem;
             padding-bottom: 2rem;
             border-bottom: 3px solid #bfa140;
+            position: relative;
+        }
+        
+        .admin-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0.75rem 1.5rem;
+            background: #8b0000;
+            border: 2px solid #8b0000;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .admin-btn:hover {
+            background: #a00000;
+            border-color: #a00000;
+            transform: translateY(-2px);
+            box-shadow: 2px 2px 0px #bfa140;
         }
         
         .pb-title {
@@ -212,19 +235,34 @@
             display: none;
         }
         
-        .autocomplete-suggestion {
+        .port-suggestion {
             padding: 0.75rem;
             cursor: pointer;
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid #333;
+            transition: background 0.2s ease;
+        }
+        
+        .port-suggestion:hover {
+            background: #2a2a2a;
+        }
+        
+        .port-suggestion:last-child {
+            border-bottom: none;
+        }
+        
+        .port-name {
+            display: block;
             color: #fff;
+            font-weight: 600;
         }
         
-        .autocomplete-suggestion:hover,
-        .autocomplete-suggestion.highlighted {
-            background: #bfa140;
-            color: #181818;
+        .port-info {
+            display: block;
+            color: #bfa140;
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
         }
-        
+
         @media (max-width: 768px) {
             .pb-container {
                 margin: 1rem;
@@ -263,10 +301,10 @@
         </ul>
     </nav>
 
-    <div class="pb-container">
-        <header class="pb-header">
+    <div class="pb-container">        <header class="pb-header">
             <h1 class="pb-title">Port Battle Management</h1>
             <p class="pb-subtitle">Coordinate fleet operations and manage sign-ups</p>
+            <button class="admin-btn" onclick="promptAdminAccess()">ADMIN</button>
         </header>
 
         <div class="action-buttons">
@@ -285,7 +323,7 @@
                     </div>
                 </div>
                 <div class="pb-actions">
-                    <button class="btn btn-small" onclick="viewPBDetails('example1')">View Details</button>
+                    <button class="btn btn-small" onclick="openSignup('example1')">SIGN-UP</button>
                     <button class="btn btn-small btn-secondary" onclick="managePB('example1')">Manage</button>
                 </div>
             </div>
@@ -332,10 +370,12 @@
                         <input type="datetime-local" id="pb-time" name="pb-time" required>
                     </div>
                 </div>
-                
-                <div class="form-group">
+                  <div class="form-group">
                     <label for="meeting-location">Meeting Location</label>
-                    <input type="text" id="meeting-location" name="meeting-location" placeholder="Port name" required>
+                    <div style="position: relative;">
+                        <input type="text" id="meeting-location" name="meeting-location" placeholder="Port name" required>
+                        <div id="meeting-suggestions" class="port-suggestions"></div>
+                    </div>
                 </div>
                 
                 <div style="text-align: center; margin-top: 2rem;">
@@ -343,9 +383,100 @@
                 </div>
             </form>
         </div>
-    </div>
-
-    <script>
+    </div>    <script>
+        // Naval Action API for ports
+        let allPorts = [];
+        
+        // Fetch ports from Naval Action API
+        async function fetchPorts() {
+            try {
+                const response = await fetch('https://na-map.github.io/api-v1/ports/');
+                const data = await response.json();
+                allPorts = data.map(port => ({
+                    name: port.name,
+                    nation: port.nation,
+                    region: port.region
+                })).sort((a, b) => a.name.localeCompare(b.name));
+                console.log('Loaded', allPorts.length, 'ports from Naval Action API');
+            } catch (error) {
+                console.error('Error fetching ports:', error);
+                // Fallback ports if API fails
+                allPorts = [
+                    { name: 'Bridgetown', nation: 'Great Britain', region: 'Caribbean' },
+                    { name: 'Kingston', nation: 'Great Britain', region: 'Caribbean' },
+                    { name: 'Port-au-Prince', nation: 'France', region: 'Caribbean' },
+                    { name: 'Havana', nation: 'Spain', region: 'Caribbean' },
+                    { name: 'Cartagena de Indias', nation: 'Spain', region: 'Caribbean' },
+                    { name: 'Willemstad', nation: 'Netherlands', region: 'Caribbean' },
+                    { name: 'Charleston', nation: 'United States', region: 'Caribbean' },
+                    { name: 'New Orleans', nation: 'United States', region: 'Caribbean' }
+                ];
+            }
+        }
+        
+        // Initialize port search for both fields
+        function initializePortSearch() {
+            setupPortSuggestions('pb-port', 'port-suggestions');
+            setupPortSuggestions('meeting-location', 'meeting-suggestions');
+        }
+        
+        // Setup port suggestions for an input field
+        function setupPortSuggestions(inputId, suggestionsId) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+            
+            // Create suggestions container if it doesn't exist
+            let suggestionsContainer = document.getElementById(suggestionsId);
+            if (!suggestionsContainer) {
+                suggestionsContainer = document.createElement('div');
+                suggestionsContainer.id = suggestionsId;
+                suggestionsContainer.className = 'port-suggestions';
+                input.parentElement.appendChild(suggestionsContainer);
+            }
+            
+            input.addEventListener('input', function() {
+                const query = this.value.toLowerCase();
+                suggestionsContainer.innerHTML = '';
+                
+                if (query.length < 2) {
+                    suggestionsContainer.style.display = 'none';
+                    return;
+                }
+                
+                const matches = allPorts.filter(port => 
+                    port.name.toLowerCase().includes(query)
+                ).slice(0, 10);
+                
+                if (matches.length === 0) {
+                    suggestionsContainer.style.display = 'none';
+                    return;
+                }
+                
+                matches.forEach(port => {
+                    const suggestion = document.createElement('div');
+                    suggestion.className = 'port-suggestion';
+                    suggestion.innerHTML = `
+                        <span class="port-name">${port.name}</span>
+                        <span class="port-info">${port.nation} • ${port.region}</span>
+                    `;
+                    suggestion.addEventListener('click', () => {
+                        input.value = port.name;
+                        suggestionsContainer.style.display = 'none';
+                    });
+                    suggestionsContainer.appendChild(suggestion);
+                });
+                
+                suggestionsContainer.style.display = 'block';
+            });
+            
+            // Hide suggestions when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!input.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+                    suggestionsContainer.style.display = 'none';
+                }
+            });
+        }
+        
         // Sample data
         const portBattles = [
             {
@@ -478,29 +609,19 @@
                 hour: '2-digit',
                 minute: '2-digit'
             }) + ' UTC';
+        }        // Enhanced PB functions
+        function openSignup(pbId) {
+            const signupUrl = `pb-signup.html?id=${pbId}`;
+            window.open(signupUrl, '_blank');
         }
-
-        // Enhanced PB functions
-        function viewPBDetails(pbId) {
-            const pb = portBattles.find(p => p.id === pbId);
-            if (!pb) return;
-            
-            const signupUrl = `${window.location.origin}/pb-signup.html?id=${pbId}`;
-            const adminUrl = `${window.location.origin}/pb-admin.html?id=${pbId}&code=${pb.adminCode}`;
-            
-            alert(`Port Battle Details:
-Port: ${pb.port} (${pb.type === 'deep' ? 'Deep Water' : 'Shallow Water'})
-BR Limit: ${pb.brLimit}
-Meeting: ${formatDateTime(pb.meetingTime)} at ${pb.meetingLocation}
-PB Time: ${formatDateTime(pb.pbTime)}
-Sign-ups: ${pb.signups}/${pb.maxSignups}
-
-✅ Sign-up URL: ${signupUrl}
-🔐 Admin Code: ${pb.adminCode}
-⚙️ Admin URL: ${adminUrl}
-
-📋 Share the sign-up URL with your fleet members
-🔒 Keep the admin code secure!`);
+        
+        function promptAdminAccess() {
+            const password = prompt('Enter admin password:');
+            if (password === 'UnionJack123') {
+                window.location.href = 'pb-admin.html';
+            } else if (password !== null) {
+                alert('Incorrect password. Access denied.');
+            }
         }
 
         function managePB(pbId) {
@@ -563,7 +684,7 @@ Sign-ups: ${pb.signups}/${pb.maxSignups}
                         </div>
                     </div>
                     <div class="pb-actions">
-                        <button class="btn btn-small" onclick="viewPBDetails('${pb.id}')">View Details</button>
+                        <button class="btn btn-small" onclick="openSignup('${pb.id}')">SIGN-UP</button>
                         <button class="btn btn-small btn-secondary" onclick="managePB('${pb.id}')">Manage</button>
                     </div>
                 `;
@@ -608,9 +729,10 @@ Sign-ups: ${pb.signups}/${pb.maxSignups}
             });
         }        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            loadPBData();
-            loadPortBattles();
-            initializePortAutocomplete();
+            fetchPorts().then(() => {
+                initializePortSearch();
+            });
+            displayPortBattles();
         });
     </script>
 </body>

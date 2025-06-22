@@ -133,12 +133,11 @@
         
         .conditional-field.show {
             display: block;
-        }
-          .signature-input {
+        }        .signature-input {
             font-family: 'Cedarville Cursive', cursive !important;
             font-size: 24px !important;
             font-weight: 400 !important;
-            color: #1a1a7e !important;
+            color: #2c1810 !important;
             letter-spacing: 1px;
         }
           .declaration-checkbox {
@@ -185,8 +184,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
-        .custom-checkbox::after {
+          .custom-checkbox::after {
             content: "✓";
             position: absolute;
             top: -2px;
@@ -194,7 +192,7 @@
             font-family: 'Cedarville Cursive', cursive;
             font-size: 20px;
             font-weight: 400;
-            color: #1a1a7e;
+            color: #2c1810;
             opacity: 0;
             transform: scale(0.5) rotate(-10deg);
             transition: all 0.3s ease;
@@ -202,7 +200,7 @@
         
         .checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox {
             background: rgba(139, 69, 19, 0.1);
-            border-color: #1a1a7e;
+            border-color: #8b4513;
         }
         
         .checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox::after {
@@ -433,25 +431,29 @@
         .form-page.hide {
             display: none;
         }
-        
-        .wax-seal {
+          .wax-seal {
             position: absolute;
             bottom: 50px;
             right: 50px;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, #b8860b 0%, #8b6914 30%, #6b4e03  70%, #4a3600 100%);
+            width: 140px;
+            height: 140px;
+            background: 
+                radial-gradient(circle at 30% 30%, #d4af37 0%, #b8860b 25%, #8b6914 50%, #6b4e03 75%, #4a3600 100%),
+                radial-gradient(circle at 70% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
             border-radius: 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             box-shadow: 
-                inset 0 0 20px rgba(0,0,0,0.3),
-                0 5px 15px rgba(0,0,0,0.4),
-                0 2px 4px rgba(0,0,0,0.2);
-            border: 3px solid #6b4e03;
-            transform: rotate(-5deg);
+                inset 0 0 30px rgba(0,0,0,0.4),
+                inset 5px 5px 15px rgba(255,215,0,0.3),
+                inset -5px -5px 15px rgba(0,0,0,0.5),
+                0 8px 25px rgba(0,0,0,0.6),
+                0 3px 8px rgba(0,0,0,0.3);
+            border: 4px solid #4a3600;
+            transform: rotate(-8deg);
+            position: relative;
         }
         
         .wax-seal::before {
@@ -460,24 +462,43 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background-image: url('krakenlogo.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.8;
+            opacity: 0.9;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+        }
+        
+        .wax-seal::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(0,0,0,0.3) 0%, transparent 40%);
+            pointer-events: none;
         }
         
         .wax-seal-text {
             font-family: 'Cinzel', serif;
             color: #2c1810;
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 11px;
+            font-weight: 700;
             text-align: center;
-            margin-top: 25px;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            margin-top: 35px;
+            letter-spacing: 2px;
+            text-shadow: 
+                1px 1px 2px rgba(0,0,0,0.5),
+                0 0 4px rgba(255,215,0,0.3);
+            z-index: 2;
+            position: relative;
         }
         
         .submitted-data {
@@ -787,7 +808,7 @@
                     <input type="text" class="signature-input" placeholder="Type your signature here" name="signature" required style="border: none; border-bottom: 2px solid #8b4513; background: transparent; text-align: center; margin-bottom: 10px; padding: 10px;">
                     <div class="signature-label">Applicant's Signature</div>
                 </div>                <div class="signature-box">
-                    <input type="text" class="signature-input" id="currentDate" name="date" readonly style="border: none; border-bottom: 2px solid #8b4513; background: transparent; text-align: center; margin-bottom: 10px; padding: 10px; font-family: 'Cedarville Cursive', cursive; font-size: 20px; color: #1a1a7e;">
+                    <input type="text" class="signature-input" id="currentDate" name="date" readonly style="border: none; border-bottom: 2px solid #8b4513; background: transparent; text-align: center; margin-bottom: 10px; padding: 10px; font-family: 'Cedarville Cursive', cursive; font-size: 20px; color: #2c1810;">
                     <div class="signature-label">Date</div>
                 </div>
             </div>            <div class="submit-section">
@@ -967,7 +988,7 @@
             
             // Signature
             html += '<h3 style="color: #8b4513; margin: 25px 0 15px 0;">Declaration</h3>';
-            html += `<p><span class="field-label">Signature:</span> <span class="field-value" style="font-family: 'Cedarville Cursive', cursive; font-size: 24px; color: #1a1a7e;">${formData.signature || 'N/A'}</span></p>`;
+            html += `<p><span class="field-label">Signature:</span> <span class="field-value" style="font-family: 'Cedarville Cursive', cursive; font-size: 24px; color: #2c1810;">${formData.signature || 'N/A'}</span></p>`;
             html += `<p><span class="field-label">Date:</span> <span class="field-value">${formData.date || 'N/A'}</span></p>`;
             
             submittedDataDiv.innerHTML = html;
@@ -1025,9 +1046,8 @@
                         },
                         timestamp: new Date().toISOString()
                     }]
-                };
-                  // Send to Discord webhook
-                const response = await fetch('api/discord-webhook.js', {
+                };                // Send to Discord webhook
+                const response = await fetch('/api/discord-webhook.js', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
