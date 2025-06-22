@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join KRAKEN | Naval Action RvR Clan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .typeform-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .wave-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23bfa140' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            animation: wave 20s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(-50px); }
+        }
+
+        .form-wrapper {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.9);
+            border-radius: 20px;
+            padding: 60px 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(191, 161, 64, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #bfa140, #d4b356, #bfa140);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 200% 0; }
+            50% { background-position: -200% 0; }
+        }
+
+        .question-container {
+            display: none;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .question-number {
+            color: #bfa140;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .question-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .question-subtitle {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid #333;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-bottom-color: #bfa140;
+        }
+
+        .form-input::placeholder {
+            color: #666;
+            font-weight: 300;
+        }
+
+        .form-textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            font-size: 1.2rem;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 150px;
+            resize: vertical;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-textarea:focus {
+            border-color: #bfa140;
+            background: rgba(191, 161, 64, 0.1);
+        }
+
+        .form-textarea::placeholder {
+            color: #666;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .option-button {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .option-button:hover {
+            background: rgba(191, 161, 64, 0.1);
+            border-color: #bfa140;
+            transform: translateY(-2px);
+        }
+
+        .option-button.selected {
+            background: rgba(191, 161, 64, 0.2);
+            border-color: #bfa140;
+            color: #bfa140;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .nav-button {
+            background: transparent;
+            border: 2px solid #bfa140;
+            color: #bfa140;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button:hover:not(:disabled) {
+            background: #bfa140;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(191, 161, 64, 0.4);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .nav-button.primary {
+            background: linear-gradient(45deg, #bfa140, #d4b356);
+            color: #000;
+            border: none;
+            font-weight: 700;
+        }
+
+        .nav-button.primary:hover:not(:disabled) {
+            background: linear-gradient(45deg, #d4b356, #bfa140);
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #bfa140, #d4b356);
+            transition: width 0.3s ease;
+            z-index: 1000;
+        }
+
+        .completion-screen {
+            text-align: center;
+            display: none;
+        }
+
+        .completion-screen.active {
+            display: block;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .completion-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #bfa140;
+            margin-bottom: 15px;
+        }
+
+        .completion-message {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 30px;
+        }
+
+        .home-button {
+            background: linear-gradient(45deg, #bfa140, #d4b356);
+            color: #000;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .home-button:hover {
+            background: linear-gradient(45deg, #d4b356, #bfa140);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(191, 161, 64, 0.4);
+        }
+
+        .error-message {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid #f44336;
+            color: #f44336;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            border-top-color: #bfa140;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .form-wrapper {
+                padding: 40px 20px;
+                margin: 10px;
+            }
+
+            .question-title {
+                font-size: 2rem;
+            }
+
+            .question-subtitle {
+                font-size: 1rem;
+            }
+
+            .form-input {
+                font-size: 1.2rem;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wave-background"></div>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="typeform-container">
+        <div class="form-wrapper">
+            <!-- Question 1: Welcome -->
+            <div class="question-container active" data-question="0">
+                <div class="question-number">Welcome to KRAKEN</div>
+                <h1 class="question-title">Ahoy, Captain! 🦑</h1>
+                <p class="question-subtitle">Ready to join the most elite Naval Action RvR clan? Let's get to know you better.</p>
+                <div class="navigation-buttons">
+                    <div></div>
+                    <button class="nav-button primary" onclick="nextQuestion()">Let's Begin</button>
+                </div>
+            </div>
+
+            <!-- Question 2: Captain's Name -->
+            <div class="question-container" data-question="1">
+                <div class="question-number">Question 1 of 6</div>
+                <h2 class="question-title">What's your captain's name?</h2>
+                <p class="question-subtitle">Tell us what you're called on the high seas</p>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="captainName" placeholder="Enter your captain's name" required>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="nameNext">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 3: Discord Username -->
+            <div class="question-container" data-question="2">
+                <div class="question-number">Question 2 of 6</div>
+                <h2 class="question-title">What's your Discord username?</h2>
+                <p class="question-subtitle">We use Discord for all clan coordination and RvR planning</p>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="discordUsername" placeholder="username#1234" required>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="discordNext">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 4: Player Type -->
+            <div class="question-container" data-question="3">
+                <div class="question-number">Question 3 of 6</div>
+                <h2 class="question-title">What type of player are you?</h2>
+                <p class="question-subtitle">Help us understand your play style and availability</p>
+                <div class="options-grid">
+                    <button class="option-button" data-value="Casual" onclick="selectOption(this, 'playerType')">
+                        🏴‍☠️ Casual Player<br>
+                        <small style="opacity: 0.7;">Few hours per week</small>
+                    </button>
+                    <button class="option-button" data-value="Hardcore" onclick="selectOption(this, 'playerType')">
+                        ⚔️ Hardcore Player<br>
+                        <small style="opacity: 0.7;">Daily gaming sessions</small>
+                    </button>
+                    <button class="option-button" data-value="Weekend Warrior" onclick="selectOption(this, 'playerType')">
+                        🗓️ Weekend Warrior<br>
+                        <small style="opacity: 0.7;">Weekends mostly</small>
+                    </button>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="playerTypeNext">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 5: RvR Experience -->
+            <div class="question-container" data-question="4">
+                <div class="question-number">Question 4 of 6</div>
+                <h2 class="question-title">What's your RvR experience?</h2>
+                <p class="question-subtitle">Don't worry if you're new - we train our captains!</p>
+                <div class="options-grid">
+                    <button class="option-button" data-value="None" onclick="selectOption(this, 'rvrExperience')">
+                        🆕 New to RvR<br>
+                        <small style="opacity: 0.7;">Ready to learn!</small>
+                    </button>
+                    <button class="option-button" data-value="Beginner" onclick="selectOption(this, 'rvrExperience')">
+                        ⭐ Beginner<br>
+                        <small style="opacity: 0.7;">1-5 battles</small>
+                    </button>
+                    <button class="option-button" data-value="Intermediate" onclick="selectOption(this, 'rvrExperience')">
+                        ⭐⭐ Intermediate<br>
+                        <small style="opacity: 0.7;">6-20 battles</small>
+                    </button>
+                    <button class="option-button" data-value="Experienced" onclick="selectOption(this, 'rvrExperience')">
+                        ⭐⭐⭐ Experienced<br>
+                        <small style="opacity: 0.7;">20+ battles</small>
+                    </button>
+                    <button class="option-button" data-value="Veteran" onclick="selectOption(this, 'rvrExperience')">
+                        ⭐⭐⭐⭐ Veteran<br>
+                        <small style="opacity: 0.7;">50+ battles</small>
+                    </button>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()" disabled id="rvrNext">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 6: Why Join -->
+            <div class="question-container" data-question="5">
+                <div class="question-number">Question 5 of 6</div>
+                <h2 class="question-title">Why do you want to join KRAKEN?</h2>
+                <p class="question-subtitle">Tell us what motivates you to sail with our crew</p>
+                <div class="input-group">
+                    <textarea class="form-textarea" id="whyJoin" placeholder="Share your thoughts... What draws you to KRAKEN? What are you looking for in a clan?"></textarea>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="nextQuestion()">Continue</button>
+                </div>
+            </div>
+
+            <!-- Question 7: Previous Clans (Optional) -->
+            <div class="question-container" data-question="6">
+                <div class="question-number">Question 6 of 6</div>
+                <h2 class="question-title">Any previous clans?</h2>
+                <p class="question-subtitle">Optional - helps us understand your Naval Action journey</p>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="previousClans" placeholder="List previous clans (or leave blank if none)">
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-button" onclick="prevQuestion()">Back</button>
+                    <button class="nav-button primary" onclick="submitApplication()" id="submitBtn">
+                        Submit Application
+                        <span class="loading-spinner" id="loadingSpinner" style="display: none;"></span>
+                    </button>
+                </div>
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+
+            <!-- Completion Screen -->
+            <div class="completion-screen" id="completionScreen">
+                <div class="success-icon">⚓</div>
+                <h2 class="completion-title">Welcome aboard, Captain! 🦑</h2>
+                <p class="completion-message">
+                    Your application has been submitted successfully.<br>
+                    We'll review it and contact you on Discord soon.<br><br>
+                    Prepare for conquest of the Caribbean!
+                </p>
+                <a href="index.html" class="home-button">Return to Port</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 0;
+        const totalQuestions = 7;
+        const formData = {};
+
+        // Update progress bar
+        function updateProgress() {
+            const progress = (currentQuestion / (totalQuestions - 1)) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+        }
+
+        // Show specific question
+        function showQuestion(index) {
+            document.querySelectorAll('.question-container').forEach(q => q.classList.remove('active'));
+            document.querySelector(`[data-question="${index}"]`).classList.add('active');
+            currentQuestion = index;
+            updateProgress();
+        }
+
+        // Next question
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions - 1) {
+                saveCurrentData();
+                showQuestion(currentQuestion + 1);
+            }
+        }
+
+        // Previous question
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                showQuestion(currentQuestion - 1);
+            }
+        }
+
+        // Save current form data
+        function saveCurrentData() {
+            const question = document.querySelector(`[data-question="${currentQuestion}"]`);
+            const inputs = question.querySelectorAll('input, textarea');
+            
+            inputs.forEach(input => {
+                if (input.value.trim()) {
+                    formData[input.id] = input.value.trim();
+                }
+            });
+
+            // Save selected options
+            const selectedOptions = question.querySelectorAll('.option-button.selected');
+            selectedOptions.forEach(option => {
+                const questionType = option.closest('[data-question]').dataset.question;
+                if (questionType === '3') formData.playerType = option.dataset.value;
+                if (questionType === '4') formData.rvrExperience = option.dataset.value;
+            });
+        }
+
+        // Select option
+        function selectOption(button, type) {
+            // Remove selection from siblings
+            button.parentElement.querySelectorAll('.option-button').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Select current option
+            button.classList.add('selected');
+            
+            // Enable next button
+            const nextBtn = document.getElementById(type + 'Next');
+            if (nextBtn) nextBtn.disabled = false;
+        }
+
+        // Input validation
+        function setupValidation() {
+            // Captain name validation
+            document.getElementById('captainName').addEventListener('input', function() {
+                const nextBtn = document.getElementById('nameNext');
+                nextBtn.disabled = this.value.trim().length < 2;
+            });
+
+            // Discord username validation
+            document.getElementById('discordUsername').addEventListener('input', function() {
+                const nextBtn = document.getElementById('discordNext');
+                const isValid = this.value.trim().length > 3 && (this.value.includes('#') || this.value.includes('@'));
+                nextBtn.disabled = !isValid;
+            });
+        }
+
+        // Submit application
+        async function submitApplication() {
+            saveCurrentData();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            loadingSpinner.style.display = 'inline-block';
+            submitBtn.innerHTML = 'Submitting Application <span class="loading-spinner"></span>';
+            errorMessage.style.display = 'none';
+
+            try {
+                // Create Discord embed
+                const embed = {
+                    title: '🦑 New KRAKEN Application',
+                    color: 0xbfa140,
+                    fields: [
+                        { name: "Captain's Name", value: formData.captainName || 'N/A', inline: true },
+                        { name: 'Discord Username', value: formData.discordUsername || 'N/A', inline: true },
+                        { name: 'Player Type', value: formData.playerType || 'Not specified', inline: true },
+                        { name: 'RvR Experience', value: formData.rvrExperience || 'Not specified', inline: true },
+                        { name: 'Previous Clans', value: formData.previousClans || 'None', inline: true },
+                        { name: 'Why join KRAKEN?', value: formData.whyJoin || 'Not specified', inline: false }
+                    ],
+                    timestamp: new Date().toISOString(),
+                    footer: { text: 'Naval Action KRAKEN Clan Application' }
+                };
+
+                const payload = {
+                    embeds: [embed],
+                    username: 'KRAKEN Recruitment Bot'
+                };
+
+                // Send to Discord webhook
+                const response = await fetch('/api/discord-webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    // Show completion screen
+                    document.querySelector('.form-wrapper').style.transform = 'translateY(-20px)';
+                    setTimeout(() => {
+                        document.querySelectorAll('.question-container').forEach(q => q.classList.remove('active'));
+                        document.getElementById('completionScreen').classList.add('active');
+                        document.getElementById('progressBar').style.width = '100%';
+                    }, 300);
+                } else {
+                    throw new Error('Failed to submit application');
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                errorMessage.textContent = 'Failed to submit application. Please try again or contact us directly on Discord.';
+                errorMessage.style.display = 'block';
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                loadingSpinner.style.display = 'none';
+                submitBtn.innerHTML = 'Submit Application';
+            }
+        }
+
+        // Initialize
+        updateProgress();
+        setupValidation();
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                const activeQuestion = document.querySelector('.question-container.active');
+                const nextBtn = activeQuestion.querySelector('.nav-button.primary');
+                if (nextBtn && !nextBtn.disabled) {
+                    e.preventDefault();
+                    nextBtn.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
