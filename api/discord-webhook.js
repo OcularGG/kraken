@@ -21,7 +21,11 @@ module.exports = async (req, res) => {
   }
 
   try {
-    console.log('Received application:', JSON.stringify(req.body, null, 2));
+    console.log('Webhook request received at:', new Date().toISOString());
+    console.log('Request method:', req.method);
+    console.log('Request headers:', JSON.stringify(req.headers, null, 2));
+    console.log('Request body:', JSON.stringify(req.body, null, 2));
+    
     const payload = req.body;
     
     // Validate that we have the required Discord webhook structure
