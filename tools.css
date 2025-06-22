@@ -218,55 +218,6 @@
     border-color: #999;
 }
 
-/* Border Selection Styles */
-.border-selection {
-    margin-bottom: 2rem;
-}
-
-.border-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.border-option {
-    background: #f9f9f9;
-    border: 3px solid #ccc;
-    padding: 1rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.border-option:hover {
-    border-color: #bfa140;
-    transform: translateY(-2px);
-    box-shadow: 4px 4px 0px #bfa140;
-}
-
-.border-option.active {
-    border-color: #bfa140;
-    background: #fff;
-    box-shadow: 4px 4px 0px #bfa140;
-    transform: translateY(-2px);
-}
-
-.border-option img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 0.5rem;
-}
-
-.border-option span {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #0a0a0a;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
