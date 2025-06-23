@@ -46,30 +46,47 @@ app.use(cors(corsOptions));
 app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true, limit: '2mb' }));
 
-// Static files
-app.use(express.static(path.join(__dirname), {
-    maxAge: '1d',
-    etag: true,
-    lastModified: true
-}));
-
-// API Routes
+// API Routes (before static files to avoid conflicts)
 app.use('/api/discord-webhook', require('./api/discord-webhook-ultra-secure'));
 app.use('/api/health', require('./api/health'));
 app.use('/api/init-db', require('./api/init-db'));
+app.use('/api/init-db-postgres', require('./api/init-db-postgres'));
+app.use('/api/test-db', require('./api/test-db'));
+app.use('/api/db-test', require('./api/db-test'));
 app.use('/api/applications', require('./api/applications'));
 app.use('/api/port-battles', require('./api/port-battles'));
 app.use('/api/signups', require('./api/signups'));
 app.use('/api/captains', require('./api/captains'));
 app.use('/api/gallery', require('./api/gallery'));
 
-// Serve HTML files
+// Redirect .html URLs to clean URLs (301 permanent redirect for SEO)
+// This MUST come before static files and general routing
+app.get('/:page.html', (req, res) => {
+    const page = req.params.page;
+    res.redirect(301, `/${page}`);
+});
+
+// Static files (after redirects to avoid serving .html files directly)
+app.use(express.static(path.join(__dirname), {
+    maxAge: '1d',
+    etag: true,
+    lastModified: true
+}));
+
+// Serve HTML files with clean URLs
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/:page.html', (req, res) => {
+// Clean URL routing (without .html extension)
+app.get('/:page', (req, res, next) => {
     const page = req.params.page;
+    
+    // Skip API routes and specific endpoints
+    if (page.startsWith('api') || page === 'health' || page === 'robots.txt' || page === 'sitemap.xml') {
+        return next();
+    }
+    
     const filePath = path.join(__dirname, `${page}.html`);
     res.sendFile(filePath, (err) => {
         if (err) {
@@ -87,6 +104,16 @@ app.get('/health', (req, res) => {
         memory: process.memoryUsage(),
         environment: process.env.NODE_ENV || 'development'
     });
+});
+
+// SEO and robots files
+app.get('/robots.txt', (req, res) => {
+    res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
+app.get('/sitemap.xml', (req, res) => {
+    res.type('application/xml');
+    res.sendFile(path.join(__dirname, 'sitemap.xml'));
 });
 
 // 404 handler

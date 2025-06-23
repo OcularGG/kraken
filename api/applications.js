@@ -133,12 +133,7 @@ module.exports = async (req, res) => {
                 signature: applicationData.signature,
                 application_date: applicationData.date,
                 submitted_at: new Date().toISOString()
-            };
-
-            const { data, error } = await supabase
-                .from('applications')
-                .insert([dbData])
-                .select();
+            };            const { data, error } = await Database.insertApplication(dbData);
 
             if (error) {
                 console.error('Database insert error:', error);
@@ -148,20 +143,17 @@ module.exports = async (req, res) => {
                 });
             }
 
-            console.log('Application saved successfully:', data[0].id);
+            console.log('Application saved successfully:', data.id);
             
             res.status(200).json({ 
                 success: true, 
-                application_id: data[0].id,
+                application_id: data.id,
                 message: 'Application saved successfully' 
             });
 
         } else if (req.method === 'GET') {
             // Get all applications (for admin view)
-            const { data, error } = await supabase
-                .from('applications')
-                .select('*')
-                .order('submitted_at', { ascending: false });
+            const { data, error } = await Database.getAllApplications();
 
             if (error) {
                 console.error('Database select error:', error);
