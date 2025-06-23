@@ -995,17 +995,12 @@
             submittedDataDiv.innerHTML = html;
         }        // Send to webhook with success page screenshot
         async function sendToWebhook(formData) {
-            try {
-                console.log('🚀 Starting webhook send process...');
+            try {                console.log('🚀 Starting webhook send process...');
                 
-                // Detect environment
-                const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-                const webhookUrl = isLocal ? 
-                    'https://discord.com/api/webhooks/1386130290640162857/1WB7lqwj3RVAcib7H08ygsfBozw7u5PHDSgAgOLCn1SpKy1Fkjlrc0byPmN2Wl8vgpzG' : 
-                    '/api/discord-webhook.js';
+                // Always use our secure API endpoint - never expose webhook URLs to client
+                const webhookUrl = '/api/discord-webhook';
                 
-                console.log('🌐 Environment:', isLocal ? 'Local' : 'Production');
-                console.log('📡 Webhook URL:', webhookUrl);
+                console.log('📡 Using secure webhook API endpoint');
                   // Create a formatted message for Discord (without image initially)
                 const discordMessage = {
                     content: "🚢 **NEW COMMISSION APPLICATION SUBMITTED** 🚢",
@@ -1091,10 +1086,8 @@
             try {
                 console.log('📸 Starting screenshot capture process...');
                 // Detect environment
-                const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-                const webhookUrl = isLocal ? 
-                    'https://discord.com/api/webhooks/1386130290640162857/1WB7lqwj3RVAcib7H08ygsfBozw7u5PHDSgAgOLCn1SpKy1Fkjlrc0byPmN2Wl8vgpzG' : 
-                    '/api/discord-webhook.js';
+                const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';                // Always use our secure API endpoint
+                const webhookUrl = '/api/discord-webhook';
                 // Wait a bit for the success page to fully render
                 setTimeout(async () => {
                     try {

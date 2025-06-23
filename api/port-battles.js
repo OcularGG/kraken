@@ -1,5 +1,5 @@
-// Port Battles API - CRUD operations for port battles
-const { supabase } = require('../../lib/supabase');
+// Port Battles API - CRUD operations for port battles using PostgreSQL
+const { Database } = require('../lib/database');
 
 module.exports = async (req, res) => {
     // Enable CORS
@@ -17,76 +17,67 @@ module.exports = async (req, res) => {
             // Create new port battle
             const pbData = req.body;
             
-            console.log('Creating port battle:', pbData.port);
+            console.log('Creating new port battle:', pbData.port);
             
             // Map form data to database columns
-            const dbData = {
-                id: pbData.id,
-                port: pbData.port,
-                battle_type: pbData.type,
-                br_limit: parseInt(pbData.brLimit),
-                meeting_time: new Date(pbData.meetingTime).toISOString(),
-                pb_time: new Date(pbData.pbTime).toISOString(),
-                meeting_location: pbData.meetingLocation,
-                max_signups: parseInt(pbData.maxSignups) || 70,
-                access_code: pbData.accessCode,
-                admin_code: pbData.adminCode,
-                allowed_rates: pbData.allowedRates || [],
-                allowed_ships: pbData.allowedShips || [],
-                screening_fleets: pbData.screeningFleets || []
-            };
+            const query = `
+                INSERT INTO port_battles (
+                    id, port, battle_type, br_limit, meeting_time, pb_time,
+                    meeting_location, max_signups, access_code, admin_code,
+                    allowed_rates, allowed_ships, screening_fleets
+                ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+                RETURNING *
+            `;
+            
+            const values = [
+                pbData.pbId,
+                pbData.port,
+                pbData.battleType,
+                parseInt(pbData.brLimit),
+                pbData.meetingTime,
+                pbData.pbTime,
+                pbData.meetingLocation,
+                parseInt(pbData.maxSignups) || 70,
+                pbData.accessCode,
+                pbData.adminCode,
+                pbData.allowedRates || [],
+                pbData.allowedShips || [],
+                pbData.screeningFleets || []
+            ];
 
-            const { data, error } = await supabase
-                .from('port_battles')
-                .insert([dbData])
-                .select();
+            const result = await Database.query(query, values);
 
-            if (error) {
-                console.error('Database insert error:', error);
-                return res.status(500).json({ 
-                    error: 'Failed to create port battle', 
-                    details: error.message 
-                });
-            }
-
-            console.log('Port battle created successfully:', data[0].id);
+            console.log('Port battle created successfully:', result.rows[0].id);
             
             res.status(200).json({ 
                 success: true, 
-                port_battle: data[0],
+                port_battle: result.rows[0],
                 message: 'Port battle created successfully' 
             });
 
         } else if (req.method === 'GET') {
-            // Get all port battles or specific one
+            // Get port battles
             const { id, access_code } = req.query;
             
-            let query = supabase.from('port_battles').select('*');
+            let query = 'SELECT * FROM port_battles';
+            let values = [];
             
             if (id) {
-                query = query.eq('id', id);
+                query += ' WHERE id = $1';
+                values = [id];
+            } else if (access_code) {
+                query += ' WHERE access_code = $1';
+                values = [access_code];
             }
             
-            if (access_code) {
-                query = query.eq('access_code', access_code);
-            }
-            
-            query = query.order('pb_time', { ascending: true });
-            
-            const { data, error } = await query;
+            query += ' ORDER BY pb_time ASC';
 
-            if (error) {
-                console.error('Database select error:', error);
-                return res.status(500).json({ 
-                    error: 'Failed to fetch port battles', 
-                    details: error.message 
-                });
-            }
+            const result = await Database.query(query, values);
 
             res.status(200).json({ 
                 success: true, 
-                port_battles: data,
-                count: data.length 
+                port_battles: result.rows,
+                count: result.rows.length 
             });
 
         } else if (req.method === 'PUT') {
@@ -98,23 +89,42 @@ module.exports = async (req, res) => {
                 return res.status(400).json({ error: 'Port battle ID is required' });
             }
             
-            const { data, error } = await supabase
-                .from('port_battles')
-                .update(updateData)
-                .eq('id', id)
-                .select();
+            const setClause = [];
+            const values = [];
+            let paramCount = 1;
+            
+            // Build dynamic update query
+            Object.keys(updateData).forEach(key => {
+                if (updateData[key] !== undefined) {
+                    const dbKey = key.replace(/([A-Z])/g, '_$1').toLowerCase(); // Convert camelCase to snake_case
+                    setClause.push(`${dbKey} = $${paramCount}`);
+                    values.push(updateData[key]);
+                    paramCount++;
+                }
+            });
+            
+            values.push(new Date().toISOString()); // updated_at
+            setClause.push(`updated_at = $${paramCount}`);
+            paramCount++;
+            
+            values.push(id); // WHERE condition
+            
+            const query = `
+                UPDATE port_battles 
+                SET ${setClause.join(', ')}
+                WHERE id = $${paramCount}
+                RETURNING *
+            `;
 
-            if (error) {
-                console.error('Database update error:', error);
-                return res.status(500).json({ 
-                    error: 'Failed to update port battle', 
-                    details: error.message 
-                });
+            const result = await Database.query(query, values);
+
+            if (result.rows.length === 0) {
+                return res.status(404).json({ error: 'Port battle not found' });
             }
 
             res.status(200).json({ 
                 success: true, 
-                port_battle: data[0],
+                port_battle: result.rows[0],
                 message: 'Port battle updated successfully' 
             });
 
@@ -126,17 +136,11 @@ module.exports = async (req, res) => {
                 return res.status(400).json({ error: 'Port battle ID is required' });
             }
             
-            const { error } = await supabase
-                .from('port_battles')
-                .delete()
-                .eq('id', id);
+            const query = 'DELETE FROM port_battles WHERE id = $1';
+            const result = await Database.query(query, [id]);
 
-            if (error) {
-                console.error('Database delete error:', error);
-                return res.status(500).json({ 
-                    error: 'Failed to delete port battle', 
-                    details: error.message 
-                });
+            if (result.rowCount === 0) {
+                return res.status(404).json({ error: 'Port battle not found' });
             }
 
             res.status(200).json({ 
@@ -151,7 +155,7 @@ module.exports = async (req, res) => {
     } catch (err) {
         console.error('Server error:', err);
         res.status(500).json({ 
-            error: 'Server error', 
+            error: 'Internal server error', 
             details: err.message 
         });
     }

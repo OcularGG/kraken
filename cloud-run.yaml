@@ -1,0 +1,134 @@
+# 🚀 Google Cloud Run Configuration for KRAKEN
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: kraken-naval-clan
+  annotations:
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+    run.googleapis.com/client-name: gcloud
+spec:
+  template:
+    metadata:
+      annotations:
+        # Performance optimizations
+        run.googleapis.com/cpu-throttling: "false"
+        run.googleapis.com/execution-environment: gen2
+        run.googleapis.com/network-interfaces: '[{"network":"default","subnetwork":"default"}]'
+        
+        # Security annotations
+        run.googleapis.com/cloudsql-instances: kraken-naval-clan:us-central1:kraken-db
+          # Scaling annotations
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "10"
+        
+    spec:
+      # Container configuration
+      containerConcurrency: 1000
+      timeoutSeconds: 300
+      
+      # Service account for security
+      serviceAccountName: kraken-service-account@kraken-naval-clan.iam.gserviceaccount.com
+      
+      containers:
+      - name: kraken-app
+        image: gcr.io/kraken-naval-clan/kraken-app:latest
+        
+        ports:
+        - name: http1
+          containerPort: 8080
+          protocol: TCP
+        
+        # Environment variables
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: PORT
+          value: "8080"
+        - name: ALLOWED_ORIGINS
+          value: "https://kraken.retrovibes.fun,https://kraken-clan.vercel.app"
+        
+        # Secrets from Google Secret Manager
+        - name: DISCORD_WEBHOOK_URL
+          valueFrom:
+            secretKeyRef:
+              name: discord-webhook-url
+              key: latest
+        - name: WEBHOOK_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: webhook-secret
+              key: latest
+        - name: KRAKEN_API_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: kraken-api-token
+              key: latest
+        - name: SUPABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: supabase-url
+              key: latest
+        - name: SUPABASE_ANON_KEY
+          valueFrom:
+            secretKeyRef:
+              name: supabase-anon-key
+              key: latest
+        
+        # Resource limits and requests
+        resources:
+          limits:
+            cpu: "2000m"
+            memory: "2Gi"
+          requests:
+            cpu: "1000m"
+            memory: "512Mi"
+        
+        # Health checks
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
+        
+        # Startup probe
+        startupProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 30
+        
+        # Volume mounts for secrets
+        volumeMounts:
+        - name: secrets-volume
+          mountPath: /secrets
+          readOnly: true
+      
+      # Volumes
+      volumes:
+      - name: secrets-volume
+        secret:
+          secretName: kraken-secrets
+          
+  # Traffic configuration
+  traffic:
+  - percent: 100
+    latestRevision: true

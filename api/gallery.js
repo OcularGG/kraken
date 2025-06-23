@@ -1,10 +1,5 @@
-// Gallery API endpoints for managing gallery submissions
-const { createClient } = require('@supabase/supabase-js');
-
-const supabase = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_ANON_KEY
-);
+// Gallery API endpoints for managing gallery submissions using PostgreSQL
+const { Database } = require('../lib/database');
 
 module.exports = async (req, res) => {
     // Set CORS headers
@@ -19,45 +14,34 @@ module.exports = async (req, res) => {
     try {
         if (req.method === 'GET') {
             // Get all approved gallery items for public view
-            const { data, error } = await supabase
-                .from('gallery_items')
-                .select(`
-                    *,
-                    author_name:captains(username)
-                `)
-                .eq('status', 'approved')
-                .order('created_at', { ascending: false });
+            const query = `
+                SELECT g.*, c.username as author_name
+                FROM gallery_items g
+                LEFT JOIN captains c ON g.author_id = c.id
+                WHERE g.status = 'approved'
+                ORDER BY g.created_at DESC
+            `;
+            
+            const result = await Database.query(query);
 
-            if (error) {
-                console.error('Error fetching gallery items:', error);
-                return res.status(500).json({ 
-                    success: false, 
-                    error: 'Failed to fetch gallery items' 
-                });
-            }
-
-            // Format the response
-            const formattedItems = data.map(item => ({
-                ...item,
-                author_name: item.author_name?.username || 'Unknown'
-            }));
-
-            return res.status(200).json({
+            res.status(200).json({
                 success: true,
-                items: formattedItems
+                items: result.rows
+            });
+
+        } else {
+            res.status(405).json({ 
+                success: false, 
+                error: 'Method not allowed' 
             });
         }
 
-        return res.status(405).json({ 
-            success: false, 
-            error: 'Method not allowed' 
-        });
-
     } catch (error) {
         console.error('Gallery API error:', error);
-        return res.status(500).json({ 
-            success: false, 
-            error: 'Internal server error' 
+        res.status(500).json({
+            success: false,
+            error: 'Internal server error',
+            details: error.message
         });
     }
 };

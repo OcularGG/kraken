@@ -1,21 +1,20 @@
-// Gallery admin API endpoint
-const { createClient } = require('@supabase/supabase-js');
-
-const supabase = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_ANON_KEY
-);
+// Gallery admin API endpoint using PostgreSQL
+const { Database } = require('../../lib/database');
 
 async function verifyGalleryAdmin(code) {
     if (!code) return false;
     
-    const { data, error } = await supabase
-        .from('captains')
-        .select('gallery_admin')
-        .eq('code', code)
-        .single();
-    
-    return !error && data?.gallery_admin === true;
+    try {
+        const query = `
+            SELECT * FROM captains 
+            WHERE code = $1 AND is_active = true AND gallery_admin = true
+        `;
+        const result = await Database.query(query, [code.toUpperCase()]);
+        return result.rows.length > 0;
+    } catch (error) {
+        console.error('Error verifying gallery admin:', error);
+        return false;
+    }
 }
 
 module.exports = async (req, res) => {
@@ -43,45 +42,36 @@ module.exports = async (req, res) => {
         }
 
         if (req.method === 'GET') {
-            // Get all gallery items for admin view
-            const { data, error } = await supabase
-                .from('gallery_items')
-                .select(`
-                    *,
-                    author_name:captains(username)
-                `)
-                .order('created_at', { ascending: false });
+            // Get all gallery items for admin review
+            const query = `
+                SELECT g.*, c.username as author_name
+                FROM gallery_items g
+                LEFT JOIN captains c ON g.author_id = c.id
+                ORDER BY 
+                    CASE WHEN g.status = 'pending' THEN 0 ELSE 1 END,
+                    g.created_at DESC
+            `;
+            
+            const result = await Database.query(query);
 
-            if (error) {
-                console.error('Error fetching gallery items:', error);
-                return res.status(500).json({
-                    success: false,
-                    error: 'Failed to fetch gallery items'
-                });
-            }
-
-            // Format the response
-            const formattedItems = data.map(item => ({
-                ...item,
-                author_name: item.author_name?.username || 'Unknown'
-            }));
-
-            return res.status(200).json({
+            res.status(200).json({
                 success: true,
-                items: formattedItems
+                items: result.rows
+            });
+
+        } else {
+            res.status(405).json({
+                success: false,
+                error: 'Method not allowed'
             });
         }
 
-        return res.status(405).json({
-            success: false,
-            error: 'Method not allowed'
-        });
-
     } catch (error) {
         console.error('Gallery admin API error:', error);
-        return res.status(500).json({
+        res.status(500).json({
             success: false,
-            error: 'Internal server error'
+            error: 'Internal server error',
+            details: error.message
         });
     }
 };

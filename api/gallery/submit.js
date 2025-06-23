@@ -1,10 +1,5 @@
-// Gallery submission API endpoint
-const { createClient } = require('@supabase/supabase-js');
-
-const supabase = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_ANON_KEY
-);
+// Gallery submission API endpoint using PostgreSQL
+const { Database } = require('../../lib/database');
 
 module.exports = async (req, res) => {
     // Set CORS headers
@@ -30,29 +25,7 @@ module.exports = async (req, res) => {
         if (!captainCode || !contentType || !contentUrl || !caption) {
             return res.status(400).json({
                 success: false,
-                error: 'Missing required fields'
-            });
-        }
-
-        // Validate Captain's Code format
-        if (!/^\d{8}$/.test(captainCode)) {
-            return res.status(400).json({
-                success: false,
-                error: 'Invalid Captain\'s Code format'
-            });
-        }
-
-        // Verify Captain's Code exists
-        const { data: captain, error: captainError } = await supabase
-            .from('captains')
-            .select('id, username')
-            .eq('code', captainCode)
-            .single();
-
-        if (captainError || !captain) {
-            return res.status(400).json({
-                success: false,
-                error: 'Invalid Captain\'s Code'
+                error: 'Missing required fields: captainCode, contentType, contentUrl, and caption are required'
             });
         }
 
@@ -60,14 +33,14 @@ module.exports = async (req, res) => {
         if (!['image', 'video'].includes(contentType)) {
             return res.status(400).json({
                 success: false,
-                error: 'Invalid content type'
+                error: 'Invalid content type. Must be either "image" or "video"'
             });
         }
 
-        // Validate URL format
+        // Validate URLs
         try {
             new URL(contentUrl);
-            if (thumbnailUrl && thumbnailUrl.trim()) {
+            if (thumbnailUrl) {
                 new URL(thumbnailUrl);
             }
         } catch (urlError) {
@@ -77,88 +50,73 @@ module.exports = async (req, res) => {
             });
         }
 
-        // Insert gallery item
-        const { data: galleryItem, error: insertError } = await supabase
-            .from('gallery_items')
-            .insert([
-                {
-                    author_id: captain.id,
-                    type: contentType,
-                    url: contentUrl.trim(),
-                    caption: caption.trim(),
-                    thumbnail: thumbnailUrl?.trim() || null,
-                    status: 'pending'
-                }
-            ])
-            .select()
-            .single();
+        console.log('Processing gallery submission from captain:', captainCode);
 
-        if (insertError) {
-            console.error('Error inserting gallery item:', insertError);
-            return res.status(500).json({
+        // Verify captain exists and is active
+        const captainQuery = `
+            SELECT * FROM captains 
+            WHERE code = $1 AND is_active = true
+        `;
+        const captainResult = await Database.query(captainQuery, [captainCode.toUpperCase()]);
+
+        if (captainResult.rows.length === 0) {
+            return res.status(403).json({
                 success: false,
-                error: 'Failed to submit gallery item'
+                error: 'Invalid or inactive captain code'
             });
         }
 
-        // Send Discord notification (optional)
-        try {
-            const discordWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
-            if (discordWebhookUrl) {
-                const embed = {
-                    title: "🎨 New Gallery Submission",
-                    description: `**${captain.username}** submitted new content for review`,
-                    fields: [
-                        {
-                            name: "Type",
-                            value: contentType,
-                            inline: true
-                        },
-                        {
-                            name: "Caption",
-                            value: caption.substring(0, 100) + (caption.length > 100 ? '...' : ''),
-                            inline: false
-                        }
-                    ],
-                    color: 0xBFA140,
-                    timestamp: new Date().toISOString(),
-                    footer: {
-                        text: "KRAKEN Gallery System"
-                    }
-                };
+        const captain = captainResult.rows[0];
 
-                if (contentType === 'image') {
-                    embed.image = { url: contentUrl };
-                } else if (thumbnailUrl) {
-                    embed.thumbnail = { url: thumbnailUrl };
-                }
+        // Check rate limiting (max 5 submissions per hour per captain)
+        const rateLimitQuery = `
+            SELECT COUNT(*) as submission_count
+            FROM gallery_items
+            WHERE author_id = $1 
+            AND created_at > NOW() - INTERVAL '1 hour'
+        `;
+        const rateLimitResult = await Database.query(rateLimitQuery, [captain.id]);
 
-                await fetch(discordWebhookUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        embeds: [embed]
-                    })
-                });
-            }
-        } catch (discordError) {
-            console.error('Discord notification error:', discordError);
-            // Don't fail the submission if Discord fails
+        if (parseInt(rateLimitResult.rows[0].submission_count) >= 5) {
+            return res.status(429).json({
+                success: false,
+                error: 'Rate limit exceeded. Maximum 5 submissions per hour.'
+            });
         }
 
-        return res.status(200).json({
+        // Insert gallery item
+        const insertQuery = `
+            INSERT INTO gallery_items (
+                author_id, type, url, caption, thumbnail, status
+            ) VALUES ($1, $2, $3, $4, $5, $6)
+            RETURNING *
+        `;
+        
+        const values = [
+            captain.id,
+            contentType,
+            contentUrl,
+            caption,
+            thumbnailUrl || null,
+            'pending'
+        ];
+
+        const result = await Database.query(insertQuery, values);
+
+        console.log('Gallery item submitted successfully:', result.rows[0].id);
+
+        res.status(200).json({
             success: true,
-            message: 'Gallery item submitted successfully',
-            item: galleryItem
+            galleryItem: result.rows[0],
+            message: 'Gallery item submitted successfully and is pending approval'
         });
 
     } catch (error) {
         console.error('Gallery submission error:', error);
-        return res.status(500).json({
+        res.status(500).json({
             success: false,
-            error: 'Internal server error'
+            error: 'Internal server error',
+            details: error.message
         });
     }
 };

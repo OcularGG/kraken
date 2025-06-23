@@ -1,5 +1,5 @@
-// PB Signups API - Handle port battle signups
-const { supabase } = require('../../lib/supabase');
+// PB Signups API - Handle port battle signups using PostgreSQL
+const { Database } = require('../lib/database');
 
 module.exports = async (req, res) => {
     // Enable CORS
@@ -20,61 +20,57 @@ module.exports = async (req, res) => {
             console.log('Creating PB signup:', signupData.captainName, 'for PB:', signupData.pbId);
             
             // Check if port battle exists
-            const { data: pbData, error: pbError } = await supabase
-                .from('port_battles')
-                .select('*')
-                .eq('id', signupData.pbId)
-                .single();
+            const pbQuery = 'SELECT * FROM port_battles WHERE id = $1';
+            const pbResult = await Database.query(pbQuery, [signupData.pbId]);
 
-            if (pbError || !pbData) {
+            if (pbResult.rows.length === 0) {
                 return res.status(404).json({ 
                     error: 'Port battle not found' 
                 });
             }
 
             // Check if captain already signed up
-            const { data: existingSignup, error: checkError } = await supabase
-                .from('pb_signups')
-                .select('*')
-                .eq('pb_id', signupData.pbId)
-                .eq('captain_name', signupData.captainName)
-                .single();
+            const existingQuery = `
+                SELECT * FROM pb_signups 
+                WHERE pb_id = $1 AND captain_name = $2
+            `;
+            const existingResult = await Database.query(existingQuery, [
+                signupData.pbId, 
+                signupData.captainName
+            ]);
 
-            if (existingSignup) {
+            if (existingResult.rows.length > 0) {
                 return res.status(400).json({ 
                     error: 'Captain already signed up for this port battle' 
                 });
             }
 
-            // Map form data to database columns
-            const dbData = {
-                pb_id: signupData.pbId,
-                captain_name: signupData.captainName,
-                ship_name: signupData.shipName,
-                ship_rate: signupData.shipRate,
-                fleet_assignment: signupData.fleetAssignment || null,
-                status: 'pending',
-                notes: signupData.notes || null
-            };
+            // Insert new signup
+            const insertQuery = `
+                INSERT INTO pb_signups (
+                    pb_id, captain_name, ship_name, ship_rate, 
+                    fleet_assignment, status, notes
+                ) VALUES ($1, $2, $3, $4, $5, $6, $7)
+                RETURNING *
+            `;
+            
+            const values = [
+                signupData.pbId,
+                signupData.captainName,
+                signupData.shipName,
+                signupData.shipRate,
+                signupData.fleetAssignment || null,
+                'pending',
+                signupData.notes || null
+            ];
 
-            const { data, error } = await supabase
-                .from('pb_signups')
-                .insert([dbData])
-                .select();
+            const result = await Database.query(insertQuery, values);
 
-            if (error) {
-                console.error('Database insert error:', error);
-                return res.status(500).json({ 
-                    error: 'Failed to create signup', 
-                    details: error.message 
-                });
-            }
-
-            console.log('PB signup created successfully:', data[0].id);
+            console.log('PB signup created successfully:', result.rows[0].id);
             
             res.status(200).json({ 
                 success: true, 
-                signup: data[0],
+                signup: result.rows[0],
                 message: 'Signup created successfully' 
             });
 
@@ -82,41 +78,36 @@ module.exports = async (req, res) => {
             // Get signups for a specific port battle or all signups
             const { pb_id, captain_name } = req.query;
             
-            let query = supabase
-                .from('pb_signups')
-                .select(`
-                    *,
-                    port_battles!inner(
-                        port,
-                        pb_time,
-                        access_code
-                    )
-                `);
+            let query = `
+                SELECT s.*, p.port, p.pb_time, p.access_code
+                FROM pb_signups s
+                INNER JOIN port_battles p ON s.pb_id = p.id
+            `;
+            let values = [];
+            let conditions = [];
             
             if (pb_id) {
-                query = query.eq('pb_id', pb_id);
+                conditions.push('s.pb_id = $' + (values.length + 1));
+                values.push(pb_id);
             }
             
             if (captain_name) {
-                query = query.eq('captain_name', captain_name);
+                conditions.push('s.captain_name = $' + (values.length + 1));
+                values.push(captain_name);
             }
             
-            query = query.order('signup_time', { ascending: false });
+            if (conditions.length > 0) {
+                query += ' WHERE ' + conditions.join(' AND ');
+            }
             
-            const { data, error } = await query;
+            query += ' ORDER BY s.signup_time DESC';
 
-            if (error) {
-                console.error('Database select error:', error);
-                return res.status(500).json({ 
-                    error: 'Failed to fetch signups', 
-                    details: error.message 
-                });
-            }
+            const result = await Database.query(query, values);
 
             res.status(200).json({ 
                 success: true, 
-                signups: data,
-                count: data.length 
+                signups: result.rows,
+                count: result.rows.length 
             });
 
         } else if (req.method === 'PUT') {
@@ -128,23 +119,38 @@ module.exports = async (req, res) => {
                 return res.status(400).json({ error: 'Signup ID is required' });
             }
             
-            const { data, error } = await supabase
-                .from('pb_signups')
-                .update(updateData)
-                .eq('id', id)
-                .select();
+            const setClause = [];
+            const values = [];
+            let paramCount = 1;
+            
+            // Build dynamic update query
+            Object.keys(updateData).forEach(key => {
+                if (updateData[key] !== undefined) {
+                    const dbKey = key.replace(/([A-Z])/g, '_$1').toLowerCase(); // Convert camelCase to snake_case
+                    setClause.push(`${dbKey} = $${paramCount}`);
+                    values.push(updateData[key]);
+                    paramCount++;
+                }
+            });
+            
+            values.push(id); // WHERE condition
+            
+            const query = `
+                UPDATE pb_signups 
+                SET ${setClause.join(', ')}
+                WHERE id = $${paramCount}
+                RETURNING *
+            `;
 
-            if (error) {
-                console.error('Database update error:', error);
-                return res.status(500).json({ 
-                    error: 'Failed to update signup', 
-                    details: error.message 
-                });
+            const result = await Database.query(query, values);
+
+            if (result.rows.length === 0) {
+                return res.status(404).json({ error: 'Signup not found' });
             }
 
             res.status(200).json({ 
                 success: true, 
-                signup: data[0],
+                signup: result.rows[0],
                 message: 'Signup updated successfully' 
             });
 
@@ -156,17 +162,11 @@ module.exports = async (req, res) => {
                 return res.status(400).json({ error: 'Signup ID is required' });
             }
             
-            const { error } = await supabase
-                .from('pb_signups')
-                .delete()
-                .eq('id', id);
+            const query = 'DELETE FROM pb_signups WHERE id = $1';
+            const result = await Database.query(query, [id]);
 
-            if (error) {
-                console.error('Database delete error:', error);
-                return res.status(500).json({ 
-                    error: 'Failed to delete signup', 
-                    details: error.message 
-                });
+            if (result.rowCount === 0) {
+                return res.status(404).json({ error: 'Signup not found' });
             }
 
             res.status(200).json({ 
@@ -181,7 +181,7 @@ module.exports = async (req, res) => {
     } catch (err) {
         console.error('Server error:', err);
         res.status(500).json({ 
-            error: 'Server error', 
+            error: 'Internal server error', 
             details: err.message 
         });
     }
