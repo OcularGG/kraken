@@ -1,4 +1,4 @@
-// Import https module for Node.js compatibility
+// Import required modules for Node.js compatibility
 const https = require('https');
 const { URL } = require('url');
 
@@ -23,20 +23,106 @@ module.exports = async (req, res) => {
   try {
     console.log('Webhook request received at:', new Date().toISOString());
     console.log('Request method:', req.method);
-    console.log('Request headers:', JSON.stringify(req.headers, null, 2));
-    console.log('Request body:', JSON.stringify(req.body, null, 2));
+    console.log('Content-Type:', req.headers['content-type']);
     
-    const payload = req.body;
+    // Check if this is a multipart/form-data request (with file upload)
+    const contentType = req.headers['content-type'] || '';
     
-    // Validate that we have the required Discord webhook structure
-    if (!payload.embeds || !Array.isArray(payload.embeds) || payload.embeds.length === 0) {
-      console.error('Invalid payload structure:', payload);
-      return res.status(400).json({ error: 'Invalid payload structure' });
+    if (contentType.includes('multipart/form-data')) {
+      // Handle form data with file upload
+      console.log('Processing multipart form data with file upload...');
+      
+      // For Vercel, we need to handle the raw body
+      const boundary = contentType.split('boundary=')[1];
+      if (!boundary) {
+        return res.status(400).json({ error: 'Missing boundary in multipart data' });
+      }
+      
+      // Get raw body as buffer
+      const chunks = [];
+      req.on('data', chunk => chunks.push(chunk));
+      req.on('end', async () => {
+        const buffer = Buffer.concat(chunks);
+        
+        // Forward the multipart data directly to Discord
+        await forwardMultipartToDiscord(buffer, contentType, res);
+      });
+      
+    } else {
+      // Handle JSON payload (existing functionality)
+      console.log('Processing JSON payload...');
+      const payload = req.body;
+      
+      // Validate that we have the required Discord webhook structure
+      if (!payload.embeds || !Array.isArray(payload.embeds) || payload.embeds.length === 0) {
+        console.error('Invalid payload structure:', payload);
+        return res.status(400).json({ error: 'Invalid payload structure' });
+      }
+      
+      await sendJsonToDiscord(payload, res);
     }
+
+  } catch (err) {
+    console.error('Server error:', err);
+    res.status(500).json({ error: 'Server error', details: err.message });
+  }
+};
+
+async function forwardMultipartToDiscord(buffer, contentType, res) {
+  return new Promise((resolve, reject) => {
+    const url = new URL(DISCORD_WEBHOOK_URL);
     
-    console.log('Sending to Discord webhook...');
-    
-    // Use https module instead of fetch for better Node.js compatibility
+    const options = {
+      hostname: url.hostname,
+      port: 443,
+      path: url.pathname + url.search,
+      method: 'POST',
+      headers: {
+        'Content-Type': contentType,
+        'Content-Length': buffer.length
+      }
+    };
+
+    const discordRequest = https.request(options, (discordRes) => {
+      let data = '';
+      
+      discordRes.on('data', (chunk) => {
+        data += chunk;
+      });
+      
+      discordRes.on('end', () => {
+        if (discordRes.statusCode >= 200 && discordRes.statusCode < 300) {
+          console.log('Successfully sent multipart data to Discord');
+          res.status(200).json({ success: true });
+          resolve();
+        } else {
+          console.error('Discord webhook error:', {
+            status: discordRes.statusCode,
+            statusMessage: discordRes.statusMessage,
+            data: data
+          });
+          res.status(500).json({ 
+            error: 'Discord webhook error', 
+            details: data || `HTTP ${discordRes.statusCode}: ${discordRes.statusMessage}` 
+          });
+          reject(new Error('Discord webhook error'));
+        }
+      });
+    });
+
+    discordRequest.on('error', (err) => {
+      console.error('Discord request error:', err);
+      res.status(500).json({ error: 'Network error', details: err.message });
+      reject(err);
+    });
+
+    discordRequest.write(buffer);
+    discordRequest.end();
+  });
+}
+
+async function sendJsonToDiscord(payload, res) {
+  return new Promise((resolve, reject) => {
     const url = new URL(DISCORD_WEBHOOK_URL);
     const postData = JSON.stringify(payload);
     
@@ -60,8 +146,9 @@ module.exports = async (req, res) => {
       
       discordRes.on('end', () => {
         if (discordRes.statusCode >= 200 && discordRes.statusCode < 300) {
-          console.log('Successfully sent to Discord');
+          console.log('Successfully sent JSON to Discord');
           res.status(200).json({ success: true });
+          resolve();
         } else {
           console.error('Discord webhook error:', {
             status: discordRes.statusCode,
@@ -72,6 +159,7 @@ module.exports = async (req, res) => {
             error: 'Discord webhook error', 
             details: data || `HTTP ${discordRes.statusCode}: ${discordRes.statusMessage}` 
           });
+          reject(new Error('Discord webhook error'));
         }
       });
     });
@@ -79,13 +167,10 @@ module.exports = async (req, res) => {
     discordRequest.on('error', (err) => {
       console.error('Discord request error:', err);
       res.status(500).json({ error: 'Network error', details: err.message });
+      reject(err);
     });
 
     discordRequest.write(postData);
     discordRequest.end();
-
-  } catch (err) {
-    console.error('Server error:', err);
-    res.status(500).json({ error: 'Server error', details: err.message });
-  }
-};
+  });
+}

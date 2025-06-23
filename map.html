@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naval Action Map | KRAKEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <script src="js/deployment-fixes.js"></script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #181818;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .map-container {
+            position: fixed;
+            top: 80px; /* Account for navbar */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #181818;
+        }
+
+        .map-header {
+            background: #2a2a2a;
+            border-bottom: 3px solid #bfa140;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .map-title {
+            color: #bfa140;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .map-subtitle {
+            color: #fff;
+            font-size: 0.9rem;
+            margin: 0.5rem 0 0 0;
+        }
+
+        .map-iframe {
+            width: 100%;
+            height: calc(100vh - 160px); /* Account for navbar and header */
+            border: none;
+            background: #fff;
+        }
+
+        .loading-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #bfa140;
+            font-size: 1.2rem;
+            z-index: 5;
+        }
+
+        @media (max-width: 768px) {
+            .map-iframe {
+                height: calc(100vh - 140px);
+            }
+            
+            .map-title {
+                font-size: 1.2rem;
+            }
+            
+            .map-subtitle {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li class="dropdown">
+                <a href="tools.html" class="active">Tools</a>
+                <div class="dropdown-content">
+                    <a href="map.html" class="active">Map</a>
+                    <a href="crafting.html">Crafting</a>
+                </div>
+            </li>
+            <li><a href="orgchart.html">Command</a></li>
+            <li><a href="pb.html">PB</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+            <li><a href="accept-commission.html">Commission</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="map-container">
+        <div class="map-header">
+            <h1 class="map-title">Naval Action Interactive Map</h1>
+            <p class="map-subtitle">Explore ports, trade routes, and territorial control</p>
+        </div>
+        
+        <div class="loading-message" id="loadingMessage">
+            Loading Naval Action Map...
+        </div>
+        
+        <iframe 
+            id="mapFrame"
+            class="map-iframe" 
+            src="https://na-map.netlify.app/"
+            title="Naval Action Map"
+            onload="hideLoading()"
+            onerror="showError()">
+        </iframe>
+    </div>
+
+    <script>
+        function hideLoading() {
+            const loadingMessage = document.getElementById('loadingMessage');
+            if (loadingMessage) {
+                loadingMessage.style.display = 'none';
+            }
+        }
+
+        function showError() {
+            const loadingMessage = document.getElementById('loadingMessage');
+            if (loadingMessage) {
+                loadingMessage.innerHTML = 'Error loading map. Please try refreshing the page.';
+                loadingMessage.style.color = '#ff6b6b';
+            }
+        }
+
+        // Ensure loading message is hidden after a maximum time
+        setTimeout(() => {
+            hideLoading();
+        }, 10000);
+    </script>
+</body>
+</html>

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commission Application - KRAKEN Naval Squadron</title>    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Commission Application - KRAKEN Naval Squadron</title>    <link rel="stylesheet" href="style.css">
     <script src="js/deployment-fixes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cedarville+Cursive&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
         
@@ -538,14 +538,21 @@
     </style>
 </head>
 <body>
-    <!-- Sticky Navigation Menu -->
-    <nav class="kraken-navbar">
+    <!-- Sticky Navigation Menu -->    <nav class="kraken-navbar">
         <ul>            <li><a href="index.html">Home</a></li>
             <li><a href="marketplace.html">Marketplace</a></li>
-            <li><a href="tools.html">Tools</a></li>
+            <li class="dropdown">
+                <a href="tools.html">Tools</a>
+                <div class="dropdown-content">
+                    <a href="map.html">Map</a>
+                    <a href="crafting.html">Crafting</a>
+                </div>
+            </li>
             <li><a href="orgchart.html">Command</a></li>
             <li><a href="pb.html">PB</a></li>
             <li><a href="apply-typeform.html" class="active">Apply</a></li>
+            <li><a href="accept-commission.html">Commission</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
         </ul>    </nav>
 
     <div class="document">
@@ -837,18 +844,12 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="section">
+              <div class="section" id="submittedSection">
                 <h2 class="section-title">Commission Application - Submitted</h2>
                 <div class="submitted-data" id="submittedData">
                     <!-- Form data will be populated here -->
                 </div>
             </div>
-            
-            <div class="wax-seal">
-                <div class="wax-seal-text">KRAKEN</div>
-            </div>
-            
             <div class="submit-section">
                 <button type="button" class="back-to-form" onclick="showForm()">Submit Another Application</button>
             </div>
@@ -992,23 +993,25 @@
             html += `<p><span class="field-label">Date:</span> <span class="field-value">${formData.date || 'N/A'}</span></p>`;
             
             submittedDataDiv.innerHTML = html;
-        }
-        
-        // Send to webhook
+        }        // Send to webhook with success page screenshot
         async function sendToWebhook(formData) {
             try {
-                // Take a screenshot of the success page for the webhook
-                const successPage = document.getElementById('successPage');
+                console.log('🚀 Starting webhook send process...');
                 
-                // Create a formatted message for Discord
+                // Detect environment
+                const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                const webhookUrl = isLocal ? 
+                    'https://discord.com/api/webhooks/1386130290640162857/1WB7lqwj3RVAcib7H08ygsfBozw7u5PHDSgAgOLCn1SpKy1Fkjlrc0byPmN2Wl8vgpzG' : 
+                    '/api/discord-webhook.js';
+                
+                console.log('🌐 Environment:', isLocal ? 'Local' : 'Production');
+                console.log('📡 Webhook URL:', webhookUrl);
+                  // Create a formatted message for Discord (without image initially)
                 const discordMessage = {
                     content: "🚢 **NEW COMMISSION APPLICATION SUBMITTED** 🚢",
                     embeds: [{
                         title: "Royal Navy Commission Application",
                         color: 0xBFA140,
-                        thumbnail: {
-                            url: "https://cdn.discordapp.com/attachments/your-attachment-url/krakenlogo.png"
-                        },
                         fields: [
                             {
                                 name: "👤 Personal Information",
@@ -1045,29 +1048,109 @@
                             text: `Application submitted on ${formData.date} | KRAKEN Naval Squadron`
                         },
                         timestamp: new Date().toISOString()
+                    }],
+                    components: [{
+                        type: 1,
+                        components: [{
+                            type: 2,
+                            label: "🎖️ Accept My Commission",
+                            style: 5,
+                            url: `${window.location.origin}/accept-commission.html`
+                        }]
                     }]
-                };                // Send to Discord webhook
-                const response = await fetch('/api/discord-webhook.js', {
+                };
+
+                console.log('📝 Sending basic application data...');
+                
+                // Send to Discord webhook (basic message first)
+                const response = await fetch(webhookUrl, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(discordMessage)
                 });
                 
+                console.log('📊 Response status:', response.status);
+                console.log('📊 Response ok:', response.ok);
+                
                 if (!response.ok) {
-                    throw new Error('Webhook request failed');
+                    const errorText = await response.text();
+                    console.error('❌ Webhook response error:', errorText);
+                    throw new Error(`Webhook request failed: ${response.status} - ${errorText}`);
                 }
                 
-                console.log('Application sent to Discord successfully');
+                console.log('✅ Application sent to Discord successfully');
             } catch (error) {
-                console.error('Error sending to webhook:', error);
+                console.error('❌ Error sending to webhook:', error);
+                alert(`Failed to send application: ${error.message}`);
                 // Still show success page even if webhook fails
             }
+        }        // Capture and send success page screenshot
+        async function captureAndSendSuccessPage(formData) {
+            try {
+                console.log('📸 Starting screenshot capture process...');
+                // Detect environment
+                const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                const webhookUrl = isLocal ? 
+                    'https://discord.com/api/webhooks/1386130290640162857/1WB7lqwj3RVAcib7H08ygsfBozw7u5PHDSgAgOLCn1SpKy1Fkjlrc0byPmN2Wl8vgpzG' : 
+                    '/api/discord-webhook.js';
+                // Wait a bit for the success page to fully render
+                setTimeout(async () => {
+                    try {
+                        const submittedSection = document.getElementById('submittedSection');
+                        if (!submittedSection) {
+                            console.error('❌ Submitted section not found');
+                            return;
+                        }
+                        if (typeof html2canvas === 'undefined') {
+                            console.error('❌ html2canvas library not loaded');
+                            alert('Screenshot library not loaded. Image will not be sent.');
+                            return;
+                        }
+                        const canvas = await html2canvas(submittedSection, {
+                            backgroundColor: '#f9f9f9',
+                            scale: 2,
+                            useCORS: true,
+                            allowTaint: true
+                        });
+                        const imageBlob = await new Promise((resolve, reject) => {
+                            canvas.toBlob((blob) => {
+                                if (blob) resolve(blob);
+                                else reject(new Error('Failed to create image blob'));
+                            }, 'image/png', 0.9);
+                        });
+                        if (!imageBlob) {
+                            console.error('❌ Failed to create image blob');
+                            return;
+                        }
+                        // Send image to Discord (no embed, just content and file)
+                        const formDataToSend = new FormData();
+                        const fileName = `kraken_application_${formData.captainName.replace(/[^a-zA-Z0-9]/g, '_')}_${Date.now()}.png`;
+                        formDataToSend.append('file', imageBlob, fileName);
+                        formDataToSend.append('payload_json', JSON.stringify({
+                            content: `📸 Application Document for ${formData.captainName}`
+                        }));
+                        const imageResponse = await fetch(webhookUrl, {
+                            method: 'POST',
+                            body: formDataToSend
+                        });
+                        if (imageResponse.ok) {
+                            console.log('✅ Application screenshot sent to Discord successfully!');
+                        } else {
+                            const errorText = await imageResponse.text();
+                            console.error('❌ Failed to send image to Discord:', errorText);
+                        }
+                    } catch (screenshotError) {
+                        console.error('❌ Error capturing submitted section:', screenshotError);
+                    }
+                }, 1200); // 1.2s delay for rendering
+            } catch (error) {
+                console.error('❌ Error in captureAndSendSuccessPage:', error);
+            }
         }
-        
-        // Form validation and submission
-        document.querySelector('form').addEventListener('submit', function(e) {
+          // Form validation and submission
+        document.querySelector('form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Basic validation
@@ -1107,15 +1190,39 @@
                     } else {
                         data[key] = value;
                     }
+                }                console.log('Form Data:', data);
+                
+                // Save to database first
+                try {
+                    console.log('💾 Saving application to database...');
+                    const saveResponse = await fetch('/api/applications', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    const saveResult = await saveResponse.json();
+                    if (!saveResponse.ok) {
+                        console.error('❌ Failed to save to database:', saveResult);
+                        alert('⚠️ Warning: Application could not be saved to database, but will still be sent to Discord.');
+                    } else {
+                        console.log('✅ Application saved to database:', saveResult.application_id);
+                    }
+                } catch (dbError) {
+                    console.error('❌ Database save error:', dbError);
+                    alert('⚠️ Warning: Could not connect to database, but application will still be sent to Discord.');
                 }
                 
-                console.log('Form Data:', data);
-                
-                // Send to webhook
-                sendToWebhook(data);
+                // Send basic webhook
+                await sendToWebhook(data);
                 
                 // Show success page
                 showSuccess(data);
+                
+                // Capture and send success page screenshot
+                captureAndSendSuccessPage(data);
                 
             } else {
                 alert('Please fill in all required fields and check all required declarations.');

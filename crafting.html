@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naval Action Crafting | KRAKEN</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/deployment-fixes.js"></script>
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .crafting-container {
+            width: 100%;
+            height: calc(100vh - 70px); /* Account for navbar height */
+            margin-top: 70px; /* Account for fixed navbar */
+            position: relative;
+            background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #0a1929 100%);
+        }
+
+        .crafting-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 25, 41, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid #b8860b;
+            padding: 20px;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .crafting-title {
+            color: #b8860b;
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .crafting-subtitle {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin: 0;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .crafting-iframe {
+            position: absolute;
+            top: 120px; /* Account for header */
+            left: 0;
+            width: 100%;
+            height: calc(100% - 120px);
+            border: none;
+            background: #ffffff;
+        }
+
+        .loading-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #b8860b;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            z-index: 50;
+        }
+
+        /* Dropdown Navigation Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(10, 25, 41, 0.95);
+            backdrop-filter: blur(10px);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1000;
+            border: 2px solid #b8860b;
+            border-top: none;
+        }
+
+        .dropdown-content a {
+            color: #ffffff !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(184, 134, 11, 0.2);
+            color: #b8860b !important;
+        }
+
+        .dropdown-content a.active {
+            background-color: rgba(184, 134, 11, 0.3);
+            color: #b8860b !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .crafting-title {
+                font-size: 2rem;
+            }
+            
+            .crafting-subtitle {
+                font-size: 1rem;
+            }
+            
+            .crafting-header {
+                padding: 15px;
+            }
+            
+            .crafting-iframe {
+                top: 100px;
+                height: calc(100% - 100px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li class="dropdown">
+                <a href="tools.html" class="active">Tools</a>
+                <div class="dropdown-content">
+                    <a href="map.html">Map</a>
+                    <a href="crafting.html" class="active">Crafting</a>
+                </div>
+            </li>
+            <li><a href="orgchart.html">Command</a></li>
+            <li><a href="pb.html">PB</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+            <li><a href="accept-commission.html">Commission</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="crafting-container">
+        <div class="crafting-header">
+            <h1 class="crafting-title">Naval Action Crafting Calculator</h1>
+            <p class="crafting-subtitle">Plan your builds, calculate resources, and optimize production</p>
+        </div>
+        
+        <div class="loading-message" id="loadingMessage">
+            Loading Naval Action Crafting Calculator...
+        </div>
+        
+        <iframe 
+            id="craftingFrame"
+            class="crafting-iframe" 
+            src="http://www.navalactioncraft.com/"
+            title="Naval Action Crafting Calculator"
+            onload="hideLoading()"
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <script>
+        function hideLoading() {
+            const loadingMessage = document.getElementById('loadingMessage');
+            if (loadingMessage) {
+                loadingMessage.style.display = 'none';
+            }
+        }
+
+        // Handle iframe loading errors
+        document.getElementById('craftingFrame').onerror = function() {
+            const loadingMessage = document.getElementById('loadingMessage');
+            if (loadingMessage) {
+                loadingMessage.innerHTML = 'Failed to load crafting calculator. Please try again later.';
+                loadingMessage.style.color = '#ff4444';
+            }
+        };
+
+        // Add timeout for loading message
+        setTimeout(() => {
+            const loadingMessage = document.getElementById('loadingMessage');
+            if (loadingMessage && loadingMessage.style.display !== 'none') {
+                loadingMessage.style.display = 'none';
+            }
+        }, 10000);
+    </script>
+</body>
+</html>

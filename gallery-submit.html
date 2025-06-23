@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit to Gallery | KRAKEN</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/deployment-fixes.js"></script>
+    <link rel="icon" type="image/png" href="krakenlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .submit-container {
+            margin-top: 70px;
+            padding: 40px 20px;
+            min-height: calc(100vh - 70px);
+            background: var(--kraken-black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .submit-form-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(191, 161, 64, 0.3);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        .submit-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .submit-title {
+            color: var(--kraken-gold);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+        }
+
+        .submit-subtitle {
+            color: var(--kraken-white);
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            color: var(--kraken-gold);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(191, 161, 64, 0.3);
+            border-radius: 8px;
+            color: var(--kraken-white);
+            font-size: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--kraken-gold);
+            box-shadow: 0 0 10px rgba(191, 161, 64, 0.3);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(191, 161, 64, 0.3);
+            border-radius: 8px;
+            color: var(--kraken-white);
+            font-size: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+        }
+
+        .form-select option {
+            background: var(--kraken-black);
+            color: var(--kraken-white);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--kraken-gold) 0%, #9d7c2e 100%);
+            color: var(--kraken-black);
+            border: none;
+            padding: 18px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #9d7c2e 0%, var(--kraken-gold) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(191, 161, 64, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: var(--kraken-gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--kraken-white);
+        }
+
+        .back-btn::before {
+            content: '← ';
+        }
+
+        .form-note {
+            background: rgba(191, 161, 64, 0.1);
+            border: 1px solid rgba(191, 161, 64, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            color: var(--kraken-white);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .form-note strong {
+            color: var(--kraken-gold);
+        }
+
+        .loading {
+            text-align: center;
+            color: var(--kraken-gold);
+            font-size: 1.1rem;
+            margin: 20px 0;
+        }
+
+        .success-message {
+            background: rgba(46, 160, 67, 0.2);
+            border: 1px solid #2ea043;
+            color: #2ea043;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .error-message {
+            background: rgba(255, 68, 68, 0.2);
+            border: 1px solid #ff4444;
+            color: #ff4444;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .submit-form-container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+            
+            .submit-title {
+                font-size: 2rem;
+            }
+            
+            .submit-container {
+                align-items: flex-start;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li class="dropdown">
+                <a href="tools.html">Tools</a>
+                <div class="dropdown-content">
+                    <a href="map.html">Map</a>
+                    <a href="crafting.html">Crafting</a>
+                </div>
+            </li>
+            <li><a href="orgchart.html">Command</a></li>
+            <li><a href="pb.html">PB</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+            <li><a href="accept-commission.html">Commission</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="submit-container">
+        <div class="submit-form-container">
+            <a href="gallery.html" class="back-btn">Back to Gallery</a>
+            
+            <div class="submit-header">
+                <h1 class="submit-title">Submit Content</h1>
+                <p class="submit-subtitle">Share your Naval Action screenshots and videos</p>
+            </div>
+
+            <div class="form-note">
+                <strong>Requirements:</strong><br>
+                • Valid Captain's Code required for submission<br>
+                • Images: JPG, PNG, GIF formats supported<br>
+                • Videos: MP4 format, max 50MB recommended<br>
+                • All submissions are reviewed before appearing in gallery
+            </div>
+
+            <div id="messageArea"></div>
+
+            <form id="submitForm">
+                <div class="form-group">
+                    <label for="captainCode" class="form-label">Captain's Code *</label>
+                    <input type="text" id="captainCode" name="captainCode" class="form-input" 
+                           placeholder="Enter your 8-digit Captain's Code" maxlength="8" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contentType" class="form-label">Content Type *</label>
+                    <select id="contentType" name="contentType" class="form-select" required>
+                        <option value="">Select content type</option>
+                        <option value="image">Image (Screenshot)</option>
+                        <option value="video">Video</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contentUrl" class="form-label">Content URL *</label>
+                    <input type="url" id="contentUrl" name="contentUrl" class="form-input" 
+                           placeholder="https://example.com/your-image-or-video.jpg" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="caption" class="form-label">Caption *</label>
+                    <textarea id="caption" name="caption" class="form-input form-textarea" 
+                              placeholder="Describe your Naval Action moment..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="thumbnailUrl" class="form-label">Thumbnail URL (Videos only)</label>
+                    <input type="url" id="thumbnailUrl" name="thumbnailUrl" class="form-input" 
+                           placeholder="https://example.com/thumbnail.jpg (optional for videos)">
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Submit to Gallery
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const messageArea = document.getElementById('messageArea');
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            messageArea.innerHTML = '';
+            
+            const formData = {
+                captainCode: document.getElementById('captainCode').value.trim(),
+                contentType: document.getElementById('contentType').value,
+                contentUrl: document.getElementById('contentUrl').value.trim(),
+                caption: document.getElementById('caption').value.trim(),
+                thumbnailUrl: document.getElementById('thumbnailUrl').value.trim()
+            };
+            
+            // Validate Captain's Code format
+            if (!/^\d{8}$/.test(formData.captainCode)) {
+                showMessage('error', 'Captain\'s Code must be exactly 8 digits.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit to Gallery';
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/gallery/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showMessage('success', 'Content submitted successfully! It will be reviewed before appearing in the gallery.');
+                    document.getElementById('submitForm').reset();
+                } else {
+                    showMessage('error', data.error || 'Failed to submit content. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error submitting content:', error);
+                showMessage('error', 'Network error. Please check your connection and try again.');
+            }
+            
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit to Gallery';
+        });
+        
+        function showMessage(type, message) {
+            const messageArea = document.getElementById('messageArea');
+            messageArea.innerHTML = `<div class="${type}-message">${message}</div>`;
+        }
+        
+        // Show/hide thumbnail field based on content type
+        document.getElementById('contentType').addEventListener('change', (e) => {
+            const thumbnailGroup = document.getElementById('thumbnailUrl').closest('.form-group');
+            const thumbnailLabel = thumbnailGroup.querySelector('.form-label');
+            
+            if (e.target.value === 'video') {
+                thumbnailLabel.innerHTML = 'Thumbnail URL (Recommended) *';
+                document.getElementById('thumbnailUrl').placeholder = 'https://example.com/thumbnail.jpg (recommended for videos)';
+            } else {
+                thumbnailLabel.innerHTML = 'Thumbnail URL (Videos only)';
+                document.getElementById('thumbnailUrl').placeholder = 'https://example.com/thumbnail.jpg (optional for videos)';
+                document.getElementById('thumbnailUrl').value = '';
+            }
+        });
+    </script>
+</body>
+</html>

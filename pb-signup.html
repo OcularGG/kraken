@@ -186,15 +186,22 @@
     </style>
 </head>
 <body>
-    <!-- Sticky Navigation Menu -->
-    <nav class="kraken-navbar">
+    <!-- Sticky Navigation Menu -->    <nav class="kraken-navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="marketplace.html">Marketplace</a></li>
-            <li><a href="tools.html">Tools</a></li>
+            <li class="dropdown">
+                <a href="tools.html">Tools</a>
+                <div class="dropdown-content">
+                    <a href="map.html">Map</a>
+                    <a href="crafting.html">Crafting</a>
+                </div>
+            </li>
             <li><a href="orgchart.html">Command</a></li>
             <li><a href="pb.html">PB</a></li>
             <li><a href="apply-typeform.html">Apply</a></li>
+            <li><a href="accept-commission.html">Commission</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
         </ul>
     </nav>
 
@@ -396,12 +403,12 @@
                             <strong>BR Limit:</strong> ${currentPB.screening.brLimit} | 
                             <strong>Ship Selection:</strong> ${currentPB.screening.shipSelectionType === 'rates' ? 'Ship Rates (' + currentPB.screening.allowedRates.join(', ') + ')' : 'Specific Ships'}
                         </div>
-                        <div class="screening-signup-form" id="screening-form-${fleet.id}">
-                            <h4 style="color: #bfa140; margin-bottom: 1rem;">Sign Up for This Fleet</h4>
+                        <div class="screening-signup-form" id="screening-form-${fleet.id}">                            <h4 style="color: #bfa140; margin-bottom: 1rem;">Sign Up for This Fleet</h4>
                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr auto; gap: 1rem; align-items: end;">
                                 <div>
-                                    <label style="color: #bfa140; display: block; margin-bottom: 0.5rem;">Player Name</label>
-                                    <input type="text" id="player-name-${fleet.id}" placeholder="Your name" style="width: 100%; padding: 0.5rem; background: #181818; border: 1px solid #bfa140; color: #fff;">
+                                    <label style="color: #bfa140; display: block; margin-bottom: 0.5rem;">Captain's Code</label>
+                                    <input type="text" id="captain-code-${fleet.id}" placeholder="8-digit code" maxlength="8" style="width: 100%; padding: 0.5rem; background: #181818; border: 1px solid #bfa140; color: #fff; font-family: monospace; text-transform: uppercase;">
+                                    <div id="captain-name-${fleet.id}" style="color: #4ade80; font-size: 0.8rem; margin-top: 0.25rem; min-height: 1rem;"></div>
                                 </div>
                                 <div>
                                     <label style="color: #bfa140; display: block; margin-bottom: 0.5rem;">Clan</label>
@@ -433,10 +440,12 @@
                 
                 container.appendChild(fleetDiv);
                 loadScreeningSignups(fleet.id);
-            });
-            
+            });            
             // Populate clan selects
             populateScreeningClans();
+            
+            // Setup Captain's Code verification
+            setupCaptainCodeVerification();
         }
         // Ship BR values
         const shipBR = {
@@ -657,57 +666,118 @@
                     });
                 }
             });
-        }
-
-        function signUpForScreening(fleetId) {
-            const playerName = document.getElementById(`player-name-${fleetId}`).value.trim();
+        }        function signUpForScreening(fleetId) {
+            const captainCode = document.getElementById(`captain-code-${fleetId}`).value.trim().toUpperCase();
             const clan = document.getElementById(`clan-${fleetId}`).value;
             const ship = document.getElementById(`ship-${fleetId}`).value.trim();
             const br = parseInt(document.getElementById(`br-${fleetId}`).value);
 
-            if (!playerName || !clan || !ship || !br) {
+            if (!captainCode || captainCode.length !== 8) {
+                alert('Please enter a valid 8-digit Captain\'s Code');
+                return;
+            }
+            
+            if (!clan || !ship || !br) {
                 alert('Please fill in all fields');
                 return;
             }
 
-            const fleet = currentPB.screening.fleets.find(f => f.id === fleetId);
-            if (!fleet) return;
+            // Verify Captain's Code
+            verifyCaptainCode(captainCode).then(captain => {
+                if (!captain) {
+                    alert('Invalid Captain\'s Code. Please check your code and try again.');
+                    return;
+                }
 
-            if (!fleet.signups) fleet.signups = [];
+                const fleet = currentPB.screening.fleets.find(f => f.id === fleetId);
+                if (!fleet) return;
 
-            if (fleet.signups.length >= 70) {
-                alert('This fleet is full (70/70)');
-                return;
+                if (!fleet.signups) fleet.signups = [];
+
+                if (fleet.signups.length >= 70) {
+                    alert('This fleet is full (70/70)');
+                    return;
+                }
+
+                // Check if captain already signed up
+                if (fleet.signups.some(s => s.captainCode === captainCode)) {
+                    alert('You have already signed up for this fleet');
+                    return;
+                }
+
+                const signup = {
+                    id: Date.now().toString(),
+                    captainCode: captainCode,
+                    playerName: captain.captainName,
+                    clan: clan,
+                    ship: ship,
+                    br: br,
+                    confirmed: false,
+                    approved: false,
+                    timestamp: new Date().toISOString()
+                };
+
+                fleet.signups.push(signup);
+                saveScreeningData();
+                loadScreeningSignups(fleetId);
+                
+                // Clear form
+                document.getElementById(`captain-code-${fleetId}`).value = '';
+                document.getElementById(`captain-name-${fleetId}`).textContent = '';
+                document.getElementById(`clan-${fleetId}`).value = '';
+                document.getElementById(`ship-${fleetId}`).value = '';
+                document.getElementById(`br-${fleetId}`).value = '';
+                
+                alert(`Successfully signed up ${captain.captainName} for ${fleet.name}!`);            }).catch(error => {
+                console.error('Error verifying captain code:', error);
+                alert('Error verifying Captain\'s Code. Please try again.');
+            });
+        }
+
+        // Captain's Code verification function
+        async function verifyCaptainCode(captainCode) {
+            try {
+                const response = await fetch(`/api/captains?code=${captainCode}`);
+                if (response.ok) {
+                    const result = await response.json();
+                    return result.captain;
+                }
+                return null;
+            } catch (error) {
+                console.error('Error verifying captain code:', error);
+                return null;
             }
+        }
 
-            // Check if player already signed up
-            if (fleet.signups.some(s => s.playerName.toLowerCase() === playerName.toLowerCase())) {
-                alert('You have already signed up for this fleet');
-                return;
-            }
-
-            const signup = {
-                id: Date.now().toString(),
-                playerName: playerName,
-                clan: clan,
-                ship: ship,
-                br: br,
-                confirmed: false,
-                approved: false,
-                timestamp: new Date().toISOString()
-            };
-
-            fleet.signups.push(signup);
-            saveScreeningData();
-            loadScreeningSignups(fleetId);
-
-            // Clear form
-            document.getElementById(`player-name-${fleetId}`).value = '';
-            document.getElementById(`clan-${fleetId}`).value = '';
-            document.getElementById(`ship-${fleetId}`).value = '';
-            document.getElementById(`br-${fleetId}`).value = '';
-
-            alert('Signed up successfully! You will need to confirm your attendance closer to the battle.');
+        // Add real-time Captain's Code verification
+        function setupCaptainCodeVerification() {
+            currentPB.screening.fleets.forEach(fleet => {
+                const codeInput = document.getElementById(`captain-code-${fleet.id}`);
+                const nameDisplay = document.getElementById(`captain-name-${fleet.id}`);
+                
+                if (codeInput && nameDisplay) {
+                    codeInput.addEventListener('input', async function() {
+                        const code = this.value.trim().toUpperCase();
+                        this.value = code; // Force uppercase
+                        
+                        if (code.length === 8) {
+                            nameDisplay.textContent = 'Verifying...';
+                            nameDisplay.style.color = '#ffa500';
+                            
+                            const captain = await verifyCaptainCode(code);
+                            if (captain) {
+                                nameDisplay.textContent = `✓ ${captain.captainName}`;
+                                nameDisplay.style.color = '#4ade80';
+                            } else {
+                                nameDisplay.textContent = '✗ Invalid code';
+                                nameDisplay.style.color = '#ff6b6b';
+                            }
+                        } else {
+                            nameDisplay.textContent = '';
+                        }
+                    });
+                }
+            });
         }
 
         function loadScreeningSignups(fleetId) {

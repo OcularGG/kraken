@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Admin | KRAKEN</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/deployment-fixes.js"></script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #181818;
+            color: #fff;
+            padding-top: 100px;
+            line-height: 1.6;
+        }
+        
+        .admin-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #2a2a2a;
+            border: 4px solid #bfa140;
+            box-shadow: 8px 8px 0px #bfa140;
+        }
+        
+        .admin-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #bfa140;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            background: #bfa140;
+            border: 2px solid #bfa140;
+            color: #000;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: #bfa140;
+            box-shadow: 4px 4px 0px #bfa140;
+        }
+        
+        .btn-danger {
+            background: #d32f2f;
+            border-color: #d32f2f;
+            color: #fff;
+        }
+        
+        .btn-danger:hover {
+            background: transparent;
+            color: #d32f2f;
+            box-shadow: 4px 4px 0px #d32f2f;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #333;
+            border-radius: 8px;
+        }
+        
+        .section h3 {
+            color: #bfa140;
+            margin-bottom: 1rem;
+        }
+        
+        .status-message {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .success {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .error {
+            background: #f44336;
+            color: white;
+        }
+        
+        .warning {
+            background: #ff9800;
+            color: white;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #555;
+        }
+        
+        .data-table th {
+            background: #bfa140;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        .data-table tr:hover {
+            background: #444;
+        }
+        
+        .code-block {
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->
+    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="orgchart.html">Command</a></li>
+            <li><a href="pb.html">PB</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+            <li><a href="admin.html" class="active">Admin</a></li>
+        </ul>
+    </nav>
+
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1 style="color: #bfa140;">KRAKEN Database Administration</h1>
+            <p>Manage database operations and view stored data</p>
+        </header>
+
+        <div class="section">
+            <h3>Database Operations</h3>
+            <button class="btn" onclick="initializeDatabase()">Initialize Database</button>
+            <button class="btn" onclick="checkDatabaseStatus()">Check Database Status</button>
+            <button class="btn btn-danger" onclick="clearLocalStorage()">Clear Local Storage</button>
+            
+            <div id="status-message"></div>
+        </div>
+
+        <div class="section">
+            <h3>Applications</h3>
+            <button class="btn" onclick="loadApplications()">Load Applications</button>
+            <button class="btn" onclick="exportApplications()">Export Applications</button>
+            
+            <div id="applications-container">
+                <p>Click "Load Applications" to view submitted applications</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Port Battles</h3>
+            <button class="btn" onclick="loadPortBattles()">Load Port Battles</button>
+            <button class="btn" onclick="exportPortBattles()">Export Port Battles</button>
+            
+            <div id="port-battles-container">
+                <p>Click "Load Port Battles" to view created port battles</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Database Logs</h3>
+            <div id="logs-container" class="code-block">
+                No logs to display
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let logs = [];
+
+        function addLog(message, type = 'info') {
+            const timestamp = new Date().toISOString();
+            logs.unshift(`[${timestamp}] ${type.toUpperCase()}: ${message}`);
+            if (logs.length > 100) logs.pop(); // Keep only last 100 logs
+            
+            const logsContainer = document.getElementById('logs-container');
+            logsContainer.textContent = logs.join('\n');
+            
+            console.log(`[ADMIN] ${message}`);
+        }
+
+        function showStatus(message, type = 'success') {
+            const statusDiv = document.getElementById('status-message');
+            statusDiv.innerHTML = `<div class="status-message ${type}">${message}</div>`;
+            addLog(message, type);
+            
+            setTimeout(() => {
+                statusDiv.innerHTML = '';
+            }, 5000);
+        }
+
+        async function initializeDatabase() {
+            try {
+                addLog('Initializing database...');
+                showStatus('Initializing database...', 'warning');
+                
+                const response = await fetch('/api/init-db', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showStatus('Database initialized successfully!', 'success');
+                    addLog('Database initialization completed');
+                } else {
+                    showStatus(`Database initialization failed: ${result.error}`, 'error');
+                    addLog(`Database initialization failed: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`Error: ${error.message}`, 'error');
+                addLog(`Database initialization error: ${error.message}`, 'error');
+            }
+        }
+
+        async function checkDatabaseStatus() {
+            try {
+                addLog('Checking database status...');
+                
+                // Check applications table
+                const appsResponse = await fetch('/api/applications');
+                const appsResult = await appsResponse.json();
+                
+                // Check port battles table
+                const pbResponse = await fetch('/api/port-battles');
+                const pbResult = await pbResponse.json();
+                
+                if (appsResponse.ok && pbResponse.ok) {
+                    const message = `Database is healthy. Applications: ${appsResult.count || 0}, Port Battles: ${pbResult.count || 0}`;
+                    showStatus(message, 'success');
+                    addLog('Database status check completed');
+                } else {
+                    showStatus('Database connection issues detected', 'error');
+                    addLog('Database status check failed', 'error');
+                }
+            } catch (error) {
+                showStatus(`Database check failed: ${error.message}`, 'error');
+                addLog(`Database status check error: ${error.message}`, 'error');
+            }
+        }
+
+        async function loadApplications() {
+            try {
+                addLog('Loading applications from database...');
+                
+                const response = await fetch('/api/applications');
+                const result = await response.json();
+                
+                if (response.ok) {
+                    const container = document.getElementById('applications-container');
+                    
+                    if (result.applications && result.applications.length > 0) {
+                        let html = `<h4>Total Applications: ${result.count}</h4>`;
+                        html += '<table class="data-table"><thead><tr>';
+                        html += '<th>Captain Name</th><th>Discord</th><th>Nation</th><th>Rank</th><th>Submitted</th>';
+                        html += '</tr></thead><tbody>';
+                        
+                        result.applications.forEach(app => {
+                            html += '<tr>';
+                            html += `<td>${app.captain_name}</td>`;
+                            html += `<td>${app.discord}</td>`;
+                            html += `<td>${app.nation}</td>`;
+                            html += `<td>${app.current_rank}</td>`;
+                            html += `<td>${new Date(app.submitted_at).toLocaleDateString()}</td>`;
+                            html += '</tr>';
+                        });
+                        
+                        html += '</tbody></table>';
+                        container.innerHTML = html;
+                        addLog(`Loaded ${result.count} applications`);
+                    } else {
+                        container.innerHTML = '<p>No applications found in database</p>';
+                        addLog('No applications found');
+                    }
+                } else {
+                    showStatus(`Failed to load applications: ${result.error}`, 'error');
+                    addLog(`Failed to load applications: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`Error loading applications: ${error.message}`, 'error');
+                addLog(`Error loading applications: ${error.message}`, 'error');
+            }
+        }
+
+        async function loadPortBattles() {
+            try {
+                addLog('Loading port battles from database...');
+                
+                const response = await fetch('/api/port-battles');
+                const result = await response.json();
+                
+                if (response.ok) {
+                    const container = document.getElementById('port-battles-container');
+                    
+                    if (result.port_battles && result.port_battles.length > 0) {
+                        let html = `<h4>Total Port Battles: ${result.count}</h4>`;
+                        html += '<table class="data-table"><thead><tr>';
+                        html += '<th>Port</th><th>Type</th><th>BR Limit</th><th>PB Time</th><th>Access Code</th>';
+                        html += '</tr></thead><tbody>';
+                        
+                        result.port_battles.forEach(pb => {
+                            html += '<tr>';
+                            html += `<td>${pb.port}</td>`;
+                            html += `<td>${pb.battle_type}</td>`;
+                            html += `<td>${pb.br_limit}</td>`;
+                            html += `<td>${new Date(pb.pb_time).toLocaleString()}</td>`;
+                            html += `<td>${pb.access_code}</td>`;
+                            html += '</tr>';
+                        });
+                        
+                        html += '</tbody></table>';
+                        container.innerHTML = html;
+                        addLog(`Loaded ${result.count} port battles`);
+                    } else {
+                        container.innerHTML = '<p>No port battles found in database</p>';
+                        addLog('No port battles found');
+                    }
+                } else {
+                    showStatus(`Failed to load port battles: ${result.error}`, 'error');
+                    addLog(`Failed to load port battles: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`Error loading port battles: ${error.message}`, 'error');
+                addLog(`Error loading port battles: ${error.message}`, 'error');
+            }
+        }
+
+        function exportApplications() {
+            fetch('/api/applications')
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success && result.applications) {
+                        const dataStr = JSON.stringify(result.applications, null, 2);
+                        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                        const url = URL.createObjectURL(dataBlob);
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download = `kraken_applications_${new Date().toISOString().split('T')[0]}.json`;
+                        link.click();
+                        URL.revokeObjectURL(url);
+                        addLog('Applications exported');
+                    }
+                })
+                .catch(error => {
+                    showStatus(`Export failed: ${error.message}`, 'error');
+                });
+        }
+
+        function exportPortBattles() {
+            fetch('/api/port-battles')
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success && result.port_battles) {
+                        const dataStr = JSON.stringify(result.port_battles, null, 2);
+                        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                        const url = URL.createObjectURL(dataBlob);
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download = `kraken_port_battles_${new Date().toISOString().split('T')[0]}.json`;
+                        link.click();
+                        URL.revokeObjectURL(url);
+                        addLog('Port battles exported');
+                    }
+                })
+                .catch(error => {
+                    showStatus(`Export failed: ${error.message}`, 'error');
+                });
+        }
+
+        function clearLocalStorage() {
+            if (confirm('Are you sure you want to clear all local storage data? This cannot be undone.')) {
+                localStorage.clear();
+                showStatus('Local storage cleared', 'warning');
+                addLog('Local storage cleared');
+            }
+        }
+
+        // Initialize logs
+        addLog('Admin panel loaded');
+    </script>
+</body>
+</html>

@@ -288,15 +288,22 @@
     </style>
 </head>
 <body>
-    <!-- Sticky Navigation Menu -->
-    <nav class="kraken-navbar">
+    <!-- Sticky Navigation Menu -->    <nav class="kraken-navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="marketplace.html">Marketplace</a></li>
-            <li><a href="tools.html">Tools</a></li>
+            <li class="dropdown">
+                <a href="tools.html">Tools</a>
+                <div class="dropdown-content">
+                    <a href="map.html">Map</a>
+                    <a href="crafting.html">Crafting</a>
+                </div>
+            </li>
             <li><a href="orgchart.html">Command</a></li>
             <li><a href="pb.html" class="active">PB</a></li>
             <li><a href="apply-typeform.html">Apply</a></li>
+            <li><a href="accept-commission.html">Commission</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
         </ul>
     </nav>
 
@@ -336,7 +343,25 @@
                 <h2 style="color: #bfa140;">Create New Port Battle</h2>
                 <button class="close" onclick="closeModal('createPBModal')">&times;</button>
             </div>
-            <form id="createPBForm">                <div class="form-group">
+            <form id="createPBForm">
+                <!-- Captain's Code Verification -->
+                <div class="form-group" style="background: rgba(191, 161, 64, 0.1); padding: 1rem; border: 2px solid #bfa140; margin-bottom: 2rem;">
+                    <h3 style="color: #bfa140; margin-bottom: 1rem;">Commander Authorization</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="captain-code">Captain's Code</label>
+                            <input type="text" id="captain-code" name="captain-code" placeholder="8-digit access code" maxlength="8" required style="font-family: monospace; text-transform: uppercase;">
+                        </div>
+                        <div class="form-group">
+                            <label for="verified-captain">Verified Captain</label>
+                            <div id="captain-verification" style="padding: 0.75rem; background: #1a1a1a; border: 2px solid #444; color: #888; min-height: 2.5rem; display: flex; align-items: center;">
+                                Enter your Captain's Code to verify authorization
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="pb-port">Port Battle Location</label>
                     <div style="position: relative;">
                         <input type="text" id="pb-port" name="pb-port" placeholder="Port name" required>
@@ -880,19 +905,139 @@ ${codesDisplay}
             } else {
                 alert('❌ Invalid admin code!');
             }
+        }        // Enhanced PB data management with Supabase database
+        async function savePBData(pbData) {
+            try {
+                console.log('💾 Saving PB to database...');
+                const response = await fetch('/api/port-battles', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(pbData)
+                });
+
+                const result = await response.json();
+                if (!response.ok) {
+                    console.error('❌ Failed to save PB to database:', result);
+                    // Fallback to localStorage
+                    localStorage.setItem('krakenPBData', JSON.stringify(portBattles));
+                    return false;
+                } else {
+                    console.log('✅ PB saved to database:', result.port_battle.id);
+                    return true;
+                }
+            } catch (error) {
+                console.error('❌ Database save error:', error);
+                // Fallback to localStorage
+                localStorage.setItem('krakenPBData', JSON.stringify(portBattles));
+                return false;
+            }
         }
 
-        // Enhanced PB data management with localStorage
-        function savePBData() {
-            localStorage.setItem('krakenPBData', JSON.stringify(portBattles));
+        async function loadPBData() {
+            try {
+                console.log('📖 Loading PBs from database...');
+                const response = await fetch('/api/port-battles');
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // Convert database format to frontend format
+                    const dbPortBattles = result.port_battles.map(pb => ({
+                        id: pb.id,
+                        port: pb.port,
+                        type: pb.battle_type,
+                        brLimit: pb.br_limit,
+                        meetingTime: pb.meeting_time,
+                        pbTime: pb.pb_time,
+                        meetingLocation: pb.meeting_location,
+                        maxSignups: pb.max_signups,
+                        accessCode: pb.access_code,
+                        adminCode: pb.admin_code,
+                        allowedRates: pb.allowed_rates || [],
+                        allowedShips: pb.allowed_ships || [],
+                        screeningFleets: pb.screening_fleets || [],
+                        signups: 0, // Will be loaded separately
+                        created_at: pb.created_at
+                    }));
+                    
+                    portBattles.length = 0; // Clear array
+                    portBattles.push(...dbPortBattles); // Add database data
+                    console.log('✅ Loaded', portBattles.length, 'PBs from database');
+                    return true;
+                } else {
+                    console.warn('⚠️ Could not load from database, falling back to localStorage');
+                    // Fallback to localStorage
+                    const saved = localStorage.getItem('krakenPBData');
+                    if (saved) {
+                        const savedData = JSON.parse(saved);
+                        portBattles.length = 0;
+                        portBattles.push(...savedData);
+                    }
+                    return false;
+                }
+            } catch (error) {
+                console.error('❌ Database load error:', error);
+                // Fallback to localStorage
+                const saved = localStorage.getItem('krakenPBData');
+                if (saved) {
+                    const savedData = JSON.parse(saved);
+                    portBattles.length = 0;
+                    portBattles.push(...savedData);
+                }
+                return false;
+            }
         }
 
-        function loadPBData() {
-            const saved = localStorage.getItem('krakenPBData');
-            if (saved) {
-                const savedData = JSON.parse(saved);
-                portBattles.length = 0; // Clear array
-                portBattles.push(...savedData); // Add saved data
+        // Captain's Code verification
+        let verifiedCaptain = null;
+
+        async function verifyCaptainCode(captainCode) {
+            try {
+                const response = await fetch(`/api/captains?code=${captainCode}`);
+                if (response.ok) {
+                    const result = await response.json();
+                    return result.captain;
+                }
+                return null;
+            } catch (error) {
+                console.error('Error verifying captain code:', error);
+                return null;
+            }
+        }
+
+        function setupCaptainCodeVerification() {
+            const codeInput = document.getElementById('captain-code');
+            const verificationDiv = document.getElementById('captain-verification');
+            
+            if (codeInput && verificationDiv) {
+                codeInput.addEventListener('input', async function() {
+                    const code = this.value.trim().toUpperCase();
+                    this.value = code; // Force uppercase
+                    verifiedCaptain = null;
+                    
+                    if (code.length === 8) {
+                        verificationDiv.innerHTML = '<span style="color: #ffa500;">🔄 Verifying...</span>';
+                        
+                        const captain = await verifyCaptainCode(code);
+                        if (captain) {
+                            if (captain.canManagePB) {
+                                verifiedCaptain = captain;
+                                verificationDiv.innerHTML = `<span style="color: #4ade80;">✅ ${captain.captainName} - Authorized for PB Management</span>`;
+                                verificationDiv.style.borderColor = '#4ade80';
+                            } else {
+                                verificationDiv.innerHTML = `<span style="color: #ff6b6b;">❌ ${captain.captainName} - Not authorized for PB Management</span>`;
+                                verificationDiv.style.borderColor = '#ff6b6b';
+                            }
+                        } else {
+                            verificationDiv.innerHTML = '<span style="color: #ff6b6b;">❌ Invalid Captain\'s Code</span>';
+                            verificationDiv.style.borderColor = '#ff6b6b';
+                        }
+                    } else {
+                        verificationDiv.innerHTML = 'Enter your Captain\'s Code to verify authorization';
+                        verificationDiv.style.borderColor = '#444';
+                    }
+                });
             }
         }
 
@@ -936,8 +1081,14 @@ ${codesDisplay}
                 listContainer.appendChild(pbElement);
             });
         }        // Form submission
-        document.getElementById('createPBForm').addEventListener('submit', function(e) {
+        document.getElementById('createPBForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+            
+            // Verify Captain's Code authorization
+            if (!verifiedCaptain || !verifiedCaptain.canManagePB) {
+                alert('❌ Captain\'s Code verification required. You must be authorized to manage port battles.');
+                return;
+            }
             
             const formData = new FormData(this);
             
@@ -982,9 +1133,8 @@ ${codesDisplay}
                     allowedShips: formData.get('allowed-ships') ? formData.get('allowed-ships').split(',').map(s => s.trim()) : [],
                     fleets: screeningFleets
                 }
-            };
-              portBattles.push(newPB);
-            savePBData(); // Save to localStorage
+            };            portBattles.push(newPB);
+            await savePBData(newPB); // Save to database
             closeModal('createPBModal');
             loadPortBattles();
             
@@ -1021,19 +1171,20 @@ ${codesDisplay}
                 if (event.target === modal) {
                     modal.style.display = 'none';
                 }
-            });        }
-
-        function displayPortBattles() {
-            loadPBData(); // Load from localStorage first
-            loadPortBattles(); // Then display them
+            });
         }
 
-        // Initialize
+        function displayPortBattles() {
+            loadPBData().then(() => {
+                loadPortBattles(); // Then display them
+            });
+        }        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             fetchPorts().then(() => {
                 initializePortSearch();
             });
             displayPortBattles();
+            setupCaptainCodeVerification();
         });
     </script>
 </body>

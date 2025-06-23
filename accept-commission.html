@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accept My Commission - KRAKEN Naval Squadron</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/deployment-fixes.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cedarville+Cursive&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #181818;
+            min-height: 100vh;
+            padding: 20px;
+            color: #2c1810;
+            padding-top: 80px;
+        }
+
+        .commission-document {
+            max-width: 700px;
+            margin: 20px auto 50px;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(139, 69, 19, 0.02) 1px, transparent 1px),
+                linear-gradient(45deg, transparent 49%, rgba(139, 69, 19, 0.005) 50%, transparent 51%),
+                linear-gradient(135deg, #ffffff 0%, #fefefe 30%, #fcfcfc 70%, #f9f9f9 100%);
+            background-size: 30px 30px, 60px 60px, 100px 100px, 100% 100%;
+            border: 2px solid #d4c7b0;
+            border-radius: 8px;
+            padding: 50px;
+            box-shadow: 
+                0 8px 32px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.8),
+                inset 0 -1px 0 rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .commission-document::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 69, 19, 0.005) 2px,
+                    rgba(139, 69, 19, 0.005) 3px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 69, 19, 0.005) 2px,
+                    rgba(139, 69, 19, 0.005) 3px
+                );
+            background-size: 20px 20px, 20px 20px;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            width: 250px;
+            height: 250px;
+            background-image: url('krakenlogo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .crest {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: url('krakenlogo.png') no-repeat center center;
+            background-size: contain;
+        }
+
+        .title {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #5d4037;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .commission-number {
+            font-size: 14px;
+            color: #666;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            border-radius: 8px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #5d4037;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #d7ccc8;
+            border-radius: 6px;
+            font-family: 'Crimson Text', serif;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #2c1810;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #8b4513;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 8px rgba(139, 69, 19, 0.3);
+        }
+
+        .submit-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .captain-code-display {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(139, 69, 19, 0.2));
+            border: 3px solid #8b4513;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .captain-code {
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #8b4513;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .code-instruction {
+            font-size: 16px;
+            color: #5d4037;
+            font-style: italic;
+        }
+
+        .success-page {
+            display: none;
+        }
+
+        .success-page.show {
+            display: block;
+        }
+
+        .form-page.hide {
+            display: none;
+        }
+
+        .error-message {
+            background: rgba(211, 47, 47, 0.1);
+            border: 1px solid rgba(211, 47, 47, 0.3);
+            color: #d32f2f;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .info-message {
+            background: rgba(25, 118, 210, 0.1);
+            border: 1px solid rgba(25, 118, 210, 0.3);
+            color: #1976d2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, #5d4037, #8b4513);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, #8b4513, #5d4037);
+            transform: translateY(-1px);
+        }
+
+        @media print {
+            .submit-section { display: none; }
+            .commission-document { margin: 0; box-shadow: none; }
+            body { background: white; }
+        }
+
+        @media (max-width: 768px) {
+            .commission-document { padding: 30px 20px; margin: 80px 10px 30px; }
+            .nav-links { display: none; }
+            .captain-code { font-size: 28px; letter-spacing: 2px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation Menu -->    <nav class="kraken-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li class="dropdown">
+                <a href="tools.html">Tools</a>
+                <div class="dropdown-content">
+                    <a href="map.html">Map</a>
+                    <a href="crafting.html">Crafting</a>
+                </div>
+            </li>
+            <li><a href="orgchart.html">Command</a></li>
+            <li><a href="pb.html">PB</a></li>
+            <li><a href="apply-typeform.html">Apply</a></li>
+            <li><a href="accept-commission.html" class="active">Commission</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="commission-document">
+        <div class="watermark"></div>
+        
+        <div class="form-page" id="formPage">
+            <div class="header">
+                <div class="crest"></div>
+                <h1 class="title">ACCEPT MY COMMISSION</h1>
+                <p class="subtitle">Royal Navy Captain Registration</p>
+                <p class="subtitle">KRAKEN Squadron</p>
+                <p class="commission-number">KRKN-REG-2025</p>
+            </div>
+
+            <div class="content">
+                <div class="section">
+                    <h2 class="section-title">Captain Registration</h2>
+                    <p style="margin-bottom: 20px; line-height: 1.6; color: #5d4037;">
+                        Welcome to the KRAKEN Squadron! After submitting your application, please register your Captain name 
+                        below to receive your unique <strong>Captain's Code</strong>. This 8-digit code will serve as your 
+                        access credential for port battle signups and squadron management functions.
+                    </p>
+                    
+                    <div id="errorMessage" class="error-message" style="display: none;"></div>
+                    <div id="infoMessage" class="info-message" style="display: none;"></div>
+
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label for="captainName">Captain Name (In-Game):</label>
+                            <input type="text" id="captainName" name="captainName" required 
+                                   placeholder="Enter your exact in-game Captain name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="discordUsername">Discord Username (Optional):</label>
+                            <input type="text" id="discordUsername" name="discordUsername" 
+                                   placeholder="Your Discord username for verification">
+                        </div>
+
+                        <div class="submit-section">
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                Generate My Captain's Code
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="success-page" id="successPage">
+            <div class="header">
+                <div class="crest"></div>
+                <h1 class="title">COMMISSION ACCEPTED</h1>
+                <p class="subtitle">Welcome to the KRAKEN Squadron</p>
+                <p class="commission-number">KRKN-REG-2025</p>
+            </div>
+
+            <div class="content">
+                <div class="section">
+                    <h2 class="section-title">Your Captain's Code</h2>
+                    
+                    <div class="captain-code-display">
+                        <div class="captain-code" id="generatedCode">--------</div>
+                        <div class="code-instruction">This is your unique Captain's Code</div>
+                    </div>
+
+                    <p style="margin: 20px 0; line-height: 1.6; color: #5d4037;">
+                        <strong>Captain <span id="registeredName">Name</span></strong>, your commission has been accepted! 
+                        Your Captain's Code is <strong><span id="codeRepeat">--------</span></strong>.
+                    </p>
+
+                    <div style="background: rgba(139, 69, 19, 0.05); border: 1px solid rgba(139, 69, 19, 0.2); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #8b4513; margin-bottom: 15px;">Important Instructions:</h3>
+                        <ul style="color: #5d4037; line-height: 1.6; margin-left: 20px;">
+                            <li>Save this code securely - you'll need it to sign up for port battles</li>
+                            <li>Use this code instead of typing your name when joining port battles</li>
+                            <li>If you lose your code, contact an officer for assistance</li>
+                            <li>Keep this code private - it's your personal access credential</li>
+                        </ul>
+                    </div>
+
+                    <div class="submit-section">
+                        <button type="button" class="back-btn" onclick="resetForm()">
+                            Register Another Captain
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            document.getElementById('infoMessage').style.display = 'none';
+        }
+
+        function showInfo(message) {
+            const infoDiv = document.getElementById('infoMessage');
+            infoDiv.textContent = message;
+            infoDiv.style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+
+        function hideMessages() {
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('infoMessage').style.display = 'none';
+        }
+
+        function showSuccess(captainName, captainCode) {
+            document.getElementById('formPage').classList.add('hide');
+            document.getElementById('successPage').classList.add('show');
+            document.getElementById('generatedCode').textContent = captainCode;
+            document.getElementById('codeRepeat').textContent = captainCode;
+            document.getElementById('registeredName').textContent = captainName;
+        }
+
+        function resetForm() {
+            document.getElementById('formPage').classList.remove('hide');
+            document.getElementById('successPage').classList.remove('show');
+            document.getElementById('registrationForm').reset();
+            hideMessages();
+            document.getElementById('submitBtn').disabled = false;
+            document.getElementById('submitBtn').textContent = 'Generate My Captain\'s Code';
+        }
+
+        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const captainName = document.getElementById('captainName').value.trim();
+            const discordUsername = document.getElementById('discordUsername').value.trim();
+
+            if (!captainName) {
+                showError('Please enter your Captain name.');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Generating Code...';
+            hideMessages();
+
+            try {
+                const response = await fetch('/api/captains', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        action: 'register',
+                        captainName: captainName,
+                        discordUsername: discordUsername || null
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showSuccess(captainName, result.captain.captain_code);
+                } else if (response.status === 409) {
+                    // Captain already exists
+                    showInfo(`Captain "${captainName}" is already registered with code: ${result.captainCode}`);
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Generate My Captain\'s Code';
+                } else {
+                    showError(result.error || 'Failed to register captain. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Generate My Captain\'s Code';
+                }
+            } catch (error) {
+                console.error('Registration error:', error);
+                showError('Network error. Please check your connection and try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Generate My Captain\'s Code';
+            }
+        });
+
+        // Auto-focus on captain name input
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('captainName').focus();
+        });
+    </script>
+</body>
+</html>
